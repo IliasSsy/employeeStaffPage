@@ -1,23 +1,9 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
     * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-    }
-    @font-face {
-        font-family: "Inter";
-        src: url("fonts/Inter/Inter-VariableFont_opsz,wght.ttf") format("truetype");
-        font-weight: 100 900;
-        font-style: normal;
-    }
-    @font-face {
-        font-family: "Inter Tight";
-        src: url("fonts/Inter_Tight/InterTight-VariableFont_wght.ttf") format("truetype");
-        font-weight: 100 900;
-        font-style: normal;
-    }
-    body {
-        font-family: "Inter", sans-serif;
     }
     .info {
         line-height: 20px;
@@ -48,10 +34,12 @@
         color: rgba(36, 39, 42, 1);
     }
     .title {
+        font-size: 56px;
+        line-height: 110%;
         width: 609px;
         height: 62px;
-        font-family: "Inter Tight", sans-serif;
         font-weight: 500;
+        margin-bottom: 40px;
     }
     .person {
         width: 370px;
@@ -102,8 +90,11 @@
     }
     .major {
         font-weight: 500;
+        font-size: 28px;
+        line-height: 110%;
     }
     .popup {
+        z-index: 1;
         position: fixed;
         inset: 0;
         opacity: 0;
@@ -130,8 +121,8 @@
     .popup__content {
         position: relative;
         width: 1570px;
-        background: #fff;
-        border-radius: 20px;
+        background: white;
+        border-radius: 4px;
         padding: 50px;
     }
     .popup__close {
@@ -140,20 +131,22 @@
         right: 30px;
         font-size: 42px;
         text-decoration: none;
-        color: #fa5d1f;
+        color: #FA5D1F;
         line-height: 1;
     }
     .popup__header {
         display: grid;
-        grid-template-columns: 360px 1fr;
+        grid-template-columns: 282px 1fr;
         gap: 50px;
         margin-bottom: 60px;
     }
     .popup__photo {
-        width: 360px;
+        width: 282px;
+        height: 274px;
     }
     .popup__person__photo {
         width: 100%;
+        height: 100%;
         display: block;
         object-fit: cover;
     }
@@ -175,7 +168,7 @@
         margin-bottom: 40px;
     }
     .popup__person__focus {
-        color: #fa5d1f;
+        color: #FA5D1F;
         font-size: 24px;
         font-weight: 500;
         line-height: 32px;
@@ -204,29 +197,25 @@
     .popup__block span {
         font-size: 18px;
         line-height: 30px;
-        color: #2f3337;
+        color: #2F3337;
     }
-
     .popup__block p:not(.popup__person__focus) {
         font-size: 18px;
         line-height: 30px;
-        color: #2f3337;
+        color: #2F3337;
     }
     .popup__person__focus {
         color: rgba(250, 93, 32, 1);
     }
-
     .person__info{
         position:relative;
         background:#F3F3F3;
         transition: 0.25s ease;
     }
-
     .person__fio,
     .person__post{
         transition: 0.25s ease;
     }
-
     .teacher__arrow{
         position: absolute;
         top: 18px;
@@ -236,25 +225,208 @@
         opacity: 0;
         transition: 0.25s ease;
     }
-
     .person:hover .person__info{
         background:#ff5a1f;
     }
-
     .person:hover .person__fio,
     .person:hover .person__post{
         color:#fff;
     }
-
     .person:hover .teacher__arrow{
         opacity:1;
     }
+    @media (max-width: 768px) {
+    .info {
+        padding: 50px 18px 0;
+        font-family: "Inter", sans-serif;
+    }
+    .return__text {
+        font-size: 14px;
+        line-height: 30px;
+    }
+    .return {
+        width: 20px;
+        height: 18px;
+    }
+    .link {
+        margin-bottom: 50px;
+    }
+    .return_text {
+        font-size: 14px;
+        line-height: 30px;
+    }
+    .title {
+        width: auto;
+        height: auto;
+        margin-bottom: 20px;
+        font-size: 28px;
+        line-height: 34px;
+        font-family: "Inter Tight", sans-serif
+    }
+    .description {
+        width: auto;
+        height: auto;
+        padding-bottom: 20px;
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .major {
+        font-size: 14px;
+        line-height: 34px;
+        font-weight: 500;
+        margin-bottom: 6px;
+    }
+    .people {
+        grid-template-columns: repeat(2, 160px);
+        justify-content: center;
+        gap: 19px;
+        margin-bottom: 100px;
+    }
+    .person {
+        width: 160px;
+    }
+    .person_photo {
+        height: 155px;
+    }
+    .person__info {
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 8px 12px;
+        width: 160px;
+        height: 78px;
+    }
+    .person__fio {
+        font-size: 12px;
+        line-height: 125%;
+        padding-bottom: 8px;
+    }
+    .person__post {
+        font-size: 10px;
+        line-height: 16px;
+    }
+    .teacher__arrow {
+        width: 16px;
+        height: 16px;
+        top: 12px;
+        right: 12px;
+    }
+    .person__header {
+        display:grid;
+        grid-template-columns:140px 1fr;
+        grid-template-rows:auto auto auto auto;
+    }
+    .popup__header{
+        display:grid;
+        grid-template-columns:160px 1fr;
+        gap:20px;
+        column-gap: 10px;
+        margin: 0px;
+        align-items: start;
+    }   
+    .popup__close {
+        position: absolute;
+        top: 0px;
+        font-size: 30px;
+        top: 15px;
+    }
+    .popup__title{
+        top: 15px;
+        line-height:18px;
+        margin-bottom:8px;
+        width: 84px;
+        font-size:14px;
+        font-weight: 500;
+    }
+    .popup__block {
+        gap: 10px;
+    }
+    .popup__person__focus + p {
+        font-size: 12px;
+        line-height: 16px;
+    }
+    .popup__block p:not(.popup__person__focus) {
+        font-size: 12px;
+        line-height: 16px;
+    }
+    .popup__block span:not(.popup__person__focus) {
+        font-size: 12px;
+        line-height: 16px;
+    }
+    .popup__person__photo{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+    .popup__photo {
+        width: 160px;
+        height: 155px;
+    }
+    .popup__header_info {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    .popup__header_info p:last-child {
+        font-size: 12px;
+        line-height: 16px;
+        margin-bottom: 20px;
+    }
+    .popup__content{
+        width:calc(100vw - 20px);
+        padding:15px;
+    }
+    .popup__person__focus{
+        margin-top: 20px;
+        margin-bottom: 0;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 18px;
+    }
+    .popup__grid{
+        display:block;
+    }
+    .popup__column{
+        display:contents;
+    }
+}
 </style>
+
+<script>
+function updatePopupLayout() {
+    const mobile = window.innerWidth <= 768;
+    document.querySelectorAll(".popup").forEach(popup => {
+        const header = popup.querySelector(".popup__header");
+        const info = popup.querySelector(".popup__header_info");
+        if (!header || !info) return;
+        const title = info.querySelector(".popup__title");
+        const subtitle = info.querySelector(".popup__subtitle");
+        const focus = info.querySelector(".popup__person__focus");
+        const text = focus ? focus.nextElementSibling : null;
+        if (!focus || !text) return;
+        if (mobile) {
+            if (focus.parentElement === info) {
+                header.after(focus);
+                focus.after(text);
+            }
+        } else {
+            if (focus.parentElement !== info) {
+                subtitle.after(focus);
+                focus.after(text);
+            }
+        }
+    });
+}
+document.addEventListener("DOMContentLoaded", () => {
+    updatePopupLayout();
+    window.addEventListener("resize", updatePopupLayout);
+});
+</script>
 
 
 <div class="info" itemprop="teachingStaff">
     <a class="link" href="https://ispring.institute/sveden/">
-        <img class="return" src="src/return.svg" alt="Назад">
+        <img class="return" src="https://static.tildacdn.com/tild6264-3866-4035-a632-396563643535/return.svg" alt="Назад">
         <span class="return__text">Назад</span>
     </a>
     <h1 class="title">Педагогический состав</h1>
@@ -306,7 +478,7 @@
                 <div class="person__info">
                     <p class="person__fio">${person.fio}</p>
                     <p class="person__post">${person.post}</p>
-                    <img class="teacher__arrow" src="src/Teacher_arrow.png">
+                    <img class="teacher__arrow" src="https://static.tildacdn.com/tild6639-6261-4861-a466-323732633933/Teacher_arrow.png">
                 </div>
             </a>
         </div>
@@ -342,7 +514,7 @@
                                 <span>Квалификация: Инженер</span><br>
                                 <span>Направление подготовки: 230105 Программное
                   обеспечение вычислительной техники и автоматизированных систем</span><br>
-                                ФГБОУ ВО "Поволжский государственный технологический университет"<br>
+                                <p>ФГБОУ ВО "Поволжский государственный технологический университет"</p><br>
                                 <span>Квалификация: Исследователь.
                   Преподаватель-исследователь</span><br>
                                 <span>Направление подготовки: 38.06.01 Экономика</span>
@@ -350,7 +522,7 @@
                         </div>
                         <div class="popup__block">
                             <p class="popup__person__focus">Карьера</p>
-                            <div>Информация отсутствует</div>
+                            <div><p>Информация отсутствует</p></div>
                         </div>
                         <div class="popup__block">
                             <p class="popup__person__focus">Место работы и должность</p>
@@ -508,7 +680,7 @@
                         <p class="popup__title" itemprop="fio">Балышева Марина Андреевна</p>
                         <p class="popup__subtitle" itemprop="post">Преподаватель</p>
                         <p class="popup__person__focus">Область практики, научных и личных интересов</p>
-                        <p>???</p>
+                        <p>нет информации</p>
                     </div>
                 </div>
                 <div class="popup__grid">
@@ -2427,7 +2599,7 @@
                         <div class="popup__block">
                             <p class="popup__person__focus">Карьера</p>
                             <div>
-                                <p>???</p>
+                                <p>нет информации</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -3629,7 +3801,7 @@
                             {id: "KrechinPB", photo: "https://static.tildacdn.com/tild3433-6131-4962-a235-373363303166/Krechin_Mikhail.png", alt: "Krechin Mikhail", fio: "Кречин Михаил<br>Александрович", post: "Старший преподаватель"},
                             {id: "KylakovskayaPB", photo: "https://static.tildacdn.com/tild3965-3566-4638-a561-633531626438/Kylakovskaya_Arina.png", alt: "Kylakovskaya Arina", fio: "Кулаковская Арина<br>Александровна", post: "Преподаватель"},
                             {id: "Lanovaya", photo: "https://static.tildacdn.com/tild6530-6138-4130-b063-663562613237/Lanovaya_Tatiana.png", alt: "Lanovaya Tatiana", fio: "Лановая Татьяна<br>Владимировна", post: "Доцент"},
-                            {id: "LopatinaT", photo: "https://static.tildacdn.com/tild6534-6333-4963-a234-613265646533/Lopatina_Tatiana.png", alt: "Lopatina Tatiana", fio: "Лопатина Татьяна<br>Петровна", post: "Старший преподаватель"},
+                            {id: "LopatinaPB", photo: "https://static.tildacdn.com/tild6534-6333-4963-a234-613265646533/Lopatina_Tatiana.png", alt: "Lopatina Tatiana", fio: "Лопатина Татьяна<br>Петровна", post: "Старший преподаватель"},
                             {id: "LubzhinA", photo: "https://static.tildacdn.com/tild6439-3633-4365-a130-363337356166/Lubzhin_Alexey.png", alt: "Lubzhin Alexey", fio: "Любжин Алексей<br>Игоревич", post: "Профессор"},
                             {id: "ParsaevaI", photo: "https://static.tildacdn.com/tild6630-6664-4537-a166-303631656535/Parsaeva_Irina.png", alt: "Parsaeva Irina", fio: "Парсаева Ирина<br>Вениаминовна", post: "Доцент"},
                             {id: "RadyushkinaPB", photo: "https://static.tildacdn.com/tild6136-3338-4963-b037-363063363162/Radyushkina_Irina.png", alt: "Radyushkina Irina", fio: "Радюшкина Ирина<br>Александровна", post: "Старший преподаватель"},
@@ -4847,7 +5019,7 @@
         {id:"LubzhinA", photo:"https://static.tildacdn.com/tild6439-3633-4365-a130-363337356166/Lubzhin_Alexey.png", alt:"Lubzhin Alexey", fio:"Любжин Алексей<br>Игоревич", post:"Профессор"},
         {id:"NorkinMK", photo:"https://static.tildacdn.com/tild3332-3364-4466-a162-303266303237/Norkin_Nikolay.png", alt:"Norkin Nikolay", fio:"Норкин Николай<br>Анатольевич", post:"Преподаватель"},
         {id:"ParsaevaI", photo:"https://static.tildacdn.com/tild6630-6664-4537-a166-303631656535/Parsaeva_Irina.png", alt:"Parsaeva Irina", fio:"Парсаева Ирина<br>Вениаминовна", post:"Доцент"},
-        {id:"PopovMK", photo:"https://static.tildacdn.com/tild6339-6233-4335-b534-393939333161/Popov_Mikhail.png", alt:"Mihail Popov", fio:"Попов Михаил<br>Александрович", post:"Старший преподаватель"},
+        {id:"Popov", photo:"https://static.tildacdn.com/tild6339-6233-4335-b534-393939333161/Popov_Mikhail.png", alt:"Mihail Popov", fio:"Попов Михаил<br>Александрович", post:"Старший преподаватель"},
         {id:"RadyushkinaMK", photo:"https://static.tildacdn.com/tild6136-3338-4963-b037-363063363162/Radyushkina_Irina.png", alt:"Parsaeva Irina", fio:"Радюшкина Ирина<br>Александровна", post:"Старший преподаватель"},
         {id:"Rozhentseva", photo:"https://static.tildacdn.com/tild3331-6563-4663-b861-623938343263/Rozhencova_Lubov.png", alt:"Rozhentseva Lubov", fio:"Роженцева Любовь<br>Сергеевна", post:"Старший преподаватель"},
         {id:"RublikMK", photo:"https://static.tildacdn.com/tild3935-6562-4535-b564-373636383435/Rublik_Stanislav.png", alt:"Rublik Stanislav", fio:"Рублик Станислав<br>Сергеевич", post:"Преподаватель"},
@@ -6425,7 +6597,7 @@
             </div>
         </div>
     </div>
-    <div id="PopovMK" class="popup">
+    <div id="Popov" class="popup">
         <a href="##" class="popup__area"></a>
         <div class="popup__body">
             <div class="popup__content">
@@ -7377,7 +7549,7 @@
             </div>
         </div>
     </div>
-    <div id="LubzhinMKD" class="popup">
+    <div id="Lubzhin" class="popup">
         <a href="##" class="popup__area"></a>
         <div class="popup__body">
             <div class="popup__content">
