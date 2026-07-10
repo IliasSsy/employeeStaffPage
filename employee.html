@@ -43,12 +43,14 @@
     }
     .person {
         width: 370px;
-        background-color: rgba(251, 241, 234, 1)
+        background-color: rgba(251, 241, 234, 1);
+        height: 441px;
     }
     .person a {
         text-decoration: none;
     }
     .person_photo {
+        display:block;
         width: 100%;
         height: 275px;
         object-fit: cover;
@@ -64,6 +66,7 @@
         color: rgba(2, 8, 11, 1)
     }
     .person__fio {
+        color: rgba(2, 8, 11, 1);
         font-weight: 500;
         font-size: 28px;
         line-height: 34px;
@@ -156,11 +159,10 @@
         justify-content: center;
     }
     .popup__title {
-        font-family: "Inter Tight", sans-serif;
         font-size: 52px;
         font-weight: 500;
         line-height: 60px;
-        margin-bottom: 16px;
+        margin-bottom: 10px;
     }
     .popup__subtitle {
         font-size: 22px;
@@ -172,11 +174,11 @@
         font-size: 24px;
         font-weight: 500;
         line-height: 32px;
-        margin-bottom: 12px;
     }
     .popup__header_info p:last-child {
         font-size: 18px;
         line-height: 30px;
+        width: 750px;
     }
     .popup__grid {
         display: grid;
@@ -191,7 +193,7 @@
     .popup__block {
         display: flex;
         flex-direction: column;
-        gap: 16px;
+        gap: 10px;
     }
     .popup__block div,
     .popup__block span {
@@ -235,10 +237,10 @@
     .person:hover .teacher__arrow{
         opacity:1;
     }
+
     @media (max-width: 768px) {
     .info {
         padding: 50px 18px 0;
-        font-family: "Inter", sans-serif;
     }
     .return__text {
         font-size: 14px;
@@ -261,7 +263,6 @@
         margin-bottom: 20px;
         font-size: 28px;
         line-height: 34px;
-        font-family: "Inter Tight", sans-serif
     }
     .description {
         width: auto;
@@ -284,6 +285,7 @@
     }
     .person {
         width: 160px;
+        height: 233px;
     }
     .person_photo {
         height: 155px;
@@ -327,7 +329,7 @@
         position: absolute;
         top: 0px;
         font-size: 30px;
-        top: 15px;
+        top: 10px;
     }
     .popup__title{
         top: 15px;
@@ -368,6 +370,8 @@
         justify-content: flex-start;
     }
     .popup__header_info p:last-child {
+        max-width: 100%;
+        width: 100%;
         font-size: 12px;
         line-height: 16px;
         margin-bottom: 20px;
@@ -391,7 +395,6 @@
     }
 }
 </style>
-
 <script>
 function updatePopupLayout() {
     const mobile = window.innerWidth <= 768;
@@ -437,7 +440,7 @@ document.addEventListener("DOMContentLoaded", () => {
             { id: "ArnaberdievPS", photo: "https://static.tildacdn.com/tild3831-3637-4333-b063-383036323136/Kerim_Arnaberdiev.png", alt: "Arnaberdiev Kerim", fio: "Арнабердиев<br>Авдыкерим", post: "И.о. зав. кафедрой" ,},
             { id: "AndreyshevPS", photo: "https://static.tildacdn.com/tild3734-3866-4535-b835-373834326337/Ivan_Andreyshev.png", alt: "Andreyshev Ivan", fio: "Андрейшев Иван<br>Ильич", post: "Преподаватель" },
             { id: "BalyshevaPS", photo: "https://static.tildacdn.com/tild6538-3834-4832-a463-643166306362/Balysheva_Marina.png", alt: "Marina Balysheva", fio: "Балышева Марина<br>Андреевна", post: "Преподаватель" },
-            { id: "BorodinPS", photo: "https://static.tildacdn.com/tild3136-6636-4432-a632-396239396563/Borodin_Andrey.png", alt: "Andrey Borodin", fio: "Бородин Андрей<br>Викторович", post: "Доцент" },
+            { id: "BorodinPS", photo: "https://static.tildacdn.com/tild6634-6530-4462-b661-666435386131/Frame_1819836402.png", alt: "Andrey Borodin", fio: "Бородин Андрей<br>Викторович", post: "Доцент" },
             { id: "VavilovaPS", photo: "https://static.tildacdn.com/tild3138-3334-4663-b362-653231663038/Vavilova_Ksenia.png", alt: "Vavilova Ksenia", fio: "Вавилова Ксения<br>Юрьевна", post: "Доцент" },
             { id: "Vorobev", photo: "https://static.tildacdn.com/tild3565-6633-4866-b763-616561386533/Vorobev_Dmitry.png", alt: "Dmitry Vorobev", fio: "Воробьев Дмитрий<br>Николаевич", post: "Доцент" },
             { id: "GainutdinovPS", photo: "https://static.tildacdn.com/tild3862-3233-4262-b637-656136633763/Gainutdinov_Rustam.png", alt: "Gainutdinov Rustam", fio: "Гайнутдинов Рустам<br>Маратович", post: "Преподаватель" },
@@ -517,7 +520,9 @@ document.addEventListener("DOMContentLoaded", () => {
                                 <p>ФГБОУ ВО "Поволжский государственный технологический университет"</p><br>
                                 <span>Квалификация: Исследователь.
                   Преподаватель-исследователь</span><br>
-                                <span>Направление подготовки: 38.06.01 Экономика</span>
+                                <p>Направление подготовки: 38.06.01 Экономика</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -611,15 +616,17 @@ document.addEventListener("DOMContentLoaded", () => {
                                     ФГБОУ ВО "Поволжский государственный технологический университет"
                                 </p>
                                 <span>Квалификация: Бакалавр</span><br>
-                                <span>Направление подготовки: 09.03.04 Программная инженерия</span><br>
+                                <p>Направление подготовки: 09.03.04 Программная инженерия</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
                             <p class="popup__person__focus">Карьера</p>
                             <div>
                                 <p>
-                                    Инженер-программист iSpring(с 2018 года)<br>
-                                    Администратор Синема5(до 2018 года)
+                                    Инженер-программист iSpring (с 2018 года)<br>
+                                    Администратор Синема5 (до 2018 года)
                                 </p>
                             </div>
                         </div>
@@ -690,8 +697,10 @@ document.addEventListener("DOMContentLoaded", () => {
                             <div itemprop="teachingLevel">
                                 <p>Высшее, специалитет</p>
                                 <p>ФГБОУ ВПО "Поволжский государственный технологический университет"</p>
-                                <span itemprop="teachingQual">Квалификация: Инженер</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: 230105 Программное обеспечение вычислительной техники и автоматизированных систем</span>
+                                <span>Квалификация: Инженер</span><br>
+                                <p>Направление подготовки: 230105 Программное обеспечение вычислительной техники и автоматизированных систем</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -776,8 +785,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее, специалитет<br>
                                     Марийский ордена Дружбы народов политехнический институт им. А.М. Горького
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Инженер-конструктор-технолог</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Конструирование и производство электронно-вычислительной аппаратуры</span>
+                                <span>Квалификация: Инженер-конструктор-технолог</span><br>
+                                <p>Направление подготовки: Конструирование и производство электронно-вычислительной аппаратуры</p><br>
+                                <p itemprop="degree">Кандидат экономических наук</p>
+                                <p itemprop="academStat">Профессор</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -862,8 +873,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     ФГБОУ ВО "Марийский государственный университет"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Лингвист, переводчик</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Перевод и переводоведение</span>
+                                <span>Квалификация: Лингвист, переводчик</span><br>
+                                <p>Направление подготовки: Перевод и переводоведение</p><br>
+                                <p itemprop="degree">Кандидат филологических наук</p>
+                                <p itemprop="academStat">Доцент по специальности "Германские языки"</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -960,8 +973,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     Чувашский государственный университет им. И. Н. Ульянова
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Географ. Преподаватель</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: География</span>
+                                <span>Квалификация: Географ. Преподаватель</span><br>
+                                <p>Направление подготовки: География</p><br>
+                                <p itemprop="degree">Кандидат филологических наук</p>
+                                <p itemprop="academStat">Доцент по кафедре философии</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -1068,8 +1083,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее, магистратура<br>
                                     ФГБОУ ВО "Марийский государственный университет"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Магистр</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: 44.04.01 Педагогическое образование</span>
+                                <span>Квалификация: Магистр</span><br>
+                                <p>Направление подготовки: 44.04.01 Педагогическое образование</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -1151,8 +1168,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     Московский государственный университет им. М.В. Ломоносова
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Математик</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Математика</span>
+                                <span>Квалификация: Математик</span><br>
+                                <p>Направление подготовки: Математика</p><br>
+                                <p itemprop="degree">Кандидат технических наук</p>
+                                <p itemprop="academStat">Доцент по кафедре информатики и системного программирования</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -1235,8 +1254,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     ФГБОУ ВО "Поволжский государственный технологический университет"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Бакалавр</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: 09.03.04 Программная инженерия</span>
+                                <span>Квалификация: Бакалавр</span><br>
+                                <p>Направление подготовки: 09.03.04 Программная инженерия</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -1315,8 +1336,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     ГОУ ВПО "Марийский государственный технический университет"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Специалист по защите информации</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Комплексное обеспечение информационной безопасности автоматизированных систем</span>
+                                <span>Квалификация: Специалист по защите информации</span><br>
+                                <p>Направление подготовки: Комплексное обеспечение информационной безопасности автоматизированных систем</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -1397,8 +1420,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     ФГБОУ ВО "Марийский государственный университет"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Математик</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Прикладная математика</span>
+                                <span>Квалификация: Математик</span><br>
+                                <p>Направление подготовки: Прикладная математика</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -1497,8 +1522,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     Марийский государственный педагогический институт им. Н. К. Крупской
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Учитель математики и физики</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Математика</span>
+                                <span>Квалификация: Учитель математики и физики</span><br>
+                                <p>Направление подготовки: Математика</p><br>
+                                <p itemprop="degree">Кандидат физико-математических наук</p>
+                                <p itemprop="academStat">Доцент по кафедре математики и методики обучения математике</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -1602,8 +1629,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее, специалитет<br>
                                     ФГБОУ ВПО "Поволжский государственный технологический университет"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Экономист</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: 080109 Бухгалтерский учет, анализ и аудит</span>
+                                <span>Квалификация: Экономист</span><br>
+                                <p>Направление подготовки: 080109 Бухгалтерский учет, анализ и аудит</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -1686,8 +1715,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     Московский государственный университет имени М.В. Ломоносова
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Социолог. Преподаватель социологии</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Социология</span>
+                                <span>Квалификация: Социолог. Преподаватель социологии</span><br>
+                                <p>Направление подготовки: Социология</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -1769,8 +1800,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     ФГБОУ ВО "Поволжский государственный технологический университет"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Инженер</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: 11.05.01 Радиоэлектронные системы и комплексы</span>
+                                <span>Квалификация: Инженер</span><br>
+                                <p>Направление подготовки: 11.05.01 Радиоэлектронные системы и комплексы</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -1861,8 +1894,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     Московский государственный университет имени М.В. Ломоносова
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Математик, системный программист</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Прикладная математика и информатика</span>
+                                <span>Квалификация: Математик, системный программист</span><br>
+                                <p>Направление подготовки: Прикладная математика и информатика</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -1946,8 +1981,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     ФГБОУ ВО "Марийский государственный университет"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Бакалавр</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: 44.03.05 Педагогическое образование</span>
+                                <span>Квалификация: Бакалавр</span><br>
+                                <p>Направление подготовки: 44.03.05 Педагогическое образование</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -2030,14 +2067,16 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее, бакалавриат<br>
                                     Таврический национальный университет имени В.И. Вернадского
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Бакалавр</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Филология</span><br><br>
+                                <span>Квалификация: Бакалавр</span><br>
+                                <span>Направление подготовки: Филология</span><br><br>
                                 <p>
                                     Высшее, магистратура<br>
                                     Таврический национальный университет имени В.И. Вернадского
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Магистр филологии, преподаватель русского языка и литературы</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Язык и литература (русский)</span>
+                                <span>Квалификация: Магистр филологии, преподаватель русского языка и литературы</span><br>
+                                <p>Направление подготовки: Язык и литература (русский)</p><br>
+                                <p itemprop="degree">Кандидат филологических наук</p>
+                                <p itemprop="academStat">Доцент</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -2139,8 +2178,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     ГОУ ВПО Ульяновский государственный университет
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Лингвист. Переводчик</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Лингвистика и межкультурная коммуникация</span>
+                                <span>Квалификация: Лингвист. Переводчик</span><br>
+                                <p>Направление подготовки: Лингвистика и межкультурная коммуникация</p><br>
+                                <p itemprop="degree">Кандидат филологических наук</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -2231,8 +2272,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     Московский государственный университет им. М.В. Ломоносова
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Филолог. Преподаватель</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Классическая филология</span>
+                                <span>Квалификация: Филолог. Преподаватель</span><br>
+                                <p>Направление подготовки: Классическая филология</p><br>
+                                <p itemprop="degree">Доктор филологических наук</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -2323,8 +2366,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     Марийский государственный технический университет
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Инженер</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Программное обеспечение вычислительной техники и автоматизированных систем</span>
+                                <span>Квалификация: Инженер</span><br>
+                                <p>Направление подготовки: Программное обеспечение вычислительной техники и автоматизированных систем</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -2409,8 +2454,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     Казанский государственный университет имени В.И. Ульянова-Ленина
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Радиофизик</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Радиофизика и электроника</span>
+                                <span>Квалификация: Радиофизик</span><br>
+                                <p>Направление подготовки: Радиофизика и электроника</p><br>
+                                <p itemprop="degree">Кандидат физико-математических наук</p>
+                                <p itemprop="academStat">Доцент по кафедре физики</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -2506,8 +2553,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     Марийский государственный педагогический институт им. Н.К. Крупской
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Учитель технологии и предпринимательства</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Технология и предпринимательство</span>
+                                <span>Квалификация: Учитель технологии и предпринимательства</span><br>
+                                <p>Направление подготовки: Технология и предпринимательство</p><br>
+                                <p itemprop="degree">Доктор педагогических наук</p>
+                                <p itemprop="academStat">Доцент по кафедре теории и методики технологии и профессионального образования</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -2592,8 +2641,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     Казанский государственный университет имени В. И. Ульянова-Ленина
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Математик</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Прикладная математика</span>
+                                <span>Квалификация: Математик</span><br>
+                                <p>Направление подготовки: Прикладная математика</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -2680,8 +2731,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее, специалитет<br>
                                     ФГБОУ ВО "Марийский государственный университет" г. Йошкар-Олы
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Учитель физической культуры</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Физическое воспитание</span>
+                                <span>Квалификация: Учитель физической культуры</span><br>
+                                <p>Направление подготовки: Физическое воспитание</p><br>
+                                <p itemprop="degree">Мастер спорта СССР по спортивной гимнастике</p>
+                                <p itemprop="academStat">Доцент по кафедре физического воспитания</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -2771,20 +2824,22 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее, бакалавриат<br>
                                     ФГАОУ ВПО "Крымский федеральный университет имени В. И. Вернадского"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Бакалавр</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: 46.03.01 История</span><br><br>
+                                <span>Квалификация: Бакалавр</span><br>
+                                <span>Направление подготовки: 46.03.01 История</span><br><br>
                                 <p>
                                     Высшее, магистратура<br>
                                     ФГАОУ ВПО "Крымский федеральный университет имени В. И. Вернадского"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Магистр</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: 46.04.01 История</span><br><br>
+                                <span>Квалификация: Магистр</span><br>
+                                <span>Направление подготовки: 46.04.01 История</span><br><br>
                                 <p>
                                     Высшее, аспирантура<br>
                                     ФГБНИУ "Российский научно-исследовательский институт культурного и природного наследия имени С.Д. Лихачёва"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Исследователь. Преподаватель-исследователь</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: 51.06.01 Культурология</span>
+                                <span>Квалификация: Исследователь. Преподаватель-исследователь</span><br>
+                                <p>Направление подготовки: 51.06.01 Культурология</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -2881,14 +2936,16 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     МГОУ ВПО "Марийский государственный университет"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Историк, преподаватель истории</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: История</span><br><br>
+                                <span>Квалификация: Историк, преподаватель истории</span><br>
+                                <span>Направление подготовки: История</span><br><br>
                                 <p>
                                     Высшее, магистратура<br>
                                     ФГБОУ ВПО "Марийский государственный университет"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Магистр</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: История</span>
+                                <span>Квалификация: Магистр</span><br>
+                                <p>Направление подготовки: История</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -2973,14 +3030,16 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее, бакалавриат<br>
                                     ФГБОУ ВО "Новосибирский государственный педагогический университет"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Бакалавр</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Организация работы с молодежью</span><br><br>
+                                <span>Квалификация: Бакалавр</span><br>
+                                <span>Направление подготовки: Организация работы с молодежью</span><br><br>
                                 <p>
                                     Высшее, магистратура<br>
                                     АНО ВО "Московский университет "Синергия""
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Магистр</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: 38.04.02 Менеджмент</span>
+                                <span>Квалификация: Магистр</span><br>
+                                <p>Направление подготовки: 38.04.02 Менеджмент</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -3062,8 +3121,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     Марийский государственный педагогический институт им. Н. К. Крупской
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Учитель физической культуры</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Физическая культура и спорт</span>
+                                <span>Квалификация: Учитель физической культуры</span><br>
+                                <p>Направление подготовки: Физическая культура и спорт</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -3152,10 +3213,12 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     ФГБОУ ВПО "Марийский государственный университет"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Математик, системный программист</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Прикладная математика и информатика</span><br><br>
+                                <span>Квалификация: Математик, системный программист</span><br>
+                                <span >Направление подготовки: Прикладная математика и информатика</span><br><br>
                                 <p>ФГБОУ ВПО "Марийский государственный университет" Дополнительное (к высшему) образование</p>
-                                <span itemprop="teachingQual">Квалификация: Разработчик профессионально-ориентированных компьютерных технологий</span>
+                                <p>Квалификация: Разработчик профессионально-ориентированных компьютерных технологий</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -3245,8 +3308,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     Марийский государственный университет
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Филолог. Преподаватель русского языка и литературы</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Филология</span>
+                                <span>Квалификация: Филолог. Преподаватель русского языка и литературы</span><br>
+                                <p>Направление подготовки: Филология</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -3344,14 +3409,16 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее, бакалавриат<br>
                                     ФГБОУ ВО "Государственный академический университет гуманитарных наук"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Бакалавр</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: 41.03.04 Политология</span><br><br>
+                                <span>Квалификация: Бакалавр</span><br>
+                                <span>Направление подготовки: 41.03.04 Политология</span><br><br>
                                 <p>
                                     Высшее, магистратура<br>
                                     ФГБОУ ВО "Государственный академический университет гуманитарных наук"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Магистр</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: 41.04.04 Политология</span>
+                                <span>Квалификация: Магистр</span><br>
+                                <p>Направление подготовки: 41.04.04 Политология</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -3425,7 +3492,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <p class="popup__subtitle" itemprop="post">Доцент</p>
                         <p class="popup__person__focus">Область практики, научных и личных интересов</p>
                         <p>
-                            Теория вероятностей и математическая статитистика.Вероятностно-статистические модели в биологии, медицине, сельском хозяйстве, экономике и др.
+                            Теория вероятностей и математическая статитистика. Вероятностно-статистические модели в биологии, медицине, сельском хозяйстве, экономике и др.
                         </p>
                     </div>
                 </div>
@@ -3438,14 +3505,16 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     ГОУ ВПО "Марийский государственный университет"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Математик</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Математика</span><br><br>
+                                <span>Квалификация: Математик</span><br>
+                                <span>Направление подготовки: Математика</span><br><br>
                                 <p>
                                     Высшее, магистратура<br>
                                     ФГБОУ ВО "Марийский государственный университет"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Магистр</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: 44.04.01 Педагогическое образование</span>
+                                <span>Квалификация: Магистр</span><br>
+                                <p>Направление подготовки: 44.04.01 Педагогическое образование</p><br>
+                                <p itemprop="degree">Доктор биологических наук</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -3522,7 +3591,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <p class="popup__title" itemprop="fio">Усков Юрий Викторович</p>
                         <p class="popup__subtitle" itemprop="post">Доцент</p>
                         <p class="popup__person__focus">Область практики, научных и личных интересов</p>
-                        <p>Директор по стратегии<br>ООО «Ричмедиа»</p>
+                        <p>Глобальный ИТ бизнес, программирование, маркетинг, сильные команды, новое образование, история, моторы, саженцы, воспитание детей</p>
                     </div>
                 </div>
                 <div class="popup__grid">
@@ -3534,8 +3603,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     Марийский государственный технический университет
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Инженер-программист</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: 230105 Программное обеспечение вычислительной техники и автоматизированных систем</span>
+                                <span>Квалификация: Инженер-программист</span><br>
+                                <p>Направление подготовки: 230105 Программное обеспечение вычислительной техники и автоматизированных систем</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -3628,8 +3699,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     ФГБОУ ВО "Поволжский государственный технологический университет"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Инженер</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: 230105 Программное обеспечение вычислительной техники и автоматизированных систем</span>
+                                <span>Квалификация: Инженер</span><br>
+                                <p>Направление подготовки: 230105 Программное обеспечение вычислительной техники и автоматизированных систем</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -3717,14 +3790,16 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее, специалитет<br>
                                     ФГБОУ ВО "Марийский государственный университет"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Педагог-психолог</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: 050706 Педагогика и психология</span><br><br>
+                                <span>Квалификация: Педагог-психолог</span><br>
+                                <span>Направление подготовки: 050706 Педагогика и психология</span><br><br>
                                 <p>
                                     Высшее, магистратура<br>
                                     ФГБОУ ВО "Марийский государственный университет"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Магистр</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: 37.04.01 Психология</span>
+                                <span>Квалификация: Магистр</span><br>
+                                <p>Направление подготовки: 37.04.01 Психология</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -3817,7 +3892,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                     <div class="person__info">
                                         <p class="person__fio" itemprop="fio">${person.fio}</p>
                                         <p class="person__post" itemprop="post">${person.post}</p>
-                                        <img class="teacher__arrow" src="src/Teacher_arrow.png">
+                                        <img class="teacher__arrow" src="https://static.tildacdn.com/tild6639-6261-4861-a466-323732633933/Teacher_arrow.png">
                                     </div>
                                 </a>
                             </div>
@@ -3851,7 +3926,9 @@ document.addEventListener("DOMContentLoaded", () => {
                                     ФГБОУ ВО "Поволжский государственный технологический университет"
                                 </p>
                                 <span>Квалификация: Бакалавр</span><br>
-                                <span>Направление подготовки: 09.03.04 Программная инженерия</span><br>
+                                <p>Направление подготовки: 09.03.04 Программная инженерия</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -3933,7 +4010,9 @@ document.addEventListener("DOMContentLoaded", () => {
                                     ФГБОУ ВПО "Марийский государственный университет"
                                 </p>
                                 <span>Квалификация: Экономист</span><br>
-                                <span>Направление подготовки: Финансы и кредит</span><br>
+                                <p>Направление подготовки: Финансы и кредит</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -4012,8 +4091,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     ФГБОУ ВО "Марийский государственный университет"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Лингвист, переводчик</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Перевод и переводоведение</span>
+                                <span>Квалификация: Лингвист, переводчик</span><br>
+                                <p>Направление подготовки: Перевод и переводоведение</p><br>
+                                <p itemprop="degree">Кандидат филологических наук</p>
+                                <p itemprop="academStat">Доцент по специальности "Германские языки"</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -4110,8 +4191,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     Чувашский государственный университет им. И. Н. Ульянова
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Географ. Преподаватель</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: География</span>
+                                <span>Квалификация: Географ. Преподаватель</span><br>
+                                <p>Направление подготовки: География</p><br>
+                                <p itemprop="degree">Кандидат философских наук</p>
+                                <p itemprop="academStat">Доцент по кафедре философии</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -4212,8 +4295,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее, специалитет<br>
                                     ФГБОУ ВПО "Поволжский государственный технологический университет"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Экономист</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: 080109 Бухгалтерский учет, анализ и аудит</span>
+                                <span>Квалификация: Экономист</span><br>
+                                <p>Направление подготовки: 080109 Бухгалтерский учет, анализ и аудит</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -4296,8 +4381,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     Марийский государственный технический университет<br>
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Специалист по защите информации</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Комплексное обеспечение информационной безопасности автоматизированных систем</span>
+                                <span>Квалификация: Специалист по защите информации</span><br>
+                                <p>Направление подготовки: Комплексное обеспечение информационной безопасности автоматизированных систем</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -4386,8 +4473,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     ФГБОУ ВО "Марийский государственный университет"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Бакалавр</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: 44.03.05 Педагогическое образование</span>
+                                <span>Квалификация: Бакалавр</span><br>
+                                <p>Направление подготовки: 44.03.05 Педагогическое образование</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -4470,8 +4559,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     Марийский государственный педагогический институт им. Н. К. Крупской
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Педагог по физической культуре и спорту</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Физическая культура и спорт</span>
+                                <span>Квалификация: Педагог по физической культуре и спорту</span><br>
+                                <p>Направление подготовки: Физическая культура и спорт</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -4559,8 +4650,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     Московский государственный университет им. М.В. Ломоносова
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Филолог. Преподаватель</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Классическая филология</span>
+                                <span>Квалификация: Филолог. Преподаватель</span><br>
+                                <p>Направление подготовки: Классическая филология</p><br>
+                                <p itemprop="degree">Доктор филологических наук</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -4651,14 +4744,16 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     Марийский ордена Знак Почета государственный педагогический институт им. Н. К. Крупской
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Учитель физической культуры</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Физическое воспитание</span><br><br>
+                                <span>Квалификация: Учитель физической культуры</span><br>
+                                <span>Направление подготовки: Физическое воспитание</span><br><br>
                                 <p>
                                     Высшее, специалитет<br>
                                     ФГБОУ ВО "Марийский государственный университет" г. Йошкар-Олы
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Учитель физической культуры</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Физическое воспитание</span>
+                                <span>Квалификация: Учитель физической культуры</span><br>
+                                <p>Направление подготовки: Физическое воспитание</p><br>
+                                <p itemprop="degree">Мастер спорта СССР по спортивной гимнастике</p>
+                                <p itemprop="academStat">Доцент по кафедре физической культуры</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -4748,8 +4843,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     Санкт-Петербургский государственный университет
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Экономист-менеджер туризма</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Менеджмент в социальной сфере</span>
+                                <span>Квалификация: Экономист-менеджер туризма</span><br>
+                                <p>Направление подготовки: Менеджмент в социальной сфере</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -4831,8 +4928,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     Марийский государственный педагогический институт им. Н. К. Крупской
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Учитель физической культуры</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Физическая культура и спорт</span>
+                                <span>Квалификация: Учитель физической культуры</span><br>
+                                <p>Направление подготовки: Физическая культура и спорт</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -4921,14 +5020,16 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее, специалитет<br>
                                     ФГБОУ ВО "Марийский государственный университет"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Педагог-психолог</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: 050706 Педагогика и психология</span><br><br>
+                                <span>Квалификация: Педагог-психолог</span><br>
+                                <span>Направление подготовки: 050706 Педагогика и психология</span><br><br>
                                 <p>
                                     Высшее, магистратура<br>
                                     ФГБОУ ВО "Марийский государственный университет"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Магистр</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: 37.04.01 Психология</span>
+                                <span>Квалификация: Магистр</span><br>
+                                <p>Направление подготовки: 37.04.01 Психология</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -5036,7 +5137,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="person__info">
                     <p class="person__fio" itemprop="fio">${person.fio}</p>
                     <p class="person__post" itemprop="post">${person.post}</p>
-                    <img class="teacher__arrow" src="src/Teacher_arrow.png">
+                    <img class="teacher__arrow" src="https://static.tildacdn.com/tild6639-6261-4861-a466-323732633933/Teacher_arrow.png">
                 </div>
             </a>
         </div>`).join("");
@@ -5068,8 +5169,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее, специалитет<br>
                                     ФГОУ ВПО "Балтийская государственная академия рыбопромыслового флота"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Маркетолог</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Маркетинг</span>
+                                <span>Квалификация: Маркетолог</span><br>
+                                <p>Направление подготовки: Маркетинг</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -5150,8 +5253,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     ФГБОУ ВО "Марийский государственный университет"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Лингвист, переводчик</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Перевод и переводоведение</span>
+                                <span>Квалификация: Лингвист, переводчик</span><br>
+                                <p>Направление подготовки: Перевод и переводоведение</p><br>
+                                <p itemprop="degree">Кандидат филололгических наук</p>
+                                <p itemprop="academStat">Доцент по специальности "Германские языки"</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -5248,8 +5353,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее, специалитет<br>
                                     ГОУ ВПО "Марийский государственный технический университет"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Экономист</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Финансы и кредит</span>
+                                <span>Квалификация: Экономист</span><br>
+                                <p>Направление подготовки: Финансы и кредит</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -5330,8 +5437,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее, специалитет<br>
                                     Московский государственный университет имени М.В. Ломоносова
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Социолог. Преподаватель социологии. Переводчик в сфере профессиональной коммуникации</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Социология</span>
+                                <span>Квалификация: Социолог. Преподаватель социологии. Переводчик в сфере профессиональной коммуникации</span><br>
+                                <p>Направление подготовки: Социология</p><br>
+                                <p itemprop="degree">Кандидат социологических наук</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -5412,8 +5521,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     ФГБОУ ВО "Марийский государственный университет"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Бакалавр</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: 44.03.05 Педагогическое образование (с двумя профилями подготовки)</span>
+                                <span>Квалификация: Бакалавр</span><br>
+                                <p>Направление подготовки: 44.03.05 Педагогическое образование (с двумя профилями подготовки)</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -5494,8 +5605,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     Казанский авиационный институт им. А.Н. Туполева
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Инженер-системотехник</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Автоматизированные системы управления</span>
+                                <span>Квалификация: Инженер-системотехник</span><br>
+                                <p>Направление подготовки: Автоматизированные системы управления</p><br>
+                                <p itemprop="degree">Доктор технических наук</p>
+                                <p itemprop="academStat">Старший научный сотрудник</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -5579,8 +5692,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     ФГБОУ ВО "Поволжский государственный технологический университет"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Специалист по защите информации</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Информационная безопасность автоматизированных систем</span>
+                                <span>Квалификация: Специалист по защите информации</span><br>
+                                <p>Направление подготовки: Информационная безопасность автоматизированных систем</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -5661,8 +5776,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     ФГАОУ ВПО "Казанский (Приволжский) федеральный университет"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Юрист</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Юриспруденция</span>
+                                <span>Квалификация: Юрист</span><br>
+                                <p>Направление подготовки: Юриспруденция</p><br>
+                                <p itemprop="degree">Кандидат юридических наук</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -5746,8 +5863,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     ФГАОУ ВО "Московский государственный институт международных отношений (университет) Министерства иностранных дел Российской Федерации" (МГИМО)
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Специалист по связям с общественностью со знанием английского языка</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Связи с общественностью</span>
+                                <span>Квалификация: Специалист по связям с общественностью со знанием английского языка</span><br>
+                                <p>Направление подготовки: Связи с общественностью</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -5831,8 +5950,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     Марийский государственный педагогический институт им. Н. К. Крупской
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Учитель математики и физики</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Математика</span>
+                                <span>Квалификация: Учитель математики и физики</span><br>
+                                <p>Направление подготовки: Математика</p><br>
+                                <p itemprop="degree">Кондидат физико-математических наук</p>
+                                <p itemprop="academStat">Доцент по кафедре математики и методики обучения математике</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -5936,8 +6057,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее, специалитет<br>
                                     ФГБОУ ВПО "Поволжский государственный технологический университет"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Экономист</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: 080109 Бухгалтерский учет, анализ и аудит</span>
+                                <span>Квалификация: Экономист</span><br>
+                                <p>Направление подготовки: 080109 Бухгалтерский учет, анализ и аудит</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -6020,8 +6143,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     Московский государственный университет имени М.В. Ломоносова
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Социолог. Преподаватель социологии</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Социология</span>
+                                <span>Квалификация: Социолог. Преподаватель социологии</span><br>
+                                <p>Направление подготовки: Социология</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -6103,8 +6228,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     ГОУ ВПО "Марийский государственный технический университет"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Инженер по организации управления на транспорте</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Организация и безопасность движения</span>
+                                <span>Квалификация: Инженер по организации управления на транспорте</span><br>
+                                <p>Направление подготовки: Организация и безопасность движения</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -6185,8 +6312,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     Марийский государственный технический университет<br>
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Специалист по защите информации</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Комплексное обеспечение информационной безопасности автоматизированных систем</span>
+                                <span>Квалификация: Специалист по защите информации</span><br>
+                                <p>Направление подготовки: Комплексное обеспечение информационной безопасности автоматизированных систем</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -6275,8 +6404,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     ФГБОУ ВО "Марийский государственный университет"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Бакалавр</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: 44.03.05 Педагогическое образование</span>
+                                <span>Квалификация: Бакалавр</span><br>
+                                <p>Направление подготовки: 44.03.05 Педагогическое образование</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -6359,8 +6490,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     Марийский ордена Дружбы народов политехнический институт им. А. М. Горького
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Инженер-механик</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Технология машиностроения, металлорежущие станки и инструменты</span>
+                                <span>Квалификация: Инженер-механик</span><br>
+                                <p>Направление подготовки: Технология машиностроения, металлорежущие станки и инструменты</p><br>
+                                <p itemprop="degree">Кандидат экономических наук</p>
+                                <p itemprop="academStat">Доцент</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -6445,8 +6578,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     Марийский государственный педагогический институт им. Н. К. Крупской
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Педагог по физической культуре и спорту</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Физическая культура и спорт</span>
+                                <span>Квалификация: Педагог по физической культуре и спорту</span><br>
+                                <p>Направление подготовки: Физическая культура и спорт</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -6534,8 +6669,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     ФГБОУ ВО "Поволжский государственный технологический университет"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Бакалавр</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: 09.03.04 Программная инженерия</span>
+                                <span>Квалификация: Бакалавр</span><br>
+                                <p>Направление подготовки: 09.03.04 Программная инженерия</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -6624,20 +6761,22 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее, бакалавриат<br>
                                     ФГАОУ ВПО "Крымский федеральный университет имени В. И. Вернадского"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Бакалавр</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: 46.03.01 История</span><br><br>
+                                <span>Квалификация: Бакалавр</span><br>
+                                <span>Направление подготовки: 46.03.01 История</span><br><br>
                                 <p>
                                     Высшее, магистратура<br>
                                     ФГАОУ ВПО "Крымский федеральный университет имени В. И. Вернадского"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Магистр</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: 46.04.01 История</span><br><br>
+                                <span>Квалификация: Магистр</span><br>
+                                <span>Направление подготовки: 46.04.01 История</span><br><br>
                                 <p>
                                     Высшее, аспирантура<br>
                                     ФГБНИУ "Российский научно-исследовательский институт культурного и природного наследия имени С.Д. Лихачёва"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Исследователь. Преподаватель-исследователь</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: 51.06.01 Культурология</span>
+                                <span>Квалификация: Исследователь. Преподаватель-исследователь</span><br>
+                                <p>Направление подготовки: 51.06.01 Культурология</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -6734,8 +6873,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     Санкт-Петербургский государственный университет
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Экономист-менеджер туризма</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Менеджмент в социальной сфере</span>
+                                <span>Квалификация: Экономист-менеджер туризма</span><br>
+                                <p>Направление подготовки: Менеджмент в социальной сфере</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -6817,14 +6958,16 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее, бакалавриат<br>
                                     ФГБОУ ВО "Новосибирский государственный педагогический университет"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Бакалавр</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Организация работы с молодежью</span><br><br>
+                                <span>Квалификация: Бакалавр</span><br>
+                                <span>Направление подготовки: Организация работы с молодежью</span><br><br>
                                 <p>
                                     Высшее, магистратура<br>
                                     АНО ВО "Московский университет "Синергия""
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Магистр</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: 38.04.02 Менеджмент</span>
+                                <span>Квалификация: Магистр</span><br>
+                                <p>Направление подготовки: 38.04.02 Менеджмент</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -6906,8 +7049,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     ФГБОУ ВО "Поволжский государственный технологический университет"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Экономист</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Финансы и кредит</span>
+                                <span>Квалификация: Экономист</span><br>
+                                <p>Направление подготовки: Финансы и кредит</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -6992,8 +7137,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее, специалитет<br>
                                     ГОУ ВПО "Государственный университет управления"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Экономист-менеджер</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Антикризисное управление</span>
+                                <span>Квалификация: Экономист-менеджер</span><br>
+                                <p>Направление подготовки: Антикризисное управление</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -7063,7 +7210,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <p class="popup__subtitle" itemprop="post">Доцент</p>
                         <p class="popup__person__focus">Область практики, научных и личных интересов</p>
                         <p>
-                            Теория вероятностей и математическая статитистика.Вероятностно-статистические модели в биологии, медицине, сельском хозяйстве, экономике и др.
+                            Теория вероятностей и математическая статитистика. Вероятностно-статистические модели в биологии, медицине, сельском хозяйстве, экономике и др.
                         </p>
                     </div>
                 </div>
@@ -7076,14 +7223,16 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     ГОУ ВПО "Марийский государственный университет"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Математик</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Математика</span><br><br>
+                                <span>Квалификация: Математик</span><br>
+                                <span>Направление подготовки: Математика</span><br><br>
                                 <p>
                                     Высшее, магистратура<br>
                                     ФГБОУ ВО "Марийский государственный университет"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Магистр</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: 44.04.01 Педагогическое образование</span>
+                                <span>Квалификация: Магистр</span><br>
+                                <p>Направление подготовки: 44.04.01 Педагогическое образование</p><br>
+                                <p itemprop="degree">Кандидат биологических наук</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -7172,8 +7321,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     ФГБОУ ВО "Поволжский государственный технологический университет"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Инженер</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: 230105 Программное обеспечение вычислительной техники и автоматизированных систем</span>
+                                <span>Квалификация: Инженер</span><br>
+                                <p>Направление подготовки: 230105 Программное обеспечение вычислительной техники и автоматизированных систем</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -7261,14 +7412,16 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее, специалитет<br>
                                     ФГБОУ ВО "Марийский государственный университет"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Педагог-психолог</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: 050706 Педагогика и психология</span><br><br>
+                                <span>Квалификация: Педагог-психолог</span><br>
+                                <span>Направление подготовки: 050706 Педагогика и психология</span><br><br>
                                 <p>
                                     Высшее, магистратура<br>
                                     ФГБОУ ВО "Марийский государственный университет"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Магистр</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: 37.04.01 Психология</span>
+                                <span>Квалификация: Магистр</span><br>
+                                <p>Направление подготовки: 37.04.01 Психология</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -7334,7 +7487,7 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
         </div>
     </div>
-    <span class="description"><span class="major">09.03.03 Прикладная информатика</span><br>Направленность (профиль): Маркетинг и дизайн продукта</span>
+    <span class="description"><span class="major">09.03.03 Прикладная информатика</span><br>Направленность (профиль): Маркетинг и дизайн цифрового продукта</span>
     <div class="people" id="peopleMKD"></div>
     <script>
         const teachersMKD = [{id:"ZherebcovaMKD", photo:"https://static.tildacdn.com/tild3961-3666-4831-b535-393132336136/Zherebcova_Olga.png", alt:"Zherebcova Olga", fio:"Жеребцова Ольга<br>Вениаминовна", post:"Старший преподаватель"},
@@ -7361,7 +7514,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="person__info">
                     <p class="person__fio" itemprop="fio">${person.fio}</p>
                     <p class="person__post" itemprop="post">${person.post}</p>
-                    <img class="teacher__arrow" src="src/Teacher_arrow.png">
+                    <img class="teacher__arrow" src="https://static.tildacdn.com/tild6639-6261-4861-a466-323732633933/Teacher_arrow.png">
                 </div>
             </a>
         </div>`).join("")
@@ -7393,8 +7546,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     ФГБОУ ВО "Марийский государственный университет"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Математик</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Прикладная математика</span>
+                                <span>Квалификация: Математик</span><br>
+                                <p>Направление подготовки: Прикладная математика</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -7490,8 +7645,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     Марийский ордена Дружбы народов политехнический институт им. А. М. Горького
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Инженер-механик</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Технология машиностроения, металлорежущие станки и инструменты</span>
+                                <span>Квалификация: Инженер-механик</span><br>
+                                <p>Направление подготовки: Технология машиностроения, металлорежущие станки и инструменты</p><br>
+                                <p itemprop="degree">Кандидат экономических наук</p>
+                                <p itemprop="academStat">Доцент</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -7576,8 +7733,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     Московский государственный университет им. М.В. Ломоносова
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Филолог. Преподаватель</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Классическая филология</span>
+                                <span>Квалификация: Филолог. Преподаватель</span><br>
+                                <p>Направление подготовки: Классическая филология</p><br>
+                                <p itemprop="degree">Доктор филологических наук</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -7668,14 +7827,16 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     ГОУ ВПО "Марийский государственный университет"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Журналист</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Журналистика</span><br><br>
+                                <span>Квалификация: Журналист</span><br>
+                                <span>Направление подготовки: Журналистика</span><br><br>
                                 <p>
                                     Высшее,<br>
                                     АНО ВПО "Межрегиональный открытый социальный институт"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Психолог. Преподаватель психологии</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Психология</span>
+                                <span>Квалификация: Психолог. Преподаватель психологии</span><br>
+                                <p>Направление подготовки: Психология</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -7757,8 +7918,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     ФГБОУ ВО "Поволжский государственный технологический университет"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Бакалавр</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: 09.03.03 Прикладная информатика</span>
+                                <span>Квалификация: Бакалавр</span><br>
+                                <p>Направление подготовки: 09.03.03 Прикладная информатика</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -7842,14 +8005,16 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     Марийский ордена Знак Почета государственный педагогический институт им. Н. К. Крупской
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Учитель физической культуры</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Физическое воспитание</span><br><br>
+                                <span>Квалификация: Учитель физической культуры</span><br>
+                                <span>Направление подготовки: Физическое воспитание</span><br><br>
                                 <p>
                                     Высшее, специалитет<br>
                                     ФГБОУ ВО "Марийский государственный университет" г. Йошкар-Олы
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Учитель физической культуры</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Физическое воспитание</span>
+                                <span>Квалификация: Учитель физической культуры</span><br>
+                                <p>Направление подготовки: Физическое воспитание</p><br>
+                                <p itemprop="degree">Мастер спорта СССР по спортивной гимнастике</p>
+                                <p itemprop="academStat">Доцент по кафедре физического воспитания</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -7939,20 +8104,22 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее, бакалавриат<br>
                                     ФГАОУ ВПО "Крымский федеральный университет имени В. И. Вернадского"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Бакалавр</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: 46.03.01 История</span><br><br>
+                                <span>Квалификация: Бакалавр</span><br>
+                                <span>Направление подготовки: 46.03.01 История</span><br><br>
                                 <p>
                                     Высшее, магистратура<br>
                                     ФГАОУ ВПО "Крымский федеральный университет имени В. И. Вернадского"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Магистр</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: 46.04.01 История</span><br><br>
+                                <span>Квалификация: Магистр</span><br>
+                                <span>Направление подготовки: 46.04.01 История</span><br><br>
                                 <p>
                                     Высшее, аспирантура<br>
                                     ФГБНИУ "Российский научно-исследовательский институт культурного и природного наследия имени С.Д. Лихачёва"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Исследователь. Преподаватель-исследователь</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: 51.06.01 Культурология</span>
+                                <span>Квалификация: Исследователь. Преподаватель-исследователь</span><br>
+                                <p>Направление подготовки: 51.06.01 Культурология</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -8049,8 +8216,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     ФГБОУ ВО "Поволжский государственный технологический университет"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Экономист</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Финансы и кредит</span>
+                                <span>Квалификация: Экономист</span><br>
+                                <p>Направление подготовки: Финансы и кредит</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -8135,14 +8304,16 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее, специалитет<br>
                                     ФГБОУ ВО "Марийский государственный университет"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Педагог-психолог</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: 050706 Педагогика и психология</span><br><br>
+                                <span>Квалификация: Педагог-психолог</span><br>
+                                <span>Направление подготовки: 050706 Педагогика и психология</span><br><br>
                                 <p>
                                     Высшее, магистратура<br>
                                     ФГБОУ ВО "Марийский государственный университет"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Магистр</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: 37.04.01 Психология</span>
+                                <span>Квалификация: Магистр</span><br>
+                                <p>Направление подготовки: 37.04.01 Психология</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -8232,7 +8403,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="person__info">
                     <p class="person__fio">${person.fio}</p>
                     <p class="person__post">${person.post}</p>
-                    <img class="teacher__arrow" src="src/Teacher_arrow.png">
+                    <img class="teacher__arrow" src="https://static.tildacdn.com/tild6639-6261-4861-a466-323732633933/Teacher_arrow.png">
                 </div>
             </a>
         </div>
@@ -8265,8 +8436,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     ФГБОУ ВО "Марийский государственный университет"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Математик</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Прикладная математика</span>
+                                <span>Квалификация: Математик</span><br>
+                                <p>Направление подготовки: Прикладная математика</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -8365,8 +8538,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     Марийский государственный педагогический институт им. Н. К. Крупской
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Учитель математики и физики</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Математика</span>
+                                <span>Квалификация: Учитель математики и физики</span><br>
+                                <p>Направление подготовки: Математика</p><br>
+                                <p itemprop="degree">Кандидат физико-математических наук</p>
+                                <p itemprop="academStat">Доцент по кафедре математики и методики обучения математике</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -8459,7 +8634,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <p class="popup__subtitle" itemprop="post">Доцент</p>
                         <p class="popup__person__focus">Область практики, научных и личных интересов</p>
                         <p>
-                            Теория вероятностей и математическая статитистика.Вероятностно-статистические модели в биологии, медицине, сельском хозяйстве, экономике и др.
+                            Теория вероятностей и математическая статитистика. Вероятностно-статистические модели в биологии, медицине, сельском хозяйстве, экономике и др.
                         </p>
                     </div>
                 </div>
@@ -8472,14 +8647,16 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     ГОУ ВПО "Марийский государственный университет"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Математик</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Математика</span><br><br>
+                                <span>Квалификация: Математик</span><br>
+                                <span>Направление подготовки: Математика</span><br><br>
                                 <p>
                                     Высшее, магистратура<br>
                                     ФГБОУ ВО "Марийский государственный университет"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Магистр</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: 44.04.01 Педагогическое образование</span>
+                                <span>Квалификация: Магистр</span><br>
+                                <p>Направление подготовки: 44.04.01 Педагогическое образование</p><br>
+                                <p itemprop="degree">Кандидат биологических наук</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -8568,8 +8745,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее,<br>
                                     ФГБОУ ВО "Марийский государственный университет"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Биолог. Преподаватель биологии и химии</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: Биология</span>
+                                <span>Квалификация: Биолог. Преподаватель биологии и химии</span><br>
+                                <p>Направление подготовки: Биология</p><br>
+                                <p itemprop="degree">Кандидат биологических наук</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
@@ -8653,14 +8832,16 @@ document.addEventListener("DOMContentLoaded", () => {
                                     Высшее, специалитет<br>
                                     ФГБОУ ВО "Марийский государственный университет"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Педагог-психолог</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: 050706 Педагогика и психология</span><br><br>
+                                <span>Квалификация: Педагог-психолог</span><br>
+                                <span>Направление подготовки: 050706 Педагогика и психология</span><br><br>
                                 <p>
                                     Высшее, магистратура<br>
                                     ФГБОУ ВО "Марийский государственный университет"
                                 </p>
-                                <span itemprop="teachingQual">Квалификация: Магистр</span><br>
-                                <span itemprop="employeeQualification">Направление подготовки: 37.04.01 Психология</span>
+                                <span>Квалификация: Магистр</span><br>
+                                <p>Направление подготовки: 37.04.01 Психология</p><br>
+                                <p>Ученая степень: нет</p>
+                                <p>Ученое звание: нет</p>
                             </div>
                         </div>
                         <div class="popup__block">
