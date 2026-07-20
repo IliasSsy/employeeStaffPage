@@ -1,0 +1,267 @@
+<style>
+    @font-face {
+        font-family: "Inter Tight";
+        src: url("fonts/Inter_Tight/static/InterTight-Regular.ttf") format("truetype");
+        font-weight: 400;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Inter Tight";
+        src: url("fonts/Inter_Tight/static/InterTight-Medium.ttf") format("truetype");
+        font-weight: 500;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Inter Tight";
+        src: url("fonts/Inter_Tight/static/InterTight-SemiBold.ttf") format("truetype");
+        font-weight: 600;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Inter Tight";
+        src: url("fonts/Inter_Tight/static/InterTight-Bold.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter/static/Inter_18pt-Regular.ttf") format("truetype");
+        font-weight: 400;
+    }
+    @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter/static/Inter_18pt-Medium.ttf") format("truetype");
+        font-weight: 500;
+    }
+    @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter/static/Inter_18pt-SemiBold.ttf") format("truetype");
+        font-weight: 600;
+    }
+    @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter/static/Inter_18pt-Bold.ttf") format("truetype");
+        font-weight: 700;
+    }
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: "Inter", sans-serif;
+        color: #222;
+        background: #fff;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    .info {
+        max-width: 960px;
+        padding: 28px 21px 30px 15px;
+    }
+    .link-return {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 40px;
+            color: black;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+    }
+    .link-return__arrow {
+        width: 40px;
+        height: 40px;
+    }
+    .info__title {
+        margin: 0 0 50px;
+        font-family: "Inter Tight", sans-serif;
+        font-size: 42px;
+        font-weight: 700;
+        line-height: 1.05;
+    }
+    .table-block {
+        margin-top: 32px;
+        overflow-x: auto;
+    }
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 16px;
+        color: #333;
+    }
+    .table th,
+    .table td {
+        border: 1px solid #7D7D7D;
+        padding: 12px 14px;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 1.3;
+    }
+    .table th {
+        font-weight: 600;
+    }
+    .table tr:first-child th {
+        background: #FBE6DE;
+    }
+    .table td {
+        background: #fff;
+    }
+    .documents {
+        margin-top: 56px;
+        margin-bottom: 50px;
+    }
+    .documents__title {
+        margin: 0 0 16px;
+        font-size: 14px;
+        font-weight: 600;
+    }
+    .documents__item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        padding: 18px 0;
+        color: inherit;
+        text-decoration: none;
+        border-top: 1px solid #EAEAEA;
+    }
+    .documents__item:last-child {
+        border-bottom: 1px solid #EAEAEA;
+    }
+    .documents__left {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        flex: 1;
+    }
+    .document__left span {
+        line-height: 23px;
+    }
+    .documents__left img {
+        width: 25px;
+        height: 25px;
+        flex-shrink: 0;
+    }
+    .documents__left span {
+        font-size: 16px;
+        line-height: 1.45;
+    }
+    .documents__action {
+        color: #FA5D20;
+    }
+    .menu {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+        margin-bottom: 18px;
+    }
+    .menu:last-of-type {
+        margin-bottom: 50px;
+    }
+    .menu__arrow {
+        width: 18px;
+        margin-top: 4px;
+        flex-shrink: 0;
+    }
+
+.menu__title {
+    line-height: 1.7;
+}
+    @media (min-width: 768px) {
+        .info {
+            padding: 50px 21px 50px 15px;
+        }
+        .info__title {
+            font-size: 56px;
+            margin-bottom: 48px;
+        }
+    }
+    @media (min-width: 1024px) {
+        .info {
+            max-width: 100vw;
+            padding: 50px 9.114vw;
+        }
+        .info__title {
+            font-size: 64px;
+            margin-bottom: 56px;
+        }
+    }
+    @media (min-width: 1600px) {
+        .info {
+            padding: 50px 9.114vw;
+        }
+        .info__title {
+            font-size: 72px;
+        }
+    }
+    @media (min-height: 2300px) {
+        .info {
+            width: 90vw;
+            max-width: 100vw;
+            padding: 50px 9.114vw;
+        }
+    }
+</style>
+<div class="info">
+    <a class="link-return" href="sveden.html">
+        <img class="link-return__arrow" src="images/Arrow_left.svg" alt="Назад">
+        <p class="link-return__title">Назад</p>
+    </a>
+    <h1 class="info__title">Стипендии и меры поддержки обучающихся</h1>
+    <div class="documents">
+        <p class="documents__title">Название документа</p>
+        <a class="documents__item" href="#" itemprop="grantDocLink">
+            <div class="documents__left">
+                <img src="images/Document.svg" alt="Документ">
+                <span>Положение о стипендиях и материальной поддержке обучающихся в АНО ВО «РУМТ»</span>
+            </div>
+            <span class="documents__action">Открыть</span>
+        </a>
+    </div>
+    <div class="menu">
+        <img class="menu__arrow" src="images/arrow_right.svg" alt="">
+        <span class="menu__title">Стипендии обучающимся предоставляются в соответствии с Положением о стипендиях и материальной поддержке обучающихся АНО ВО «РУМТ»</span>
+    </div>
+    <div class="menu">
+        <img class="menu__arrow" src="images/arrow_right.svg" alt="">
+        <span class="menu__title">Материальная поддержка обучающимся предоставляется в соответствии с Положением о стипендиях и материальной поддержке обучающихся в АНО ВО «РУМТ».</span>
+    </div>
+    <div class="menu">
+        <img class="menu__arrow" src="images/arrow_right.svg" alt="">
+        <span class="menu__title">В АНО ВО «РУМТ» общежитий нет.</span>
+    </div>
+    <h2 class="info__subtitle">Информация о наличии общежития, интерната, количестве жилых помещений в общежитии, интернате для иногородних обучающихся</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Наименование показателя</th>
+                <th>Общежития</th>
+                <th>Интернаты</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td align="center">1</td>
+                <td align="center">2</td>
+                <td align="center">3</td>
+            </tr>
+            <tr>
+                <td>Количество</td>
+                <td align="center" itemprop="hostelInfo">Нет</td>
+                <td align="center" itemprop="interInfo">Нет</td>
+            </tr>
+            <tr>
+                <td>Количество мест</td>
+                <td align="center" itemprop="hostelNum">Нет</td>
+                <td align="center" itemprop="interNum">Нет</td>
+            </tr>
+            <tr>
+                <td>
+                    Количество жилых помещений, приспособленных для использования
+                    инвалидами и лицами с ограниченными возможностями здоровья
+                </td>
+                <td align="center" itemprop="hostelNumOvz">Нет</td>
+                <td align="center" itemprop="interNumOvz">Нет</td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="info__text">Ссылка на информацию о формировании платы за проживание в общежитии <span style="color:#FA5D20">отсутствует</span>, общежитий нет.</p>
+</div>
