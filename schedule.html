@@ -1,0 +1,303 @@
+<style>
+    @font-face {
+        font-family: "Inter Tight";
+        src: url("fonts/Inter_Tight/static/InterTight-Regular.ttf") format("truetype");
+        font-weight: 400;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Inter Tight";
+        src: url("fonts/Inter_Tight/static/InterTight-Medium.ttf") format("truetype");
+        font-weight: 500;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Inter Tight";
+        src: url("fonts/Inter_Tight/static/InterTight-SemiBold.ttf") format("truetype");
+        font-weight: 600;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Inter Tight";
+        src: url("fonts/Inter_Tight/static/InterTight-Bold.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter/static/Inter_18pt-Regular.ttf") format("truetype");
+        font-weight: 400;
+    }
+    @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter/static/Inter_18pt-Medium.ttf") format("truetype");
+        font-weight: 500;
+    }
+    @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter/static/Inter_18pt-SemiBold.ttf") format("truetype");
+        font-weight: 600;
+    }
+    @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter/static/Inter_18pt-Bold.ttf") format("truetype");
+        font-weight: 700;
+    }
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: "Inter", sans-serif;
+        color: #222222;
+        background: #fff;
+    }
+    a {
+        color: black;
+    }
+    .link-return__title {
+        display: inline;
+        color: black;
+        font-size: 20px;
+    }
+    .info {
+        max-width: 900px;
+        padding: 30px 21px 30px 15px;
+    }
+    .link-return {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 40px;
+        color: #8A8A8A;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 500;
+    }
+    .link-return__arrow {
+        width: 40px;
+        height: 40px;
+    }
+    .info__title {
+        margin: 0 0 50px;
+        font-family: "Inter Tight", sans-serif;
+        font-size: 42px;
+        font-weight: 700;
+        line-height: 1.05;
+    }
+    .schedule {
+        margin-top: 56px;
+    }
+    .schedule__title {
+        margin: 0 0 16px;
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .schedule__item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        padding: 18px 0;
+        color: inherit;
+        text-decoration: none;
+        border-top: 1px solid #EAEAEA;
+    }
+    .schedule__item:last-child {
+        border-bottom: 1px solid #EAEAEA;
+    }
+    .schedule__left {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        flex: 1;
+    }
+    .schedule__left span {
+        line-height: 23px;
+    }
+    .schedule__left img {
+        width: 25px;
+        height: 25px;
+        flex-shrink: 0;
+    }
+    .schedule__left span {
+        font-size: 16px;
+        line-height: 1.45;
+    }
+    .schedule__action {
+        color: #FA5D20;
+    }
+    @media (min-width: 768px) {
+        .info {
+            padding: 30px 21px 30px 15px;
+        }
+        .title {
+            font-size: 56px;
+        }
+        .item__title {
+            font-size: 24px;
+        }
+        .item__text {
+            font-size: 19px;
+        }
+        .schedule__left span {
+            font-size: 17px;
+        }
+        .schedule__item {
+            padding: 22px 0;
+        }
+    }
+    @media (min-width: 1024px) {
+        .info {
+            padding: 50px 9.114vw;
+            max-width: 100vw
+        }
+        .title {
+            font-size: 64px;
+        }
+        .item__title {
+            font-size: 26px;
+        }
+        .item__text {
+            font-size: 20px;
+        }
+        .schedule__left span {
+            font-size: 18px;
+        }
+        .schedule__item {
+            padding: 24px 0;
+        }
+    }
+    @media (min-width: 2000px) {
+        .info {
+            max-width: 100vw;
+            width: 90vw
+        }
+    }
+</style>
+<script>
+    const schedule = [
+        {
+            title: "Осенний семестр 2025-2026 учебного года",
+            items: [
+                {
+                    name: "Расписание занятий для 1 курса на 1 семестр",
+                    link: "#"
+                },
+                {
+                    name: "Расписание занятий для 2 курса на 3 семестр",
+                    link: "#"
+                },
+                {
+                    name: "Расписание занятий для 3 курса на 5 семестр",
+                    link: "#"
+                },
+                {
+                    name: "Расписание занятий для 4 курса на 7 семестр",
+                    link: "#"
+                },
+                {
+                    name: "Расписание факультативных занятий на осенний семестр",
+                    link: "#"
+                },
+                {
+                    name: "Расписание спортивных секций на осенний семестр",
+                    link: "#"
+                },
+                {
+                    name: "Расписание зачетов и экзаменов для 1 курса на 1 семестр",
+                    link: "#"
+                },
+                {
+                    name: "Расписание зачетов и экзаменов для 2 курса на 3 семестр",
+                    link: "#"
+                },
+                {
+                    name: "Расписание зачетов и экзаменов для 3 курса на 5 семестр",
+                    link: "#"
+                },
+                {
+                    name: "Расписание зачетов и экзаменов для 4 курса на 7 семестр",
+                    link: "#"
+                }
+            ]
+        },
+        {
+            title: "Весенний семестр 2025-2026 учебного года",
+            items: [
+                {
+                    name: "Расписание занятий для 1 курса на 2 семестр",
+                    link: "#"
+                },
+                {
+                    name: "Расписание занятий для 2 курса на 4 семестр",
+                    link: "#"
+                },
+                {
+                    name: "Расписание занятий для 3 курса на 6 семестр",
+                    link: "#"
+                },
+                {
+                    name: "Расписание занятий для 4 курса на 8 семестр",
+                    link: "#"
+                },
+                {
+                    name: "Расписание факультативных занятий на весенний семестр",
+                    link: "#"
+                },
+                {
+                    name: "Расписание спортивных секций на весенний семестр",
+                    link: "#"
+                },
+                {
+                    name: "Расписание зачетов и экзаменов для 1 курса на 2 семестр",
+                    link: "#"
+                },
+                {
+                    name: "Расписание зачетов и экзаменов для 2 курса на 4 семестр",
+                    link: "#"
+                },
+                {
+                    name: "Расписание зачетов и экзаменов для 3 курса на 6 семестр",
+                    link: "#"
+                },
+                {
+                    name: "Расписание зачетов и экзаменов для 4 курса на 8 семестр",
+                    link: "#"
+                }
+            ]
+        }
+    ];
+document.addEventListener("DOMContentLoaded", () => {
+    const container = document.querySelector(".schedule-container");
+    schedule.forEach(section => {
+        const block = document.createElement("div");
+        block.className = "schedule";
+        block.style.marginBottom = "50px";
+        const title = document.createElement("p");
+        title.className = "schedule__title";
+        title.textContent = section.title;
+        block.appendChild(title);
+        section.items.forEach(item => {
+            const link = document.createElement("a");
+            link.className = "schedule__item";
+            link.href = item.link;
+            link.innerHTML = `
+                <div class="schedule__left">
+                    <img src="images/Table.svg" alt="table">
+                    <span>${item.name}</span>
+                </div>
+                <span class="schedule__action">Показать</span>
+            `;
+            block.appendChild(link);
+        });
+        container.appendChild(block);
+    });
+});
+</script>
+<div class="info">
+    <a class="link-return" href="sveden.html">
+        <img class="link-return__arrow" src="images/Arrow_left.svg" alt="arrow">
+        <p class="link-return__title">Назад</p>
+    </a>
+    <h1 class="info__title">Бакалавриат. Расписание</h1>
+    <div class="schedule-container"></div>
+</div>
