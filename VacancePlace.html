@@ -1,0 +1,300 @@
+<style>
+    @font-face {
+        font-family: "Inter Tight";
+        src: url("fonts/Inter_Tight/static/InterTight-Regular.ttf") format("truetype");
+        font-weight: 400;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Inter Tight";
+        src: url("fonts/Inter_Tight/static/InterTight-Medium.ttf") format("truetype");
+        font-weight: 500;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Inter Tight";
+        src: url("fonts/Inter_Tight/static/InterTight-SemiBold.ttf") format("truetype");
+        font-weight: 600;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Inter Tight";
+        src: url("fonts/Inter_Tight/static/InterTight-Bold.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter/static/Inter_18pt-Regular.ttf") format("truetype");
+        font-weight: 400;
+    }
+    @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter/static/Inter_18pt-Medium.ttf") format("truetype");
+        font-weight: 500;
+    }
+    @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter/static/Inter_18pt-SemiBold.ttf") format("truetype");
+        font-weight: 600;
+    }
+    @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter/static/Inter_18pt-Bold.ttf") format("truetype");
+        font-weight: 700;
+    }
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: "Inter", sans-serif;
+        color: #222;
+        background: #fff;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    .info {
+        max-width: 960px;
+        padding: 28px 21px 30px 15px;
+    }
+    .link-return {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 40px;
+            color: black;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+    }
+    .link-return__arrow {
+        width: 40px;
+        height: 40px;
+    }
+    .info__title {
+        margin: 0 0 50px;
+        font-family: "Inter Tight", sans-serif;
+        font-size: 42px;
+        font-weight: 700;
+        line-height: 1.05;
+    }
+    .table-block {
+        margin-top: 32px;
+        overflow-x: auto;
+    }
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 16px;
+        color: #333;
+    }
+    .table th,
+    .table td {
+        border: 1px solid #7D7D7D;
+        padding: 12px 14px;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 1.3;
+    }
+    .table th {
+        font-weight: 600;
+    }
+    .table tr:first-child th {
+        background: #FBE6DE;
+    }
+    .table td {
+        background: #fff;
+    }
+    @media (min-width: 768px) {
+        .info {
+            padding: 50px 21px 50px 15px;
+        }
+        .info__title {
+            font-size: 56px;
+            margin-bottom: 48px;
+        }
+    }
+    @media (min-width: 1024px) {
+        .info {
+            max-width: 100vw;
+            padding: 50px 9.114vw;
+        }
+        .info__title {
+            font-size: 64px;
+            margin-bottom: 56px;
+        }
+    }
+    @media (min-width: 1600px) {
+        .info {
+            padding: 50px 9.114vw;
+        }
+        .info__title {
+            font-size: 72px;
+        }
+    }
+    @media (min-height: 2300px) {
+        .info {
+            width: 90vw;
+            max-width: 100vw;
+            padding: 50px 9.114vw;
+        }
+    }
+</style>
+<div class="info">
+    <a class="link-return" href="sveden.html">
+        <img class="link-return__arrow" src="images/Arrow_left.svg" alt="arrow">
+        <p class="link-return__title">Назад</p>
+    </a>
+    <h1 class="info__title">Бакалавриат. Расписание</h1>
+    <div class="table-block">
+        <table class="table" width="100%">
+            <tbody>
+                <tr>
+                    <th rowspan="2">Код, шифр группы научных специальностей</th>
+                    <th rowspan="2">Наименование профессии, специальности, направления подготовки, наименование группы научных специальностей</th>
+                    <th rowspan="2">Уровень образования</th>
+                    <th rowspan="2">Образовательная программа, направленность, профиль, шифр и наименование научной специальности</th>
+                    <th rowspan="2">Курс</th>
+                    <th rowspan="2">Форма обучения</th>
+                    <th colspan="4">Количество вакантных мест для приёма (перевода)</th>
+                </tr>
+
+                <tr>
+                    <th style="background: #FBE6DE;">на места, финансируемые за счёт бюджетных ассигнований федерального бюджета</th>
+                    <th style="background: #FBE6DE;">на места, финансируемые за счёт бюджетов субъектов Российской Федерации</th>
+                    <th style="background: #FBE6DE;">на места, финансируемые за счёт местных бюджетов</th>
+                    <th style="background: #FBE6DE;">за счёт средств физических и (или) юридических лиц</th>
+                </tr>
+
+                <tr align="center" itemprop="vacant">
+                    <td itemprop="eduCode">09.03.03</td>
+                    <td itemprop="eduName">Прикладная информатика</td>
+                    <td itemprop="eduLevel">Бакалавр</td>
+                    <td itemprop="eduProf">Маркетинг и дизайн цифрового продукта</td>
+                    <td itemprop="eduCourse">1</td>
+                    <td itemprop="eduForm">Очная</td>
+                    <td itemprop="numberBFVacant">0</td>
+                    <td itemprop="numberBRVacant">0</td>
+                    <td itemprop="numberBMVacant">0</td>
+                    <td itemprop="numberPVacant">2</td>
+                </tr>
+
+                <tr align="center" itemprop="vacant">
+                    <td itemprop="eduCode">09.03.03</td>
+                    <td itemprop="eduName">Прикладная информатика</td>
+                    <td itemprop="eduLevel">Бакалавр</td>
+                    <td itemprop="eduProf">Цифровые компетенции в образовании</td>
+                    <td itemprop="eduCourse">1</td>
+                    <td itemprop="eduForm">Очная</td>
+                    <td itemprop="numberBFVacant">0</td>
+                    <td itemprop="numberBRVacant">0</td>
+                    <td itemprop="numberBMVacant">0</td>
+                    <td itemprop="numberPVacant">0</td>
+                </tr>
+
+                <tr align="center">
+                    <td itemprop="eduCode">09.03.04</td>
+                    <td itemprop="eduName">Программная инженерия</td>
+                    <td itemprop="eduLevel">Бакалавр</td>
+                    <td itemprop="eduProf">Проектирование и разработка программных систем</td>
+                    <td itemprop="eduCourse">1</td>
+                    <td itemprop="eduForm">Очная</td>
+                    <td itemprop="numberBFVacant">0</td>
+                    <td itemprop="numberBRVacant">0</td>
+                    <td itemprop="numberBMVacant">0</td>
+                    <td itemprop="numberPVacant">1</td>
+                </tr>
+
+                <tr align="center" itemprop="vacant">
+                    <td itemprop="eduCode">09.03.03</td>
+                    <td itemprop="eduName">Прикладная информатика</td>
+                    <td itemprop="eduLevel">Бакалавр</td>
+                    <td itemprop="eduProf">Маркетинг цифрового продукта</td>
+                    <td itemprop="eduCourse">2</td>
+                    <td itemprop="eduForm">Очная</td>
+                    <td itemprop="numberBFVacant">0</td>
+                    <td itemprop="numberBRVacant">0</td>
+                    <td itemprop="numberBMVacant">0</td>
+                    <td itemprop="numberPVacant">6</td>
+                </tr>
+
+                <tr align="center">
+                    <td itemprop="eduCode">09.03.04</td>
+                    <td itemprop="eduName">Программная инженерия</td>
+                    <td itemprop="eduLevel">Бакалавр</td>
+                    <td itemprop="eduProf">Проектирование и разработка программных систем</td>
+                    <td itemprop="eduCourse">2</td>
+                    <td itemprop="eduForm">Очная</td>
+                    <td itemprop="numberBFVacant">0</td>
+                    <td itemprop="numberBRVacant">0</td>
+                    <td itemprop="numberBMVacant">0</td>
+                    <td itemprop="numberPVacant">9</td>
+                </tr>
+
+                <tr align="center" itemprop="vacant">
+                    <td itemprop="eduCode">09.03.03</td>
+                    <td itemprop="eduName">Прикладная информатика</td>
+                    <td itemprop="eduLevel">Бакалавр</td>
+                    <td itemprop="eduProf">Маркетинг цифрового продукта</td>
+                    <td itemprop="eduCourse">3</td>
+                    <td itemprop="eduForm">Очная</td>
+                    <td itemprop="numberBFVacant">0</td>
+                    <td itemprop="numberBRVacant">0</td>
+                    <td itemprop="numberBMVacant">0</td>
+                    <td itemprop="numberPVacant">12</td>
+                </tr>
+
+                <tr align="center">
+                    <td itemprop="eduCode">09.03.04</td>
+                    <td itemprop="eduName">Программная инженерия</td>
+                    <td itemprop="eduLevel">Бакалавр</td>
+                    <td itemprop="eduProf">Проектирование и разработка программных систем</td>
+                    <td itemprop="eduCourse">3</td>
+                    <td itemprop="eduForm">Очная</td>
+                    <td itemprop="numberBFVacant">0</td>
+                    <td itemprop="numberBRVacant">0</td>
+                    <td itemprop="numberBMVacant">0</td>
+                    <td itemprop="numberPVacant">10</td>
+                </tr>
+
+                <tr align="center">
+                    <td itemprop="eduCode">09.03.04</td>
+                    <td itemprop="eduName">Программная инженерия</td>
+                    <td itemprop="eduLevel">Бакалавр</td>
+                    <td itemprop="eduProf">Бизнес-инжиниринг и проектирование информационных систем</td>
+                    <td itemprop="eduCourse">3</td>
+                    <td itemprop="eduForm">Очная</td>
+                    <td itemprop="numberBFVacant">0</td>
+                    <td itemprop="numberBRVacant">0</td>
+                    <td itemprop="numberBMVacant">0</td>
+                    <td itemprop="numberPVacant">3</td>
+                </tr>
+
+                <tr align="center" itemprop="vacant">
+                    <td itemprop="eduCode">09.03.03</td>
+                    <td itemprop="eduName">Прикладная информатика</td>
+                    <td itemprop="eduLevel">Бакалавр</td>
+                    <td itemprop="eduProf">Маркетинг цифрового продукта</td>
+                    <td itemprop="eduCourse">4</td>
+                    <td itemprop="eduForm">Очная</td>
+                    <td itemprop="numberBFVacant">0</td>
+                    <td itemprop="numberBRVacant">0</td>
+                    <td itemprop="numberBMVacant">0</td>
+                    <td itemprop="numberPVacant">2</td>
+                </tr>
+
+                <tr align="center">
+                    <td itemprop="eduCode">09.03.04</td>
+                    <td itemprop="eduName">Программная инженерия</td>
+                    <td itemprop="eduLevel">Бакалавр</td>
+                    <td itemprop="eduProf">Проектирование и разработка программных систем</td>
+                    <td itemprop="eduCourse">4</td>
+                    <td itemprop="eduForm">Очная</td>
+                    <td itemprop="numberBFVacant">0</td>
+                    <td itemprop="numberBRVacant">0</td>
+                    <td itemprop="numberBMVacant">0</td>
+                    <td itemprop="numberPVacant">19</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
