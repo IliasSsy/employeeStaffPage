@@ -1,0 +1,252 @@
+<meta charset="UTF-8">
+<style>
+    @font-face {
+        font-family: "Inter Tight";
+        src: url("fonts/Inter_Tight/static/InterTight-Regular.ttf") format("truetype");
+        font-weight: 400;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Inter Tight";
+        src: url("fonts/Inter_Tight/static/InterTight-Medium.ttf") format("truetype");
+        font-weight: 500;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Inter Tight";
+        src: url("fonts/Inter_Tight/static/InterTight-SemiBold.ttf") format("truetype");
+        font-weight: 600;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Inter Tight";
+        src: url("fonts/Inter_Tight/static/InterTight-Bold.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter/static/Inter_18pt-Regular.ttf") format("truetype");
+        font-weight: 400;
+    }
+    @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter/static/Inter_18pt-Medium.ttf") format("truetype");
+        font-weight: 500;
+    }
+    @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter/static/Inter_18pt-SemiBold.ttf") format("truetype");
+        font-weight: 600;
+    }
+    @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter/static/Inter_18pt-Bold.ttf") format("truetype");
+        font-weight: 700;
+    }
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: "Inter", sans-serif;
+        color: #222;
+        background: #fff;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    .info {
+        max-width: 960px;
+        padding: 28px 21px 30px 15px;
+    }
+    .info__title {
+        margin: 0 0 42px;
+        font-family: "Inter Tight", sans-serif;
+        font-size: min(3.3079vw + 19.6px, 48px);
+        font-weight: 700;
+        line-height: 1;
+    }
+    #menu {
+        display: flex;
+        flex-direction: column;
+    }
+    .menu__item {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        padding: 24px 0;
+        color: #222;
+        text-decoration: none;
+        font-size: min(8.3px + 1.5276vw, 20px);
+        font-weight: 600;
+        line-height: 1.45;
+        border-bottom: 1px solid #ECECEC;
+        transition: color .2s ease, border-color .2s ease;
+    }
+    .menu__title {
+        flex: 1;
+    }
+    .menu__arrow {
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+        transition: transform .2s ease;
+    }
+    .menu__item:hover {
+        border-bottom-color: #FA5D20;
+    }
+    .menu__item:hover .menu__arrow {
+        transform: rotate(45deg);
+    }
+    @media (min-width: 768px) {
+        .info {
+            padding: 50px 21px 50px 15px;
+        }
+        .info__title {
+            font-size: 56px;
+            margin-bottom: 48px;
+        }
+        .menu__item {
+            font-size: 21px;
+            gap: 20px;
+            padding: 24px 0;
+        }
+        .menu__arrow {
+            width: 22px;
+            height: 22px;
+        }
+    }
+    @media (min-width: 1024px) {
+        .info {
+            max-width: 100vw;
+            padding: 50px 9.114vw;
+        }
+        .info__title {
+            font-size: 64px;
+            margin-bottom: 56px;
+        }
+        .menu__item {
+            font-size: 22px;
+            gap: 22px;
+            padding: 28px 0;
+        }
+        .menu__arrow {
+            width: 24px;
+            height: 24px;
+        }
+    }
+    @media (min-width: 1600px) {
+        .info {
+            padding: 50px 9.114vw;
+        }
+        .info__title {
+            font-size: 72px;
+        }
+    }
+    @media (min-height: 2300px) {
+        .info {
+            width: 90vw;
+            max-width: 100vw;
+            padding: 50px 9.114vw;
+        }
+    }
+</style>
+<script>
+    const sections = [
+        {
+            title: "Основные сведения",
+            link: "https://ispring.institute/sveden/common"
+        },
+        {
+            title: "Структура и органы управления образовательной организацией",
+            link: "https://ispring.institute/sveden/struct"
+        },
+        {
+            title: "Документы",
+            link: "https://ispring.institute/sveden/document"
+        },
+        {
+            title: "Образование",
+            link: "https://ispring.institute/sveden/education"
+        },
+        {
+            title: "Образовательные стандарты и требования",
+            link: "https://ispring.institute/sveden/eduStandarts"
+        },
+        {
+            title: "Руководство",
+            link: "https://ispring.institute/sveden/managers"
+        },
+        {
+            title: "Педагогический состав",
+            link: "https://ispring.institute/sveden/employees"
+        },
+        {
+            title: "Материально-техническое обеспечение и оснащённость образовательного процесса. Доступная среда",
+            link: "https://ispring.institute/sveden/objects"
+        },
+        {
+            title: "Стипендии и меры поддержки обучающихся",
+            link: "https://ispring.institute/sveden/grants"
+        },
+        {
+            title: "Платные образовательные услуги",
+            link: "https://ispring.institute/sveden/paid_edu"
+        },
+        {
+            title: "Финансово-хозяйственная деятельность",
+            link: "https://ispring.institute/sveden/budget"
+        },
+        {
+            title: "Вакантные места для приёма (перевода) обучающихся",
+            link: "https://ispring.institute/sveden/vacant"
+        },
+        {
+            title: "Международное сотрудничество",
+            link: "https://ispring.institute/sveden/inter"
+        },
+        {
+            title: "Организация питания в образовательной организации",
+            link: "https://ispring.institute/sveden/catering"
+        },
+        {
+            title: "Бакалавриат. Расписание",
+            link: "https://ispring.institute/schedule"
+        },
+        {
+            title: "Электронная информационно-образовательная среда",
+            link: "https://ispring.institute/info_environment"
+        },
+        {
+            title: "Оценка качества образования",
+            link: "https://ispring.institute/education_assessment"
+        },
+        {
+            title: "Приём",
+            link: "https://ispring.institute/priem"
+        },
+        {
+            title: "Профессиональное обучение",
+            link: "https://ispring.institute/profobr"
+        },
+        {
+            title: "Дополнительное образование",
+            link: "https://ispring.institute/dopobr"
+        }
+    ];
+    document.addEventListener("DOMContentLoaded", () => {
+        const menu = document.getElementById("menu");
+        sections.forEach(section => {
+            const item = document.createElement("a");
+            item.className = "menu__item";
+            item.href = section.link;
+            item.innerHTML = `
+            <img class="menu__arrow" src="images/Vector.svg" alt="arrow">
+            <span class="menu__title">${section.title}</span>
+            `;
+            menu.appendChild(item);
+        });
+    })
+</script>
+<div class="info">
+    <h1 class="info__title">Сведения об образовательной организации</h1>
+    <div id="menu"></div>
+</div>

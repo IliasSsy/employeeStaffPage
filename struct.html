@@ -1,0 +1,250 @@
+<meta charset="UTF-8">
+<style>
+        @font-face {
+        font-family: "Inter Tight";
+        src: url("fonts/Inter_Tight/static/InterTight-Regular.ttf") format("truetype");
+        font-weight: 400;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Inter Tight";
+        src: url("fonts/Inter_Tight/static/InterTight-Medium.ttf") format("truetype");
+        font-weight: 500;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Inter Tight";
+        src: url("fonts/Inter_Tight/static/InterTight-SemiBold.ttf") format("truetype");
+        font-weight: 600;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Inter Tight";
+        src: url("fonts/Inter_Tight/static/InterTight-Bold.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter/static/Inter_18pt-Regular.ttf") format("truetype");
+        font-weight: 400;
+    }
+    @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter/static/Inter_18pt-Medium.ttf") format("truetype");
+        font-weight: 500;
+    }
+    @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter/static/Inter_18pt-SemiBold.ttf") format("truetype");
+        font-weight: 600;
+    }
+    @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter/static/Inter_18pt-Bold.ttf") format("truetype");
+        font-weight: 700;
+    }
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: "Inter", sans-serif;
+        color: #222;
+        background: #fff;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    .info {
+        max-width: 960px;
+        padding: 28px 21px 30px 15px;
+    }
+    .cards {
+        margin-top: 32px;
+    }
+    .card {
+        padding: 28px 0;
+        border-bottom: 1px solid #e8e8e8;
+    }
+    .card-header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 24px;
+    }
+    .card-header img {
+        width: 22px;
+        height: 22px;
+        flex-shrink: 0;
+    }
+    .card-header h2 {
+        margin: 0;
+        font-family: "Inter Tight", sans-serif;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 1.3;
+    }
+    .card-image {
+        display: block;
+        max-width: 100%;
+        margin: 0 auto 20px;
+    }
+    .card-image img,
+    .card-image {
+        display: block;
+        width: 45%;
+    }
+    .card-info {
+        display: flex;
+        flex-direction: column;
+    }
+    .card-info h3 {
+        margin: 0 0 8px;
+        font-family: "Inter Tight", sans-serif;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 1.3;
+        color: #ff5b1f;
+    }
+    .card-info p {
+        margin: 0;
+        font-size: 16px;
+        line-height: 1.4;
+    }
+    .card-info p + p {
+        margin-top: 2px;
+    }
+    .card-info a {
+        display: block;
+        margin-top: 2px;
+        font-size: 16px;
+        line-height: 1.4;
+        color: #ff5b1f;
+        text-decoration: none;
+    }
+    .card-info a:hover {
+        text-decoration: underline;
+    }
+    .document {
+        margin-top: 8px !important;
+    }
+</style>
+<script>
+    const departments = [
+        {
+            image: "https://static.tildacdn.com/tild3934-6562-4333-a534-336139363331/Protasova_Marina.png",
+            title: "Административный отдел",
+            name: "Протасова Марина Александровна",
+            position: "Руководитель административного отдела",
+            address: "424033, Республика Марий Эл, г. Йошкар-Ола, ул. Эшкинина, д. 86",
+            website: "Официальный сайт отсутствует",
+            email: "marina.protasova@ispring.com",
+            document: "Положение об административном отделе"
+        },
+        {
+            image: "https://static.tildacdn.com/tild3437-3733-4637-a562-616535326131/Serkina_Nadezhda.png",
+            title: "Учебно-методический отдел",
+            name: "Серкина Надежда Евгеньевна",
+            position: "Руководитель учебно-методического отдела",
+            address: "424033, Республика Марий Эл, г. Йошкар-Ола, ул. Эшкинина, д. 86",
+            website: "Официальный сайт отсутствует",
+            email: "nadezhda.serkina@ispring.com",
+            document: "Положение об учебно-методическом отделе"
+        },
+        {
+            image: "https://static.tildacdn.com/tild3734-3864-4737-b463-356365633535/Arnaberdiev_Kerim.png",
+            title: "Кафедра программных систем",
+            name: "Арнабердиев Авдыкерим",
+            position: "И.о. заведующего кафедрой",
+            address: "424033, Республика Марий Эл, г. Йошкар-Ола, ул. Эшкинина, д. 86",
+            website: "Официальный сайт отсутствует",
+            email: "kerim.arnaberdiev@ispring.com",
+            document: "Положение о кафедре программных систем"
+        },
+        {
+            image: "https://static.tildacdn.com/tild3536-3363-4461-a638-653838653238/noperson-white.png",
+            title: "Кафедра маркетинговых коммуникаций",
+            name: "Вакансия",
+            position: "Заведующий кафедрой",
+            address: "424033, Республика Марий Эл, г. Йошкар-Ола, ул. Эшкинина, д. 86",
+            website: "Официальный сайт отсутствует",
+            email: "institute@ispring.ru",
+            document: "Положение о кафедре маркетинговых коммуникаций"
+        },
+        {
+            image: "https://static.tildacdn.com/tild3463-3733-4162-b931-643537313364/Zherebtsova_Olga.jpg",
+            title: "Кафедра цифровых образовательных систем",
+            name: "Жеребцова Ольга Вениаминовна",
+            position: "И.о. заведующего кафедрой",
+            address: "424033, Республика Марий Эл, г. Йошкар-Ола, ул. Эшкинина, д. 86",
+            website: "Официальный сайт отсутствует",
+            email: "olga.zherebtsova@ispring.com",
+            document: "Положение о кафедре цифровых образовательных систем"
+        },
+        {
+            image: "https://static.tildacdn.com/tild3536-3363-4461-a638-653838653238/noperson-white.png",
+            title: "Центр академического образования",
+            name: "Вакансия",
+            position: "Руководитель центра академического образования",
+            address: "424033, Республика Марий Эл, г. Йошкар-Ола, ул. Эшкинина, д. 86",
+            website: "Официальный сайт отсутствует",
+            email: "institute@ispring.ru",
+            document: "Положение о центре академического образования"
+        },
+        {
+            image: "https://static.tildacdn.com/tild3333-6135-4939-b933-313764333532/Vavilova_Kseniya.png",
+            title: "Центр иностранных языков",
+            name: "Вавилова Ксения Юрьевна",
+            position: "Руководитель центра иностранных языков",
+            address: "424033, Республика Марий Эл, г. Йошкар-Ола, ул. Эшкинина, д. 86",
+            website: "Официальный сайт отсутствует",
+            email: "kseniya.vavilova@ispring.com",
+            document: "Положение о центре иностранных языков"
+        },
+        {
+            image: "https://static.tildacdn.com/tild3536-3363-4461-a638-653838653238/noperson-white.png",
+            title: "Центр дополнительного образования",
+            name: "Вакансия",
+            position: "Руководитель центра дополнительного образования",
+            address: "424033, Республика Марий Эл, г. Йошкар-Ола, ул. Эшкинина, д. 86",
+            website: "Официальный сайт отсутствует",
+            email: "institute@ispring.ru",
+            document: "Положение о центре дополнительного образования"
+        }
+    ];
+    document.addEventListener("DOMContentLoaded", () => {
+        const cards = document.querySelector(".cards");
+        departments.forEach(department => {
+            const card = document.createElement("div");
+            card.className = "card";
+            card.innerHTML = `
+                <div class="card-header">
+                    <h2>${department.title}</h2>
+                </div>
+                <img class="card-image" src="${department.image}" alt="${department.name}">
+                <div class="card-info">
+                    <h3>${department.name}</h3>
+                    <p>${department.position}</p>
+                    <p>${department.address}</p>
+                    <p>${department.website}</p>
+                    <a href="mailto:${department.email}">${department.email}</a>
+                    <a class="document" href="#">${department.document}</a>
+                </div>
+            `;
+            cards.appendChild(card);
+        });
+    });
+</script>
+<div class="info">
+    <a class="link-return" href="sveden.html">
+        <img class="link-return__arrow" src="images/Arrow_left.svg" alt="arrow">
+        <p class="link-return__title" style="display: inline">Назад</p>
+    </a>
+    <h1 class="title">Структура и органы управления образовательной организацией</h1>
+    <h2 class="includes">Структура органов управления АНО ВО "РУМТ" включает в себя:</h2>
+    <div class="includes__info">
+        <p><img src="images/Arrow_left.svg">Высший орган управления - Учредитель</p>
+        <p><img src="images/Arrow_left.svg">Единоличный исполнительный орган - Директор</p>
+        <p><img src="images/Arrow_left.svg">Коллегиальный орган управления - Учёный совет, <span class="hypertext">Положение</span></p>
+        <p><img src="images/Arrow_left.svg">Коллегиальный орган управления - Общее собрание работников и обучающися, <span class="hypertext">Положение</span></p>
+    </div>
+    <div class="cards"></div>
+</div>

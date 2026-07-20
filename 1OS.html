@@ -1,0 +1,293 @@
+<style>
+    * {
+        text-decoration: none;
+    }
+
+    :active,
+    :hover,
+    :focus {
+        outline: 0;
+        outline-offset: 0;
+    }
+
+    .info {
+        margin: 50px 20% 50px;
+        line-height: 20px;
+        font-size: 16px;
+        font-family: 'EuclidCircularB', Arial, sans-serif;
+        color: #2f3337;
+        font-weight: 400;
+    }
+
+    .title {
+        color: #ff8562;
+        font-size: 30px;
+        line-height: 40px;
+        font-weight: 700;
+        overflow-y: hidden;
+    }
+
+    .title_focus {
+        color: #ff8562;
+    }
+
+    .subtitle {
+        line-height: 20px;
+        font-size: 18px;
+        font-weight: 600;
+        overflow: hidden;
+    }
+
+    .documents {
+        display: flex;
+    }
+
+    ul {
+        padding-left: 0;
+        flex: 1 1 48%;
+        margin-right: 10px;
+        margin-bottom: 20px;
+        display: flex;
+        min-height: 70px;
+    }
+
+    li {
+        list-style: none;
+        background: url("https://static.tildacdn.com/tild3030-6339-4366-a165-356264613266/doc.svg") no-repeat;
+        padding-left: 70px;
+        font-weight: 400;
+        line-height: 18px;
+        font-size: 16px;
+        overflow-y: hidden;
+    }
+
+    .table {
+        border: 1px solid #ff8562;
+        border-collapse: collapse;
+
+    }
+
+    .td {
+        border: 1px solid #ff8562;
+        padding: 10px;
+    }
+
+    .th {
+        border: 1px solid #ff8562;
+        background-color: #ff846233;
+    }
+
+    .table2 {
+        border-collapse: collapse;
+    }
+
+    .td2 {
+        border-bottom: 1px solid #474646;
+        padding: 10px;
+    }
+
+    @media screen and (max-width: 750px) {
+        .info {
+            margin: 30px 5% 30px;
+        }
+    }
+
+    @media screen and (max-width: 570px) {
+        .subtitle {
+            line-height: 20px;
+            font-size: 18px;
+        }
+
+        .info {
+            line-height: 16px;
+            font-size: 14px;
+        }
+
+        li {
+            line-height: 16px;
+            font-size: 14px;
+        }
+
+        .documents {
+        display: flex;
+        flex-direction: column
+    }
+    }
+</style>
+
+<div class="info">
+    <a class="link" href="https://ispring.institute/sveden/">
+        <img class="return" src="https://static.tildacdn.com/tild3331-3037-4537-b438-353839393732/return.svg" alt="return">
+    </a>
+    <br>
+    <h1 class="title">Основные сведения</h1>
+    <br>
+    <table class="table2">
+        <tr>
+            <td class="td2" width="45%">Полное наименование организации:</td>
+            <td class="td2" itemprop="fullName">Автономная некоммерческая организация высшего образования "Русский
+                университет метатехнологий"</td>
+        </tr>
+        <tr>
+            <td class="td2"> Сокращенное наименование: </td>
+            <td class="td2" itemprop="shortName">АНО ВО "РУМТ"</td>
+        </tr>
+        <tr>
+            <td class="td2">До изменения вида деятельности с дополнительного профессионального образования на высшее
+                образование
+                организация
+                именовалась:</td>
+            <td class="td2">Автономная некоммерческая организация дополнительного профессионального образования
+                "Инфосфера",
+                АНО ДПО "Инфосфера"</td>
+        </tr>
+        <tr>
+            <td class="td2">Дата создания:</td>
+            <td class="td2" itemprop="regDate">17 декабря 2009 г.</td>
+        </tr>
+        <tr>
+            <td class="td2">Адрес местонахождения:</td>
+            <td class="td2" itemprop="address">424033, Республика Марий Эл, г.
+                Йошкар-Ола, ул.
+                Эшкинина, д. 8 б</td>
+        </tr>
+        <tr>
+            <td class="td2">Режим, график работы</td>
+            <td class="td2" itemprop="workTime">ПН-ПТ с 9:00 до 18:00, обед с 12:00 до 13:00</td>
+        </tr>
+        <tr>
+            <td class="td2">Контактные телефоны</td>
+            <td class="td2" itemprop="telephone">+7 (8362) 60 00 10, +7 939 720 00 10</td>
+        </tr>
+        <tr>
+            <td class="td2">Адрес электронной почты</td>
+            <td class="td2" itemprop="email">institute@ispring.ru</td>
+        </tr>
+    </table>
+    <br>
+    <div class="documents">
+        <ul>
+            <li itemprop="licenseDocLink"><span><a class="link" href="https://ispri.ng/W3GQR" target="_blank" rel="noreferrer noopener" class="title_focus">Лицензия</a> на
+                    осуществление образовательной деятельности, <a class="link"
+                        href="https://islod.obrnadzor.gov.ru/rlic/details/0B10100A-130A-0E0B-1010-0F0C0D0B0A1210110B0A/" target="_blank" rel="noreferrer noopener" class="title_focus">скачать реестровую выписку</a></span></li>
+        </ul>
+        <ul>
+            <li itemprop="accreditationDocLink"><span><a class="link"
+                        href="https://ispri.ng/10r21" target="_blank" rel="noreferrer noopener" class="title_focus">
+                        Свидетельство</a> о государственной аккредитации, <a class="link"
+                        href="https://isga.obrnadzor.gov.ru/accredreestr/details/0B110C0A-0B10-0C0B-0D0B-101210120A0D0E0A0B0D" target="_blank" rel="noreferrer noopener" class="title_focus"><br>скачать реестровую выписку</a></span></li>
+        </ul>
+    </div>
+    <br>
+    <h2 class="subtitle">Сведения об учредителях</h2>
+    <br>
+    <table class="table2" itemprop="uchredLaw">
+        <tr>
+            <td class="td2">Наименование учредителя</td>
+            <td class="td2" itemprop="nameUchred">Общество с ограниченной ответственностью «ПС Груп»</td>
+        </tr>
+        <tr>
+            <td class="td2">Адрес местонахождения</td>
+            <td class="td2" itemprop="addressUchred">Республика Марий Эл, г.Йошкар-Ола, ул. Вознесенская, д. 110, офис 408А
+            </td>
+        </tr>
+        <tr>
+            <td class="td2">Контактные телефоны</td>
+            <td class="td2" itemprop="telUchred">+7 (8362) 60 00 10</td>
+        </tr>
+        <tr>
+            <td class="td2">Адрес электронной почты</td>
+            <td class="td2" itemprop="mailUchred">psgroup2026@yandex.ru</td>
+        </tr>
+        <tr>
+            <td class="td2">Адрес сайта</td>
+            <td class="td2" itemprop="websiteUchred">Отсутствует</td>
+        </tr>
+    </table>
+    <br>
+    <br>
+    <h2 class="subtitle">Информация о местах осуществления образовательной деятельности, в том числе сведения об адресах мест осуществления образовательной деятельности, 
+        которые в соответствии с частью 4 статьи 91 Федерального закона от 29 декабря 2012 г. № 273-ФЗ "Об образовании в Российской Федерации" не включаются в соответствующую 
+        запись в реестре лицензий на осуществление образовательной деятельности</h2>
+    <br>
+    <table class="table">
+        <tr>
+            <th class="th">№ п/п</th>
+            <th class="th">Места осуществления образовательной деятельности, в том числе не указываемые в приложении к лицензии (реестре лицензий) на осуществление образовательной деятельности</th>
+            <th class="th">Адрес места осуществления образовательной деятельности</th>
+        </tr>
+        <tr>
+            <td class="td" align="center">1</td>
+            <td class="td">Места осуществления образовательной
+                деятельности при использовании сетевой формы
+                реализации образовательных программ</td>
+            <td class="td" itemprop="addressPlaceSet">Отсутствует</td>
+        </tr>
+        <tr>
+            <td class="td" align="center">2</td>
+            <td class="td">Места проведения практики</td>
+            <td class="td" itemprop="addressPlacePrac">• 424006, Республика Марий Эл, г. Йошкар-Ола, ул. Вознесенская, д. 110, ООО «Ричмедиа»<br>
+            • 424033, Республика Марий Эл, г. Йошкар-Ола, ул. Эшкинина, д 8а, Лицей «Инфотех»<br>
+            • 424003, Республика Марий Эл, г. Йошкар-Ола, Ленинский проспект, д. 56А, ООО «ТРЭВЕЛ ЛАЙН СИСТЕМС»<br>
+            • 424031, Республика Марий Эл, г. Йошкар-Ола, Ленинский проспект, д. 26А, ООО «Алат Коммерц»<br>
+            • 424003, Республика Марий Эл,г. Йошкар-Ола, ул. Суворова, д. 15, АО «Марийский машиностроительный завод»<br>
+            • 428000, Чувашская Республика-Чувашия, город Чебоксары, проспект Максима Горького, дом 18Б, помещение 6, ООО «Научно-производственный центр «Кейсистемс − Безопасность»<br>
+            • 111524, г. Москва, ул. Электродная, д. 2, стр. 34, помещ. 19/3, АО «Стратим»<br>
+            • 236022, Калининградская область, г. Калининград, ул. Чернышевского, д. 37, кв.5, ООО «УВ»<br>
+            • 424000, Республика Марий Эл, г. Йошкар-Ола, ул. Вознесенская, д.110, офис 316, ООО «Академия Айспринг»<br>
+            • 117546, г. Москва, Булатниковский проезд, д. 10, ИП Тихомиров Ярослав Владимирович
+            </td>
+        </tr>
+        <tr>
+            <td class="td" align="center">3</td>
+            <td class="td">Места проведения практической подготовки обучающихся</td>
+            <td class="td" itemprop="addressPlacePodg">
+                • 424006, Республика Марий Эл, г. Йошкар-Ола, ул. Вознесенская,
+                д.
+                110, ООО "Ричмедиа";<br>
+                • 424033, Республика Марий Эл, городской округ "Город
+                Йошкар-Ола",
+                город
+                Йошкар-Ола,
+                улица Эшкинина, дом 8а, Лицей "Инфотех";<br>
+                • 424033, Республика Марий Эл, городской округ "Город
+                Йошкар-Ола",
+                город
+                Йошкар-Ола,
+                улица Эшкинина, дом 8а, АНО ВО "РУМТ";<br>
+                • 424033, Республика Марий Эл, г. Йошкар-Ола, ул. Эшкинина, д. 8 б, АНО ВО "РУМТ"
+            </td>
+        </tr>
+        <tr>
+            <td class="td" align="center">4</td>
+            <td class="td">Места проведения государственной итоговой аттестации</td>
+            <td class="td" itemprop="addressPlaceGia">
+                • 424033, Республика Марий Эл, городской округ "Город
+                Йошкар-Ола",
+                город
+                Йошкар-Ола,
+                улица Эшкинина, дом 8а;<br>
+                • 424033, Республика Марий Эл, г. Йошкар-Ола, ул. Эшкинина, д. 8 б
+            </td>
+        </tr>
+        <tr>
+            <td class="td" align="center">5</td>
+            <td class="td">Места осуществления образовательной
+                деятельности по дополнительным образовательным
+                программам</td>
+            <td class="td" itemprop="addressPlaceDop">
+                • 424033, Республика Марий Эл, городской округ "Город Йошкар-Ола", город Йошкар-Ола, улица Эшкинина,
+                дом
+                8а;<br>
+                • 424033, Республика Марий Эл, г. Йошкар-Ола, ул. Эшкинина, д. 8 б
+            </td>
+        </tr>
+        <tr>
+            <td class="td" align="center">6</td>
+            <td class="td">Места осуществления образовательной
+                деятельности по основным программам
+                профессионального обучения</td>
+            <td class="td" itemprop="addressPlaceOppo">• 424033, Республика Марий Эл, г. Йошкар-Ола, ул. Эшкинина, д. 8 б</td>
+        </tr>
+    </table>
+</div>
