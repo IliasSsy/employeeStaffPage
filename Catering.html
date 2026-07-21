@@ -1,0 +1,356 @@
+<style>
+    @font-face {
+        font-family: "Inter Tight";
+        src: url("fonts/Inter_Tight/static/InterTight-Regular.ttf") format("truetype");
+        font-weight: 400;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Inter Tight";
+        src: url("fonts/Inter_Tight/static/InterTight-Medium.ttf") format("truetype");
+        font-weight: 500;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Inter Tight";
+        src: url("fonts/Inter_Tight/static/InterTight-SemiBold.ttf") format("truetype");
+        font-weight: 600;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Inter Tight";
+        src: url("fonts/Inter_Tight/static/InterTight-Bold.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter/static/Inter_18pt-Regular.ttf") format("truetype");
+        font-weight: 400;
+    }
+    @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter/static/Inter_18pt-Medium.ttf") format("truetype");
+        font-weight: 500;
+    }
+    @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter/static/Inter_18pt-SemiBold.ttf") format("truetype");
+        font-weight: 600;
+    }
+    @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter/static/Inter_18pt-Bold.ttf") format("truetype");
+        font-weight: 700;
+    }
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: "Inter", sans-serif;
+        color: #222;
+        background: #fff;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    .info {
+        max-width: 960px;
+        padding: 28px 21px 30px 15px;
+    }
+    .link-return {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 40px;
+            color: black;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+    }
+    .link-return__arrow {
+        width: 40px;
+        height: 40px;
+    }
+    .info__title {
+        margin: 0 0 50px;
+        font-family: "Inter Tight", sans-serif;
+        font-size: 42px;
+        font-weight: 700;
+        line-height: 1.05;
+    }
+    .info__subtitle {
+        margin: 0 0 30px;
+        font-family: "Inter Tight", sans-serif;
+        font-size: 36px;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+    .section {
+        margin: 0 0 48px;
+    }
+    .section__stats {
+        display: flex;
+        gap: 25px;
+    }
+    .section__image {
+        margin-bottom: 30px;
+        display: flex;
+        justify-content: center;
+    }
+    .section__image img {
+        display: block;
+        width: 90vw;
+        max-width: 100%;
+        height: auto;
+        border-radius: 20px;
+    }
+    .section__content {
+        display: flex;
+        flex-direction: column;
+    }
+    .section__title {
+        margin: 0 0 16px;
+        font-family: "Inter Tight", sans-serif;
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 1.1;
+    }
+    .section__stats {
+        margin-bottom: 20px;
+    }
+    .section__number {
+        margin-bottom: 4px;
+        font-size: 22px;
+        font-weight: 600;
+        color: #FF5A1F;
+    }
+    .section__text {
+        margin: 0 0 20px;
+        font-size: 20px;
+        line-height: 1.45;
+    }
+    .section__address {
+        margin: 0;
+        font-size: 20px;
+        line-height: 1.45;
+        color: black;
+    }
+    .menu {
+        display: flex;
+        align-items: baseline;
+        gap: 12px;
+        padding: 16px 0;
+        border-bottom: 1px solid #D9D9D9;
+        cursor: pointer;
+        transition: border-color .2s ease;
+    }
+    .menu__arrow {
+        width: 18px;
+        flex-shrink: 0;
+        transition: transform 0.3s ease;
+    }
+    .menu:hover {
+        border-bottom-color: #FF5A1F;
+    }
+    .menu:hover .menu__arrow {
+        transform: rotate(45deg);
+    }
+    .menu.open {
+        border-bottom-color: #FF5A1F;
+    }
+    .menu.open .menu__arrow {
+        transform: rotate(90deg);
+    }
+    .menu__title {
+        font-size: 20px;
+        line-height: 1.45;
+    }
+    .menu__body {
+        display: none;
+    }
+    .menu__body.open {
+        display: block;
+    }
+    @media (min-width: 768px) {
+        .info {
+            padding: 50px 21px 50px 15px;
+        }
+        .info__title {
+            font-size: 56px;
+            margin-bottom: 48px;
+        }
+    }
+    @media (min-width: 1024px) {
+        .info {
+            max-width: 100vw;
+            padding: 50px 9.114vw;
+        }
+        .info__title {
+            font-size: 64px;
+            margin-bottom: 56px;
+        }
+        .info__subtitle {
+            margin-bottom: 40px;
+            font-size: 42px;
+        }
+        .section {
+            display: flex;
+            align-items: flex-start;
+            gap: 48px;
+            margin-bottom: 70px;
+        }
+        .section__image {
+            flex: 0 0 52%;
+            margin: 0;
+        }
+        .section__image img {
+            width: 100%;
+            max-width: none;
+            border-radius: 24px;
+        }
+        .section__content {
+            flex: 1;
+            min-width: 0;
+            padding-top: 6px;
+        }
+        .section__title {
+            margin-bottom: 16px;
+            font-size: 52px;
+        }
+        .section__stats {
+            gap: 40px;
+            margin-bottom: 24px;
+        }
+        .section__number {
+            font-size: 34px;
+        }
+        .section__text {
+            margin-bottom: 28px;
+            font-size: 24px;
+            line-height: 1.5;
+        }
+        .section__address {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #666;
+        }
+        .menu {
+            padding: 24px 0;
+        }
+        .menu__title {
+            font-size: 26px;
+        }
+        .menu__body {
+            padding: 24px 0 32px 32px;
+        }
+        .menu__text {
+            max-width: 900px;
+            font-size: 20px;
+            line-height: 1.7;
+        }
+    }
+    @media (min-width: 1600px) {
+        .info {
+            padding: 50px 9.114vw;
+        }
+        .info__title {
+            font-size: 72px;
+        }
+    }
+    @media (min-width: 2300px) {
+        .info {
+            width: 90vw;
+            max-width: 100vw;
+            padding: 50px 9.114vw;
+        }
+    }
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const body = document.querySelector('.menu__body');
+        let currentMenu = null;
+        document.querySelectorAll('.menu').forEach(menu => {
+            menu.addEventListener('click', () => {
+                if (currentMenu === menu && body.classList.contains('open')) {
+                    body.classList.remove('open');
+                    menu.classList.remove('open');
+                    currentMenu = null;
+                    return;
+                }
+                if (currentMenu) {
+                    currentMenu.classList.remove('open');
+                }
+                menu.after(body);
+                body.classList.add('open');
+                menu.classList.add('open');
+                currentMenu = menu;
+            });
+        });
+    });
+</script>
+<div class="info">
+    <a class="link-return" href="sveden.html">
+        <img class="link-return__arrow" src="images/Arrow_left.svg" alt="Назад">
+        <p class="link-return__title">Назад</p>
+    </a>
+    <h1 class="info__title">Организация питания<br>в образовательной организации</h1>
+    <h2 class="info__subtitle">Сведения об условиях охраны здоровья обучающихся</h2>
+    <div class="section">
+        <div class="section__image">
+            <img src="https://static.tildacdn.com/tild3336-3564-4561-a339-366265666236/canteen.jpg" alt="Столовая">
+        </div>
+        <div class="section__content">
+            <h2 class="section__title">Столовая</h2>
+            <div class="section__stats">
+                    <span class="section__number">336,8 м&sup2;</span>
+                    <span class="section__number">100 мест</span>
+            </div>
+            <p class="section__text">Приспособлена для использования инвалидами и лицами с ограниченными возможностями здоровья.</p>
+            <p class="section__address">424033, Российская Федерация, Республика Марий Эл, городской округ "Город Йошкар-Ола", город Йошкар-Ола, улица Эшкинина, дом 8а, 1 этаж</p>
+        </div>
+    </div>
+    <div class="menu">
+        <img class="menu__arrow" src="images/Vector.svg" alt="arrow">
+        <span class="menu__title">Меню ежедневного горячего питания</span>
+    </div>
+    <div class="menu">
+        <img class="menu__arrow" src="images/Vector.svg" alt="arrow">
+        <span class="menu__title">Информация о наличии диетического меню в образовательной организации</span>
+    </div>
+    <div class="menu">
+        <img class="menu__arrow" src="images/Vector.svg" alt="arrow">
+        <span class="menu__title">Перечень юридических лиц и индивидуальных предпринимателей, поставляющих (реализующих) пищевые продукты и продовольственное сырье в общеобразовательные организации</span>
+    </div>
+    <div class="menu">
+        <img class="menu__arrow" src="images/Vector.svg" alt="arrow">
+        <span class="menu__title">Перечень юридических лиц и индивидуальных предпринимателей, оказывающих услуги по организации питания в общеобразовательной организации</span>
+    </div>
+    <div class="menu" style="margin-bottom: 50px">
+        <img class="menu__arrow" src="images/Vector.svg" alt="arrow">
+        <span class="menu__title">Формы обратной связи для родителей обучающихся и ответы на вопросы родителей по питанию</span>
+    </div>
+    <div class="menu__body">
+        <p class="menu__text">
+            Образовательная организация не реализует образовательные программы начального общего образования, поэтому в
+            соответствии с п 13. Постановления Правительства Российской Федерации от 20.10.2021 № 1802 "Об утверждении
+            Правил размещения на официальном сайте образовательной организации в информационно-телекоммуникационной сети
+            "Интернет" и обновления информации об образовательной организации, а также о признании утратившими силу
+            некоторых актов и отдельных положений некоторых актов Правительства Российской Федерации" не публикует
+            информацию по данному пункту
+        </p>
+    </div>
+    <h2 class="info__subtitle">Сведения об условиях охраны здоровья обучающихся</h2>
+    <div class="section">
+        <div class="section__image">
+            <img src="https://static.tildacdn.com/tild6439-3066-4132-a331-343634363663/1.jpg" alt="Медицинский пункт">
+        </div>
+        <div class="section__content">
+            <h2 class="section__title">Медицинский пункт</h2>
+            <div class="section__stats">
+                    <span class="section__number">- м&sup2;</span>
+                    <span class="section__number">- мест</span>
+            </div>
+            <p class="section__text">Приспособлена для использования инвалидами и лицамис ограниченными возможностями здоровья.</p>
+            <p class="section__address">424033, Российская Федерация, Республика Марий Эл, городской округ "Город Йошкар-Ола", город Йошкар-Ола, улица Эшкинина, дом 8а, 1 этаж</p>
+        </div>
+    </div>
+</div>

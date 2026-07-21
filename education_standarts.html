@@ -1,0 +1,195 @@
+<style>
+    @font-face {
+        font-family: "Inter Tight";
+        src: url("fonts/Inter_Tight/static/InterTight-Regular.ttf") format("truetype");
+        font-weight: 400;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Inter Tight";
+        src: url("fonts/Inter_Tight/static/InterTight-Medium.ttf") format("truetype");
+        font-weight: 500;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Inter Tight";
+        src: url("fonts/Inter_Tight/static/InterTight-SemiBold.ttf") format("truetype");
+        font-weight: 600;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Inter Tight";
+        src: url("fonts/Inter_Tight/static/InterTight-Bold.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter/static/Inter_18pt-Regular.ttf") format("truetype");
+        font-weight: 400;
+    }
+    @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter/static/Inter_18pt-Medium.ttf") format("truetype");
+        font-weight: 500;
+    }
+    @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter/static/Inter_18pt-SemiBold.ttf") format("truetype");
+        font-weight: 600;
+    }
+    @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter/static/Inter_18pt-Bold.ttf") format("truetype");
+        font-weight: 700;
+    }
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: "Inter", sans-serif;
+        color: #222222;
+        background: #fff;
+    }
+    a {
+        color: black;
+    }
+    .link-return__title {
+        display: inline;
+        color: black;
+        font-size: 20px;
+    }
+    .info {
+        max-width: 900px;
+        padding: 30px 21px 30px 15px;
+    }
+    .link-return {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 40px;
+        color: #8A8A8A;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 500;
+    }
+    .link-return__arrow {
+        width: 40px;
+        height: 40px;
+    }
+    .info__title {
+        margin: 0 0 50px;
+        font-family: "Inter Tight", sans-serif;
+        font-size: 42px;
+        font-weight: 700;
+        line-height: 1.05;
+    }
+    .FGOS {
+        margin-top: 56px;
+    }
+    .FGOS__title {
+        margin: 0 0 16px;
+        font-size: 14px;
+        font-weight: 600;
+    }
+    .FGOS__item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        padding: 18px 0;
+        color: inherit;
+        text-decoration: none;
+        border-top: 1px solid #EAEAEA;
+    }
+    .FGOS__item:last-child {
+        border-bottom: 1px solid #EAEAEA;
+    }
+    .FGOS__left {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        flex: 1;
+    }
+    .FGOS__left span {
+        line-height: 23px;
+    }
+    .FGOS__left img {
+        width: 25px;
+        height: 25px;
+        flex-shrink: 0;
+    }
+    .FGOS__left span {
+        font-size: 16px;
+        line-height: 1.45;
+    }
+    .FGOS__action {
+        color: #FA5D20;
+    }
+    .educationStandarts {
+        margin-bottom: 50px;
+    }
+    @media (min-width: 768px) {
+        .info {
+            padding: 50px 21px 50px 15px;
+        }
+        .info__title {
+            font-size: 56px;
+            margin-bottom: 48px;
+        }
+    }
+    @media (min-width: 1024px) {
+        .info {
+            max-width: 100vw;
+            padding: 50px 9.114vw;
+        }
+        .info__title {
+            font-size: 64px;
+            margin-bottom: 56px;
+        }
+    }
+    @media (min-width: 1600px) {
+        .info {
+            padding: 50px 9.114vw;
+        }
+        .info__title {
+            font-size: 55px;
+        }
+    }
+    @media (min-width: 2300px) {
+        .info {
+            width: 90vw;
+            max-width: 100vw;
+            padding: 50px 9.114vw;
+        }
+    }
+</style>
+<div class="info">
+    <a class="link-return" href="sveden.html">
+        <img class="link-return__arrow" src="images/Arrow_left.svg" alt="arrow">
+        <p class="link-return__title">Назад</p>
+    </a>
+    <h1 class="info__title">Образовательные стандарты и требования</h1>
+    <h2 class="info__subtitle">ФГОС высшего образования:</h2>
+    <div class="FGOS" style="margin-bottom: 50px">
+        <p class="FGOS__title">Название документа</p>
+        <a class="FGOS__item" href="#" itemprop="licenseDocLink">
+            <div class="FGOS__left">
+                <img src="images/Document.svg" alt="table">
+                <span>09.03.04 Программная инженерия</span>
+            </div>
+            <span class="FGOS__action">Открыть</span>
+        </a>
+        <a class="FGOS__item" href="#" itemprop="accreditationDocLink">
+            <div class="FGOS__left">
+                <img src="images/Document.svg" alt="table">
+                <span>09.03.03 Прикладная информатика</span>
+            </div>
+            <span class="FGOS__action">Открыть</span>
+        </a>
+    </div>
+    <div class="educationStandarts">
+        <h2>Образовательные стандарты</h2>
+        <p>Не используются</p>
+    </div>
+    <h2>Основные программы профессионального обучения и дополнительные образовательные программы в соответствии с Федеральным Законом № 273-ФЗ от 29.12.2012 г. "Об образовании в Российской Федерации" организация разрабатывает самостоятельно.</h2>
+</div>

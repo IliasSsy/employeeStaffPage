@@ -1,0 +1,1896 @@
+<style>
+    @font-face {
+        font-family: "Inter Tight";
+        src: url("fonts/Inter_Tight/static/InterTight-Regular.ttf") format("truetype");
+        font-weight: 400;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Inter Tight";
+        src: url("fonts/Inter_Tight/static/InterTight-Medium.ttf") format("truetype");
+        font-weight: 500;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Inter Tight";
+        src: url("fonts/Inter_Tight/static/InterTight-SemiBold.ttf") format("truetype");
+        font-weight: 600;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Inter Tight";
+        src: url("fonts/Inter_Tight/static/InterTight-Bold.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter/static/Inter_18pt-Regular.ttf") format("truetype");
+        font-weight: 400;
+    }
+    @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter/static/Inter_18pt-Medium.ttf") format("truetype");
+        font-weight: 500;
+    }
+    @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter/static/Inter_18pt-SemiBold.ttf") format("truetype");
+        font-weight: 600;
+    }
+    @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter/static/Inter_18pt-Bold.ttf") format("truetype");
+        font-weight: 700;
+    }
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: "Inter", sans-serif;
+        color: #222222;
+        background: #fff;
+    }
+    a {
+        color: black;
+    }
+    .link-return__title {
+        display: inline;
+        color: black;
+        font-size: 20px;
+    }
+    .info {
+        max-width: 900px;
+        padding: 30px 21px 30px 15px;
+    }
+    .link-return {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 40px;
+        color: black;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 500;
+    }
+    .link-return__arrow {
+        width: 40px;
+        height: 40px;
+    }
+    .info__title {
+        margin: 0 0 50px;
+        font-family: "Inter Tight", sans-serif;
+        font-size: 42px;
+        font-weight: 700;
+        line-height: 1.05;
+    }
+    .documents {
+        margin-top: 30px;
+        cursor: pointer;
+        margin-bottom: 50px;
+    }
+    .documents__title {
+        margin: 0 0 16px;
+        font-size: 20   px;
+        font-weight: 600;
+    }
+    .documents__item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        padding: 18px 24px;
+        color: inherit;
+        text-decoration: none;
+        border-top: 1px solid #EAEAEA;
+    }
+    .documents__item:last-child {
+        border-bottom: 1px solid #EAEAEA;
+    }
+    .documents__left {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        flex: 1;
+    }
+    .documents__left span {
+        line-height: 23px;
+    }
+    .documents__left img {
+        width: 25px;
+        height: 25px;
+        flex-shrink: 0;
+    }
+    .documents__left span {
+        font-size: 16px;
+        line-height: 1.45;
+    }
+    .documents__action {
+        color: #FA5D20;
+    }
+    .documents__item:hover {
+        border-bottom: 1px solid orange;
+    }
+    .table-block {
+        margin-top: 32px;
+        overflow-x: auto;
+        display: none;
+    }
+    .table-block.open {
+        display: block;
+    }
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 16px;
+        color: #333;
+    }
+    .table th,
+    .table td {
+        border: 1px solid #7D7D7D;
+        padding: 12px 14px;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 1.3;
+    }
+    .table th {
+        font-weight: 600;
+    }
+    .table tr:first-child th {
+        background: #FBE6DE;
+    }
+    .table td {
+        background: #fff;
+    }
+    .accept__resources {
+        display: none;
+    }
+    .accept__resources.open {
+        display: block;
+    }
+    .menu {
+        display: flex;
+        align-items: baseline;
+        gap: 12px;
+        padding: 16px 0;
+        border-bottom: 1px solid #D9D9D9;
+        cursor: pointer;
+        transition: border-color .2s ease;
+    }
+    .menu__arrow {
+        width: 18px;
+        flex-shrink: 0;
+        transition: transform 0.3s ease;
+    }
+    .menu:hover {
+        border-bottom-color: #FF5A1F;
+    }
+    .menu:hover .menu__arrow {
+        transform: rotate(45deg);
+    }
+    .menu.open {
+        border-bottom-color: #FF5A1F;
+    }
+    .menu.open .menu__arrow {
+        transform: rotate(90deg);
+    }
+    .menu__title {
+        font-size: 20px;
+        line-height: 1.45;
+    }
+    .menu__body {
+        display: none;
+    }
+    .menu__body.open {
+        display: block;
+    }
+    .point {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 18px;
+    }
+    .point:last-of-type {
+        margin-bottom: 50px;
+    }
+    .point__arrow {
+        width: 18px;
+        margin-top: 4px;
+        flex-shrink: 0;
+        align-items: center;
+    }
+    .point__title {
+        line-height: 1.7;
+    }
+    .point__text {
+        font-size: 24px;
+        font-weight: 500;
+    }
+    .info__text {
+        display: none;
+        font-size: 20;
+        margin-bottom: 50px;
+    }
+    .info__text.open {
+        display: block;
+    }
+    #sections__names, #accept__resources__names,
+    #education__courses {
+        margin-top: 15px;
+        border-radius: 10px;
+        margin-left: 15px;
+        margin-bottom: 50px;
+        background-color: #fff7f7;
+    }
+    #education .table-block {
+        width: 100%;
+        display: block;
+        border-collapse: collapse;
+        margin-top: 32px;
+        margin-bottom: 50px;
+    }
+    .table-style td,
+    .table-style th {
+        border: 1px solid #F15A24;
+        padding: 12px;
+    }
+    .info__dormitory {
+        display: none;
+    }
+    .info__dormitory.open {
+        display: block;
+    }
+    @media (min-width: 768px) {
+        .info {
+            padding: 30px 21px 30px 15px;
+        }
+        .title {
+            font-size: 56px;
+        }
+        .item__title {
+            font-size: 24px;
+        }
+        .item__text {
+            font-size: 19px;
+        }
+        .documents__left span {
+            font-size: 17px;
+        }
+        .documents__item {
+            padding: 22px 24px;
+            padding-left: 0px
+        }
+    }
+    @media (min-width: 1024px) {
+        .info {
+            padding: 50px 9.114vw;
+            max-width: 100vw
+        }
+        .title {
+            font-size: 64px;
+        }
+        .item__title {
+            font-size: 26px;
+        }
+        .item__text {
+            font-size: 20px;
+        }
+        .documents__left span {
+            font-size: 18px;
+        }
+        .documents__item {
+            padding: 24px 30px 24px 0px;
+        }
+    }
+    @media (min-width: 2000px) {
+        .info {
+            max-width: 100vw;
+            width: 90vw
+        }
+    }
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const bodies = {
+        study__classes__menu: document.getElementById("study__classes"),
+        improving__way__menu: document.getElementById("self-improving__way"),
+        practice__tasks__menu: document.getElementById("practice__tasks"),
+        institute__objects__menu: document.getElementById("institute__objects"),
+        sections__names__menu: document.getElementById("sections__names"),
+        education__menu: document.getElementById("education"),
+        OVZ__menu: document.getElementById("OVZ_students"),
+        access__information__sistem__menu: document.getElementById("access__information__sistem"),
+        OVZ__access__information__sistem__menu: document.getElementById("OVZ__access__information__sistem"),
+        education__environment__menu: document.getElementById("education__environment"),
+        resources__menu: document.getElementById("resources"),
+        accept__resources__menu: document.getElementById("accept__resources__names"),
+        education__courses__menu: document.getElementById("education__courses"),
+        special__insruments__menu: document.getElementById("special__insruments"),
+        dormitory__menu: document.getElementById("dormitory")
+    };
+    let currentMenu = null;
+    let currentBody = null;
+    document.querySelectorAll(".documents__item").forEach(menu => {
+        menu.addEventListener("click", () => {
+            const body = bodies[menu.id];
+            if (!body) return;
+            const action = menu.querySelector(".documents__action");
+            if (currentMenu === menu && body.classList.contains("open")) {
+                body.classList.remove("open");
+                menu.classList.remove("open");
+                action.textContent = "Показать";
+                currentMenu = null;
+                currentBody = null;
+                return;
+            }
+            if (currentMenu) {
+                currentMenu.classList.remove("open");
+                currentMenu.querySelector(".documents__action").textContent = "Показать";
+            }
+            if (currentBody) {
+                currentBody.classList.remove("open");
+            }
+            menu.after(body);
+            menu.classList.add("open");
+            body.classList.add("open");
+            action.textContent = "Скрыть";
+            currentMenu = menu;
+            currentBody = body;
+        });
+    });
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const bodies = {
+        A__section__menu: document.getElementById("A__section"),
+        B__section__menu: document.getElementById("B__section"),
+        C__section__menu: document.getElementById("C__section"),
+    };
+    let currentMenu = null;
+    let currentBody = null;
+    document.querySelectorAll(".menu").forEach(menu => {
+        menu.addEventListener("click", () => {
+            const body = bodies[menu.id];
+            if (!body) return;
+            if (currentMenu === menu && body.classList.contains("open")) {
+                body.classList.remove("open");
+                menu.classList.remove("open");
+                currentMenu = null;
+                currentBody = null;
+                return;
+            }
+            if (currentMenu) currentMenu.classList.remove("open");
+            if (currentBody) currentBody.classList.remove("open");
+            menu.after(body);
+            menu.classList.add("open");
+            body.classList.add("open");
+            currentMenu = menu;
+            currentBody = body;
+        });
+    });
+});
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const bodies = {
+        own__resources__menu: document.getElementById("own__resources"),
+        professional__BD__menu: document.getElementById("professional__BD"),
+        foreign__resources__menu: document.getElementById("foreign__resources"),
+        library__system__menu: document.getElementById("library__system"),
+        education__courses__menu: document.getElementById("education__courses")
+    };
+    let currentMenu = null;
+    let currentBody = null;
+    document.querySelectorAll(".menu").forEach(menu => {
+        menu.addEventListener("click", () => {
+            const body = bodies[menu.id];
+            if (!body) return;
+            if (currentMenu === menu && body.classList.contains("open")) {
+                body.classList.remove("open");
+                menu.classList.remove("open");
+                currentMenu = null;
+                currentBody = null;
+                return;
+            }
+            if (currentMenu) currentMenu.classList.remove("open");
+            if (currentBody) currentBody.classList.remove("open");
+            menu.after(body);
+            menu.classList.add("open");
+            body.classList.add("open");
+            currentMenu = menu;
+            currentBody = body;
+        });
+    });
+});
+</script>
+<div class="info">
+    <a class="link-return" href="sveden.html">
+        <img class="link-return__arrow" src="images/Arrow_left.svg" alt="arrow">
+        <p class="link-return__title">Назад</p>
+    </a>
+    <h1 class="info__title">Материально-техническое обеспечение и оснащенность образовательного процесса. Доступная среда</h1>
+    <div class="documents" style="margin-bottom: 50px">
+        <p class="documents__title">Название раздела страницы</p>
+        <a class="documents__item" id="study__classes__menu">
+            <div class="documents__left">
+                <span>Сведения об оборудованных учебных кабинетах</span>
+            </div>
+            <span class="documents__action">Показать</span>
+        </a>
+        <a class="documents__item" id="improving__way__menu">
+            <div class="documents__left">
+                <span>Сведения о помещениях для самостоятельной работы</span>
+            </div>
+            <span class="documents__action">Показать</span>
+        </a>
+        <a class="documents__item" id="practice__tasks__menu">
+            <div class="documents__left">
+                <span>Сведения об объектах для проведения практических занятий </span>
+            </div>
+            <span class="documents__action">Показать</span>
+        </a>
+        <a class="documents__item" id="institute__objects__menu">
+            <div class="documents__left">
+                <span>Сведения о библиотеке(ах) и объектах спорта</span>
+            </div>
+            <span class="documents__action">Показать</span>
+        </a>
+        <a class="documents__item" id="sections__names__menu">
+            <div class="documents__left">
+                <span>Условия доступности в здания образовательной организации инвалидов и лиц с ограниченными возможностями здоровья обеспечены в учебных корпусах А, Б и С</span>
+            </div>
+            <span class="documents__action">Показать</span>
+        </a>
+        <a class="documents__item" id="education__menu">
+            <div class="documents__left">
+                <span>Сведения о средствах обучения и воспитания</span>
+            </div>
+            <span class="documents__action">Показать</span>
+        </a>
+        <a class="documents__item" id="OVZ__menu">
+            <div class="documents__left">
+                <span>Сведения о средствах обучения и воспитания приспособленных для использования инвалидами и лицами с ограниченными возможностями здоровья</span>
+            </div>
+            <span class="documents__action">Показать</span>
+        </a>
+        <a class="documents__item" id="access__information__sistem__menu">
+            <div class="documents__left">
+                <span>Сведения о доступе к информационным системам и информационно-телекоммуникационным сетям</span>
+            </div>
+            <span class="documents__action">Показать</span>
+        </a>
+        <a class="documents__item" id="OVZ__access__information__sistem__menu">
+            <div class="documents__left">
+                <span>Сведения о доступе к информационным системам и информационно-телекоммуникационным сетям, приспособленным для использования инвалидами и лицами с ограниченными возможностями здоровья</span>
+            </div>
+            <span class="documents__action">Показать</span>
+        </a>
+        <a class="documents__item" id="education__environment__menu">
+            <div class="documents__left">
+                <span>Наличие в образовательной организации электронной информационно-образовательной среды</span>
+            </div>
+            <span class="documents__action">Показать</span>
+        </a>
+        <a class="documents__item" id="resources__menu">
+            <div class="documents__left">
+                <span>Сведения о наличии электронных образовательных и информационных ресурсов</span>
+            </div>
+            <span class="documents__action">Показать</span>
+        </a>
+        <a class="documents__item" id="accept__resources__menu">
+            <div class="documents__left">
+                <span>Сведения об электронных образовательных ресурсах, к которым обеспечивается доступ обучающихся</span>
+            </div>
+            <span class="documents__action">Показать</span>
+        </a>
+        <a class="documents__item" id="education__courses__menu">
+            <div class="documents__left">
+                <span>Информация об электронных образовательных ресурсах, к которым обеспечивается доступ инвалидов и лиц с ограниченными возможностями здоровья</span>
+            </div>
+            <span class="documents__action">Показать</span>
+        </a>
+        <a class="documents__item" id="special__insruments__menu">
+            <div class="documents__left">
+                <span>Сведения о наличии специальных технических средств обучения коллективного и индивидуального пользования для инвалидов и лиц с ограниченными возможностями здоровья</span>
+            </div>
+            <span class="documents__action">Показать</span>
+        </a>
+        <a class="documents__item" id="dormitory__menu">
+            <div class="documents__left">
+                <span>Информация о наличии общежития, интерната, количестве жилых помещений в общежитии, интернате для иногородних обучающихся</span>
+            </div>
+            <span class="documents__action">Показать</span>
+        </a>
+    </div>
+    <div class="table-block" id="study__classes">
+        <table class="table">
+        <tr itemprop="purposeCab">
+            <th itemprop="addressCab">Адрес</th>
+            <th itemprop="nameCab">Наименование оборудованных учебных кабинетов</th>
+            <th itemprop="osnCab">Оснащенность оборудованных учебных кабинетов</th>
+            <th itemprop="ovzCab">Приспособленность для использования инвалидами и лицами с
+            ограниченными
+            возможностями здоровья</th>
+        </tr>
+        <tr>
+            <td>Ауд. 310, расположенная по адресу: 424033, Республика Марий Эл, г. Йошкар-Ола,
+            улица
+            Эшкинина, д. 8а
+            </td>
+            <td>Учебный кабинет для проведения занятий лекционного типа.
+            </td>
+            <td>Специализированная мебель: столы и стулья учебные, стол и стул для преподавателя,
+            маркерная доска, технические средства обучения: проектор стационарный, АРМ преподавателя
+            (персональный
+            компьютер/ноутбук), термометр настенный.
+            </td>
+            <td align="center">Нет</td>
+        </tr>
+        <tr>
+            <td>Ауд. 109, расположенная по адресу: 424033, Республика Марий Эл, г. Йошкар-Ола,
+            ул.
+            Эшкинина,
+            д. 8б</td>
+            <td>Компьютерный класс для проведения лабораторных занятий, выполнения курсовых
+            работ,
+            групповых
+            и индивидуальных консультаций, текущего контроля и промежуточной аттестации, самостоятельной
+            работы.
+            <p>&nbsp;</p>
+            Научно-исследовательская лаборатория микропроцессорных технологий и систем управления.
+            </td>
+            <td>Специализированная мебель: учебные столы, стулья, стол и стул для преподавателя,
+            маркерная
+            доска, технические средства обучения: проектор стационарный, АРМ преподавателя (персональный
+            компьютер/
+            ноутбук), персональные компьютеры/ ноутбуки с выходом в интернет (12 шт.), установленным ПО:
+            стандартное
+            ПО, специализированное ПО.</td>
+            <td align="center">Нет</td>
+        </tr>
+        <tr>
+            <td>Ауд. 111, расположенная по адресу: 424033, Республика Марий Эл, г. Йошкар-Ола,
+            ул.
+            Эшкинина,
+            д. 8б</td>
+            <td>Компьютерный класс для проведения лабораторных занятий, выполнения курсовых
+            работ,
+            групповых
+            и индивидуальных консультаций, текущего контроля и промежуточной аттестации, самостоятельной
+            работы.
+            <p>&nbsp;</p>
+            Лаборатория компьютерных наук.
+            </td>
+            <td>Специализированная мебель: учебные столы, стулья, стол и стул для преподавателя,
+            маркерная
+            доска, технические средства обучения: проектор стационарный, АРМ преподавателя (персональный
+            компьютер/
+            ноутбук), персональные компьютеры/ ноутбуки с выходом в интернет (12 шт.), установленным ПО:
+            стандартное
+            ПО, специализированное ПО.</td>
+            <td align="center">Нет</td>
+        </tr>
+        <tr>
+            <td>Ауд. 114, расположенная по адресу: 424033, Республика Марий Эл, г. Йошкар-Ола,
+            ул.
+            Эшкинина,
+            д. 8б</td>
+            <td>Учебный кабинет для проведения занятий лекционного типа, занятий семинарского
+            типа,
+            выполнения курсовых работ, групповых и индивидуальных консультаций, текущего контроля и
+            промежуточной
+            аттестации.
+            </td>
+            <td>Специализированная мебель: учебные столы, стулья, стол и стул для преподавателя,
+            маркерная
+            доска, технические средства обучения: проектор стационарный, АРМ преподавателя (персональный
+            компьютер/ноутбук), термометр настенный.
+            </td>
+            <td align="center">Да</td>
+        </tr>
+        <tr>
+            <td>Ауд. 218 (с лаборантской), расположенная по адресу: 424033, Республика Марий Эл,
+            г.
+            Йошкар-Ола, ул. Эшкинина, д. 8б</td>
+            <td>Кабинет физики для проведения занятий семинарского типа, лабораторных занятий,
+            выполнения
+            курсовых работ, групповых и индивидуальных консультаций, текущего контроля и промежуточной
+            аттестации.
+            </td>
+            <td>Специализированная мебель: учебные столы, стулья, стол и стул для преподавателя,
+            маркерная
+            доска, технические средства обучения: проектор стационарный, АРМ преподавателя (персональный
+            компьютер/ноутбук), термометр настенный; лабораторные установки: «Измерение длины световой
+            волны с
+            помощью колец Ньютона» (1 шт.), «Формула Френеля (коэффициенты отражения и пропускания от
+            поверхности
+            диэлектрика под различными углами)» (1 шт.), «Исследование дифракции света на одной щели
+            (дифракция
+            Фраунгофера)» (1 шт.), «Исследование дифракции Френеля на круглом отверстии и круглом диске»
+            (1
+            шт.),
+            «Изучение явления поляризации света. Закон Малюса» (1 шт.), «Изучение электростатического
+            поля» (1
+            шт.),
+            «Исследование резонанса в цепи переменного тока» (1 шт.), «Изучение индуктивности
+            соленоидов» (1
+            шт.),
+            «Исследование магнитного поля в катушках Гельмгольца» (1 шт.), «Измерение скорости тела
+            методом
+            баллистического маятника», (1 шт.), «Маятник Максвелла» (1шт.), «Маятник Обербека» (1 шт.),
+            «Измерение
+            отношения Cp/Cv воздуха» (1 шт.), «Определение
+            коэффициента вязкости воздуха» (1 шт.).
+            </td>
+            <td align="center">Нет</td>
+        </tr>
+        <tr>
+            <td>Ауд. 220, расположенная по адресу: 424033, Республика Марий Эл, г. Йошкар-Ола,
+            ул.
+            Эшкинина,
+            д. 8б</td>
+            <td>Компьютерный класс для проведения лабораторных занятий, выполнения курсовых
+            работ,
+            групповых
+            и индивидуальных консультаций, текущего контроля и промежуточной аттестации, самостоятельной
+            работы.
+            </td>
+            <td>Специализированная мебель: учебные столы, стулья, стол и стул для преподавателя,
+            маркерная
+            доска, технические средства обучения: проектор стационарный, АРМ преподавателя (персональный
+            компьютер/
+            ноутбук), персональные компьютеры/ ноутбуки с выходом в интернет (12 шт.), установленным ПО:
+            стандартное
+            ПО, специализированное ПО.
+            </td>
+            <td align="center">Нет</td>
+        </tr>
+        <tr>
+            <td>Ауд. 222, расположенная по адресу: 424033, Республика Марий Эл, г. Йошкар-Ола,
+            ул.
+            Эшкинина,
+            д. 8б
+            </td>
+            <td>Компьютерный класс для проведения лабораторных занятий, выполнения курсовых
+            работ,
+            групповых
+            и индивидуальных консультаций, текущего контроля и промежуточной аттестации, самостоятельной
+            работы.
+            <p>&nbsp;</p>
+            Лаборатория маркетинговых исследований.
+            </td>
+            <td>Специализированная мебель: учебные столы, стулья, стол и стул для преподавателя,
+            маркерная
+            доска, технические средства обучения: проектор стационарный, АРМ преподавателя (персональный
+            компьютер/
+            ноутбук), персональные компьютеры/ ноутбуки с выходом в интернет (12 шт.), установленным ПО:
+            стандартное
+            ПО, специализированное ПО.</td>
+            <td align="center">Нет</td>
+        </tr>
+        <tr>
+            <td>Ауд. 224, расположенная по адресу: 424033, Республика Марий Эл, г. Йошкар-Ола,
+            ул.
+            Эшкинина,
+            д. 8б
+            </td>
+            <td>Компьютерный класс для проведения лабораторных занятий, выполнения курсовых
+            работ,
+            групповых
+            и индивидуальных консультаций, текущего контроля и промежуточной аттестации, самостоятельной
+            работы.
+            <p>&nbsp;</p>
+            Лаборатория программного обеспечения.
+            </td>
+            <td>Специализированная мебель: учебные столы, стулья, стол и стул для преподавателя,
+            маркерная
+            доска, технические средства обучения: проектор стационарный, АРМ преподавателя (персональный
+            компьютер/
+            ноутбук), персональные компьютеры/ ноутбуки с выходом в интернет (12 шт.), установленным ПО:
+            стандартное
+            ПО, специализированное ПО.
+            </td>
+            <td align="center">Нет</td>
+        </tr>
+        <tr>
+            <td>Ауд. 226, расположенная по адресу: 424033, Республика Марий Эл, г. Йошкар-Ола,
+            ул.
+            Эшкинина,
+            д. 8б
+            </td>
+            <td>Учебный кабинет иностранного языка для проведения занятий семинарского типа,
+            самостоятельной
+            работы, групповых и индивидуальных консультаций, текущего контроля и промежуточной
+            аттестации.
+            </td>
+            <td>Специализированная мебель: учебные столы, стулья, стол и стул для преподавателя,
+            маркерная
+            доска, технические средства обучения: проектор стационарный, АРМ преподавателя (персональный
+            компьютер/ноутбук), термометр настенный.
+            </td>
+            <td align="center">Нет</td>
+        </tr>
+        <tr>
+            <td>Ауд. 228, расположенная по адресу: 424033, Республика Марий Эл, г. Йошкар-Ола,
+            ул.
+            Эшкинина,
+            д. 8б
+            </td>
+            <td>Учебный кабинет для проведения занятий семинарского типа, самостоятельной работы,
+            выполнения
+            курсовых работ, групповых и индивидуальных консультаций, текущего контроля и промежуточной
+            аттестации.
+            </td>
+            <td>Специализированная мебель: учебные столы, стулья, стол и стул для преподавателя,
+            маркерная
+            доска, технические средства обучения: проектор стационарный, АРМ преподавателя (персональный
+            компьютер/ноутбук), термометр настенный.
+            </td>
+            <td align="center">Нет</td>
+        </tr>
+        <tr>
+            <td>Ауд. 318, расположенная по адресу: 424033, Республика Марий Эл, г. Йошкар-Ола,
+            ул.
+            Эшкинина,
+            д. 8б</td>
+            <td>Учебный кабинет для проведения занятий лекционного типа, занятий семинарского
+            типа,
+            выполнения курсовых работ, групповых и индивидуальных консультаций, текущего контроля и
+            промежуточной
+            аттестации.
+            </td>
+            <td>Специализированная мебель: учебные столы, стулья, стол и стул для преподавателя,
+            маркерная
+            доска, технические средства обучения: проектор стационарный, АРМ преподавателя (персональный
+            компьютер/ноутбук), термометр настенный.
+            </td>
+            <td align="center">Нет</td>
+        </tr>
+        <tr>
+            <td>Ауд. 320, расположенная по адресу: 424033, Республика Марий Эл, г. Йошкар-Ола,
+            ул.
+            Эшкинина,
+            д. 8б</td>
+            <td>Учебный кабинет для проведения занятий лекционного типа, занятий семинарского
+            типа,
+            выполнения курсовых работ, групповых и индивидуальных консультаций, текущего контроля и
+            промежуточной
+            аттестации.
+            </td>
+            <td>Специализированная мебель: учебные столы, стулья, стол и стул для преподавателя,
+            маркерная
+            доска, технические средства обучения: проектор стационарный, АРМ преподавателя (персональный
+            компьютер/ноутбук), термометр настенный.
+            </td>
+            <td align="center">Нет</td>
+        </tr>
+        <tr>
+            <td>Ауд. 322, расположенная по адресу: 424033, Республика Марий Эл, г. Йошкар-Ола,
+            ул.
+            Эшкинина,
+            д. 8б</td>
+            <td>Учебный кабинет для проведения занятий лекционного типа, занятий семинарского
+            типа,
+            выполнения курсовых работ, групповых и индивидуальных консультаций, текущего контроля и
+            промежуточной
+            аттестации.
+            </td>
+            <td>Специализированная мебель: учебные столы, стулья, стол и стул для преподавателя,
+            маркерная
+            доска, технические средства обучения: проектор стационарный, АРМ преподавателя (персональный
+            компьютер/ноутбук), термометр настенный.
+            </td>
+            <td align="center">Нет</td>
+        </tr>
+        <tr>
+            <td>Ауд. 324, расположенная по адресу: 424033, Республика Марий Эл, г. Йошкар-Ола,
+            ул.
+            Эшкинина,
+            д. 8б</td>
+            <td>Учебный кабинет для проведения занятий лекционного типа, занятий семинарского
+            типа,
+            выполнения курсовых работ, групповых и индивидуальных консультаций, текущего контроля и
+            промежуточной
+            аттестации.
+            </td>
+            <td>Специализированная мебель: учебные столы, стулья, стол и стул для преподавателя,
+            маркерная
+            доска, технические средства обучения: проектор стационарный, АРМ преподавателя (персональный
+            компьютер/ноутбук), термометр настенный.
+            </td>
+            <td align="center">Нет</td>
+        </tr>
+        <tr>
+            <td>Ауд. 416, расположенная по адресу: 424033, Республика Марий Эл, г. Йошкар-Ола,
+            ул.
+            Эшкинина,
+            д. 8б
+            </td>
+            <td>Учебный кабинет для проведения занятий семинарского типа, самостоятельной работы,
+            выполнения
+            курсовых работ, групповых и индивидуальных консультаций, текущего контроля и промежуточной
+            аттестации.
+            </td>
+            <td>Специализированная мебель: учебные столы, стулья, стол и стул для преподавателя,
+            маркерная
+            доска, технические средства обучения: проектор стационарный, АРМ преподавателя (персональный
+            компьютер/ноутбук), термометр настенный.
+            </td>
+            <td align="center">Нет</td>
+        </tr>
+        <tr>
+            <td>Ауд. 418, расположенная по адресу: 424033, Республика Марий Эл, г. Йошкар-Ола,
+            ул.
+            Эшкинина,
+            д. 8б</td>
+            <td>Учебный кабинет для проведения занятий лекционного типа, занятий семинарского
+            типа,
+            выполнения курсовых работ, групповых и индивидуальных консультаций, текущего контроля и
+            промежуточной
+            аттестации.
+            </td>
+            <td>Специализированная мебель: учебные столы, стулья, стол и стул для преподавателя,
+            маркерная
+            доска, технические средства обучения: проектор стационарный, АРМ преподавателя (персональный
+            компьютер/ноутбук), термометр настенный.
+            </td>
+            <td align="center">Нет</td>
+        </tr>
+        <tr>
+            <td>Ауд. 420, расположенная по адресу: 424033, Республика Марий Эл, г. Йошкар-Ола,
+            ул.
+            Эшкинина,
+            д. 8б</td>
+            <td>Учебный кабинет для проведения занятий лекционного типа, занятий семинарского
+            типа,
+            выполнения курсовых работ, групповых и индивидуальных консультаций, текущего контроля и
+            промежуточной
+            аттестации.
+            </td>
+            <td>Специализированная мебель: учебные столы, стулья, стол и стул для преподавателя,
+            маркерная
+            доска, технические средства обучения: проектор стационарный, АРМ преподавателя (персональный
+            компьютер/ноутбук), термометр настенный.
+            </td>
+            <td align="center">Нет</td>
+        </tr>
+        <tr>
+            <td>Ауд. 422, расположенная по адресу: 424033, Республика Марий Эл, г. Йошкар-Ола,
+            ул.
+            Эшкинина,
+            д. 8б</td>
+            <td>Учебный кабинет для проведения занятий лекционного типа, занятий семинарского
+            типа,
+            выполнения курсовых работ, групповых и индивидуальных консультаций, текущего контроля и
+            промежуточной
+            аттестации.
+            </td>
+            <td>Специализированная мебель: учебные столы, стулья, стол и стул для преподавателя,
+            маркерная
+            доска, технические средства обучения: проектор стационарный, АРМ преподавателя (персональный
+            компьютер/ноутбук), термометр настенный.
+        </td>
+            <td align="center">Нет</td>
+        </tr>
+        </table>
+    </div>
+    <div class="table-block" id="self-improving__way">
+        <table class="table">
+        <tr>
+            <th>Адрес</th>
+            <th>Наименование оборудованных учебных кабинетов</th>
+            <th>Оснащенность оборудованных учебных кабинетов</th>
+            <th>Приспособленность для использования инвалидами и лицами с ограниченными
+            возможностями здоровья</th>
+        </tr>
+        <tr>
+            <td>Ауд.108, расположенная по адресу: 424033, Республика Марий Эл, г. Йошкар-Ола, ул.
+            Эшкинина,
+            д. 8б</td>
+            <td>Учебный кабинет для самостоятельной работы обучающихся, групповых и
+            индивидуальных
+            консультаций.</td>
+            <td>Специализированная мебель: учебные столы, стулья, термометр настенный.</td>
+            <td align="center">Да</td>
+        </tr>
+        <tr>
+            <td>Ауд.217, расположенная по адресу: 424033, Республика Марий Эл, г. Йошкар-Ола, ул.
+            Эшкинина,
+            д. 8б</td>
+            <td>Учебный кабинет для самостоятельной работы обучающихся, групповых и
+            индивидуальных
+            консультаций.</td>
+            <td>Специализированная мебель: учебные столы, стулья, термометр настенный.</td>
+            <td align="center">Нет</td>
+        </tr>
+        <tr>
+            <td>Ауд. 314, расположенная по адресу: 424033, Республика Марий Эл, г. Йошкар-Ола,
+            ул.
+            Эшкинина,
+            д. 8б
+            </td>
+            <td>Библиотека, читальный зал, кабинет для самостоятельной работы с выходом в сеть
+            Интернет.
+            </td>
+            <td>Специализированная мебель: учебные столы, стулья, шкафы книжные; маркерная доска,
+            проектор
+            стационарный, термометр настенный; МФУ (печать, сканирование, копирование); персональные
+            компьютеры/
+            ноутбуки с выходом в интернет, установленным ПО: комплект ПО для всех дисциплин.
+            </td>
+            <td align="center">Нет</td>
+        </tr>
+        </table>
+    </div>
+    <div class="table-block" id="practice__tasks">
+        <table class="table">
+        <tr itemprop="purposePrac">
+            <th itemprop="addressPrac">Адрес</th>
+            <th itemprop="namePrac">Наименование объектов для проведения практических занятий
+            </th>
+            <th itemprop="osnPrac">Оснащенность объектов для проведения практических занятий</th>
+            <th itemprop="ovzPrac">Приспособленность для использования инвалидами и лицами с
+            ограниченными возможностями здоровья</th>
+        </tr>
+        <tr>
+            <td>Ауд. 109, расположенная по адресу: 424033, Республика Марий Эл, г. Йошкар-Ола,
+            ул.
+            Эшкинина,
+            д. 8б</td>
+            <td>Компьютерный класс для проведения лабораторных занятий, выполнения курсовых
+            работ,
+            групповых
+            и индивидуальных консультаций, текущего контроля и промежуточной аттестации, самостоятельной
+            работы.
+            <p>&nbsp;</p>
+            Научно-исследовательская лаборатория микропроцессорных технологий и систем управления.
+            </td>
+            <td>Специализированная мебель: учебные столы, стулья, стол и стул для преподавателя,
+            маркерная
+            доска, технические средства обучения: проектор стационарный, АРМ преподавателя (персональный
+            компьютер/
+            ноутбук), персональные компьютеры/ ноутбуки с выходом в интернет (12 шт.), установленным ПО:
+            стандартное
+            ПО, специализированное ПО.</td>
+            <td align="center">Да</td>
+        </tr>
+        <tr>
+            <td>Ауд. 111, расположенная по адресу: 424033, Республика Марий Эл, г. Йошкар-Ола,
+            ул.
+            Эшкинина,
+            д. 8б</td>
+            <td>Компьютерный класс для проведения лабораторных занятий, выполнения курсовых
+            работ,
+            групповых
+            и индивидуальных консультаций, текущего контроля и промежуточной аттестации, самостоятельной
+            работы.
+            <p>&nbsp;</p>
+            Лаборатория компьютерных наук.
+            </td>
+            <td>Специализированная мебель: учебные столы, стулья, стол и стул для преподавателя,
+            маркерная
+            доска, технические средства обучения: проектор стационарный, АРМ преподавателя (персональный
+            компьютер/
+            ноутбук), персональные компьютеры/ ноутбуки с выходом в интернет (12 шт.), установленным ПО:
+            стандартное
+            ПО, специализированное ПО.</td>
+            <td align="center">Да</td>
+        </tr>
+        <tr>
+            <td>Ауд. 218 (с лаборантской), расположенная по адресу: 424033, Республика Марий Эл,
+            г.
+            Йошкар-Ола, ул. Эшкинина, д. 8б
+            </td>
+            <td>Кабинет физики для проведения занятий семинарского типа, лабораторных занятий,
+            выполнения
+            курсовых работ, групповых и индивидуальных консультаций, текущего контроля и промежуточной
+            аттестации.
+            </td>
+            <td>"Специализированная мебель: учебные столы, стулья, стол и стул для преподавателя,
+            маркерная
+            доска, технические средства обучения: проектор стационарный, АРМ преподавателя (персональный
+            компьютер/ноутбук), термометр настенный; лабораторные установки: «Измерение длины световой
+            волны с
+            помощью колец Ньютона» (1 шт.), «Формула Френеля (коэффициенты отражения и пропускания от
+            поверхности
+            диэлектрика под различными углами)» (1 шт.), «Исследование дифракции света на одной щели
+            (дифракция
+            Фраунгофера)» (1 шт.), «Исследование дифракции Френеля на круглом отверстии и круглом диске»
+            (1
+            шт.),
+            «Изучение явления поляризации света. Закон Малюса» (1 шт.), «Изучение электростатического
+            поля» (1
+            шт.),
+            «Исследование резонанса в цепи переменного тока» (1 шт.), «Изучение индуктивности
+            соленоидов» (1
+            шт.),
+            «Исследование магнитного поля в катушках Гельмгольца» (1 шт.), «Измерение скорости тела
+            методом
+            баллистического маятника», (1 шт.), «Маятник Максвелла» (1шт.), «Маятник Обербека» (1 шт.),
+            «Измерение
+            отношения Cp/Cv воздуха» (1 шт.), «Определение
+            коэффициента вязкости воздуха» (1 шт.)."
+            </td>
+            <td align="center">Нет</td>
+        </tr>
+        <tr>
+            <td>Ауд. 220, расположенная по адресу: 424033, Республика Марий Эл, г. Йошкар-Ола,
+            ул.
+            Эшкинина,
+            д. 8б</td>
+            <td>Компьютерный класс для проведения лабораторных занятий, выполнения курсовых
+            работ,
+            групповых
+            и индивидуальных консультаций, текущего контроля и промежуточной аттестации, самостоятельной
+            работы.
+            </td>
+            <td>Специализированная мебель: учебные столы, стулья, стол и стул для преподавателя,
+            маркерная
+            доска, технические средства обучения: проектор стационарный, АРМ преподавателя (персональный
+            компьютер/
+            ноутбук), персональные компьютеры/ ноутбуки с выходом в интернет (12 шт.), установленным ПО:
+            стандартное
+            ПО, специализированное ПО.
+            </td>
+            <td align="center">Нет</td>
+        </tr>
+        <tr>
+            <td>Ауд. 222, расположенная по адресу: 424033, Республика Марий Эл, г. Йошкар-Ола,
+            ул.
+            Эшкинина,
+            д. 8б
+            </td>
+            <td>Компьютерный класс для проведения лабораторных занятий, выполнения курсовых
+            работ,
+            групповых
+            и индивидуальных консультаций, текущего контроля и промежуточной аттестации, самостоятельной
+            работы.
+            <p>&nbsp;</p>
+            Лаборатория маркетинговых исследований.
+            </td>
+            <td>Специализированная мебель: учебные столы, стулья, стол и стул для преподавателя,
+            маркерная
+            доска, технические средства обучения: проектор стационарный, АРМ преподавателя (персональный
+            компьютер/
+            ноутбук), персональные компьютеры/ ноутбуки с выходом в интернет (12 шт.), установленным ПО:
+            стандартное
+            ПО, специализированное ПО.</td>
+            <td align="center">Нет</td>
+        </tr>
+        <tr>
+            <td>Ауд. 224, расположенная по адресу: 424033, Республика Марий Эл, г. Йошкар-Ола,
+            ул.
+            Эшкинина,
+            д. 8б
+            </td>
+            <td>Компьютерный класс для проведения лабораторных занятий, выполнения курсовых
+            работ,
+            групповых
+            и индивидуальных консультаций, текущего контроля и промежуточной аттестации, самостоятельной
+            работы.
+            <p>&nbsp;</p>
+            Лаборатория программного обеспечения.
+            </td>
+            <td>Специализированная мебель: учебные столы, стулья, стол и стул для преподавателя,
+            маркерная
+            доска, технические средства обучения: проектор стационарный, АРМ преподавателя (персональный
+            компьютер/
+            ноутбук), персональные компьютеры/ ноутбуки с выходом в интернет (12 шт.), установленным ПО:
+            стандартное
+            ПО, специализированное ПО.
+            </td>
+            <td align="center">Нет</td>
+        </tr>
+        </table>
+    </div>
+    <div class="table-block" id="institute__objects">
+        <table class="table">
+        <tr>
+            <th>Вид помещения</th>
+            <th>Адрес места нахождения</th>
+            <th>Площадь, м2</th>
+            <th>Количество мест</th>
+            <th>Приспособленность для использования инвалидами и лицами с ограниченными
+            возможностями здоровья</th>
+        </tr>
+        <tr>
+            <td colspan="4">Объекты спорта:</td>
+        </tr>
+        <tr itemprop="purposeSport">
+            <td itemprop="objName">Спортивный зал</td>
+            <td itemprop="objAddress">Спортивный зал, расположенный по адресу: 424006, Республика Марий Эл, г.о. город Йошкар-Ола, 
+            г. Йошкар-Ола, ул. Вознесенская, д. 110
+            </td>
+            <td align="center" itemprop="objSq">379,9</td>
+            <td align="center" itemprop="objCnt">-</td>
+            <td align="center" itemprop="objOvz">Да</td>
+        </tr>
+        <tr>
+            <td colspan="4">Библиотека:</td>
+        </tr>
+        <tr itemprop="purposeLibr">
+            <td itemprop="objName">Библиотека, читальный зал, кабинет для самостоятельной работы
+            с
+            выходом в сеть Интернет.</td>
+            <td itemprop="objAddress">Ауд. 314, расположенная по адресу: 424033, Республика Марий
+            Эл, г.
+            Йошкар-Ола, ул. Эшкинина, д. 8б</td>
+            <td align="center" itemprop="objSq">70,08</td>
+            <td align="center" itemprop="objCnt">20</td>
+            <td align="center" itemprop="objOvz">Да</td>
+        </tr>
+        </table>
+    </div>
+    <div class="menu__body" id="sections__names">
+        <div class="menu" id="A__section__menu">
+            <img class="menu__arrow" src="images/Vector.svg" alt="arrow">
+            <span class="menu__title">Учебный корпус А</span>
+        </div>
+        <div class="menu" id="B__section__menu">
+            <img class="menu__arrow" src="images/Vector.svg" alt="arrow">
+            <span class="menu__title">Учебный корпус Б</span>
+        </div>
+        <div class="menu" id="C__section__menu">
+            <img class="menu__arrow" src="images/Vector.svg" alt="arrow">
+            <span class="menu__title">Учебный корпус C</span>
+        </div>
+    </div>
+    <div class="menu__body" id="B__section">
+        <p><strong style="color:#F15A24;">Адрес:</strong> 424033, Республика Марий Эл, г. Йошкар-Ола, ул. Эшкинина, д. 8б</p>
+        <p><strong style="color:#F15A24;">Вход в здание оборудован:</strong></p>
+        <ul>
+            <li>вертикальным подъемником;</li>
+            <li>соответствующей цветовой разметкой ступеней;</li>
+            <li>вывеской с названием и графиком работы университета, выполненной рельефно-точечным шрифтом Брайля на контрастном фоне;</li>
+            <li>кнопкой вызова помощника с широкой зоной нажатия и подтверждением вызова звуковым и световым сигналами;</li>
+            <li>предупреждающей тактильной плиткой;</li>
+            <li>входными дверями с расширенным дверным проемом и контрастным цветовым обозначением.</li>
+        </ul>
+        <p>На автостоянке возле корпуса выделено парковочное место для транспортных средств лиц с ОВЗ.</p>
+        <p><strong style="color:#F15A24;">Навигация и целевые зоны</strong></p>
+        <ul>
+            <li>В фойе здания размещен план учебного корпуса (мнемосхема), выполненный на контрастном фоне рельефно-точечным шрифтом Брайля.</li>
+            <li>Предусмотрено место для размещения собаки-поводыря.</li>
+            <li>Имеется лифт.</li>
+            <li>Оказывается услуга сопровождения инвалидов и лиц с ограниченными возможностями здоровья по территории объекта работником организации.</li>
+            <li>Зоны целевого назначения размещены на первом этаже здания.</li>
+            <li>На полу имеется разметка направления движения к местам оказания образовательных услуг для слабовидящих.</li>
+            <li>Обозначение учебных аудиторий первого этажа выполнено с использованием тактильных табличек.</li>
+        </ul>
+        <p><strong style="color:#F15A24;">Входные двери и учебные аудитории</strong></p>
+        <ul>
+            <li>На остеклении входных дверей имеются предупреждающие знаки жёлтого цвета.</li>
+            <li>Ширина дверей обеспечивает беспрепятственный проезд инвалидов на кресле-коляске, входы в аудитории выполнены без перепада высот.</li>
+            <li>В учебных аудиториях первого этажа установлена специализированная мебель для лиц с ограниченными возможностями здоровья:
+                <ul>
+                    <li>одноместные адаптированные столы и стулья с регулируемой высотой для лиц с нарушениями опорно-двигательного аппарата;</li>
+                    <li>отдельные одноместные столы и стулья для лиц с нарушениями зрения и слуха.</li>
+                </ul>
+            </li>
+            <li>Рабочее место для слабовидящих инвалидов размещено у окна.</li>
+            <li>Рабочее место для инвалидов с нарушениями опорно-двигательного аппарата размещено у входа в аудиторию с обеспечением пространства для беспрепятственного передвижения.</li>
+        </ul>
+        <p><strong style="color:#F15A24;">Санитарно-гигиеническое помещение</strong></p>
+        <ul>
+            <li>На первом этаже оборудован туалет для маломобильных групп населения.</li>
+            <li>Санузел оснащен сантехническим оборудованием для инвалидов, поручнями и кнопкой вызова помощи персонала.</li>
+            <li>Раковина и унитаз установлены в соответствии с установленными требованиями по высоте и расстоянию.</li>
+            <li>Раковина оборудована поручнями для опоры при пользовании.</li>
+            <li>Возле унитаза предусмотрено пространство для размещения кресла-коляски.</li>
+            <li>Установлены стационарный и откидной поручни.</li>
+            <li>Входная дверь имеет расширенный дверной проем и контрастное цветовое обозначение.</li>
+        </ul>
+        <p><strong style="color:#F15A24;">Безопасность</strong></p>
+        <ul>
+            <li>Здание оснащено системами противопожарной сигнализации и оповещения с дублирующими световыми устройствами и информационными табло.</li>
+            <li>В здании ведется круглосуточное видеонаблюдение.</li>
+        </ul>
+    </div>
+    <div class="menu__body" id="A__section">
+        <p><strong style="color:#F15A24;">Адрес:</strong> Российская Федерация, Республика Марий Эл, городской округ «Город Йошкар-Ола», город Йошкар-Ола, улица Эшкинина, дом 8а</p>
+        <p><strong style="color:#F15A24;">Вход в здание оборудован:</strong></p>
+        <ul>
+            <li>вертикальным подъемником (модель: ПВИ 001, высота подъема до 2 м);</li>
+            <li>соответствующей цветовой разметкой ступеней;</li>
+            <li>вывеской с названием и графиком работы университета, выполненной рельефно-точечным шрифтом Брайля на контрастном фоне;</li>
+            <li>кнопкой вызова помощника с широкой зоной нажатия и подтверждением вызова звуковым и световым сигналами;</li>
+            <li>предупреждающей тактильной плиткой;</li>
+            <li>входными дверями, имеющими расширенный дверной проем, выполненными контурным контрастным цветовым обозначением;</li>
+            <li>наружными дверями, сделанными из прозрачного и ударопрочного материала.</li>
+        </ul>
+        <p>На автостоянке возле корпуса выделено парковочное место для транспортных средств лиц с ОВЗ.</p>
+        <p><strong style="color:#F15A24;">Навигация и целевые зоны</strong></p>
+        <ul>
+            <li>Зоны целевого назначения размещены на первом этаже здания, на полу имеется разметка направления движения к местам оказания услуг (образовательного процесса) для слабовидящих.</li>
+            <li>В фойе здания размещен план учебного корпуса (мнемосхема), выполненный на контрастном фоне рельефно-точечным шрифтом Брайля, оборудовано место для размещения собаки-поводыря.</li>
+            <li>Обозначение учебных аудиторий первого этажа выполнено с использованием тактильных табличек.</li>
+        </ul>
+        <p><strong style="color:#F15A24;">Входные двери и дверные проемы</strong></p>
+        <ul>
+            <li>На остеклении входных дверей имеются предупреждающие знаки жёлтого цвета.</li>
+            <li>Ширина дверей обеспечивает беспрепятственный проезд инвалида на коляске, входы в аудитории без перепада высот.</li>
+        </ul>
+        <p><strong style="color:#F15A24;">Санитарно-гигиеническое помещение</strong></p>
+        <ul>
+            <li>На 1 этаже здания оборудован туалет для маломобильных групп населения, санузел оснащен сантехническим оборудованием для инвалидов, поручнями, кнопкой вызова помощи персонала, раковина и унитаз установлены на высоте и расстоянии, соответствующих установленным требованиям.</li>
+            <li>Раковина умывальника оборудована поручнями для опоры инвалидов при пользовании умывальником.</li>
+            <li>Возле унитаза предусмотрено пространство для размещения кресла-коляски, оборудованы поручни (стационарный и откидывающийся).</li>
+        </ul>
+    </div>
+    <div class="menu__body" id="C__section">
+        <p><strong style="color:#F15A24;">Адрес:</strong> 424006, Республика Марий Эл, г.о. город Йошкар-Ола, г. Йошкар-Ола, ул. Вознесенская, д. 110</p>
+        <p><strong style="color:#F15A24;">Вход в здание оборудован:</strong></p>
+        <ul>
+            <li>пандусами.</li>
+            <li>На автостоянке возле корпуса выделено парковочное место для транспортных средств лиц с ОВЗ.</li>
+            <li>Имеется лифт для подъема на 2 этаж.</li>
+            <li>Оказывается услуга сопровождения инвалидов и лиц с ограниченными возможностями здоровья по территории объекта работником организации.</li>
+            <li>У входа в здание размещена вывеска с названием и графиком работы, выполненная рельефно-точечным шрифтом Брайля на контрастном фоне.</li>
+            <li>Наружные двери здания выполнены из прозрачного и ударопрочного материала.</li>
+            <li>Установлена кнопка вызова помощника с широкой зоной нажатия и подтверждением вызова звуковым и световым сигналами.</li>
+            <li>Входные двери в здание имеют расширенный дверной проем, выполнены контурным контрастным цветовым обозначением.</li>
+        </ul>
+        <p><strong style="color:#F15A24;">Навигация и целевые зоны</strong></p>
+        <ul>
+            <li>В фойе здания размещен план корпуса (мнемосхема), выполненный на контрастном фоне рельефно-точечным шрифтом Брайля, оборудовано место для размещения собаки-поводыря.</li>
+            <li>Обозначение целевых помещений выполнено с использованием тактильных табличек.</li>
+            <li>На полу имеется разметка направления движения к местам оказания услуг (образовательного процесса) для слабовидящих.</li>
+        </ul>
+        <p><strong style="color:#F15A24;">Входные двери и помещения</strong></p>
+        <ul>
+            <li>На остеклении входных дверей имеются предупреждающие знаки жёлтого цвета.</li>
+            <li>Ширина дверей обеспечивает беспрепятственный проезд инвалида на коляске.</li>
+            <li>Вход в спортзал оборудован пандусами.</li>
+        </ul>
+        <p><strong style="color:#F15A24;">Санитарно-гигиеническое помещение</strong></p>
+        <ul>
+            <li>На 2 этаже здания оборудован туалет для маломобильных групп населения, санузел оснащен сантехническим оборудованием для инвалидов, поручнями, кнопкой вызова помощи персонала, раковина и унитаз установлены на высоте и расстоянии, соответствующих установленным требованиям.</li>
+            <li>Раковина умывальника оборудована поручнями для опоры инвалидов при пользовании умывальником, возле унитаза предусмотрено пространство для размещения кресла-коляски, оборудованы поручни (стационарный и откидывающийся).</li>
+            <li>Входная дверь в санитарно-гигиеническое помещение имеет расширенный дверной проем, выполнена контрастным цветовым обозначением.</li>
+        </ul>
+        <p><strong style="color:#F15A24;">Санитарно-гигиеническое помещение</strong></p>
+        <ul>
+            <li>На 2 этаже здания оборудован туалет для маломобильных групп населения, санузел оснащен сантехническим оборудованием для инвалидов, поручнями, кнопкой вызова помощи персонала, раковина и унитаз установлены на высоте и расстоянии, соответствующих установленным требованиям.</li>
+            <li>Раковина умывальника оборудована поручнями для опоры инвалидов при пользовании умывальником, возле унитаза предусмотрено пространство для размещения кресла-коляски, оборудованы поручни (стационарный и откидывающийся).</li>
+            <li>Входная дверь в санитарно-гигиеническое помещение имеет расширенный дверной проем, выполнена контрастным цветовым обозначением.</li>
+        </ul>
+    </div>
+    <div class="menu__body" id="education">
+        <p class="point__text">В средства обучения и воспитания включаются:</p>
+        <div class="point">
+            <img class="point__arrow" src="images/arrow_right.svg" alt="arrow">
+            <span class="point__title">Оборудование, необходимое в образовательном процессе - приборы, лабораторные комплексы, спортивное оборудование и инвентарь, другое техническое и материальное оснащение учебных корпусов АНО ВО "РУМТ", спортзалов и помещений, используемых в воспитательном процессе, а также научно-исследовательские лаборатории и центры;</span>
+        </div>
+        <div class="point">
+            <img class="point__arrow" src="images/arrow_right.svg" alt="arrow">
+            <span class="point__title">Учебно-наглядные пособия - наглядно-дидактические материалы, учебные и учебно-методические пособия, наборы демонстрационного оборудования, обеспечивающие тематические иллюстрации, соответствующие рабочим программам дисциплин (модулей);</span>
+        </div>
+        <div class="point">
+            <img class="point__arrow" src="images/arrow_right.svg" alt="arrow">
+            <span class="point__title">Компьютеры, информационно-телекоммуникационные сети, аппаратно-программные и аудиовизуальные средства - интерактивные доски, персональные компьютеры, видео-проекторы и др.;</span>
+        </div>
+        <div class="point">
+            <img class="point__arrow" src="images/arrow_right.svg" alt="arrow">
+            <span class="point__title">Печатные и электронные ресурсы - библиотечные фонды и базы данных, по содержанию соответствующие полному перечню дисциплин образовательной программы, наличием методические пособия и рекомендации по всем дисциплинам и по всем видам занятий, а также наглядные пособия, аудио-, видео- и мультимедийные материалы, предусмотренные рабочими программами дисциплин (модулей).</span>
+        </div>
+        <p class="point__text">Русский университет метатехнологий обеспечен необходимым комплектом лицензионного
+        программного обеспечения, в который входят:</p>
+        <table class="table-block table-style">
+            <tr>
+            <td>Операционная система</td>
+            <td>Windows 10, Windows Server 2019, Linux Ubuntu 20.04.5 LTS</td>
+            </tr>
+            <tr>
+            <td>Браузер</td>
+            <td>Google Chrome, Mozzila Firefox</td>
+            </tr>
+            <tr>
+            <td>Файловый менеджер</td>
+            <td>Стандартный проводник Windows, FAR Manager</td>
+            </tr>
+            <tr>
+            <td>Офисные приложения</td>
+            <td>Текстовый редактор Word, Табличный редактор Excel, Редактор презентаций PowerPoint,
+                Keynote,
+                Notepad++</td>
+            </tr>
+            <tr>
+            <td>Просмотрщик PDF документов</td>
+            <td>Adobe Acrobat Reader</td>
+            </tr>
+            <tr>
+            <td>Система управления базами данных</td>
+            <td>MySQL (MySql), MongoDB</td>
+            </tr>
+            <tr>
+            <td>Система контроля версий</td>
+            <td>Git</td>
+            </tr>
+            <tr>
+            <td>Средство антивирусной защиты</td>
+            <td>Kaspesky Endpoint Security для Windows</td>
+            </tr>
+            <tr>
+            <td>Редактор кода</td>
+            <td>Visual Studio Code (VS Code), Android Studio, Xcode</td>
+            </tr>
+            <tr>
+            <td>Среда разработки</td>
+            <td>PascalABC.NET, Free Pascal, PyCharm Comminty Edition, Microsoft Visual Studio
+                Community
+                Edition, C/C++ for Visual Studio Code, SWI Prolog, среда разработки для Lisp (Portacle), среда
+                разработки для Prolog (SWI-Prolog), Clion, Python, Python Environment Manager, C#, Net
+                Framework,
+                TASM, Go, Gnu Pascal, TypeScript, Kotlin, Android SDK, PHP, LEGO Education WeDo 2.0, MINDSTORMS
+                EV3</td>
+            </tr>
+            <tr>
+            <td>Программная платформа</td>
+            <td>Docker, Node.js</td>
+            </tr>
+            <tr>
+            <td>Эмулятор</td>
+            <td>DOSBox</td>
+            </tr>
+            <tr>
+            <td>Веб-сервер</td>
+            <td>Nginx</td>
+            </tr>
+            <tr>
+            <td>Сервис для разработки интерфейсов и прототипирования</td>
+            <td>Figma</td>
+            </tr>
+            <tr>
+            <td>Графический редактор</td>
+            <td>Paint.Net, CorelDRAW, Microsoft Visio, Tux Paint</td>
+            </tr>
+            <tr>
+            <td>IDE для редактирования шейдеров</td>
+            <td>SHADERed</td>
+            </tr>
+            <tr>
+            <td>Пакетный менеджер</td>
+            <td>npm, CocoaPods</td>
+            </tr>
+            <tr>
+            <td>Инструмент для автоматизации действий веб-браузера</td>
+            <td>Selenium, selenium-webdriver</td>
+            </tr>
+            <tr>
+            <td>Облачная среда для редактирования и исполнения языка Python</td>
+            <td>Colaboratory</td>
+            </tr>
+            <tr>
+            <td>Инструмент для визуального проектирования</td>
+            <td>draw.io</td>
+            </tr>
+            <tr>
+            <td>Быстрое хранилище данных</td>
+            <td>Redis</td>
+            </tr>
+            <tr>
+            <td>Брокер сообщений</td>
+            <td>Nats</td>
+            </tr>
+            <tr>
+            <td>Платформа для удаленного вызова процедур</td>
+            <td>gRPC</td>
+            </tr>
+            <tr>
+            <td>Программная библиотека</td>
+            <td>jQuery, React, Redux</td>
+            </tr>
+            <tr>
+            <td>Комплексное программное обеспечение бизнес-анализа</td>
+            <td>Power BI</td>
+            </tr>
+            <tr>
+            <td>Программа автоматизированного перевода</td>
+            <td>Across Language Server, Multilizer,POEditor, ABBYY SmartCAT, Matecat</td>
+            </tr>
+            <tr>
+            <td>Сравнение файлов</td>
+            <td>ApSIC Comparator</td>
+            </tr>
+            <tr>
+            <td>Виртуальная доска</td>
+            <td>Miro</td>
+            </tr>
+            <tr>
+            <td>Конструктор сайтов</td>
+            <td>Tilda</td>
+            </tr>
+            <tr>
+            <td>Конструктор для командной работы над курсами</td>
+            <td>iSpring Suite Max</td>
+            </tr>
+            <tr>
+            <td>Сетевой сканер</td>
+            <td>Angry IP Scanner</td>
+            </tr>
+            <tr>
+            <td>Игровой движок</td>
+            <td>Construct 3</td>
+            </tr>
+            <tr>
+            <td>Аудиоредактор</td>
+            <td>Audacity</td>
+            </tr>
+            <tr>
+            <td>Видеоредактор</td>
+            <td>Windows Movie Maker</td>
+            </tr>
+            <tr>
+            <td>Система трехмерного моделирования</td>
+            <td>Blender, КОМПАС-3D LT</td>
+            </tr>
+            <tr>
+            <td>Программа двумерной анимации</td>
+            <td>Synfig</td>
+            </tr>
+            <tr>
+            <td>Веб-среда разработки для устройств</td>
+            <td>Arduino</td>
+            </tr>
+        </table>
+    </div>
+    <p class="info__text" id="OVZ_students"><img class="point__arrow" src="images/arrow_right.svg" alt="arrow" style="margin-right: 8px;">Обучающиеся с ограниченными возможностями здоровья отсутствуют</p>
+    <p class="info__text" id="access__information__sistem"><img class="point__arrow" src="images/arrow_right.svg" alt="arrow" style="margin-right: 8px;">Для самостоятельной работы обучающихся специальные помещения оснащены компьютерной техникой с возможностью подключения к сети "Интернет" и обеспечением доступа в электронную информационно-образовательную среду Института. Доступ к сети "Интернет" осуществляется в соответствии с договором от 28.10.2016 с АО «ЭР-Телеком Холдинг» и с договором от 01.04.2019 с ПАО "Ростелеком".</p>
+    <p class="info__text" id="OVZ__access__information__sistem"><img class="point__arrow" src="images/arrow_right.svg" alt="arrow" style="margin-right: 8px;">Для обучающихся специальные помещения оснащены компьютерной техникой с возможностью подключения к сети "Интернет" и обеспечением доступа в электронную информационно-образовательную среду Института.</p>
+    <p class="info__text" id="education__environment"><img class="point__arrow" src="images/arrow_right.svg" alt="arrow" style="margin-right: 8px;">Каждый обучающийся Института в течение всего периода обучения обеспечен индивидуальным неограниченным доступом к нескольким электронно-библиотечным системам (электронным библиотекам) и к электронной информационно-образовательной среде организации. Электронно-библиотечная система (электронная библиотека) и электронная информационно-образовательная среда обеспечивают возможность доступа обучающегося из любой точки, в которой имеется доступ к информационно-телекоммуникационной сети Интернет, как на территории Института, так и вне ее.</p>
+    <div class="table-block" id="resources">
+        <table class="table">
+            <tr>
+            <th>Наименование</th>
+            <th>Количество</th>
+            </tr>
+            <tr itemprop="eoisOwn">
+            <td>Количество собственных электронных образовательных и информационных ресурсов</td>
+            <td align="center">2</td>
+            </tr>
+            <tr itemprop="eoisSide">
+            <td>Количество сторонних электронных образовательных и информационных
+            ресурсов</td>
+            <td align="center">14</td>
+            </tr>
+            <tr itemprop="bdec">
+            <td>Количество баз данных электронного каталога</td>
+            <td align="center">13</td>
+            </tr>
+        </table>
+    </div>
+    <div class="accept__resources" id="accept__resources__names">
+        <div class="menu" id="own__resources__menu">
+            <img class="menu__arrow" src="images/Vector.svg" alt="arrow">
+            <span class="menu__title">Собственных электронные образовательные и информационные ресурсы(для внутренних пользователей):</span>
+        </div>
+        <div class="menu" id="foreign__resources__menu">
+            <img class="menu__arrow" src="images/Vector.svg" alt="arrow">
+            <span class="menu__title">Сторонние электронные образовательные и информационные ресурсы:</span>
+        </div>
+        <div class="menu" id="library__system__menu">
+            <img class="menu__arrow" src="images/Vector.svg" alt="arrow">
+            <span class="menu__title">Электронные библиотечные системы и ресурсы, к которым обеспечивается доступ обучающихся:</span>
+        </div>
+        <div class="menu" id="professional__BD__menu">
+            <img class="menu__arrow" src="images/Vector.svg" alt="arrow">
+            <span class="menu__title">Профессиональные базы данных, к которым обеспечивается доступ обучающихся:</span>
+        </div>
+    </div>
+    <div class="menu__body" id="own__resources">
+        <div class="documents">
+            <p class="documents__title">Ссылки</p>
+            <a class="documents__item" href="https://institute.ispringlearn.ru/" target="_blank">
+                <div class="documents__left">
+                    <span>Система дистанционного обучения iSpring Learn</span>
+                </div>
+                <span class="documents__action">Перейти</span>
+            </a>
+            <a class="documents__item" href="http://my.ispring.institute/" target="_blank">
+                <div class="documents__left">
+                    <span>Интегрированная система управления ВУЗом «ИСУ ВУЗ»</span>
+                </div>
+                <span class="documents__action">Перейти</span>
+            </a>
+        </div>
+    </div>
+    <div class="menu__body" id="library__system">
+        <div class="documents">
+            <p class="documents__title">Ссылки</p>
+            <a class="documents__item" href="https://e.lanbook.com/" target="_blank">
+                <div class="documents__left">
+                    <span>Электронно-библиотечная система «Лань»</span>
+                </div>
+                <span class="documents__action">Перейти</span>
+            </a>
+            <a class="documents__item" href="https://urait.ru/" target="_blank">
+                <div class="documents__left">
+                    <span>Образовательная платформа «Юрайт»</span>
+                </div>
+                <span class="documents__action">Перейти</span>
+            </a>
+            <a class="documents__item" href="https://elibrary.ru/" target="_blank">
+                <div class="documents__left">
+                    <span>Научная электронная библиотека eLIBRARY.RU</span>
+                </div>
+                <span class="documents__action">Перейти</span>
+            </a>
+            <a class="documents__item" href="https://cyberleninka.ru/" target="_blank">
+                <div class="documents__left">
+                    <span>Научная электронная библиотека «КиберЛенинка»</span>
+                </div>
+                <span class="documents__action">Перейти</span>
+            </a>
+            <a class="documents__item" href="https://www.rfbr.ru/rffi/ru/library" target="_blank">
+                <div class="documents__left">
+                    <span>Библиотека РФФИ (Российского фонда фундаментальных исследований)</span>
+                </div>
+                <span class="documents__action">Перейти</span>
+            </a>
+            <a class="documents__item" href="https://www.metalogika.com/" target="_blank">
+                <div class="documents__left">
+                    <span>Метаклассическая логика | Металогика</span>
+                </div>
+                <span class="documents__action">Перейти</span>
+            </a>
+            <a class="documents__item" href="https://tl-ic.kursksu.ru/pages/index" target="_blank">
+                <div class="documents__left">
+                    <span>Электронный научный журнал «Теория языка и межкультурная коммуникация»</span>
+                </div>
+                <span class="documents__action">Перейти</span>
+            </a>
+            <a class="documents__item" href="https://learn.microsoft.com/ru-ru/power-bi/fundamentals/desktop-getting-started" target="_blank">
+                <div class="documents__left">
+                    <span>Начало работы с Power BI Desktop</span>
+                </div>
+                <span class="documents__action">Перейти</span>
+            </a>
+        </div>
+    </div>
+    <div class="menu__body" id="professional__BD">
+        <div class="documents">
+            <p class="documents__title">Ссылки</p>
+            <a class="documents__item" href="https://habr.com" target="_blank">
+                <div class="documents__left">
+                    <span>База данных для IT-специалистов (Habr)</span>
+                </div>
+                <span class="documents__action">Перейти</span>
+            </a>
+            <a class="documents__item" href="http://www.philosophy.ru/library/" target="_blank">
+                <div class="documents__left">
+                    <span>Сайт Института Философии РАН</span>
+                </div>
+                <span class="documents__action">Перейти</span>
+            </a>
+            <a class="documents__item" href="http://nlr.ru/elibrary" target="_blank">
+                <div class="documents__left">
+                    <span>Каталог оцифрованных изданий Российской Национальной библиотеки</span>
+                </div>
+                <span class="documents__action">Перейти</span>
+            </a>
+            <a class="documents__item" href="https://runivers.ru/" target="_blank">
+                <div class="documents__left">
+                    <span>Электронная энциклопедия и библиотека «Руниверс»</span>
+                </div>
+                <span class="documents__action">Перейти</span>
+            </a>
+            <a class="documents__item" href="https://libsport.ru/" target="_blank">
+                <div class="documents__left">
+                    <span>Российская спортивная энциклопедия</span>
+                </div>
+                <span class="documents__action">Перейти</span>
+            </a>
+            <a class="documents__item" href="https://docs.cntd.ru/" target="_blank">
+                <div class="documents__left">
+                    <span>Электронный фонд правовой и нормативно-технической информации</span>
+                </div>
+                <span class="documents__action">Перейти</span>
+            </a>
+            <a class="documents__item" href="http://scipy.org/" target="_blank">
+                <div class="documents__left">
+                    <span>Библиотека для научных вычислений для языка программирования Python (SciPy)</span>
+                </div>
+                <span class="documents__action">Перейти</span>
+            </a>
+            <a class="documents__item" href="http://www.gramota.ru/" target="_blank">
+                <div class="documents__left">
+                    <span>Справочно-информационный портал «Грамота.ру»</span>
+                </div>
+                <span class="documents__action">Перейти</span>
+            </a>
+            <a class="documents__item" href="https://dictionary.cambridge.org/" target="_blank">
+                <div class="documents__left">
+                    <span>Cambridge Dictionary</span>
+                </div>
+                <span class="documents__action">Перейти</span>
+            </a>
+            <a class="documents__item" href="http://www.marketing.spb.ru/" target="_blank">
+                <div class="documents__left">
+                    <span>Энциклопедия маркетинга</span>
+                </div>
+                <span class="documents__action">Перейти</span>
+            </a>
+            <a class="documents__item" href="https://www.rsl.ru/" target="_blank">
+                <div class="documents__left">
+                    <span>Российская государственная библиотека</span>
+                </div>
+                <span class="documents__action">Перейти</span>
+            </a>
+            <a class="documents__item" href="https://www.garant.ru/" target="_blank">
+                <div class="documents__left">
+                    <span>Информационно-правовой портал «Гарант»</span>
+                </div>
+                <span class="documents__action">Перейти</span>
+            </a>
+            <a class="documents__item" href="http://pravo.gov.ru/" target="_blank">
+                <div class="documents__left">
+                    <span>Официальный интернет-портал правовой информации</span>
+                </div>
+                <span class="documents__action">Перейти</span>
+            </a>
+        </div>
+    </div>
+    <div class="menu__body" id="foreign__resources">
+        <div class="documents">
+            <p class="documents__title">Ссылки</p>
+            <a class="documents__item" href="https://minobrnauki.gov.ru/" target="_blank">
+                <div class="documents__left">
+                    <span>Министерство науки и высшего образования Российской Федерации</span>
+                </div>
+                <span class="documents__action">Перейти</span>
+            </a>
+            <a class="documents__item" href="https://edu.gov.ru/" target="_blank">
+                <div class="documents__left">
+                    <span>Министерство просвещения Российской Федерации</span>
+                </div>
+                <span class="documents__action">Перейти</span>
+            </a>
+            <a class="documents__item" href="https://obrnadzor.gov.ru/" target="_blank">
+                <div class="documents__left">
+                    <span>Федеральная служба по надзору в сфере образования и науки</span>
+                </div>
+                <span class="documents__action">Перейти</span>
+            </a>
+            <a class="documents__item" href="http://www.edu.ru/" target="_blank">
+                <div class="documents__left">
+                    <span>Федеральный портал «Российское образование»</span>
+                </div>
+                <span class="documents__action">Перейти</span>
+            </a>
+            <a class="documents__item" href="http://window.edu.ru/" target="_blank">
+                <div class="documents__left">
+                    <span>Информационная система «Единое окно доступа к образовательным ресурсам»</span>
+                </div>
+                <span class="documents__action">Перейти</span>
+            </a>
+            <a class="documents__item" href="http://fcior.edu.ru/" target="_blank">
+                <div class="documents__left">
+                    <span>Федеральный центр информационно-образовательных ресурсов</span>
+                </div>
+                <span class="documents__action">Перейти</span>
+            </a>
+        </div>
+    </div>
+    <div class="menu__body" id="education__courses">
+        <div class="documents">
+            <p class="documents__title">Ссылки</p>
+            <a class="documents__item" href="https://minobrnauki.gov.ru/" target="_blank">
+                <div class="documents__left">
+                    <span>Министерство науки и высшего образования Российской Федерации</span>
+                </div>
+                <span class="documents__action">Перейти</span>
+            </a>
+            <a class="documents__item" href="https://edu.gov.ru/" target="_blank">
+                <div class="documents__left">
+                    <span>Министерство просвещения Российской Федерации</span>
+                </div>
+                <span class="documents__action">Перейти</span>
+            </a>
+            <a class="documents__item" href="https://obrnadzor.gov.ru/" target="_blank">
+                <div class="documents__left">
+                    <span>Федеральная служба по надзору в сфере образования и науки</span>
+                </div>
+                <span class="documents__action">Перейти</span>
+            </a>
+            <a class="documents__item" href="http://www.edu.ru/" target="_blank">
+                <div class="documents__left">
+                    <span>Федеральный портал «Российское образование»</span>
+                </div>
+                <span class="documents__action">Перейти</span>
+            </a>
+            <a class="documents__item" href="http://window.edu.ru/" target="_blank">
+                <div class="documents__left">
+                    <span>Информационная система «Единое окно доступа к образовательным ресурсам»</span>
+                </div>
+                <span class="documents__action">Перейти</span>
+            </a>
+            <a class="documents__item" href="http://fcior.edu.ru/" target="_blank">
+                <div class="documents__left">
+                    <span>Федеральный центр информационно-образовательных ресурсов</span>
+                </div>
+                <span class="documents__action">Перейти</span>
+            </a>
+            <a class="documents__item" href="https://e.lanbook.com/" target="_blank">
+                <div class="documents__left">
+                    <span>Электронно-библиотечная система «Лань»</span>
+                </div>
+                <span class="documents__action">Перейти</span>
+            </a>
+            <a class="documents__item" href="https://urait.ru/" target="_blank">
+                <div class="documents__left">
+                    <span>Образовательная платформа «Юрайт»</span>
+                </div>
+                <span class="documents__action">Перейти</span>
+            </a>
+            <a class="documents__item" href="https://elibrary.ru/" target="_blank">
+                <div class="documents__left">
+                    <span>Научная электронная библиотека eLIBRARY.RU</span>
+                </div>
+                <span class="documents__action">Перейти</span>
+            </a>
+            <a class="documents__item" href="https://cyberleninka.ru/" target="_blank">
+                <div class="documents__left">
+                    <span>Научная электронная библиотека «КиберЛенинка»</span>
+                </div>
+                <span class="documents__action">Перейти</span>
+            </a>
+            <a class="documents__item" href="https://www.rfbr.ru/rffi/ru/library/" target="_blank">
+                <div class="documents__left">
+                    <span>Библиотека РФФИ (Российского фонда фундаментальных исследований)</span>
+                </div>
+                <span class="documents__action">Перейти</span>
+            </a>
+            <a class="documents__item" href="https://www.metalogika.com/" target="_blank">
+                <div class="documents__left">
+                    <span>Метаклассическая логика | Металогика</span>
+                </div>
+                <span class="documents__action">Перейти</span>
+            </a>
+            <a class="documents__item" href="https://tl-ic.kursksu.ru/pages/index/" target="_blank">
+                <div class="documents__left">
+                    <span>Электронный научный журнал «Теория языка и межкультурная коммуникация»</span>
+                </div>
+                <span class="documents__action">Перейти</span>
+            </a>
+            <a class="documents__item" href="https://habr.com/" target="_blank">
+                <div class="documents__left">
+                    <span>База данных для IT-специалистов</span>
+                </div>
+                <span class="documents__action">Перейти</span>
+            </a>
+            <a class="documents__item" href="http://www.philosophy.ru/library/" target="_blank">
+                <div class="documents__left">
+                    <span>Сайт Института Философии РАН</span>
+                </div>
+                <span class="documents__action">Перейти</span>
+            </a>
+            <a class="documents__item" href="http://nlr.ru/elibrary/" target="_blank">
+                <div class="documents__left">
+                    <span>Каталог оцифрованных изданий Российской Национальной библиотеки</span>
+                </div>
+                <span class="documents__action">Перейти</span>
+            </a>
+            <a class="documents__item" href="https://ruivers.ru/" target="_blank">
+                <div class="documents__left">
+                    <span>Электронная энциклопедия и библиотека Руниверс</span>
+                </div>
+                <span class="documents__action">Перейти</span>
+            </a>
+            <a class="documents__item" href="https://libsport.ru/" target="_blank">
+                <div class="documents__left">
+                    <span>Российская спортивная энциклопедия</span>
+                </div>
+                <span class="documents__action">Перейти</span>
+            </a>
+            <a class="documents__item" href="https://docs.cntd.ru/" target="_blank">
+                <div class="documents__left">
+                    <span>Электронный фонд правовой и нормативно-технической информации</span>
+                </div>
+                <span class="documents__action">Перейти</span>
+            </a>
+            <a class="documents__item" href="http://scipy.org/" target="_blank">
+                <div class="documents__left">
+                    <span>Библиотека для научных вычислений для языка программирования Python</span>
+                </div>
+                <span class="documents__action">Перейти</span>
+            </a>
+            <a class="documents__item" href="http://www.gramota.ru/" target="_blank">
+                <div class="documents__left">
+                    <span>Справочно-информационный портал Грамота.ру</span>
+                </div>
+                <span class="documents__action">Перейти</span>
+            </a>
+            <a class="documents__item" href="https://dictionary.cambridge.org/" target="_blank">
+                <div class="documents__left">
+                    <span>Cambridge Dictionary</span>
+                </div>
+                <span class="documents__action">Перейти</span>
+            </a>
+            <a class="documents__item" href="http://www.marketing.spb.ru/" target="_blank">
+                <div class="documents__left">
+                    <span>Энциклопедия маркетинга</span>
+                </div>
+                <span class="documents__action">Перейти</span>
+            </a>
+            <a class="documents__item" href="https://www.rsl.ru/" target="_blank">
+                <div class="documents__left">
+                    <span>Российская государственная библиотека</span>
+                </div>
+                <span class="documents__action">Перейти</span>
+            </a>
+            <a class="documents__item" href="https://www.garant.ru/" target="_blank">
+                <div class="documents__left">
+                    <span>Информационно-правовой портал «Гарант»</span>
+                </div>
+                <span class="documents__action">Перейти</span>
+            </a>
+            <a class="documents__item" href="http://pravo.gov.ru/" target="_blank">
+                <div class="documents__left">
+                    <span>Официальный интернет-портал правовой информации</span>
+                </div>
+                <span class="documents__action">Перейти</span>
+            </a>
+        </div>
+    </div>
+    <p class="info__text" id="special__insruments"><img class="point__arrow" src="images/arrow_right.svg" alt="arrow" style="margin-right: 8px;">Обучающиеся с ограниченными возможностями здоровья отсутствуют.</p>
+    <div class="info__dormitory" id="dormitory">
+        <div class="table-block2">
+            <table class="table">
+                <tr>
+                <th>Наименование показателя</th>
+                <th>Общежития</th>
+                <th>Интернаты</th>
+                </tr>
+                <tr align="center">
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                </tr>
+                <tr>
+                <td>Количество</td>
+                <td align="center" itemprop="hostelInfo">Нет</td>
+                <td align="center" itemprop="interInfo">Нет</td>
+                </tr>
+                <tr>
+                <td>Количество мест</td>
+                <td align="center" itemprop="hostelNum">Нет</td>
+                <td align="center" itemprop="interNum">Нет</td>
+                </tr>
+                <tr>
+                <td>Количество жилых помещений,
+                    приспособленных для использования инвалидами и
+                    лицами с ограниченными возможностями здоровья</td>
+                <td align="center" itemprop="hostelNumOvz">Нет</td>
+                <td align="center" itemprop="interNumOvz">Нет</td>
+                </tr>
+                <tr>
+                <td itemprop="hostelInterOvz">Условия для беспрепятственного
+                    доступа</td>
+                <td align="center">Отсутствуют</td>
+                <td align="center">Отсутствуют</td>
+                </tr>
+            </table>
+        </div>
+        <p itemprop="localActObSt">Ссылка на информацию о формировании платы за проживание в общежитии (отсутствует, общежитий нет).</p>
+    </div>
+</div>
