@@ -1,0 +1,300 @@
+<style>
+    @font-face {
+        font-family: "Inter Tight";
+        src: url("fonts/Inter_Tight/static/InterTight-Regular.ttf") format("truetype");
+        font-weight: 400;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Inter Tight";
+        src: url("fonts/Inter_Tight/static/InterTight-Medium.ttf") format("truetype");
+        font-weight: 500;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Inter Tight";
+        src: url("fonts/Inter_Tight/static/InterTight-SemiBold.ttf") format("truetype");
+        font-weight: 600;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Inter Tight";
+        src: url("fonts/Inter_Tight/static/InterTight-Bold.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter/static/Inter_18pt-Regular.ttf") format("truetype");
+        font-weight: 400;
+    }
+    @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter/static/Inter_18pt-Medium.ttf") format("truetype");
+        font-weight: 500;
+    }
+    @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter/static/Inter_18pt-SemiBold.ttf") format("truetype");
+        font-weight: 600;
+    }
+    @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter/static/Inter_18pt-Bold.ttf") format("truetype");
+        font-weight: 700;
+    }
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: "Inter", sans-serif;
+        color: #222;
+        background: #fff;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    .info {
+        max-width: 960px;
+        padding: 28px 21px 30px 15px;
+    }
+    .link-return {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 40px;
+            color: black;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+    }
+    .info__description {
+        font-size: 22;
+    }
+    .link-return__arrow {
+        width: 40px;
+        height: 40px;
+    }
+    .info__title {
+        margin: 0 0 50px;
+        font-family: "Inter Tight", sans-serif;
+        font-size: 42px;
+        font-weight: 700;
+        line-height: 1.05;
+    }
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 16px;
+        color: #333;
+    }
+    .table th,
+    .table td {
+        border: 1px solid #7D7D7D;
+        padding: 12px 14px;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 1.3;
+    }
+    .table th {
+        font-weight: 600;
+    }
+    .table tr:first-child th {
+        background: #FBE6DE;
+    }
+    .table td {
+        background: #fff;
+    }
+    .teacher {
+        display: flex;
+        gap: 48px;
+        margin-top: 32px;
+    }
+    .teacher__left {
+        width: 260px;
+        flex-shrink: 0;
+        border-left: 3px solid #FF6B35;
+        padding-left: 24px;
+    }
+    .teacher__photo {
+        width: 210px;
+        border-radius: 16px;
+        display: block;
+        margin-bottom: 24px;
+    }
+    .teacher__name {
+        margin: 0;
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 1.15;
+    }
+    .teacher__post {
+        margin: 14px 0 32px;
+        color: #FF6B35;
+        font-size: 20px;
+        font-weight: 500;
+    }
+    .teacher__text {
+        margin: 10px 0;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+    .teacher__right {
+        flex: 1;
+    }
+    .teacher__row {
+        display: flex;
+        gap: 40px;
+        padding: 28px 0;
+        border-bottom: 1px solid #ECECEC;
+    }
+    .teacher__row:first-child {
+        padding-top: 0;
+    }
+    .teacher__title {
+        width: 230px;
+        flex-shrink: 0;
+
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1.5;
+    }
+    .teacher__content {
+        flex: 1;
+    }
+    .teacher__content p {
+        margin: 0 0 10px;
+        font-size: 16px;
+        line-height: 1.7;
+    }
+    .teacher__content p:last-child {
+        margin-bottom: 0;
+    }
+    .info__subtitle {
+        font-weight: 600;
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+    @media (min-width: 768px) {
+        .info {
+            padding: 50px 21px 50px 15px;
+        }
+        .info__title {
+            font-size: 56px;
+            margin-bottom: 48px;
+        }
+    }
+    @media (min-width: 1024px) {
+        .info {
+            max-width: 100vw;
+            padding: 50px 9.114vw;
+        }
+        .info__title {
+            font-size: 64px;
+            margin-bottom: 56px;
+        }
+    }
+    @media (min-width: 1600px) {
+        .info {
+            padding: 50px 9.114vw;
+        }
+        .info__title {
+            font-size: 72px;
+        }
+    }
+    @media (min-width: 2300px) {
+        .info {
+            width: 90vw;
+            max-width: 100vw;
+            padding: 50px 9.114vw;
+        }
+    }
+</style>
+<div class="info">
+    <a class="link-return" href="sveden.html">
+        <img class="link-return__arrow" src="images/Arrow_left.svg" alt="arrow">
+        <p class="link-return__title">Назад</p>
+    </a>
+    <h1 class="info__title">Профессиональное обучение</h1>
+    <p class="info__subtitle">Основные программы профессионального обучения</p>
+    <p class="info__description">Программы реализуются в очной форме. Обучение осуществляется на русском языке. Программы могут реализовываться с использованием дистанционных технологий. Программы реализуются только по договорам об оказании платных образовательных услуг. Обучающихся за счет бюджетных ассигнований федерального бюджета, за счет бюджетных ассигнований бюджетов субъектов Российской Федерации нет.</p>
+    <table class="table" width="100%">
+        <p class="info__subtitle" style="margin-top: 50px;">Программы профессиональной подготовки по профессиям рабочих, должностям служащих</p>
+        <tr class="text">
+            <th class="th">Наименование программы</th>
+            <th class="th">Присваиваемая квалификация</th>
+            <th class="th">Срок обучения</th>
+            <th class="th">Программа + учебный план</th>
+            <th class="th">Календарный учебный график</th>
+            <th class="th">Расписание занятий</th>
+        </tr>
+        <tr class="text" align="center">
+            <td class="program">Вожатый</td>
+            <td class="program">Вожатый</td>
+            <td class="program">160 ак.часов</td>
+            <td class="program"><a class="link" href="https://ispri.ng/ZM26X" target="_blank" rel="noreferrer noopener">
+                    Программа</a></td>
+            <td class="program"><a class="link" href="https://ispri.ng/B0g8G" target="_blank" rel="noreferrer noopener">
+                    Календарный учебный график</a></td>
+            <td class="program"><a class="link" href="https://ispri.ng/yRv7g" target="_blank"
+                    rel="noreferrer noopener">Расписание</a></td>
+        </tr>
+    </table>
+    <p class="info__subtitle" style="margin-top: 100px;">Преподавательский состав</p>
+    <div class="teacher" itemprop="teachingStaff">
+        <div class="teacher__left">
+            <img class="teacher__photo" src="https://static.tildacdn.com/tild6530-3666-4466-a365-346335616563/Rublik_Stanislav.png" alt="Рублик Станислав Сергеевич">
+            <p class="teacher__name" itemprop="fio">Рублик Станислав<br>Сергеевич</p>
+            <p class="teacher__post" itemprop="post">Преподаватель</p>
+            <p class="teacher__text" itemprop="degree">Ученая степень: нет</p>
+            <p class="teacher__text" itemprop="academStat">Ученое звание: нет</p>
+        </div>
+        <div class="teacher__right">
+            <div class="teacher__row">
+                <p class="teacher__title">Образование</p>
+                <div class="teacher__content">
+                    <p itemprop="teachingLevel">Высшее,<br>ФГБОУ ВО «Новосибирский государственный педагогический университет»</p>
+                    <p itemprop="teachingQual">Квалификация: Бакалавр</p>
+                    <p itemprop="employeeQualification">Направление подготовки: Организация работы с молодежью</p>
+                    <p itemprop="teachingLevel">Высшее,<br>АНО ВО «Московский университет "Синергия"»</p>
+                    <p itemprop="teachingQual">Квалификация: Магистр</p>
+                    <p itemprop="employeeQualification">Направление подготовки: 38.04.02 Менеджмент</p>
+                </div>
+            </div>
+            <div class="teacher__row">
+                <p class="teacher__title">Сведения о продолжительности опыта (лет) работы в профессиональной сфере</p>
+                <div class="teacher__content">
+                    <p itemprop="specExperience">Нет сведений</p>
+                </div>
+            </div>
+            <div class="teacher__row">
+                <p class="teacher__title">Сведения о повышении квалификации</p>
+                <div class="teacher__content">
+                    <p itemprop="qualification">Сведения о повышении квалификации отсутствуют.</p>
+                    <p itemprop="profDevelopment">
+                        Сведения о профессиональной переподготовке отсутствуют.
+                        Диплом о профессиональной переподготовке №000000095686
+                        от 12.05.2021 «Основы безопасности жизнедеятельности:
+                        теория и методика преподавания в образовательной организации»,
+                        540 часов.
+                    </p>
+                </div>
+            </div>
+            <div class="teacher__row">
+                <p class="teacher__title">Преподаваемые дисциплины</p>
+                <div class="teacher__content">
+                    <p itemprop="teachingDiscipline">Нет</p>
+                    <p itemprop="teachingOp">
+                        Участие в реализации образовательных программ:
+                        Основная программа профессионального обучения по должности
+                        служащего «200269 Вожатый».
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p class="info__subtitle" style="margin-top: 50px">Вакантные места для приема (перевода) обучающихся</p>
+    <p class="description">В АНО ВО «РУМТ» места для приема (перевода) финансируемые за счет бюджетных ассигнований федерального бюджета, бюджетов Российской федерации, местных бюджетов <span style="color: orange">не предусмотрены</span>.</p>
+    <p class="description">Количество вакантных мест для приема (перевода) на места по договорам об образовании за счет средств физических и (или) юридических лиц: <span style="color: orange">информация отсутствует</span>.</p>
+    <p class="info__subtitle" style="margin-top: 50px"> Основные программы профессионального обучения </p>
+    <p class="description">Программа профессиональной подготовки по профессиям рабочих, должностям служащих "Вожатый".</p>
+    <p class="description" style="color: orange">Записаться на программу</p>
+</div>

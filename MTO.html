@@ -259,9 +259,17 @@
     .info__dormitory.open {
         display: block;
     }
+    .documents__item {
+        background-color: #fff;
+        transition: background-color 0.3s ease;
+    }
+
+    .documents__item.open {
+        background-color: #FFF3EB;
+    }
     @media (min-width: 768px) {
         .info {
-            padding: 30px 21px 30px 15px;
+            padding: 50px 21px 30px 15px;
         }
         .title {
             font-size: 56px;
@@ -309,55 +317,55 @@
     }
 </style>
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-    const bodies = {
-        study__classes__menu: document.getElementById("study__classes"),
-        improving__way__menu: document.getElementById("self-improving__way"),
-        practice__tasks__menu: document.getElementById("practice__tasks"),
-        institute__objects__menu: document.getElementById("institute__objects"),
-        sections__names__menu: document.getElementById("sections__names"),
-        education__menu: document.getElementById("education"),
-        OVZ__menu: document.getElementById("OVZ_students"),
-        access__information__sistem__menu: document.getElementById("access__information__sistem"),
-        OVZ__access__information__sistem__menu: document.getElementById("OVZ__access__information__sistem"),
-        education__environment__menu: document.getElementById("education__environment"),
-        resources__menu: document.getElementById("resources"),
-        accept__resources__menu: document.getElementById("accept__resources__names"),
-        education__courses__menu: document.getElementById("education__courses"),
-        special__insruments__menu: document.getElementById("special__insruments"),
-        dormitory__menu: document.getElementById("dormitory")
-    };
-    let currentMenu = null;
-    let currentBody = null;
-    document.querySelectorAll(".documents__item").forEach(menu => {
-        menu.addEventListener("click", () => {
-            const body = bodies[menu.id];
-            if (!body) return;
-            const action = menu.querySelector(".documents__action");
-            if (currentMenu === menu && body.classList.contains("open")) {
-                body.classList.remove("open");
-                menu.classList.remove("open");
-                action.textContent = "Показать";
-                currentMenu = null;
-                currentBody = null;
-                return;
-            }
-            if (currentMenu) {
-                currentMenu.classList.remove("open");
-                currentMenu.querySelector(".documents__action").textContent = "Показать";
-            }
-            if (currentBody) {
-                currentBody.classList.remove("open");
-            }
-            menu.after(body);
-            menu.classList.add("open");
-            body.classList.add("open");
-            action.textContent = "Скрыть";
-            currentMenu = menu;
-            currentBody = body;
+    document.addEventListener("DOMContentLoaded", () => {
+        const bodies = {
+            study__classes__menu: document.getElementById("study__classes"),
+            improving__way__menu: document.getElementById("self-improving__way"),
+            practice__tasks__menu: document.getElementById("practice__tasks"),
+            institute__objects__menu: document.getElementById("institute__objects"),
+            sections__names__menu: document.getElementById("sections__names"),
+            education__menu: document.getElementById("education"),
+            OVZ__menu: document.getElementById("OVZ_students"),
+            access__information__sistem__menu: document.getElementById("access__information__sistem"),
+            OVZ__access__information__sistem__menu: document.getElementById("OVZ__access__information__sistem"),
+            education__environment__menu: document.getElementById("education__environment"),
+            resources__menu: document.getElementById("resources"),
+            accept__resources__menu: document.getElementById("accept__resources__names"),
+            education__courses__menu: document.getElementById("education__courses"),
+            special__insruments__menu: document.getElementById("special__insruments"),
+            dormitory__menu: document.getElementById("dormitory")
+        };
+        let currentMenu = null;
+        let currentBody = null;
+        document.querySelectorAll(".documents__item").forEach(menu => {
+            menu.addEventListener("click", () => {
+                const body = bodies[menu.id];
+                if (!body) return;
+                const action = menu.querySelector(".documents__action");
+                if (currentMenu === menu && body.classList.contains("open")) {
+                    body.classList.remove("open");
+                    menu.classList.remove("open");
+                    action.textContent = "Показать";
+                    currentMenu = null;
+                    currentBody = null;
+                    return;
+                }
+                if (currentMenu) {
+                    currentMenu.classList.remove("open");
+                    currentMenu.querySelector(".documents__action").textContent = "Показать";
+                }
+                if (currentBody) {
+                    currentBody.classList.remove("open");
+                }
+                menu.after(body);
+                menu.classList.add("open");
+                body.classList.add("open");
+                action.textContent = "Скрыть";
+                currentMenu = menu;
+                currentBody = body;
+            });
         });
     });
-});
 </script>
 <script>
 document.addEventListener("DOMContentLoaded", () => {

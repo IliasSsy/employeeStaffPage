@@ -1,0 +1,1451 @@
+<style>
+    @font-face {
+        font-family: "Inter Tight";
+        src: url("fonts/Inter_Tight/static/InterTight-Regular.ttf") format("truetype");
+        font-weight: 400;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Inter Tight";
+        src: url("fonts/Inter_Tight/static/InterTight-Medium.ttf") format("truetype");
+        font-weight: 500;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Inter Tight";
+        src: url("fonts/Inter_Tight/static/InterTight-SemiBold.ttf") format("truetype");
+        font-weight: 600;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Inter Tight";
+        src: url("fonts/Inter_Tight/static/InterTight-Bold.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter/static/Inter_18pt-Regular.ttf") format("truetype");
+        font-weight: 400;
+    }
+    @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter/static/Inter_18pt-Medium.ttf") format("truetype");
+        font-weight: 500;
+    }
+    @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter/static/Inter_18pt-SemiBold.ttf") format("truetype");
+        font-weight: 600;
+    }
+    @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter/static/Inter_18pt-Bold.ttf") format("truetype");
+        font-weight: 700;
+    }
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: "Inter", sans-serif;
+        color: #222;
+        background: #fff;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    .info {
+        max-width: 100%;
+        padding: 30px 21px 30px 15px;
+    }
+    .link-return {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 40px;
+            color: black;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+    }
+    .link-return__arrow {
+        width: 40px;
+        height: 40px;
+    }
+    .info__title {
+        margin: 0 0 50px;
+        font-family: "Inter Tight", sans-serif;
+        font-size: 42px;
+        font-weight: 700;
+        line-height: 1.05;
+    }
+    .menu {
+        display: flex;
+        align-items: baseline;
+        gap: 12px;
+        padding: 16px 0;
+        border-bottom: 1px solid #D9D9D9;
+        cursor: pointer;
+        transition: border-color .2s ease;
+    }
+    .menu__arrow {
+        width: 18px;
+        flex-shrink: 0;
+        transition: transform 0.3s ease;
+    }
+    .menu:hover {
+        border-bottom-color: #FF5A1F;
+    }
+    .menu:hover .menu__arrow {
+        transform: rotate(45deg);
+    }
+    .menu.open {
+        border-bottom-color: #FF5A1F;
+    }
+    .menu.open .menu__arrow {
+        transform: rotate(90deg);
+    }
+    .menu__title {
+        font-size: 20px;
+        line-height: 1.45;
+    }
+    .documents {
+        margin-top: 15px;
+    }
+    .documents__title {
+        margin: 0 0 16px;
+        font-size: 14px;
+        font-weight: 600;
+    }
+    .documents__item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        padding: 18px 0;
+        color: inherit;
+        text-decoration: none;
+        border-top: 1px solid #EAEAEA;
+    }
+    .documents__item:last-child {
+        border-bottom: 1px solid #EAEAEA;
+    }
+    .documents__left {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        flex: 1;
+    }
+    .document__left span {
+        line-height: 23px;
+    }
+    .documents__left img {
+        width: 25px;
+        height: 25px;
+        flex-shrink: 0;
+    }
+    .documents__left span {
+        font-size: 16px;
+        line-height: 1.45;
+    }
+    .documents__action {
+        color: #FA5D20;
+    }
+    .department {
+        font-size: 22px;
+    }
+    .info__subtitle {
+        margin: 0 0 18px;
+        font-family: "Inter Tight", sans-serif;
+        font-size: 28px;
+        font-weight: 600;
+        line-height: 1.15;
+    }
+    .description {
+        margin: 0 0 18px;
+        max-width: 860px;
+        color: #555;
+        font-size: 20px;
+        line-height: 1.65;
+    }
+    .menu__information {
+        display: none;
+        padding: 28px 0 12px;
+    }
+    .menu__information.open {
+        display: block;
+    }
+    .information__title {
+        margin: 32px 0 8px;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 1.4;
+    }
+    .information__title:first-child {
+        margin-top: 0;
+    }
+    .information__text {
+        margin: 0;
+        color: #555;
+        font-size: 18px;
+        line-height: 1.7;
+    }
+    .program {
+        margin-top: 48px;
+        padding-top: 36px;
+        border-top: 1px solid orange;
+    }
+    .program:first-of-type {
+        margin-top: 32px;
+    }
+    .program .documents {
+        margin-top: 18px;
+    }
+    .documents__item:hover {
+        background: #FFF6F1;
+    }
+    .documents__action {
+        flex-shrink: 0;
+        font-size: 15px;
+        font-weight: 500;
+        color: #FA5D20;
+    }
+    .documents__email,
+    .documents__link {
+        color: #FA5D20;
+        text-decoration: none;
+    }
+    .documents__email:hover,
+    .documents__link:hover {
+        text-decoration: underline;
+    }
+    .program:first-child {
+        border-top: none;
+    }
+    .program:last-child {
+        border-bottom: none;
+    }
+    .teacher {
+        display: flex;
+        gap: 48px;
+        margin-top: 5px;
+        border-bottom: 2px solid #FF6B35
+    }
+    .teacher__left {
+        width: 260px;
+        flex-shrink: 0;
+        border-left: 3px solid #FF6B35;
+        padding-left: 24px;
+    }
+    .teacher__photo {
+        width: 210px;
+        border-radius: 16px;
+        display: block;
+        margin-bottom: 24px;
+    }
+    .teacher__name {
+        margin: 0;
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 1.15;
+    }
+    .teacher__post {
+        margin: 14px 0 32px;
+        color: #FF6B35;
+        font-size: 20px;
+        font-weight: 500;
+    }
+    .teacher__text {
+        margin: 10px 0;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+    .teacher__right {
+        flex: 1;
+    }
+    .teacher__row {
+        display: flex;
+        gap: 40px;
+        padding: 28px 0;
+        border-bottom: 1px solid #ECECEC;
+    }
+    .teacher__row:first-child {
+        padding-top: 0;
+    }
+    .teacher__title {
+        width: 230px;
+        flex-shrink: 0;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1.5;
+    }
+    .teacher__content {
+        flex: 1;
+    }
+    .teacher__content p {
+        margin: 0 0 10px;
+        font-size: 16px;
+        line-height: 1.7;
+    }
+    .teacher__content p:last-child {
+        margin-bottom: 0;
+    }
+    @media (min-width: 768px) {
+        .info {
+            padding: 50px 21px 50px 15px;
+        }
+        .info__title {
+            font-size: 56px;
+            margin-bottom: 48px;
+        }
+    }
+    @media (min-width: 1024px) {
+        .info {
+            max-width: 100vw;
+            padding: 50px 9.114vw;
+        }
+        .info__title {
+            font-size: 64px;
+            margin-bottom: 56px;
+        }
+    }
+    @media (min-width: 1600px) {
+        .info {
+            padding: 50px 9.114vw;
+        }
+        .info__title {
+            font-size: 72px;
+        }
+    }
+    @media (min-width: 2300px) {
+        .info {
+            width: 90vw;
+            max-width: 100vw;
+            padding: 50px 9.114vw;
+        }
+    }
+</style>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const bodies = {
+        menu__prefessional__education: document.getElementById("professional__education"),
+        menu__dop__programms: document.getElementById("dop__programms"),
+        menu__general__developmental__programms: document.getElementById("general__developmental__programms"),
+    };
+    let currentMenu = null;
+    let currentBody = null;
+    document.querySelectorAll(".menu").forEach(menu => {
+        menu.addEventListener("click", () => {
+            const body = bodies[menu.id];
+            if (!body) return;
+            if (currentMenu === menu) {
+                menu.classList.remove("open");
+                body.classList.remove("open");
+                currentMenu = null;
+                currentBody = null;
+                return;
+            }
+            if (currentMenu) {
+                currentMenu.classList.remove("open");
+                currentBody.classList.remove("open");
+            }
+            menu.after(body);
+            menu.classList.add("open");
+            body.classList.add("open");
+            currentMenu = menu;
+            currentBody = body;
+        });
+    });
+});
+</script>
+<div class="info">
+    <a class="link-return" href="sveden.html">
+        <img class="link-return__arrow" src="images/Arrow_left.svg" alt="arrow">
+        <p class="link-return__title">Назад</p>
+    </a>
+    <h1 class="info__title">Дополнительное образование</h1>
+    <h2 class="info__subtitle">Дополнительные профессиональные программы</h2>
+    <p class="description">Программы реализуются в очной форме. Обучение осуществляется на русском языке. Программы могут реализовываться с использованием дистанционных технологий.</p>
+    <p class="description">Программы реализуются только по договорам об оказании платных образовательных услуг. Обучающихся за счет бюджетных ассигнований федерального бюджета, за счет бюджетных ассигнований бюджетов субъектов Российской Федерации нет.</p>
+    <div class="menu" id="menu__prefessional__education"> 
+        <img class="menu__arrow" src="images/Vector.svg" alt="arrow">
+        <span class="menu__title">Программа профессиональной переподготовки</span>
+    </div>
+    <div class="menu" id="menu__dop__programms">
+        <img class="menu__arrow" src="images/Vector.svg" alt="arrow">
+        <span class="menu__title">Дополнительны профессиональные программы повышения квалификации</span>
+    </div>
+    <div class="menu" id="menu__general__developmental__programms">
+        <img class="menu__arrow" src="images/Vector.svg" alt="arrow" >
+        <span class="menu__title">Дополнительные общеразвивающие программы</span>
+    </div>
+    <div class="menu__information" id="professional__education">
+        <p class="information__title">Наименование программы</p>
+        <p class="information__text">Разработка и проектирование программных систем. Базовый уровень</p>
+        <p class="information__title">Присваиваемая квалификаиця</p>
+        <p class="information__text">Программист</p>
+        <p class="information__title">Срок обучения</p>
+        <p class="information__text">2 года (1512 академических часа)</p>
+        <div class="documents" style="margin-top: 30px">
+            <a class="documents__item" href="#" style="border-top: none">
+                <div class="documents__left">
+                    <img src="images/Document.svg "alt="table">
+                    <span>Программа и учебный план<span>
+                </div>
+                <span class="documents__action">Открыть</span>
+            </a>
+            <a class="documents__item" href="#">
+                <div class="documents__left">
+                    <img src="images/Document.svg"alt="table">
+                    <span>Программа и учебный план </span>
+                </div>
+                <span class="documents__action">Открыть</span>
+            </a>
+            <a class="documents__item" href="#">
+                <div class="documents__left">
+                    <img src="images/Document.svg"alt="table">
+                    <span>Рабочие программы дисциплин</span>
+                </div>
+                <span class="documents__action">Открыть</span>
+            </a>
+            <a class="documents__item" href="#" style="margin-bottom: 30px;">
+                <div class="documents__left">
+                    <img src="images/Document.svg"alt="table">
+                    <span>Рабочие программы дисциплин</span>
+                </div>
+                <span class="documents__action">Открыть</span>
+            </a>
+        </div>
+    </div>
+    <div class="menu__information" id="dop__programms">
+        <div class="program" style="padding-top:0; margin-top: 0">
+            <p class="information__title">Дополнительная профессиональная образовательная программа повышения квалификации</p>
+            <p class="information__text">Особенности современного образовательного процесса. Базовые траектории обучения, технологии и методики преподавания учебных дисциплин.</p>
+            <p class="information__title">Срок обучения</p>
+            <p class="information__text">16 академических часов</p>
+            <div class="documents">
+                <a class="documents__item" href="#">
+                    <div class="documents__left">
+                        <img src="images/Document.svg" alt="document">
+                        <span>Программа, в том числе учебный план</span>
+                    </div>
+                    <span class="documents__action">Открыть</span>
+                </a>
+            </div>
+        </div>
+        <div class="program">
+            <p class="information__title">Дополнительная профессиональная образовательная программа повышения квалификации</p>
+            <p class="information__text">Педагогика и психология преподавания в системе дополнительного образования.</p>
+            <p class="information__title">Срок обучения</p>
+            <p class="information__text">16 академических часов</p>
+            <div class="documents">
+                <a class="documents__item" href="#">
+                    <div class="documents__left">
+                        <img src="images/Document.svg" alt="document">
+                        <span>Программа, в том числе учебный план</span>
+                    </div>
+                    <span class="documents__action">Открыть</span>
+                </a>
+            </div>
+        </div>
+        <div class="program">
+            <p class="information__title">Дополнительная профессиональная образовательная программа повышения квалификации</p>
+            <p class="information__text">Методические аспекты преподавания английского языка в формате CELTA.</p>
+            <p class="information__title">Срок обучения</p>
+            <p class="information__text">21 академический час</p>
+            <div class="documents">
+                <a class="documents__item" href="#">
+                    <div class="documents__left">
+                        <img src="images/Document.svg" alt="document">
+                        <span>Программа, в том числе учебный план</span>
+                    </div>
+                    <span class="documents__action">Открыть</span>
+                </a>
+            </div>
+        </div>
+        <div class="program">
+            <p class="information__title">Дополнительная профессиональная образовательная программа повышения квалификации</p>
+            <p class="information__text">Образовательная робототехника в начальной и средней школе.</p>
+            <p class="information__title">Срок обучения</p>
+            <p class="information__text">24 академических часа</p>
+            <div class="documents">
+                <a class="documents__item" href="#">
+                    <div class="documents__left">
+                        <img src="images/Document.svg" alt="document">
+                        <span>Программа, в том числе учебный план</span>
+                    </div>
+                    <span class="documents__action">Открыть</span>
+                </a>
+            </div>
+        </div>
+        <div class="program">
+            <p class="information__title">Дополнительная профессиональная образовательная программа повышения квалификации</p>
+            <p class="information__text">Базовые траектории обучения, технологии и методики преподавания учебных дисциплин в КШ «Инфосфера».</p>
+            <p class="information__title">Срок обучения</p>
+            <p class="information__text">20 академических часов</p>
+            <div class="documents">
+                <a class="documents__item" href="#">
+                    <div class="documents__left">
+                        <img src="images/Document.svg" alt="document">
+                        <span>Программа, в том числе учебный план</span>
+                    </div>
+                    <span class="documents__action">Открыть</span>
+                </a>
+            </div>
+        </div>
+        <div class="program">
+            <p class="information__title">Дополнительная профессиональная образовательная программа повышения квалификации</p>
+            <p class="information__text">Базовые основы веб-разработки.</p>
+            <p class="information__title">Срок обучения</p>
+            <p class="information__text">16 академических часов</p>
+            <div class="documents">
+                <a class="documents__item" href="#">
+                    <div class="documents__left">
+                        <img src="images/Document.svg" alt="document">
+                        <span>Программа, в том числе учебный план</span>
+                    </div>
+                    <span class="documents__action">Открыть</span>
+                </a>
+            </div>
+        </div>
+        <div class="program" style="margin-bottom: 30px;">
+            <p class="information__title">Дополнительная профессиональная образовательная программа повышения квалификации</p>
+            <p class="information__text">Практическое применение метода погружений как педагогической технологии комплексного воспитания личности: опыт учителей-передвижников.</p>
+            <p class="information__title">Срок обучения</p>
+            <p class="information__text">24 академических часа</p>
+            <div class="documents">
+                <a class="documents__item" href="#">
+                    <div class="documents__left">
+                        <img src="images/Document.svg" alt="document">
+                        <span>Программа, в том числе учебный план</span>
+                    </div>
+                    <span class="documents__action">Открыть</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="menu__information" id="general__developmental__programms">
+        <p class="description">Программы реализуются в очной форме. Обучение осуществляется по договорам об оказании платных образовательных услуг. Обучение осуществляется на русском языке.</p>
+        <p class="description">Часть материала дополнительной общеразвивающей программы может быть представлена для освоения с использованием дистанционных технологий. При этом часть программы, осваиваемая с использованием дистанционных технологий, указывается в самой образовательной программе.</p>
+        <p class="description">Объем программы (в академических часах), срок освоения программы, примерный календарный учебный график, рекомендуемый численный состав учебной группы указаны в образовательной программе.</p>
+        <p class="description">Старт обучения проводится при наборе учебной группы.</p>
+        <div class="program">
+            <p class="information__title">Наименование программы</p>
+            <p class="information__text">Продуктовый дизайн (UX/UI)</p>
+            <p class="information__title">Срок обучения</p>
+            <p class="information__text">36 академических часов</p>
+            <div class="documents">
+                <a class="documents__item" href="#">
+                    <div class="documents__left">
+                        <img src="images/Document.svg" alt="document">
+                        <span>Программа</span>
+                    </div>
+                    <span class="documents__action">Открыть</span>
+                </a>
+                <a class="documents__item" href="#">
+                    <div class="documents__left">
+                        <img src="images/arrow_right.svg" alt="link">
+                        <span>Записаться на программу</span>
+                    </div>
+                    <span class="documents__action">Перейти</span>
+                </a>
+            </div>
+        </div>
+        <div class="program">
+            <p class="information__title">Наименование программы</p>
+            <p class="information__text">Конструкция и базовые навыки пилотирования мультироторных БПЛА</p>
+            <p class="information__title">Срок обучения</p>
+            <p class="information__text">36 академических часов</p>
+        </div>
+        <div class="program">
+            <p class="information__title">Наименование программы</p>
+            <p class="information__text">Инструменты дизайнера</p>
+            <p class="information__title">Срок обучения</p>
+            <p class="information__text">21 академический час</p>
+            <div class="documents">
+                <a class="documents__item" href="#">
+                    <div class="documents__left">
+                        <img src="images/Document.svg" alt="document">
+                        <span>Программа</span>
+                    </div>
+                    <span class="documents__action">Открыть</span>
+                </a>
+                <a class="documents__item" href="#">
+                    <div class="documents__left">
+                        <img src="images/arrow_right.svg" alt="link">
+                        <span>Записаться на программу</span>
+                    </div>
+                    <span class="documents__action">Перейти</span>
+                </a>
+            </div>
+        </div>
+        <div class="program">
+            <p class="information__title">Наименование программы</p>
+            <p class="information__text">Поисковое продвижение сайтов (SEO)</p>
+            <p class="information__title">Срок обучения</p>
+            <p class="information__text">20 академических часов</p>
+        </div>
+        <div class="program">
+            <p class="information__title">Наименование программы</p>
+            <p class="information__text">Тестирование ПО</p>
+            <p class="information__title">Срок обучения</p>
+            <p class="information__text">48 академических часов</p>
+            <div class="documents">
+                <a class="documents__item" href="#">
+                    <div class="documents__left">
+                        <img src="images/Document.svg" alt="document">
+                        <span>Программа</span>
+                    </div>
+                    <span class="documents__action">Открыть</span>
+                </a>
+                <a class="documents__item" href="#">
+                    <div class="documents__left">
+                        <img src="images/arrow_right.svg" alt="link">
+                        <span>Записаться на программу</span>
+                    </div>
+                    <span class="documents__action">Перейти</span>
+                </a>
+            </div>
+        </div>
+        <div class="program">
+            <p class="information__title">Наименование программы</p>
+            <p class="information__text">Веб-дизайн: сайты, лендинги, блоги и интернет-магазины</p>
+            <p class="information__title">Срок обучения</p>
+            <p class="information__text">32 академических часа</p>
+            <div class="documents">
+                <a class="documents__item" href="#">
+                    <div class="documents__left">
+                        <img src="images/Document.svg" alt="document">
+                        <span>Программа</span>
+                    </div>
+                    <span class="documents__action">Открыть</span>
+                </a>
+                <a class="documents__item" href="#">
+                    <div class="documents__left">
+                        <img src="images/arrow_right.svg" alt="link">
+                        <span>Записаться на программу</span>
+                    </div>
+                    <span class="documents__action">Перейти</span>
+                </a>
+            </div>
+        </div>
+        <div class="program">
+            <p class="information__title">Наименование программы</p>
+            <p class="information__text">Автоматизированное тестирование ПО</p>
+            <p class="information__title">Срок обучения</p>
+            <p class="information__text">36 академических часов</p>
+            <div class="documents">
+                <a class="documents__item" href="#">
+                    <div class="documents__left">
+                        <img src="images/Document.svg" alt="document">
+                        <span>Программа</span>
+                    </div>
+                    <span class="documents__action">Открыть</span>
+                </a>
+                <a class="documents__item" href="#">
+                    <div class="documents__left">
+                        <img src="images/arrow_right.svg" alt="link">
+                        <span>Записаться на программу</span>
+                    </div>
+                    <span class="documents__action">Перейти</span>
+                </a>
+            </div>
+        </div>
+        <div class="program">
+            <p class="information__title">Наименование программы</p>
+            <p class="information__text">Математический модуль</p>
+            <p class="information__title">Срок обучения</p>
+            <p class="information__text">30 академических часов</p>
+        </div>
+    </div>
+    <h2 class="info__subtitle" style="margin-top: 100px; margin-bottom: 30px;">Преподавательский состав</h2>
+    <h3 class="department" style="margin-bottom: 30px;">Дополнительные образовательные профессиональные программы</h3>
+    <script>
+        const teachers = [
+            {
+                id: "andreyshev",
+                photo: "https://static.tildacdn.com/tild3134-6265-4666-a562-646364643934/Andreyshev_Ivan.jpg",
+                name: "Андрейшев Иван Ильич",
+                position: "Преподаватель дополнительного образования",
+                degree: "нет",
+                title: "нет",
+                education: [
+                    {
+                        level: "Высшее",
+                        university: 'ФГБОУ ВО "Поволжский государственный технологический университет"',
+                        qualification: "Бакалавр",
+                        specialty: "09.03.04 Программная инженерия"
+                    }
+                ],
+                experience: "7",
+                disciplines: [
+                    "Основы проектной деятельности"
+                ],
+                programs: [
+                    "Разработка и проектирование программных систем. Базовый уровень"
+                ],
+                qualificationCourses: [
+                    'Удостоверение о повышении квалификации №122421412162 от 25.11.2024 "Организация образовательного процесса для инвалидов и лиц с ограниченными возможностями здоровья в образовательной организации высшего образования", 36 часов'
+                ],
+                retraining: [
+                    "отсутствуют"
+                ]
+            },
+            {
+                id: "arnaberdiev",
+                photo: "https://static.tildacdn.com/tild3064-3363-4133-a534-373837623530/Arnaberdiev_Kerim.jpg",
+                name: "Арнабердиев Авдыкерим",
+                position: "Преподаватель дополнительного образования",
+                degree: "нет",
+                title: "нет",
+                education: [
+                    {
+                        level: "Высшее, специалитет",
+                        university: 'ФГБОУ ВО "Поволжский государственный технологический университет"',
+                        qualification: "Инженер",
+                        specialty: "230105 Программное обеспечение вычислительной техники и автоматизированных систем"
+                    },
+                    {
+                        level: "Высшее, аспирантура",
+                        university: 'ФГБОУ ВО "Поволжский государственный технологический университет"',
+                        qualification: "Исследователь. Преподаватель-исследователь",
+                        specialty: "38.06.01 Экономика"
+                    }
+                ],
+                experience: "5",
+                disciplines: [
+                    "Основы Front-End разработки",
+                    "Основы web-разработки"
+                ],
+                programs: [
+                    "Разработка и проектирование программных систем. Базовый уровень"
+                ],
+                qualificationCourses: [
+                    'Удостоверение о повышении квалификации №0000012 от 31.01.2023 "Разработка электронных курсов", 70 часов',
+                    'Удостоверение о повышении квалификации №122416298819 от 21.04.2023 "Организация образовательного процесса для инвалидов и лиц с ограниченными возможностями здоровья", 36 часов',
+                    'Удостоверение о повышении квалификации №120000000441 от 13.05.2023 "Педагогика и психология преподавания в системе дополнительного образования"'
+                ],
+                retraining: [
+                    "отсутствуют"
+                ]
+            },
+            {
+                id: "balysheva",
+                photo: "https://static.tildacdn.com/tild6437-3630-4661-b763-636533386463/Balysheva_Marina.jpg",
+                name: "Балышева Марина Андреевна",
+                position: "Преподаватель дополнительного образования",
+                degree: "нет",
+                title: "нет",
+                education: [
+                    {
+                        level: "Высшее, специалитет",
+                        university: 'ФГБОУ ВО "Поволжский государственный технологический университет"',
+                        qualification: "Инженер",
+                        specialty: "230105 Программное обеспечение вычислительной техники и автоматизированных систем"
+                    }
+                ],
+                experience: "нет сведений",
+                disciplines: [
+                    "Основы Web-разработки"
+                ],
+                programs: [
+                    "Разработка и проектирование программных систем. Базовый уровень"
+                ],
+                qualificationCourses: [
+                    'Удостоверение о повышении квалификации №1200 0000455 от 18.02.2024 "Педагогика и психология преподавания в системе дополнительного образования", 16 часов'
+                ],
+                retraining: [
+                    "отсутствуют"
+                ]
+            },
+            {
+                id: "gainutdinov",
+                photo: "https://static.tildacdn.com/tild6139-3865-4266-b266-636331656533/Gainutdinov_Rustam.png",
+                name: "Гайнутдинов Рустам Маратович",
+                position: "Преподаватель дополнительного образования",
+                degree: "нет",
+                title: "нет",
+                education: [
+                    {
+                        level: "Высшее",
+                        university: 'ФГБОУ ВО "Поволжский государственный технологический университет"',
+                        qualification: "Бакалавр",
+                        specialty: "09.03.04 Программная инженерия"
+                    }
+                ],
+                experience: "3",
+                disciplines: [
+                    "Базы данных"
+                ],
+                programs: [
+                    "Разработка и проектирование программных систем. Базовый уровень"
+                ],
+                qualificationCourses: [
+                    'Удостоверение о повышении квалификации №122416299378 от 17.11.2023 "Организация образовательного процесса для инвалидов и лиц с ограниченными возможностями здоровья в образовательной организации высшего образования", 36 часов'
+                ],
+                retraining: [
+                    "отсутствуют"
+                ]
+            },
+            {
+                id: "galochkin",
+                photo: "https://static.tildacdn.com/tild3437-6232-4665-b337-386539376438/Galochkin_Vladimir.jpg",
+                name: "Галочкин Владимир Иванович",
+                position: "Преподаватель дополнительного образования",
+                degree: "Кандидат технических наук",
+                title: "Доцент по кафедре информатики и системного программирования",
+                education: [
+                    {
+                        level: "Высшее",
+                        university: "Московский государственный университет им. М.В. Ломоносова",
+                        qualification: "Математик",
+                        specialty: "Математика"
+                    }
+                ],
+                experience: "нет сведений",
+                disciplines: [
+                    "Структуры данных и алгоритмы"
+                ],
+                programs: [
+                    "Разработка и проектирование программных систем. Базовый уровень"
+                ],
+                qualificationCourses: [
+                    'Удостоверение о повышении квалификации №120000000369 от 03.04.2021 "Особенности современного образовательного процесса. Базовые траектории обучения, технологии и методики преподавания учебных дисциплин", 40 часов',
+                    'Удостоверение о повышении квалификации №122416298824 от 21.04.2023 "Организация образовательного процесса для инвалидов и лиц с ограниченными возможностями здоровья", 36 часов',
+                    'Удостоверение о повышении квалификации №1200 0000443 от 13.05.2023 "Педагогика и психология преподавания в системе дополнительного образования", 16 часов'
+                ],
+                retraining: [
+                    "отсутствуют"
+                ]
+            },
+            {
+                id: "elmykeev",
+                photo: "https://static.tildacdn.com/tild3939-6265-4430-b131-626261643962/Elmikeev_Oleg.png",
+                name: "Ельмикеев Олег Рудольфович",
+                position: "Преподаватель дополнительного образования",
+                degree: "Кандидат педагогических наук",
+                title: "нет",
+                education: [
+                    {
+                        level: "Высшее",
+                        university: "Марийский политехнический институт им. М. Горького",
+                        qualification: "Инженер-конструктор-технолог",
+                        specialty: "Конструирование и производство электронно-вычислительной аппаратуры"
+                    }
+                ],
+                experience: "нет сведений",
+                disciplines: [
+                    "Программирование микропроцессоров"
+                ],
+                programs: [
+                    "Разработка и проектирование программных систем. Базовый уровень"
+                ],
+                qualificationCourses: [
+                    'Удостоверение о повышении квалификации №122416298825 от 21.04.2023 "Организация образовательного процесса для инвалидов и лиц с ограниченными возможностями здоровья", 36 часов'
+                ],
+                retraining: [
+                    "отсутствуют"
+                ]
+            },
+            {
+                id: "zherebtsova",
+                photo: "https://static.tildacdn.com/tild3463-3733-4162-b931-643537313364/Zherebtsova_Olga.jpg",
+                name: "Жеребцова Ольга Вениаминовна",
+                position: "Преподаватель дополнительного образования",
+                degree: "нет",
+                title: "нет",
+                education: [
+                    {
+                        level: "Высшее",
+                        university: "Марийский государственный университет",
+                        qualification: "Математик",
+                        specialty: "Прикладная математика"
+                    }
+                ],
+                experience: "нет сведений",
+                disciplines: [
+                    "Основы программирования"
+                ],
+                programs: [
+                    "Разработка и проектирование программных систем. Базовый уровень"
+                ],
+                qualificationCourses: [
+                    'Удостоверение о повышении квалификации №07-07/ВО/ОТ-ДО от 28.02.2022 "Требования охраны труда. Основные изменения в трудовом законодательстве, вступающие с 01 марта 2022 года в области охраны труда", 16 часов',
+                    'Удостоверение о повышении квалификации №120000000400 от 26.08.2022 "Системное развитие навыков программирования в условиях обновленного ФГОС ООО", 25 часов',
+                    'Удостоверение о повышении квалификации №2626 от 01.10.2022 "Разработка и реализация основной образовательной программы в соответствии с законодательством", 24 часа',
+                    'Удостоверение о повышении квалификации №0000003 от 23.01.2023 "Разработка электронных курсов", 70 часов',
+                    'Удостоверение о повышении квалификации №122416298826 от 21.04.2023 "Организация образовательного процесса для инвалидов и лиц с ограниченными возможностями здоровья", 36 часов'
+                ],
+                retraining: [
+                    'Диплом о профессиональной переподготовке №Д2019011698 от 01.08.2019 "Менеджмент образовательной организации", 250 часов'
+                ]
+            },
+            {
+                id: "kozlov",
+                photo: "https://static.tildacdn.com/tild3332-6236-4165-b232-303831393537/Kozlov_Alexander.jpg",
+                name: "Козлов Александр Иванович",
+                position: "Преподаватель дополнительного образования",
+                degree: "Кандидат физико-математических наук",
+                title: "Доцент по кафедре математики и методики обучения математике",
+                education: [
+                    {
+                        level: "Высшее",
+                        university: "Марийский государственный педагогический институт им. Н. К. Крупской",
+                        qualification: "Учитель математики и физики",
+                        specialty: "Математика"
+                    }
+                ],
+                experience: "нет сведений",
+                disciplines: [
+                    "Дискретная математика",
+                    "Комбинаторная математика и алгоритмы"
+                ],
+                programs: [
+                    "Разработка и проектирование программных систем. Базовый уровень"
+                ],
+                qualificationCourses: [
+                    'Удостоверение о повышении квалификации №05-07/ВО/ОТ-ДО от 28.02.2022 "Требования охраны труда. Основные изменения в трудовом законодательстве, вступающие с 01 марта 2022 года в области охраны труда", 16 часов',
+                    'Удостоверение о повышении квалификации №000004 от 23.01.2023 "Разработка электронных курсов", 70 часов',
+                    'Удостоверение о повышении квалификации №722023000556 от 11.03.2023 "Деятельностное математическое образование", 24 часа',
+                    'Удостоверение о повышении квалификации №122414352035 от 25.05.2023 "Подготовка экспертов региональных предметных комиссий по проверке выполнения заданий с развернутым ответом по математике при проведении государственной итоговой аттестации (ГИА-11)", 26 часов',
+                    'Удостоверение о повышении квалификации №122416299381 от 17.11.2023 "Организация образовательного процесса для инвалидов и лиц с ограниченными возможностями здоровья в образовательной организации высшего образования", 36 часов',
+                    'Удостоверение о повышении квалификации №24010/11 от 26.01.2024 "Развитие математического образования: от содержимого к содержанию", 18 часов',
+                    'Удостоверение о повышении квалификации №28395 от 20.05.2025 "Цифровые технологии в работе с талантливыми обучающимися при изучении математических дисциплин", 36 часов'
+                ],
+                retraining: [
+                    'Диплом о профессиональной переподготовке №ПС 00012 от 31.01.2018 "Разработка и проектирование программных систем. Базовый уровень", 1728 часов'
+                ]
+            },
+            {
+                id: "malov",
+                photo: "https://static.tildacdn.com/tild6231-6361-4632-b337-646164346337/Malov_Alexey.jpg",
+                name: "Малов Алексей Николаевич",
+                position: "Преподаватель дополнительного образования",
+                degree: "нет",
+                title: "нет",
+                education: [
+                    {
+                        level: "Высшее",
+                        university: "Марийский государственный технический университет",
+                        qualification: "Инженер",
+                        specialty: "Программное обеспечение вычислительной техники и автоматизированных систем"
+                    }
+                ],
+                experience: "16",
+                disciplines: [
+                    "Объектно-ориентированное программирование"
+                ],
+                programs: [
+                    "Разработка и проектирование программных систем. Базовый уровень"
+                ],
+                qualificationCourses: [
+                    'Удостоверение о повышении квалификации №1200 0000448 от 13.05.2023 "Педагогика и психология преподавания в системе дополнительного образования", 16 часов',
+                    'Удостоверение о повышении квалификации №122416299384 от 17.11.2023 "Организация образовательного процесса для инвалидов и лиц с ограниченными возможностями здоровья в образовательной организации высшего образования", 36 часов'
+                ],
+                retraining: [
+                    "отсутствуют"
+                ]
+            },
+            {
+                id: "uskov",
+                photo: "https://static.tildacdn.com/tild6536-3039-4762-a137-623661653433/Uskov_Yury.jpg",
+                name: "Усков Юрий Викторович",
+                position: "Преподаватель дополнительного образования",
+                degree: "нет",
+                title: "нет",
+                education: [
+                    {
+                        level: "Высшее",
+                        university: "Марийский государственный технический университет",
+                        qualification: "Инженер-программист",
+                        specialty: "Программное обеспечение вычислительной техники и автоматизированных систем"
+                    }
+                ],
+                experience: "13",
+                disciplines: [
+                    "Основы программирования"
+                ],
+                programs: [
+                    "Разработка и проектирование программных систем. Базовый уровень"
+                ],
+                qualificationCourses: [
+                    'Удостоверение о повышении квалификации №0000012 от 31.01.2023 "Разработка электронных курсов", 70 часов',
+                    'Удостоверение о повышении квалификации №122416298834 от 21.04.2023 "Организация образовательного процесса для инвалидов и лиц с ограниченными возможностями здоровья", 36 часов',
+                    'Удостоверение о повышении квалификации №1200 0000454 от 13.05.2023 "Педагогика и психология преподавания в системе дополнительного образования", 16 часов'
+                ],
+                retraining: [
+                    "отсутствуют"
+                ]
+            },
+        ];
+        document.addEventListener("DOMContentLoaded", () => {
+            const body = document.getElementById("department__professional");
+            console.log(body);
+            teachers.forEach(teacher => {
+                const education = teacher.education.map(item => `
+                    <p itemprop="teachingLevel">${item.level},<br>${item.university}</p>
+                    <p itemprop="teachingQual">Квалификация: ${item.qualification}</p>
+                    <p itemprop="employeeQualification">Направление подготовки: ${item.specialty}</p>
+                `).join("");
+                const qualification = teacher.qualificationCourses.map(item => `
+                    <p itemprop="qualification">${item}</p>
+                `).join("");
+                const retraining = teacher.retraining.map(item => `
+                    <p itemprop="profDevelopment">${item}</p>
+                `).join("");
+                const disciplines = teacher.disciplines.map(item => `
+                    <p itemprop="teachingDiscipline">${item}</p>
+                `).join("");
+                const programs = teacher.programs.map(item => `
+                    <p itemprop="teachingOp">${item}</p>
+                `).join("");
+                body.insertAdjacentHTML("beforeend", `
+                    <div class="teacher" itemprop="teachingStaff">
+                        <div class="teacher__left">
+                            <img class="teacher__photo" src="${teacher.photo}" alt="${teacher.name}">
+                            <p class="teacher__name" itemprop="fio">${teacher.name}</p>
+                            <p class="teacher__post" itemprop="post">${teacher.position}</p>
+                            <p class="teacher__text" itemprop="degree">Ученая степень: ${teacher.degree}</p>
+                            <p class="teacher__text" itemprop="academStat">Ученое звание: ${teacher.title}</p>
+                        </div>
+                        <div class="teacher__right">
+                            <div class="teacher__row">
+                                <p class="teacher__title">Образование</p>
+                                <div class="teacher__content">
+                                    ${education}
+                                </div>
+                            </div>
+                            <div class="teacher__row">
+                                <p class="teacher__title">
+                                    Сведения о продолжительности опыта (лет) работы в профессиональной сфере
+                                </p>
+                                <div class="teacher__content">
+                                    <p itemprop="specExperience">${teacher.experience}</p>
+                                </div>
+                            </div>
+                            <div class="teacher__row">
+                                <p class="teacher__title">Сведения о повышении квалификации</p>
+                                <div class="teacher__content">
+                                    ${qualification}
+                                    ${retraining}
+                                </div>
+                            </div>
+                            <div class="teacher__row">
+                                <p class="teacher__title">Преподаваемые дисциплины</p>
+                                <div class="teacher__content">
+                                    ${disciplines}
+                                    ${programs}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `);
+            });
+        })
+    </script>
+    <div class="teacher" id="department__professional" style="display: flex; flex-direction: column;"></div>
+    <h3 class="department" style="margin-bottom: 30px; margin-top: 50px; margin-bottom: 30px">Дополнительные образовательные профессиональные программы</h3>
+<script>
+    const qualification__teachers = [
+                    {
+                        photo: "https://static.tildacdn.com/tild3462-3464-4763-b634-323031333130/Voroshilova_Elena.jpg",
+                        name: "Ворошилова Елена Сергеевна",
+                        position: "Преподаватель дополнительного образования",
+                        degree: "нет",
+                        title: "нет",
+                        education: [
+                            {
+                                level: "Высшее",
+                                university: "Марийский государственный технический университет",
+                                qualification: "Магистр экономики",
+                                specialty: "Экономика"
+                            }
+                        ],
+                        experience: "нет сведений",
+                        qualificationCourses: [
+                            'Удостоверение о повышении квалификации №040000534809 от 25.12.2023 "Спортивное программирование: современные платформы и технологии обучения", 36 часов'
+                        ],
+                        retraining: [
+                            'Диплом о профессиональной переподготовке №1200 00000117 от 12.08.2023 по программе "Учитель информатики 21 века", 460 часов',
+                            'Диплом о профессиональной переподготовке №ОООД-24/100 от 27.07.2024 по программе "Управление и лидерство в образовании", 262 ак. ч.'
+                        ],
+                        disciplines: [
+                            "нет"
+                        ],
+                        programs: [
+                            "Базовые траектории обучения, технологии и методики преподавания учебных дисциплин в КШ «Инфосфера»"
+                        ]
+                    },
+                    {
+                        photo: "https://static.tildacdn.com/tild3765-6435-4232-b838-343165303437/Ginzburg_Elena.jpg",
+                        name: "Гинзбург Елена Евгеньевна",
+                        position: "Преподаватель дополнительного образования",
+                        degree: "нет",
+                        title: "нет",
+                        education: [
+                            {
+                                level: "Высшее",
+                                university: "Марийский государственный педагогический институт им. Н. К. Крупской",
+                                qualification: "Учитель физики и информатики",
+                                specialty: "Физика и информатика"
+                            }
+                        ],
+                        experience: "нет сведений",
+                        qualificationCourses: [
+                            'Удостоверение о повышении квалификации №122416299379 от 17.11.2023 "Организация образовательного процесса для инвалидов и лиц с ограниченными возможностями здоровья в образовательной организации высшего образования", 36 часов'
+                        ],
+                        retraining: [
+                            "отсутствует"
+                        ],
+                        disciplines: [
+                            "нет"
+                        ],
+                        programs: [
+                            "Образовательная робототехника в начальной и средней школе"
+                        ]
+                    },
+                    {
+                        photo: "https://static.tildacdn.com/tild3463-3733-4162-b931-643537313364/Zherebtsova_Olga.jpg",
+                        name: "Жеребцова Ольга Вениаминовна",
+                        position: "Преподаватель дополнительного образования",
+                        degree: "нет",
+                        title: "нет",
+                        education: [
+                            {
+                                level: "Высшее",
+                                university: "Марийский государственный университет",
+                                qualification: "Математик",
+                                specialty: "Прикладная математика"
+                            }
+                        ],
+                        experience: "нет сведений",
+                        qualificationCourses: [
+                            'Удостоверение №2237 от 20.11.2021 "Государственная регламентация образовательной деятельности", 24 часа',
+                            'Удостоверение №07-07/ВО/ОТ-ДО от 28.02.2022 "Требования охраны труда. Основные изменения в трудовом законодательстве, вступающие с 01 марта 2022 года в области охраны труда", 16 часов',
+                            'Удостоверение №120000000400 от 26.08.2022 "Системное развитие навыков программирования в условиях обновленного ФГОС ООО", 25 часов',
+                            'Удостоверение №2626 от 01.10.2022 "Разработка и реализация основной образовательной программы в соответствии с законодательством", 24 часа',
+                            'Удостоверение №0000003 от 23.01.2023 "Разработка электронных курсов", 70 часов',
+                            'Удостоверение №122416298826 от 21.04.2023 "Организация образовательного процесса для инвалидов и лиц с ограниченными возможностями здоровья", 36 часов'
+                        ],
+                        retraining: [
+                            'Диплом о профессиональной переподготовке №Д2019011698 от 01.08.2019 "Менеджмент образовательной организации", 250 часов'
+                        ],
+                        disciplines: [
+                            "нет"
+                        ],
+                        programs: [
+                            "Педагогика и психология преподавания в системе дополнительного образования"
+                        ]
+                    }
+            ];
+        document.addEventListener("DOMContentLoaded", () => {
+            const body = document.getElementById("department__qualification");
+            console.log(body);
+            qualification__teachers.forEach(teacher => {
+                const education = teacher.education.map(item => `
+                    <p itemprop="teachingLevel">${item.level},<br>${item.university}</p>
+                    <p itemprop="teachingQual">Квалификация: ${item.qualification}</p>
+                    <p itemprop="employeeQualification">Направление подготовки: ${item.specialty}</p>
+                `).join("");
+                const qualification = teacher.qualificationCourses.map(item => `
+                    <p itemprop="qualification">${item}</p>
+                `).join("");
+                const retraining = teacher.retraining.map(item => `
+                    <p itemprop="profDevelopment">${item}</p>
+                `).join("");
+                const disciplines = teacher.disciplines.map(item => `
+                    <p itemprop="teachingDiscipline">${item}</p>
+                `).join("");
+                const programs = teacher.programs.map(item => `
+                    <p itemprop="teachingOp">${item}</p>
+                `).join("");
+                body.insertAdjacentHTML("beforeend", `
+                    <div class="teacher" itemprop="teachingStaff">
+                        <div class="teacher__left">
+                            <img class="teacher__photo" src="${teacher.photo}" alt="${teacher.name}">
+                            <p class="teacher__name" itemprop="fio">${teacher.name}</p>
+                            <p class="teacher__post" itemprop="post">${teacher.position}</p>
+                            <p class="teacher__text" itemprop="degree">Ученая степень: ${teacher.degree}</p>
+                            <p class="teacher__text" itemprop="academStat">Ученое звание: ${teacher.title}</p>
+                        </div>
+                        <div class="teacher__right">
+                            <div class="teacher__row">
+                                <p class="teacher__title">Образование</p>
+                                <div class="teacher__content">
+                                    ${education}
+                                </div>
+                            </div>
+                            <div class="teacher__row">
+                                <p class="teacher__title">
+                                    Сведения о продолжительности опыта (лет) работы в профессиональной сфере
+                                </p>
+                                <div class="teacher__content">
+                                    <p itemprop="specExperience">${teacher.experience}</p>
+                                </div>
+                            </div>
+                            <div class="teacher__row">
+                                <p class="teacher__title">Сведения о повышении квалификации</p>
+                                <div class="teacher__content">
+                                    ${qualification}
+                                    ${retraining}
+                                </div>
+                            </div>
+                            <div class="teacher__row">
+                                <p class="teacher__title">Преподаваемые дисциплины</p>
+                                <div class="teacher__content">
+                                    ${disciplines}
+                                    ${programs}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `);
+            });
+        })
+</script>
+    <div class="teacher" id="department__qualification" style="display: flex; flex-direction: column;"></div>
+    <h3 class="department" style="margin-bottom: 30px;">Дополнительные общеразвивающие программы</h3>
+<script>
+    const development__teachers = [{
+                        photo: "https://static.tildacdn.com/tild6161-3138-4366-b633-663533646232/Baharevich_Dmitriy.jpg",
+                        name: "Бахаревич Дмитрий Игоревич",
+                        position: "Преподаватель дополнительного образования",
+                        degree: "нет",
+                        title: "нет",
+                        education: [
+                            {
+                                level: "Высшее",
+                                university: "Марийский государственный технический университет",
+                                qualification: "Инженер-технолог",
+                                specialty: "Технология деревообработки"
+                            }
+                        ],
+                        experience: "нет сведений",
+                        qualificationCourses: [
+                            'Удостоверение о повышении квалификации №1200 00000467 от 24.08.2024 "Образовательная робототехника в начальной и средней школе", 24 ак.ч.'
+                        ],
+                        retraining: [
+                            "отсутствуют"
+                        ],
+                        disciplines: [
+                            "нет"
+                        ],
+                        programs: [
+                            "Конструкция и базовые навыки пилотирования мультироторных БПЛА"
+                        ]
+                    },
+                    {
+                        photo: "https://static.tildacdn.com/tild6634-3939-4431-b238-633762356635/Lapteva_Ekaterina.jpg",
+                        name: "Лаптева Екатерина Геннадьевна",
+                        position: "Преподаватель дополнительного образования",
+                        degree: "нет",
+                        title: "нет",
+                        education: [
+                            {
+                                level: "Высшее",
+                                university: "Марийский государственный университет",
+                                qualification: "Математик. Системный программист",
+                                specialty: "Прикладная математика и информатика"
+                            }
+                        ],
+                        experience: "нет сведений",
+                        qualificationCourses: [
+                            'Удостоверение о повышении квалификации №1200 0000446 от 13.05.2023 "Педагогика и психология преподавания в системе дополнительного образования", 16 часов'
+                        ],
+                        retraining: [
+                            "отсутствуют"
+                        ],
+                        disciplines: [
+                            "нет"
+                        ],
+                        programs: [
+                            "Тестирование ПО"
+                        ]
+                    },
+                    {
+                    photo: "https://static.tildacdn.com/tild6632-3733-4839-a635-653731313434/Rachkova_Viktoria.png",
+                    name: "Рачкова Виктория",
+                    position: "Преподаватель дополнительного образования",
+                    degree: "нет",
+                    title: "нет",
+                    education: [
+                        {
+                            level: "получает Высшее (4 курс)",
+                            university: 'ФГБОУ ВО "Поволжский государственный технологический университет"',
+                            qualification: "Бакалавр",
+                            specialty: "27.03.05 Инноватика"
+                        }
+                    ],
+                    experience: "нет сведений",
+                    qualificationCourses: [
+                        "отсутствуют"
+                    ],
+                    retraining: [
+                        "отсутствуют"
+                    ],
+                    disciplines: [
+                        "нет"
+                    ],
+                    programs: [
+                        "Инструменты дизайнера"
+                    ]
+                },
+                {
+                    photo: "https://static.tildacdn.com/tild3035-3338-4436-a265-613539613635/Popov_Pavel.jpg",
+                    name: "Попов Павел Ильич",
+                    position: "Преподаватель дополнительного образования",
+                    degree: "нет",
+                    title: "нет",
+                    education: [
+                        {
+                            level: "Высшее",
+                            university: 'ГОУ ВПО "Марийский государственный технический университет"',
+                            qualification: "Инженер",
+                            specialty: "Безопасность жизнедеятельности в техносфере"
+                        }
+                    ],
+                    experience: "нет сведений",
+                    qualificationCourses: [
+                        "отсутствуют"
+                    ],
+                    retraining: [
+                        "отсутствуют"
+                    ],
+                    disciplines: [
+                        "нет"
+                    ],
+                    programs: [
+                        "Автоматизированное тестирование ПО"
+                    ]
+                },
+                {
+                    photo: "https://static.tildacdn.com/tild3638-3861-4664-a239-663565353539/Skulkina_Anastasia.jpg",
+                    name: "Скулкина Анастасия Александровна",
+                    position: "Преподаватель дополнительного образования",
+                    degree: "нет",
+                    title: "нет",
+                    education: [
+                        {
+                            level: "Высшее",
+                            university: 'ФГБОУ ВПО "Поволжский государственный технологический университет"',
+                            qualification: "Экономист",
+                            specialty: "Финансы и кредит"
+                        }
+                    ],
+                    experience: "4",
+                    qualificationCourses: [
+                        'Удостоверение о повышении квалификации №1200 0000451 от 13.05.2023 "Педагогика и психология преподавания в системе дополнительного образования", 16 часов',
+                        'Удостоверение о повышении квалификации №122416299390 от 17.11.2023 "Организация образовательного процесса для инвалидов и лиц с ограниченными возможностями здоровья в образовательной организации высшего образования", 36 часов'
+                    ],
+                    retraining: [
+                        "отсутствуют"
+                    ],
+                    disciplines: [
+                        "нет"
+                    ],
+                    programs: [
+                        "Инструменты дизайнера",
+                        "Веб-дизайн: сайты, лендинги, блоги и интернет-магазины"
+                    ]
+                },
+                {
+                    photo: "https://static.tildacdn.com/tild3865-6262-4134-a264-323930626431/Fabrikov_Mikhail.jpg",
+                    name: "Фабриков Михаил Викторович",
+                    position: "Преподаватель дополнительного образования",
+                    degree: "нет",
+                    title: "нет",
+                    education: [
+                        {
+                            level: "Высшее",
+                            university: 'ФГАОУ ВО "Санкт-Петербургский государственный электротехнический университет "ЛЭТИ" им. В.И. Ульянова (Ленина)", г. Санкт-Петербург',
+                            qualification: "Бакалавр",
+                            specialty: "27.03.03 Системный анализ и управление"
+                        }
+                    ],
+                    experience: "нет сведений",
+                    qualificationCourses: [
+                        "отсутствуют"
+                    ],
+                    retraining: [
+                        "отсутствуют"
+                    ],
+                    disciplines: [
+                        "нет"
+                    ],
+                    programs: [
+                        "Продуктовый дизайн (UX/UI)"
+                    ]
+                },
+            ];
+            document.addEventListener("DOMContentLoaded", () => {
+            const body = document.getElementById("teachers__evelopmental__programms");
+            console.log(body);
+            development__teachers.forEach(teacher => {
+                const education = teacher.education.map(item => `
+                    <p itemprop="teachingLevel">${item.level},<br>${item.university}</p>
+                    <p itemprop="teachingQual">Квалификация: ${item.qualification}</p>
+                    <p itemprop="employeeQualification">Направление подготовки: ${item.specialty}</p>
+                `).join("");
+                const qualification = teacher.qualificationCourses.map(item => `
+                    <p itemprop="qualification">${item}</p>
+                `).join("");
+                const retraining = teacher.retraining.map(item => `
+                    <p itemprop="profDevelopment">${item}</p>
+                `).join("");
+                const disciplines = teacher.disciplines.map(item => `
+                    <p itemprop="teachingDiscipline">${item}</p>
+                `).join("");
+                const programs = teacher.programs.map(item => `
+                    <p itemprop="teachingOp">${item}</p>
+                `).join("");
+                body.insertAdjacentHTML("beforeend", `
+                    <div class="teacher" itemprop="teachingStaff">
+                        <div class="teacher__left">
+                            <img class="teacher__photo" src="${teacher.photo}" alt="${teacher.name}">
+                            <p class="teacher__name" itemprop="fio">${teacher.name}</p>
+                            <p class="teacher__post" itemprop="post">${teacher.position}</p>
+                            <p class="teacher__text" itemprop="degree">Ученая степень: ${teacher.degree}</p>
+                            <p class="teacher__text" itemprop="academStat">Ученое звание: ${teacher.title}</p>
+                        </div>
+                        <div class="teacher__right">
+                            <div class="teacher__row">
+                                <p class="teacher__title">Образование</p>
+                                <div class="teacher__content">
+                                    ${education}
+                                </div>
+                            </div>
+                            <div class="teacher__row">
+                                <p class="teacher__title">
+                                    Сведения о продолжительности опыта (лет) работы в профессиональной сфере
+                                </p>
+                                <div class="teacher__content">
+                                    <p itemprop="specExperience">${teacher.experience}</p>
+                                </div>
+                            </div>
+                            <div class="teacher__row">
+                                <p class="teacher__title">Сведения о повышении квалификации</p>
+                                <div class="teacher__content">
+                                    ${qualification}
+                                    ${retraining}
+                                </div>
+                            </div>
+                            <div class="teacher__row">
+                                <p class="teacher__title">Преподаваемые дисциплины</p>
+                                <div class="teacher__content">
+                                    ${disciplines}
+                                    ${programs}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `);
+            });
+        })
+</script>
+    <div class="teacher" id="teachers__evelopmental__programms" style="display: flex; flex-direction: column;"></div>
+    <p class="info__subtitle" style="margin-top: 100px;">Вакантные места для приема (перевода) обучающихся</p>
+    <p class="description">В АНО ВО «РУМТ» места для приема (перевода) финансируемые за счет бюджетных ассигнований федерального бюджета, бюджетов Российской федерации, местных бюджетов <span style="color: orange;">не предусмотрены.</span></p>
+    <p class="description" style="margin-bottom: 50px;">Количество вакантных мест для приема (перевода) на места по договорам об образовании за счет средств физических и (или) юридических лиц: <span style="color: orange">отсутствует</span></p>
+    <p class="info__subtitle"> Дополнительные программы профессиональной переподготовки </p>
+    <p class="description" style="margin-bottom: 50px;">Разработка и проектирование программных систем. Базовый уровень – 30.<br><span style="color: orange">Записаться на программу</span></p>
+    <p class="info__subtitle"> Дополнительные общеразвивающие программы </p>
+    <p class="description" style="color: orange">Подробнее</p>
+</div>

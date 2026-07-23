@@ -1,28 +1,24 @@
 <meta charset="UTF-8">
 <style>
-        @font-face {
+    @font-face {
         font-family: "Inter Tight";
         src: url("fonts/Inter_Tight/static/InterTight-Regular.ttf") format("truetype");
         font-weight: 400;
-        font-style: normal;
     }
     @font-face {
         font-family: "Inter Tight";
         src: url("fonts/Inter_Tight/static/InterTight-Medium.ttf") format("truetype");
         font-weight: 500;
-        font-style: normal;
     }
     @font-face {
         font-family: "Inter Tight";
         src: url("fonts/Inter_Tight/static/InterTight-SemiBold.ttf") format("truetype");
         font-weight: 600;
-        font-style: normal;
     }
     @font-face {
         font-family: "Inter Tight";
         src: url("fonts/Inter_Tight/static/InterTight-Bold.ttf") format("truetype");
         font-weight: 700;
-        font-style: normal;
     }
     @font-face {
         font-family: "Inter";
@@ -44,87 +40,251 @@
         src: url("fonts/Inter/static/Inter_18pt-Bold.ttf") format("truetype");
         font-weight: 700;
     }
+    * {
+        box-sizing: border-box;
+    }
     body {
         margin: 0;
-        padding: 0;
         font-family: "Inter", sans-serif;
-        color: #222;
-        background: #fff;
+        color: #222222;
+        background: #ffffff;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
     .info {
-        max-width: 960px;
+        max-width: 100%;
+        margin: 0 auto;
         padding: 28px 21px 30px 15px;
     }
-    .cards {
-        margin-top: 32px;
-    }
-    .card {
-        padding: 28px 0;
-        border-bottom: 1px solid #e8e8e8;
-    }
-    .card-header {
-        display: flex;
+    .link-return {
+        display: inline-flex;
         align-items: center;
-        gap: 10px;
-        margin-bottom: 24px;
+        gap: 8px;
+        margin-bottom: 40px;
+        color: #222;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 500;
     }
-    .card-header img {
-        width: 22px;
-        height: 22px;
-        flex-shrink: 0;
+    .link-return__arrow {
+        width: 40px;
+        height: 40px;
     }
-    .card-header h2 {
-        margin: 0;
+    .title {
+        margin: 0 0 40px;
         font-family: "Inter Tight", sans-serif;
-        font-size: 22px;
+        font-size: 64px;
         font-weight: 700;
-        line-height: 1.3;
+        line-height: 1.05;
     }
-    .card-image {
-        display: block;
-        max-width: 100%;
-        margin: 0 auto 20px;
+    .includes {
+        margin: 0 0 48px;
+        font-size: 22px;
+        font-weight: 600;
+        line-height: 1.5;
     }
-    .card-image img,
-    .card-image {
-        display: block;
-        width: 45%;
-    }
-    .card-info {
+    .cards {
         display: flex;
         flex-direction: column;
     }
-    .card-info h3 {
-        margin: 0 0 8px;
+    .department {
+        padding: 42px 24px;
+        border-bottom: 1px solid #ECECEC;
+        transition: background-color .25s ease;
+    }
+    .department:hover {
+        background: #FFF6F1;
+    }
+    .department__title {
+        margin: 0 0 28px;
         font-family: "Inter Tight", sans-serif;
-        font-size: 22px;
-        font-weight: 700;
-        line-height: 1.3;
-        color: #ff5b1f;
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 1.2;
     }
-    .card-info p {
+    .department__content {
+        display: flex;
+        align-items: center;
+        gap: 56px;
+    }
+    .department__image {
+        width: 190px;
+        height: 190px;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 18px;
+        flex-shrink: 0;
+        transition: transform .25s ease;
+    }
+    .department:hover .department__image {
+        transform: scale(1.02);
+    }
+    .department__info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .department__name {
         margin: 0;
-        font-size: 16px;
+        font-size: 34px;
+        font-weight: 600;
+        line-height: 1.15;
+    }
+    .department__position {
+        margin: 12px 0 22px;
+        color: #FF6B35;
+        font-size: 20px;
+        font-weight: 500;
         line-height: 1.4;
     }
-    .card-info p + p {
-        margin-top: 2px;
-    }
-    .card-info a {
-        display: block;
-        margin-top: 2px;
+    .department__address,
+    .department__website {
+        margin: 0 0 8px;
+        color: #555;
         font-size: 16px;
-        line-height: 1.4;
-        color: #ff5b1f;
+        line-height: 1.65;
+    }
+    .department__email {
+        margin-bottom: 18px;
+        color: #FF6B35;
+        font-size: 16px;
         text-decoration: none;
     }
-    .card-info a:hover {
+    .department__document {
+        color: #FF6B35;
+        font-size: 16px;
+        font-weight: 500;
+        text-decoration: none;
+    }
+    .department__email:hover,
+    .department__document:hover {
         text-decoration: underline;
     }
-    .document {
-        margin-top: 8px !important;
+    .table-block {
+        overflow-x: auto;
+    }
+    .info__description {
+        font-size: 24;
+        margin-bottom: 30px;
+        margin-top: 50px;
+    }
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 16px;
+        color: #333333;
+    }
+    .table th,
+    .table td {
+        border: 1px solid #7D7D7D;
+        padding: 12px 14px;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 1.3;
+    }
+    .table th {
+        font-weight: 600;
+    }
+    .table tr:first-child th {
+        background: #FBE6DE;
+    }
+    .table td {
+        background: #fff;
+    }
+    .menu {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+        margin-bottom: 18px;
+    }
+    .menu:last-of-type {
+        margin-bottom: 50px;
+    }
+    .menu__arrow {
+        width: 18px;
+        margin-top: 4px;
+        flex-shrink: 0;
+    }
+    .menu__title {
+        line-height: 1.7;
+    }
+    @media (max-width: 900px) {
+        .title {
+            font-size: 48px;
+        }
+        .department__content {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 28px;
+        }
+        .department__image {
+            width: 170px;
+            height: 170px;
+        }
+        .department__name {
+            font-size: 28px;
+        }
+    }
+    @media (max-width: 600px) {
+        .info {
+            padding: 32px 20px 60px;
+        }
+        .title {
+            font-size: 40px;
+        }
+        .includes {
+            font-size: 18px;
+        }
+        .department {
+            padding: 32px 0;
+        }
+        .department__title {
+            font-size: 24px;
+        }
+        .department__image {
+            width: 150px;
+            height: 150px;
+        }
+        .department__name {
+            font-size: 24px;
+        }
+        .department__position {
+            font-size: 18px;
+        }
+    }
+    @media (min-width: 768px) {
+        .info {
+            padding: 50px 21px 50px 15px;
+        }
+        .info__title {
+            font-size: 56px;
+            margin-bottom: 48px;
+        }
+    }
+    @media (min-width: 1024px) {
+        .info {
+            max-width: 100vw;
+            padding: 50px 9.114vw;
+        }
+        .info__title {
+            font-size: 64px;
+            margin-bottom: 56px;
+        }
+    }
+    @media (min-width: 1600px) {
+        .info {
+            padding: 50px 9.114vw;
+        }
+        .info__title {
+            font-size: 72px;
+        }
+    }
+    @media (min-width: 2300px) {
+        .info {
+            width: 90vw;
+            max-width: 100vw;
+            padding: 50px 9.114vw;
+        }
     }
 </style>
 <script>
@@ -211,40 +371,91 @@
         }
     ];
     document.addEventListener("DOMContentLoaded", () => {
-        const cards = document.querySelector(".cards");
-        departments.forEach(department => {
-            const card = document.createElement("div");
-            card.className = "card";
-            card.innerHTML = `
-                <div class="card-header">
-                    <h2>${department.title}</h2>
+    const cards = document.querySelector(".cards");
+    departments.forEach(department => {
+        cards.insertAdjacentHTML("beforeend", `
+            <div class="department">
+                <h2 class="department__title">${department.title}</h2>
+                <div class="department__content">
+                    <img class="department__image" src="${department.image}" alt="${department.name}">
+                    <div class="department__info">
+                        <p class="department__name">${department.name}</p>
+                        <p class="department__position">${department.position}</p>
+                        <p class="department__address">${department.address}</p>
+                        <p class="department__website">${department.website}</p>
+                        <a class="department__email" href="mailto:${department.email}">${department.email}</a>
+                        <a class="department__document" href="#">${department.document} →</a>
+                    </div>
                 </div>
-                <img class="card-image" src="${department.image}" alt="${department.name}">
-                <div class="card-info">
-                    <h3>${department.name}</h3>
-                    <p>${department.position}</p>
-                    <p>${department.address}</p>
-                    <p>${department.website}</p>
-                    <a href="mailto:${department.email}">${department.email}</a>
-                    <a class="document" href="#">${department.document}</a>
-                </div>
-            `;
-            cards.appendChild(card);
-        });
+            </div>
+        `);
     });
+});
 </script>
 <div class="info">
     <a class="link-return" href="sveden.html">
         <img class="link-return__arrow" src="images/Arrow_left.svg" alt="arrow">
-        <p class="link-return__title" style="display: inline">Назад</p>
+        <p class="link-return__title">Назад</p>
     </a>
     <h1 class="title">Структура и органы управления образовательной организацией</h1>
     <h2 class="includes">Структура органов управления АНО ВО "РУМТ" включает в себя:</h2>
-    <div class="includes__info">
-        <p><img src="images/Arrow_left.svg">Высший орган управления - Учредитель</p>
-        <p><img src="images/Arrow_left.svg">Единоличный исполнительный орган - Директор</p>
-        <p><img src="images/Arrow_left.svg">Коллегиальный орган управления - Учёный совет, <span class="hypertext">Положение</span></p>
-        <p><img src="images/Arrow_left.svg">Коллегиальный орган управления - Общее собрание работников и обучающися, <span class="hypertext">Положение</span></p>
+    <div class="menu">
+        <img class="menu__arrow" src="images/arrow_right.svg" alt="arrow">
+        <span class="menu__title">Стипендии обучающимся предоставляются в соответствии с Положением о стипендиях и материальной поддержке обучающихся АНО ВО «РУМТ»</span>
+    </div>
+    <div class="menu">
+        <img class="menu__arrow" src="images/arrow_right.svg" alt="arrow">
+        <span class="menu__title">Материальная поддержка обучающимся предоставляется в соответствии с Положением о стипендиях и материальной поддержке обучающихся в АНО ВО «РУМТ».</span>
+    </div>
+    <div class="menu" style="margin-bottom: 50px;">
+        <img class="menu__arrow" src="images/arrow_right.svg" alt="arrow">
+        <span class="menu__title">В АНО ВО «РУМТ» общежитий нет.</span>
     </div>
     <div class="cards"></div>
+    <p class="info__description">Информация о филиалах образовательной организации</p>
+    <div class="table-block">
+        <table class="table">
+            <tr>
+                <th>Наименование филиала</th>
+                <th>ФИО руководителя</th>
+                <th>Должность руководителя</th>
+                <th>Адрес места нахождения</th>
+                <th>Электронная почта</th>
+                <th>Адрес официального сайта или страницы</th>
+                <th>Положение о филиале</th>
+            </tr>
+            <tr align="center" itemprop="filInfo">
+                <td itemprop="nameFil">отсутствует</td>
+                <td itemprop="fioFil">отсутствует</td>
+                <td itemprop="postFil">отсутствует</td>
+                <td itemprop="addressFil">отсутствует</td>
+                <td itemprop="emailFil">отсутствует</td>
+                <td itemprop="websiteFil">отсутствует</td>
+                <td itemprop="divisionClauseDocLink">отсутствует</td>
+            </tr>
+        </table>
+    </div>
+    <p class="info__description">Информация о представительствах образовательной организации</p>
+    <div class="table-block">
+        <table class="table">
+            <tr>
+                <th>Наименование представительства</th>
+                <th>ФИО руководителя</th>
+                <th>Должность руководителя</th>
+                <th>Адрес места нахождения</th>
+                <th>Электронная почта</th>
+                <th>Адрес официального сайта или страницы</th>
+                <th>Положение о представительстве</th>
+            </tr>
+            <tr align="center" itemprop="repInfo">
+                <td itemprop="nameRep">отсутствует</td>
+                <td itemprop="fioRep">отсутствует</td>
+                <td itemprop="postRep">отсутствует</td>
+                <td itemprop="addressRep">отсутствует</td>
+                <td itemprop="emailRep">отсутствует</td>
+                <td itemprop="websiteRep">отсутствует</td>
+                <td itemprop="divisionClauseDocLink">отсутствует</td>
+            </tr>
+        </table>
+    </div>
 </div>
