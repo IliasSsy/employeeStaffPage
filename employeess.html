@@ -1,111 +1,167 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
     * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
     }
+        @font-face {
+        font-family: "Inter Tight";
+        src: url("fonts/Inter_Tight/static/InterTight-Regular.ttf") format("truetype");
+        font-weight: 400;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Inter Tight";
+        src: url("fonts/Inter_Tight/static/InterTight-Medium.ttf") format("truetype");
+        font-weight: 500;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Inter Tight";
+        src: url("fonts/Inter_Tight/static/InterTight-SemiBold.ttf") format("truetype");
+        font-weight: 600;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Inter Tight";
+        src: url("fonts/Inter_Tight/static/InterTight-Bold.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter/static/Inter_18pt-Regular.ttf") format("truetype");
+        font-weight: 400;
+    }
+    @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter/static/Inter_18pt-Medium.ttf") format("truetype");
+        font-weight: 500;
+    }
+    @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter/static/Inter_18pt-SemiBold.ttf") format("truetype");
+        font-weight: 600;
+    }
+    @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter/static/Inter_18pt-Bold.ttf") format("truetype");
+        font-weight: 700;
+    }
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: "Inter", sans-serif;
+        color: #222;
+        background: #fff;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
     .info {
-        line-height: 20px;
-        max-width: 100vw;
-        padding: 50px 9.114vw;
-        color: #2f3337;
-        font-weight: 400;
+        max-width: 960px;
+        padding: 50px 21px 50px 15px;
     }
-    .link {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        text-decoration: none;
-        width: 107px;
-        height: 33px;
-        margin-bottom: 80px;
+    .link-return {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 40px;
+            color: black;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
     }
-    .return {
-        width: 26px;
-        height: 24px
+    .link-return__arrow {
+        width: 40px;
+        height: 40px;
     }
-    .return__text {
-        width: 66px;
-        font-weight: 400;
-        font-size: 22px;
-        line-height: 150%;
-        color: rgba(36, 39, 42, 1);
-    }
-    .title {
-        font-size: 56px;
-        line-height: 110%;
-        width: 100%;
-        max-width: 609px;
-        height: 110px;
-        font-weight: 500;
-        margin-bottom: 40px;
-    }
-    .person {
-        width: 100%;
-        max-width: 370px;
-        background-color: rgba(251, 241, 234, 1);
-        height: 441px;
-    }
-    .person a {
-        text-decoration: none;
-    }
-    .person_photo {
-        display:block;
-        width: 100%;
-        height: 275px;
-        object-fit: cover;
-    }
-    .person__info {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 25px;
-        height: 166px;
-        background-color: rgba(242, 242, 242, 1);
-        color: rgba(2, 8, 11, 1)
-    }
-    .person__fio {
-        color: rgba(2, 8, 11, 1);
-        font-weight: 500;
-        font-size: 28px;
-        line-height: 34px;
-        padding-bottom: 20px;
-    }
-    .person__post {
-        font-weight: 400;
-        font-size: 18px;
-        line-height: 28px
-    }
-    .people {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, 330px);
-        gap: 30px;
-        margin-bottom: 150px;
+    .info__title {
+        margin: 0 0 50px;
+        font-family: "Inter Tight", sans-serif;
+        font-size: 42px;
+        font-weight: 700;
+        line-height: 1.05;
     }
     .description {
-        display: block;
-        width: 100%;
-        max-width: 1287px;
-        height: 131px;
-        padding-bottom: 50px;
-        font-size: 28px;
-        line-height: 40px;
+        width: auto;
+        height: auto;
+        padding-bottom: 20px;
+        font-size: 14px;
+        line-height: 20px;
     }
     .major {
+        font-size: 14px;
+        line-height: 34px;
         font-weight: 500;
-        font-size: 28px;
-        line-height: 110%;
+        margin-bottom: 6px;
+    }
+    .people {
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+        width: 100%;
+        margin-bottom: 100px;
+    }
+    .person {
+        background: #FBF1EA;
+    }
+    .person a {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        color: inherit;
+    }
+    .person_photo {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        display: block;
+    }
+    .person__info {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-height: 110px;
+        padding: 16px;
+        background: #F2F2F2;
+    }
+    .person__fio {
+        font-family: "Inter Tight", sans-serif;
+        font-size: clamp(12px, 2vw, 18px);
+        font-weight: 500;
+        line-height: 1.25;
+        margin: 0 0 8px;
+    }
+    .person__post {
+        font-size: clamp(12px, 1.6vw, 18px);
+        line-height: 1.3;
+        margin-top: auto;
+        color: #555;
     }
     .popup {
         z-index: 1;
         position: fixed;
         inset: 0;
         opacity: 0;
+        visibility: hidden;
         overflow-y: auto;
         scrollbar-width: none;
         background: rgba(0, 0, 0, 0.5);
-        visibility: hidden;
-        transition: all 0.3s ease;
+        transition: opacity .3s ease;
+    }
+    .teacher__arrow {
+        position: absolute;
+        top: 18px;
+        right: 18px;
+        width: 22px;
+        height: 22px;
+        opacity: 0;
+        transition: 0.25s ease;
     }
     .popup:target {
         opacity: 1;
@@ -119,33 +175,36 @@
         min-height: 100vh;
         display: flex;
         justify-content: center;
-        padding: 50px 20px;
+        padding: 10px;
     }
     .popup__content {
+        margin-top: 100px;
+        margin-bottom: 50px;
         position: relative;
-        width: min(1570px, calc(100vw - 40px));
-        background: white;
+        width: calc(100vw - 18px);
+        background: #fff;
         border-radius: 4px;
-        padding: 50px;
+        padding: 15px;
     }
     .popup__close {
         position: absolute;
-        top: 30px;
-        right: 30px;
-        font-size: 42px;
+        top: 10px;
+        right: 10px;
+        font-size: 30px;
         text-decoration: none;
         color: #FA5D1F;
         line-height: 1;
     }
     .popup__header {
         display: grid;
-        grid-template-columns: 282px 1fr;
-        gap: 50px;
-        margin-bottom: 60px;
+        grid-template-columns: 160px 1fr;
+        gap: 10px;
+        align-items: start;
+        margin-bottom: 20px;
     }
     .popup__photo {
-        width: 282px;
-        height: 274px;
+        width: 160px;
+        height: 155px;
     }
     .popup__person__photo {
         width: 100%;
@@ -154,73 +213,63 @@
         object-fit: cover;
     }
     .popup__header_info {
-        width: 100%;
-        min-width: 0;
         display: flex;
         flex-direction: column;
-        justify-content: center;
     }
     .popup__title {
-        max-width: 100%;
-        width: 100%;
-        font-size: 52px;
+        margin: 0 0 8px;
+        font-size: 14px;
         font-weight: 500;
-        line-height: 60px;
-        margin-bottom: 10px;
+        line-height: 18px;
+        width: 160px;
     }
     .popup__subtitle {
-        font-size: 22px;
-        line-height: 34px;
-        margin-bottom: 40px;
+        margin-bottom: 20px;
+        font-size: 12px;
+        line-height: 16px;
     }
     .popup__person__focus {
+        margin: 20px 0 0;
         color: #FA5D1F;
-        font-size: 24px;
+        font-size: 14px;
         font-weight: 500;
-        line-height: 32px;
+        line-height: 18px;
     }
     .popup__header_info p:last-child {
-        font-size: 18px;
-        line-height: 30px;
-        width: 750px;
+        width: 100%;
+        margin-bottom: 20px;
+        font-size: 12px;
+        line-height: 16px;
     }
     .popup__grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 70px;
+        display: block;
     }
     .popup__column {
-        display: flex;
-        flex-direction: column;
-        gap: 50px;
+        display: contents;
     }
     .popup__block {
         display: flex;
         flex-direction: column;
         gap: 10px;
+        margin-bottom: 20px;
     }
-    .popup__block div,
-    .popup__block span {
-        font-size: 18px;
-        line-height: 30px;
+    .popup__block p:not(.popup__person__focus),
+    .popup__block span,
+    .popup__block div {
+        margin: 0;
+        font-size: 12px;
+        line-height: 16px;
         color: #2F3337;
     }
-    .popup__block p:not(.popup__person__focus) {
-        font-size: 18px;
-        line-height: 30px;
-        color: #2F3337;
+    html:has(.popup:target),
+    body:has(.popup:target) {
+        overflow: hidden;
     }
-    .popup__person__focus {
-        color: rgba(250, 93, 32, 1);
+    .popup__content p:not([class]){
+        font-size: 12px;
     }
-    .person__info{
-        position:relative;
-        background:#F3F3F3;
-        transition: 0.25s ease;
-    }
-    .person__fio,
-    .person__post{
-        transition: 0.25s ease;
+    .description {
+        font-size: 14;
     }
     .teacher__arrow{
         position: absolute;
@@ -241,195 +290,139 @@
     .person:hover .teacher__arrow{
         opacity:1;
     }
-    @media (min-width: 3500px) {
-        .popup__content {
-            height: 1500px;
-        }
-    }
-@media (max-width: 1100px) {
-    .people{
-        grid-template-columns:repeat(auto-fit, minmax(240px,320px));
-        gap:24px;
-    }
-    .person{
-        max-width:320px;
-        height:auto;
-    }
-    .person__info{
-        width:100%;
-    }
-    .person_photo{
-        height:240px;
-    }
-}
-@media (max-width: 900px){
-    .people{
-        grid-template-columns:repeat(auto-fit, minmax(200px,260px));
-        gap:20px;
-    }
-    .person{
-        max-width:260px;
-        padding: 28px 21px 30px 15px;
-    }
-    .person_photo{
-        height:210px;
-    }
-}
-@media (max-width: 768px) {
-    .info {
-        padding: 28px 21px 30px 15px;
-    }
-    .return__text {
-        font-size: 14px;
-        line-height: 30px;
-    }
-    .return {
-        width: 20px;
-        height: 18px;
-    }
-    .link {
-        margin-bottom: 50px;
-    }
-    .return_text {
-        font-size: 14px;
-        line-height: 30px;
-    }
-    .title {
-        width: auto;
-        height: auto;
-        margin-bottom: 20px;
-        font-size: 28px;
-        line-height: 34px;
-    }
-    .description {
-        width: auto;
-        height: auto;
-        padding-bottom: 20px;
-        font-size: 14px;
-        line-height: 20px;
-    }
-    .major {
-        font-size: 14px;
-        line-height: 34px;
-        font-weight: 500;
-        margin-bottom: 6px;
-    }
     .people {
-        grid-template-columns:repeat(2, minmax(0, 160px));
-        gap: 19px;
-        margin-bottom: 100px;
+        display: grid;
+        align-items: stretch;
     }
     .person {
-        width: 160px;
-        height: 233px;
+        display: flex;
     }
-    .person_photo {
-        height: 155px;
-    }
-    .person__info {
-        flex-direction: column;
-        justify-content: flex-start;
-        padding: 8px 12px;
-        width: 160px;
-        height: 78px;
-    }
-    .person__fio {
-        font-size: 12px;
-        line-height: 125%;
-        padding-bottom: 8px;
-    }
-    .person__post {
-        font-size: 10px;
-        line-height: 16px;
-    }
-    .teacher__arrow {
-        width: 16px;
-        height: 16px;
-        top: 12px;
-        right: 12px;
-    }
-    .person__header {
-        display:grid;
-        grid-template-columns:140px 1fr;
-        grid-template-rows:auto auto auto auto;
-    }
-    .popup__header{
-        display:grid;
-        grid-template-columns:160px 1fr;
-        gap:20px;
-        column-gap: 10px;
-        margin: 0px;
-        align-items: start;
-    }   
-    .popup__close {
-        position: absolute;
-        top: 0px;
-        font-size: 30px;
-        top: 10px;
-    }
-    .popup__title{
-        top: 15px;
-        line-height:18px;
-        margin-bottom:8px;
-        width: 84px;
-        font-size:14px;
-        font-weight: 500;
-    }
-    .popup__block {
-        gap: 10px;
-    }
-    .popup__person__focus + p {
-        font-size: 12px;
-        line-height: 16px;
-    }
-    .popup__block p:not(.popup__person__focus) {
-        font-size: 12px;
-        line-height: 16px;
-    }
-    .popup__block span:not(.popup__person__focus) {
-        font-size: 12px;
-        line-height: 16px;
-    }
-    .popup__person__photo{
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-    }
-    .popup__photo {
-        width: 160px;
-        height: 155px;
-    }
-    .popup__header_info {
+    .person a {
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
-    }
-    .popup__header_info p:last-child {
-        max-width: 100%;
         width: 100%;
-        font-size: 12px;
-        line-height: 16px;
-        margin-bottom: 20px;
     }
-    .popup__content{
-        width:calc(100vw - 20px);
-        padding:15px;
+    .person__info {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
     }
-    .popup__person__focus{
-        margin-top: 20px;
-        margin-bottom: 0;
-        font-size: 14px;
-        font-weight: 500;
-        line-height: 18px;
+    @media (min-width: 768px) {
+        .info {
+            padding: 50px 21px 50px 15px;
+        }
+        .info__title {
+            font-size: 56px;
+            margin-bottom: 48px;
+        }
+        .people {
+            grid-template-columns: repeat(auto-fit, 300px);
+        }
+        .person_photo {
+            width: 100%;
+            aspect-ratio: 1 / 0.7;
+            object-fit: cover;
+            object-position: center top;
+        }
     }
-    .popup__grid{
-        display:block;
+    @media (min-width: 1024px) {
+        .info {
+            width: 100%;
+            max-width: 100vw;
+            padding: 50px 9.114vw;
+        }
+        .person__info {
+            padding: 18px;
+            min-height: 140px;
+        }
+        .people {
+            grid-template-columns: repeat(auto-fit, 365px);
+            gap: 30px;
+            justify-content: center;
+            margin-bottom: 150px;
+        }
+        .info__title {
+            font-size: 64px;
+            margin-bottom: 56px;
+        }
+        .major, .person__fio {
+            font-size: 28px;
+            font-weight: 500;
+            font-family: "Inter Tight", sans-serif
+        }
+        .description {
+            font-size: 28px;
+        }
+        .person__post {
+            font-size: 18px;
+        }
+        .description {
+            line-height: 50px;
+        }
+        .popup__content {
+            width: 82vw;
+            margin: 60px auto;
+            padding: 36px;
+        }
+        .popup__header {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            gap: 32px;
+            align-items: start;
+            margin-bottom: 40px;
+        }
+        .popup__photo {
+            width: 180px;
+            height: 180px;
+        }
+        .popup__person__photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .popup__grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 60px;
+            align-items: start;
+        }
+        .popup__column {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        .popup__content p:not([class]), .popup__content span:not([class]), .popup__subtitle{
+            font-size: 18px;
+            line-height: 28px;;
+        }
+        .popup__person__focus {
+            font-size: 24px;
+            line-height: 28px;
+        }
+        .popup__title {
+            font-size: 40px;
+            font-family: "Inter Tight", sans-serif;
+            font-weight: 500;
+            margin-bottom: 20px;
+            margin-top: 10px;
+            width: 100%;
+        }
     }
-    .popup__column{
-        display:contents;
+    @media (min-width: 1600px) {
+        .info {
+            padding: 50px 9.114vw;
+        }
+        .info__title {
+            font-size: 72px;
+        }
     }
-}
+    @media (min-width: 2300px) {
+        .info {
+            width: 100%;
+            max-width: 100vw;
+            padding: 50px 9.114vw;
+        }
+    }
 </style>
 <script>
 function updatePopupLayout() {
@@ -452,15 +445,13 @@ function updatePopupLayout() {
 document.addEventListener("DOMContentLoaded", updatePopupLayout);
 window.addEventListener("resize", updatePopupLayout);
 </script>
-
-
 <div class="info" itemprop="teachingStaff">
-    <a class="link" href="https://ispring.institute/sveden/">
-        <img class="return" src="https://static.tildacdn.com/tild6264-3866-4035-a632-396563643535/return.svg" alt="Назад">
-        <span class="return__text">Назад</span>
+    <a class="link-return" href="sveden.html">
+        <img class="link-return__arrow" src="images/Arrow_left.svg" alt="arrow">
+        <p class="link-return__title">Назад</p>
     </a>
     <div class="card__content">
-        <h1 class="title">Педагогический состав</h1>
+        <h1 class="info__title" style="margin-bottom: 20px;">Педагогический состав</h1>
         <span class="description"><span class="major">09.03.04 Программная инженерия</span><br>Направленность (профиль): Проектирование и разработка программных систем</span>
         <div class="people" id="peoplePS"></div>
             <script>
@@ -530,7 +521,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Арнабердиев Авдыкерим</p>
                         <p class="popup__subtitle" itemprop="post">И.о. зав. кафедрой, старший преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Веб разработка, фронтенд разработка, подготовка программистов</p>
                     </div>
                 </div>
@@ -631,7 +622,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Андрейшев Иван Ильич</p>
                         <p class="popup__subtitle" itemprop="post">Преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Проектная разработка, мобильная разработка, C++, немного разработка игр</p>
                     </div>
                 </div>
@@ -715,7 +706,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Балышева Марина Андреевна</p>
                         <p class="popup__subtitle" itemprop="post">Преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>нет информации</p>
                     </div>
                 </div>
@@ -801,7 +792,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Бородин Андрей Викторович</p>
                         <p class="popup__subtitle" itemprop="post">Доцент</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Нет информации</p>
                     </div>
                 </div>
@@ -889,7 +880,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Вавилова Ксения Юрьевна</p>
                         <p class="popup__subtitle" itemprop="post">Доцент</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Английский язык, практика речи, межкультурная коммуникация</p>
                     </div>
                 </div>
@@ -989,7 +980,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Воробьев Дмитрий Николаевич</p>
                         <p class="popup__subtitle" itemprop="post">Доцент</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Философия, теория познания, академическое письмо</p>
                     </div>
                 </div>
@@ -1093,7 +1084,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Гайнутдинов Рустам Маратович</p>
                         <p class="popup__subtitle" itemprop="post">Преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Нет информации</p>
                     </div>
                 </div>
@@ -1184,7 +1175,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Галочкин Владимир Иванович</p>
                         <p class="popup__subtitle" itemprop="post">Доцент</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Алгоритмы и структуры данных, базы данных, олимпиадное программирование, алгоритмическая подготовка программистов</p>
                     </div>
                 </div>
@@ -1270,7 +1261,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Дудин Андрей Александрович</p>
                         <p class="popup__subtitle" itemprop="post">Преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Программирование, архитектура информационных систем</p>
                     </div>
                 </div>
@@ -1352,7 +1343,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Егошин Андрей Станиславович</p>
                         <p class="popup__subtitle" itemprop="post">Преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Руководитель отдела<br>Отдел разработки систем обучения ООО «Ричмедиа»</p>
                     </div>
                 </div>
@@ -1436,7 +1427,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Жеребцова Ольга Вениаминовна</p>
                         <p class="popup__subtitle" itemprop="post">И.о зав. кафедрой, старший преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Как сформировать у ребенка инженерное мышление так, чтобы их не переучивать </p>
                     </div>
                 </div>
@@ -1535,7 +1526,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Козлов Александр Иванович</p>
                         <p class="popup__subtitle" itemprop="post">Доцент</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>
                             Вычислительная математика, разработка алгоритмов решения некорректных задач,
                             обучение математике.
@@ -1645,7 +1636,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Колесников Евгений Александрович</p>
                         <p class="popup__subtitle" itemprop="post">Старший преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Нет информации</p>
                     </div>
                 </div>
@@ -1731,7 +1722,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Колесникова Светлана Николаевна</p>
                         <p class="popup__subtitle" itemprop="post">Старший преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Нет информации</p>
                     </div>
                 </div>
@@ -1816,7 +1807,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Костицына Ксения Олеговна</p>
                         <p class="popup__subtitle" itemprop="post">Преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Схемотехника, электроника (курсы, мастер-классы для школьников) </p>
                     </div>
                 </div>
@@ -1908,7 +1899,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Кудасов Николай Дмитриевич</p>
                         <p class="popup__subtitle" itemprop="post">Старший преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>
                             Функциональное программирование (Haskell, в первую очередь), включая промышленное функциональное программирование (веб-сервисы, компиляторы); теоритическая информатика (теория языков программирования, теория типов, гомотопическая теория типов)
                         </p>
@@ -1997,7 +1988,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Кулаковская Арина Александровна</p>
                         <p class="popup__subtitle" itemprop="post">Преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Нет информации</p>
                     </div>
                 </div>
@@ -2083,7 +2074,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Лановая Татьяна Владимировна</p>
                         <p class="popup__subtitle" itemprop="post">Доцент</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Современный русский язык, цифровой этикет, деловое общение и научная коммуникация, проектная деятельность (организация, реализация социальных проектов, экспертиза заявок)</p>
                     </div>
                 </div>
@@ -2194,7 +2185,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Лежнина Татьяна Михайловна</p>
                         <p class="popup__subtitle" itemprop="post">Доцент</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Нет информации</p>
                     </div>
                 </div>
@@ -2288,7 +2279,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Любжин Алексей Игоревич</p>
                         <p class="popup__subtitle" itemprop="post">Профессор</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Нет информации</p>
                     </div>
                 </div>
@@ -2382,7 +2373,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Малов Алексей Николаевич</p>
                         <p class="popup__subtitle" itemprop="post">Доцент</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Программирование, архитектура ПО, компьютерная графика и мультимедиа</p>
                     </div>
                 </div>
@@ -2468,7 +2459,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Масленников Александр Степанович</p>
                         <p class="popup__subtitle" itemprop="post">Доцент</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>
                             Исследование вещества методом ядерного магнитного резонанса, разрабатываю тестовые задания различной формы для оценки уровня знания студентов, увлекался альпинизмом, имел первый спортивный разряд и восхождение на пик Ленина (7134 метра)
                         </p>
@@ -2569,7 +2560,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Моисеева Ольга Александровна</p>
                         <p class="popup__subtitle" itemprop="post">Доцент</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Нет информации</p>
                     </div>
                 </div>
@@ -2655,7 +2646,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Нехорошкова Людмила Георгиевна</p>
                         <p class="popup__subtitle" itemprop="post">Старший преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>
                             Теория языков программирования, информационное моделирование и анализ требований, технология разработки ПО, управление программными проектами
                         </p>
@@ -2741,7 +2732,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Парсаева Ирина Вениаминовна</p>
                         <p class="popup__subtitle" itemprop="post">Доцент</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Нет информации</p>
                     </div>
                 </div>
@@ -2840,7 +2831,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Попов Михаил Александрович</p>
                         <p class="popup__subtitle" itemprop="post">Старший преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Практическая генеалогия, комплексный портрет сословия одновдорцев в Российской империи в XVIII-XIX веках</p>
                     </div>
                 </div>
@@ -2952,7 +2943,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Роженцева Любовь Сергеевна</p>
                         <p class="popup__subtitle" itemprop="post">Преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Нет информации</p>
                     </div>
                 </div>
@@ -3046,7 +3037,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Рублик Станислав Сергеевич</p>
                         <p class="popup__subtitle" itemprop="post">Преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Нет информации</p>
                     </div>
                 </div>
@@ -3137,7 +3128,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Смойлов Андрей Александрович</p>
                         <p class="popup__subtitle" itemprop="post">Старший преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Нет информации</p>
                     </div>
                 </div>
@@ -3229,7 +3220,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Старцева Евгения Андреевна</p>
                         <p class="popup__subtitle" itemprop="post">Старший преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Ручное и автоматизированное тестирование</p>
                     </div>
                 </div>
@@ -3322,7 +3313,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Сульдина Людмила Георгиевна</p>
                         <p class="popup__subtitle" itemprop="post">Старший преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>
                             Социальная философия (цифровая субъектность, кризис идентичности, виртуальная идентичность и аутентичность); История и теория вокального искусства (бельканто); СМИ/Медиа/Креативные индустрии  (культурный блогинг), Менеджмент (особенно в части оптимизации). Личные интересы: фитнес, академический вокал, саморазвитие/ коучинг/наставничество, современный кинематограф, электронная музыка.Социальная философия (цифровая субъектность, кризис идентичности, виртуальная идентичность и аутентичность); История и теория вокального искусства (бельканто); СМИ/Медиа/Креативные индустрии  (культурный блогинг), Менеджмент (особенно в части оптимизации). Личные интересы: фитнес, академический вокал, саморазвитие/ коучинг/наставничество, современный кинематограф, электронная музыка.
                         </p>
@@ -3425,7 +3416,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Тараторин Никита Дмитриевич</p>
                         <p class="popup__subtitle" itemprop="post">Преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Политика, политология, политическая философия</p>
                     </div>
                 </div>
@@ -3519,7 +3510,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Трубянов Алексей Борисович</p>
                         <p class="popup__subtitle" itemprop="post">Доцент</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>
                             Теория вероятностей и математическая статитистика. Вероятностно-статистические модели в биологии, медицине, сельском хозяйстве, экономике и др.
                         </p>
@@ -3619,7 +3610,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Усков Юрий Викторович</p>
                         <p class="popup__subtitle" itemprop="post">Доцент</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Глобальный ИТ бизнес, программирование, маркетинг, сильные команды, новое образование, история, моторы, саженцы, воспитание детей</p>
                     </div>
                 </div>
@@ -3715,7 +3706,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Фоминых Максим Андреевич</p>
                         <p class="popup__subtitle" itemprop="post">Преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Видеокоммуникации, история ИТ-индустрии, публичные выступления, научпоп, фитнес, прыжки с парашютом, аэротруба, походы, коньки, лыжи, сноуборд.</p>
                     </div>
                 </div>
@@ -3806,7 +3797,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Чемоданова Мария Владимировна</p>
                         <p class="popup__subtitle" itemprop="post">Старший преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Теория и методичка обучения, педагогическая психология,психология развития</p>
                     </div>
                 </div>
@@ -3943,7 +3934,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Андрейшев Иван Ильич</p>
                         <p class="popup__subtitle" itemprop="post">Преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Проектная разработка, мобильная разработка, C++, немного разработка игр</p>
                     </div>
                 </div>
@@ -4027,7 +4018,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Бергер Екатерина Дмитриевна</p>
                         <p class="popup__subtitle" itemprop="post">Старший преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Нет информации</p>
                     </div>
                 </div>
@@ -4109,7 +4100,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Вавилова Ксения Юрьевна</p>
                         <p class="popup__subtitle" itemprop="post">Доцент</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Английский язык, практика речи, межкультурная коммуникация</p>
                     </div>
                 </div>
@@ -4209,7 +4200,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Воробьев Дмитрий Николаевич</p>
                         <p class="popup__subtitle" itemprop="post">Доцент</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Философия, теория познания, академическое письмо</p>
                     </div>
                 </div>
@@ -4313,7 +4304,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Колесников Евгений Александрович</p>
                         <p class="popup__subtitle" itemprop="post">Старший преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Нет информации</p>
                     </div>
                 </div>
@@ -4399,7 +4390,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Кречин Михаил Александрович</p>
                         <p class="popup__subtitle" itemprop="post">Старший преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Ed-Tech, история и философия, активный участник экологических проектов по восстановлению лесов России</p>
                     </div>
                 </div>
@@ -4491,7 +4482,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Кулаковская Арина Александровна</p>
                         <p class="popup__subtitle" itemprop="post">Преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Нет информации</p>
                     </div>
                 </div>
@@ -4577,7 +4568,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Лопатина Татьяна Петровна</p>
                         <p class="popup__subtitle" itemprop="post">Старший преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>нет сведений</p>
                     </div>
                 </div>
@@ -4668,7 +4659,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Любжин Алексей Игоревич</p>
                         <p class="popup__subtitle" itemprop="post">Профессор</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Нет информации</p>
                     </div>
                 </div>
@@ -4762,7 +4753,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Парсаева Ирина Вениаминовна</p>
                         <p class="popup__subtitle" itemprop="post">Доцент</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Нет информации</p>
                     </div>
                 </div>
@@ -4861,7 +4852,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Радюшкина Ирина Александровна</p>
                         <p class="popup__subtitle" itemprop="post">Старший преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>нет сведений</p>
                     </div>
                 </div>
@@ -4946,7 +4937,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Смойлов Андрей Александрович</p>
                         <p class="popup__subtitle" itemprop="post">Старший преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Нет информации</p>
                     </div>
                 </div>
@@ -5038,7 +5029,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Чемоданова Мария Владимировна</p>
                         <p class="popup__subtitle" itemprop="post">Старший преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Теория и методичка обучения, педагогическая психология,психология развития</p>
                     </div>
                 </div>
@@ -5187,7 +5178,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Алексеенко Дмитрий Сергеевич</p>
                         <p class="popup__subtitle" itemprop="post">Старший преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>нет сведений</p>
                     </div>
                 </div>
@@ -5271,7 +5262,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Вавилова Ксения Юрьевна</p>
                         <p class="popup__subtitle" itemprop="post">Доцент</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Английский язык, практика речи, межкультурная коммуникация</p>
                     </div>
                 </div>
@@ -5371,7 +5362,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Галкина Татьяна Игоревна</p>
                         <p class="popup__subtitle" itemprop="post">Старший преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Регулярный спикер отраслевых конференций и вебинаров, автор статей и член жюри премий в области цифрового обучения.</p>
                     </div>
                 </div>
@@ -5455,7 +5446,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Гриднева Елена Николаевна</p>
                         <p class="popup__subtitle" itemprop="post">Доцент</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>нет сведений</p>
                     </div>
                 </div>
@@ -5539,7 +5530,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Зыль Анастасия Сергеевна</p>
                         <p class="popup__subtitle" itemprop="post">Старший преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Нет информации</p>
                     </div>
                 </div>
@@ -5623,7 +5614,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Горохов Андрей Витальевич</p>
                         <p class="popup__subtitle" itemprop="post">Профессор</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>нет сведений</p>
                     </div>
                 </div>
@@ -5710,7 +5701,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Карманова Екатерина Владимировна</p>
                         <p class="popup__subtitle" itemprop="post">Преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Продуктовая и бизнес-аналитика, развитие аналитики в компаниях, работа с данными и метриками, машинное обучение, аналитическое мышление и принятие решений на основе данных</p>
                     </div>
                 </div>
@@ -5794,7 +5785,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Климовская Ленара Робертовна</p>
                         <p class="popup__subtitle" itemprop="post">Доцент</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>нет сведений</p>
                     </div>
                 </div>
@@ -5881,7 +5872,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Кобзарева Ольга Анатольевна</p>
                         <p class="popup__subtitle" itemprop="post">Преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>нет сведений</p>
                     </div>
                 </div>
@@ -5965,7 +5956,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Козлов Александр Иванович</p>
                         <p class="popup__subtitle" itemprop="post">Доцент</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>
                             Вычислительная математика, разработка алгоритмов решения некорректных задач,
                             обучение математике.
@@ -6075,7 +6066,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Колесников Евгений Александрович</p>
                         <p class="popup__subtitle" itemprop="post">Старший преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Нет информации</p>
                     </div>
                 </div>
@@ -6161,7 +6152,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Колесникова Светлана Николаевна</p>
                         <p class="popup__subtitle" itemprop="post">Старший преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Нет информации</p>
                     </div>
                 </div>
@@ -6246,7 +6237,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Королев Михаил Алексеевич</p>
                         <p class="popup__subtitle" itemprop="post">Преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Нет информации</p>
                     </div>
                 </div>
@@ -6330,7 +6321,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Кречин Михаил Александрович</p>
                         <p class="popup__subtitle" itemprop="post">Старший преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Ed-Tech, история и философия, активный участник экологических проектов по восстановлению лесов России</p>
                     </div>
                 </div>
@@ -6422,7 +6413,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Кулаковская Арина Александровна</p>
                         <p class="popup__subtitle" itemprop="post">Преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Нет информации</p>
                     </div>
                 </div>
@@ -6508,7 +6499,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Лежнина Марина Владимировна</p>
                         <p class="popup__subtitle" itemprop="post">Доцент</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>нет сведений</p>
                     </div>
                 </div>
@@ -6596,7 +6587,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Лопатина Татьяна Петровна</p>
                         <p class="popup__subtitle" itemprop="post">Старший преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>нет сведений</p>
                     </div>
                 </div>
@@ -6687,7 +6678,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Норкин Николай Анатольевич</p>
                         <p class="popup__subtitle" itemprop="post">Преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Интерактивный дизайн и проектирование цифровых интерфейсов, продуктовые исследования и тестирование удобства интерфейсов.</p>
                     </div>
                 </div>
@@ -6779,7 +6770,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Попов Михаил Александрович</p>
                         <p class="popup__subtitle" itemprop="post">Старший преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Практическая генеалогия, комплексный портрет сословия одновдорцев в Российской империи в XVIII-XIX веках</p>
                     </div>
                 </div>
@@ -6891,7 +6882,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Радюшкина Ирина Александровна</p>
                         <p class="popup__subtitle" itemprop="post">Старший преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>нет сведений</p>
                     </div>
                 </div>
@@ -6976,7 +6967,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Рублик Станислав Сергеевич</p>
                         <p class="popup__subtitle" itemprop="post">Преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Нет информации</p>
                     </div>
                 </div>
@@ -7067,7 +7058,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Седых Анастасия Александровна</p>
                         <p class="popup__subtitle" itemprop="post">Старший преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Руководитель группы отдела маркетинга, ООО "Ричмедиа"</p>
                     </div>
                 </div>
@@ -7155,7 +7146,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Тихомиров Ярослав Владимирович</p>
                         <p class="popup__subtitle" itemprop="post">Преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>нет сведений</p>
                     </div>
                 </div>
@@ -7239,7 +7230,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Трубянов Алексей Борисович</p>
                         <p class="popup__subtitle" itemprop="post">Доцент</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>
                             Теория вероятностей и математическая статитистика. Вероятностно-статистические модели в биологии, медицине, сельском хозяйстве, экономике и др.
                         </p>
@@ -7339,7 +7330,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Фоминых Максим Андреевич</p>
                         <p class="popup__subtitle" itemprop="post">Преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Видеокоммуникации, история ИТ-индустрии, публичные выступления, научпоп, фитнес, прыжки с парашютом, аэротруба, походы, коньки, лыжи, сноуборд.</p>
                     </div>
                 </div>
@@ -7430,7 +7421,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Чемоданова Мария Владимировна</p>
                         <p class="popup__subtitle" itemprop="post">Старший преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Теория и методичка обучения, педагогическая психология,психология развития</p>
                     </div>
                 </div>
@@ -7564,7 +7555,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Жеребцова Ольга Вениаминовна</p>
                         <p class="popup__subtitle" itemprop="post">И.о зав. кафедрой, старший преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Как сформировать у ребенка инженерное мышление так, чтобы их не переучивать </p>
                     </div>
                 </div>
@@ -7663,7 +7654,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Лежнина Марина Владимировна</p>
                         <p class="popup__subtitle" itemprop="post">Доцент</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>нет сведений</p>
                     </div>
                 </div>
@@ -7751,7 +7742,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Любжин Алексей Игоревич</p>
                         <p class="popup__subtitle" itemprop="post">Профессор</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Нет информации</p>
                     </div>
                 </div>
@@ -7845,7 +7836,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Мальцева Елена Федоровна</p>
                         <p class="popup__subtitle" itemprop="post">Преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Копирайтинг, контент-маркетинг, коммуникации, русская классическая литература</p>
                     </div>
                 </div>
@@ -7936,7 +7927,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Мошкина Арина Андреевна</p>
                         <p class="popup__subtitle" itemprop="post">Преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Нет информации</p>
                     </div>
                 </div>
@@ -8023,7 +8014,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Парсаева Ирина Вениаминовна</p>
                         <p class="popup__subtitle" itemprop="post">Доцент</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Нет информации</p>
                     </div>
                 </div>
@@ -8122,7 +8113,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Попов Михаил Александрович</p>
                         <p class="popup__subtitle" itemprop="post">Старший преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Практическая генеалогия, комплексный портрет сословия одновдорцев в Российской империи в XVIII-XIX веках</p>
                     </div>
                 </div>
@@ -8234,7 +8225,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Седых Анастасия Александровна</p>
                         <p class="popup__subtitle" itemprop="post">Старший преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Руководитель группы отдела маркетинга, ООО "Ричмедиа"</p>
                     </div>
                 </div>
@@ -8322,7 +8313,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Чемоданова Мария Владимировна</p>
                         <p class="popup__subtitle" itemprop="post">Старший преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Теория и методичка обучения, педагогическая психология,психология развития</p>
                     </div>
                 </div>
@@ -8454,7 +8445,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Жеребцова Ольга Вениаминовна</p>
                         <p class="popup__subtitle" itemprop="post">И.о зав. кафедрой, старший преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Как сформировать у ребенка инженерное мышление так, чтобы их не переучивать </p>
                     </div>
                 </div>
@@ -8553,7 +8544,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Козлов Александр Иванович</p>
                         <p class="popup__subtitle" itemprop="post">Доцент</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>
                             Вычислительная математика, разработка алгоритмов решения некорректных задач,
                             обучение математике.
@@ -8663,7 +8654,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Трубянов Алексей Борисович</p>
                         <p class="popup__subtitle" itemprop="post">Доцент</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>
                             Теория вероятностей и математическая статитистика. Вероятностно-статистические модели в биологии, медицине, сельском хозяйстве, экономике и др.
                         </p>
@@ -8763,7 +8754,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Хабибрахманова Лилия Хафизовна</p>
                         <p class="popup__subtitle" itemprop="post">Доцент</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>нет сведений</p>
                     </div>
                 </div>
@@ -8850,7 +8841,7 @@ window.addEventListener("resize", updatePopupLayout);
                     <div class="popup__header_info">
                         <p class="popup__title" itemprop="fio">Чемоданова Мария Владимировна</p>
                         <p class="popup__subtitle" itemprop="post">Старший преподаватель</p>
-                        <p class="popup__person__focus">Область практики, научных и личных интересов</p>
+                        <p class="popup__person__focus" style="margin-bottom:10px;">Область практики, научных и личных интересов</p>
                         <p>Теория и методичка обучения, педагогическая психология,психология развития</p>
                     </div>
                 </div>

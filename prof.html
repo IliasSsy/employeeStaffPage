@@ -1,3 +1,5 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
     @font-face {
         font-family: "Inter Tight";
@@ -43,135 +45,187 @@
         src: url("fonts/Inter/static/Inter_18pt-Bold.ttf") format("truetype");
         font-weight: 700;
     }
+    * {
+        box-sizing: border-box;
+    }
     body {
         margin: 0;
         padding: 0;
+        overflow-x: hidden;
         font-family: "Inter", sans-serif;
         color: #222;
         background: #fff;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
+        line-height: 1.5;
     }
     .info {
-        max-width: 960px;
-        padding: 28px 21px 30px 15px;
+        width: 100%;
+        padding: 24px 16px 32px;
     }
     .link-return {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 40px;
-            color: black;
-            text-decoration: none;
-            font-size: 15px;
-            font-weight: 500;
-    }
-    .info__description {
-        font-size: 22;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        margin-bottom: 28px;
+        color: #222;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 500;
     }
     .link-return__arrow {
-        width: 40px;
-        height: 40px;
+        width: 28px;
+        height: 28px;
     }
     .info__title {
-        margin: 0 0 50px;
+        margin: 0 0 32px;
         font-family: "Inter Tight", sans-serif;
-        font-size: 42px;
+        font-size: 34px;
         font-weight: 700;
-        line-height: 1.05;
+        line-height: 1.1;
+    }
+    .info__subtitle {
+        font-size: 20px;
+        font-weight: 700;
+        color: #1F2937;
+        margin: 28px 0 8px;
+    }
+    .info__description {
+        margin-bottom: 28px;
+        font-size: 17px;
+        line-height: 1.55;
+    }
+    .table-wrapper {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin: 24px 0;
     }
     .table {
-        width: 100%;
+        min-width: 700px;
+        width: max-content;
         border-collapse: collapse;
-        font-size: 16px;
+        font-size: 14px;
         color: #333;
     }
     .table th,
     .table td {
         border: 1px solid #7D7D7D;
-        padding: 12px 14px;
-        text-align: center;
+        padding: 10px 12px;
         vertical-align: middle;
-        line-height: 1.3;
+        text-align: center;
+        line-height: 1.35;
     }
     .table th {
-        font-weight: 600;
-    }
-    .table tr:first-child th {
         background: #FBE6DE;
-    }
-    .table td {
-        background: #fff;
+        font-weight: 600;
     }
     .teacher {
-        display: flex;
-        gap: 48px;
-        margin-top: 32px;
+        margin: 28px 0;
     }
     .teacher__left {
-        width: 260px;
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+    }
+    .teacher__line {
+        width: 3px;
+        height: 125px;
+        background: #FA5D20;
+        border-radius: 100px;
         flex-shrink: 0;
-        border-left: 3px solid #FF6B35;
-        padding-left: 24px;
     }
     .teacher__photo {
-        width: 210px;
-        border-radius: 16px;
-        display: block;
-        margin-bottom: 24px;
-    }
-    .teacher__name {
-        margin: 0;
-        font-size: 32px;
-        font-weight: 600;
-        line-height: 1.15;
-    }
-    .teacher__post {
-        margin: 14px 0 32px;
-        color: #FF6B35;
-        font-size: 20px;
-        font-weight: 500;
-    }
-    .teacher__text {
-        margin: 10px 0;
-        font-size: 16px;
-        line-height: 1.5;
-    }
-    .teacher__right {
-        flex: 1;
-    }
-    .teacher__row {
-        display: flex;
-        gap: 40px;
-        padding: 28px 0;
-        border-bottom: 1px solid #ECECEC;
-    }
-    .teacher__row:first-child {
-        padding-top: 0;
-    }
-    .teacher__title {
-        width: 230px;
+        width: 125px;
+        height: 125px;
+        border-radius: 12px;
+        object-fit: cover;
         flex-shrink: 0;
-
-        font-size: 16px;
-        font-weight: 600;
-        line-height: 1.5;
     }
     .teacher__content {
+        display: flex;
+        flex-direction: column;
         flex: 1;
+        min-width: 0;
     }
-    .teacher__content p {
-        margin: 0 0 10px;
+    .teacher__name {
+        margin: 0 0 6px;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 1.15;
+        color: #1F2937;
+    }
+    .teacher__post {
+        margin: 0 0 12px;
         font-size: 16px;
-        line-height: 1.7;
-    }
-    .teacher__content p:last-child {
-        margin-bottom: 0;
-    }
-    .info__subtitle {
         font-weight: 600;
-        font-size: 28px;
-        margin-bottom: 30px;
+        color: #FA5D20;
+    }
+    .teacher__text {
+        margin: 0 0 6px;
+        font-size: 14px;
+        color: #555;
+        line-height: 1.45;
+    }
+    .teacher__button {
+        display: inline-block;
+        margin-top: 8px;
+        color: #FA5D20;
+        font-size: 15px;
+        font-weight: 500;
+        text-decoration: none;
+    }
+    .teacher__right {
+        display: none;
+    }
+    .popup{
+        position:fixed;
+        inset: 0;
+        display:none;
+        justify-content:center;
+        align-items:center;
+        z-index:1;
+    }
+    .popup.active{
+        display:flex;
+    }
+    .popup__overlay{
+        position:absolute;
+        inset:0;
+        background:rgba(0,0,0,.55);
+    }
+    .popup__window{
+        position:relative;
+        width:min(900px,90vw);
+        max-height:85vh;
+        background:#ffffff;
+        border-radius:16px;
+        overflow-y:auto;
+        padding:30px;
+        z-index:1;
+    }
+    .popup__close{
+        position:absolute;
+        color: #FA5D20;
+        top:6px;
+        right:18px;
+        border:none;
+        width: 48px;
+        height: 48px;
+        background:none;
+        font-size:32px;
+        cursor:pointer;
+    }
+    .popup .teacher__line {
+        display: none;
+    }
+    .teacher__title {
+        margin: 20px 0 0;
+        color: #FA5D1F;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 20px;
+    }
+    body.popup-open{
+        overflow:hidden;
     }
     @media (min-width: 768px) {
         .info {
@@ -183,15 +237,78 @@
         }
     }
     @media (min-width: 1024px) {
-        .info {
-            max-width: 100vw;
-            padding: 50px 9.114vw;
-        }
-        .info__title {
-            font-size: 64px;
-            margin-bottom: 56px;
-        }
+    body {
+        padding: 50px 9.114vw;
     }
+    .info__title {
+        font-size: 64px;
+        margin-bottom: 56px;
+    }
+    .teacher {
+        display: flex;
+        gap: 48px;
+        margin-top: 32px;
+    }
+    .teacher__left {
+        width: 260px;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        border-left: 3px solid #FA5D20;
+        padding-left: 24px;
+    }
+    .teacher__line {
+        display: none;
+    }
+    .teacher__photo {
+        display: block;
+        width: 200px;
+        height: 200px;
+        margin: 0 0 24px;
+    }
+    .teacher__content {
+        display: block;
+        flex: 1;
+        min-width: 0;
+    }
+    .teacher__button {
+        display: none;
+    }
+    .teacher__right {
+        flex: 1;
+        min-width: 0;
+        display: block;
+    }
+    .teacher__row {
+        display: flex;
+        gap: 40px;
+        padding: 28px 0;
+        border-bottom: 1px solid #E5E7EB;
+    }
+    .teacher__row:first-child {
+        padding-top: 0;
+    }
+    .teacher__title {
+        width: 230px;
+        flex-shrink: 0;
+        margin: 0;
+        color: #222;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 1.5;
+    }
+    .teacher__row > .teacher__content {
+        flex: 1;
+        min-width: 0;
+    }
+    .teacher__row > .teacher__content p {
+        margin: 0 0 12px;
+    }
+    .teacher__row > .teacher__content p:last-child {
+        margin-bottom: 0;
+    }
+}
     @media (min-width: 1600px) {
         .info {
             padding: 50px 9.114vw;
@@ -208,6 +325,30 @@
         }
     }
 </style>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const popup = document.getElementById("popup");
+    const popupContent = popup.querySelector(".popup__content");
+    document.querySelectorAll(".teacher").forEach(teacher => {
+        teacher.querySelector(".teacher__left").addEventListener("click", () => {
+            if (window.matchMedia("(min-width: 1024px)").matches) {
+                return;
+            }
+            popupContent.innerHTML = teacher.innerHTML;
+            popupContent.querySelector(".teacher__button").remove();
+            popupContent.querySelector(".teacher__right").style.display = "block";
+            popup.classList.add("active");
+            document.body.classList.add("popup-open");
+        });
+    });
+    function closePopup() {
+        popup.classList.remove("active");
+        document.body.classList.remove("popup-open");
+    }
+    popup.querySelector(".popup__close").onclick = closePopup;
+    popup.querySelector(".popup__overlay").onclick = closePopup;
+})
+</script>
 <div class="info">
     <a class="link-return" href="sveden.html">
         <img class="link-return__arrow" src="images/Arrow_left.svg" alt="arrow">
@@ -216,47 +357,53 @@
     <h1 class="info__title">Профессиональное обучение</h1>
     <p class="info__subtitle">Основные программы профессионального обучения</p>
     <p class="info__description">Программы реализуются в очной форме. Обучение осуществляется на русском языке. Программы могут реализовываться с использованием дистанционных технологий. Программы реализуются только по договорам об оказании платных образовательных услуг. Обучающихся за счет бюджетных ассигнований федерального бюджета, за счет бюджетных ассигнований бюджетов субъектов Российской Федерации нет.</p>
-    <table class="table" width="100%">
-        <p class="info__subtitle" style="margin-top: 50px;">Программы профессиональной подготовки по профессиям рабочих, должностям служащих</p>
-        <tr class="text">
-            <th class="th">Наименование программы</th>
-            <th class="th">Присваиваемая квалификация</th>
-            <th class="th">Срок обучения</th>
-            <th class="th">Программа + учебный план</th>
-            <th class="th">Календарный учебный график</th>
-            <th class="th">Расписание занятий</th>
-        </tr>
-        <tr class="text" align="center">
-            <td class="program">Вожатый</td>
-            <td class="program">Вожатый</td>
-            <td class="program">160 ак.часов</td>
-            <td class="program"><a class="link" href="https://ispri.ng/ZM26X" target="_blank" rel="noreferrer noopener">
-                    Программа</a></td>
-            <td class="program"><a class="link" href="https://ispri.ng/B0g8G" target="_blank" rel="noreferrer noopener">
-                    Календарный учебный график</a></td>
-            <td class="program"><a class="link" href="https://ispri.ng/yRv7g" target="_blank"
-                    rel="noreferrer noopener">Расписание</a></td>
-        </tr>
-    </table>
-    <p class="info__subtitle" style="margin-top: 100px;">Преподавательский состав</p>
-    <div class="teacher" itemprop="teachingStaff">
+    <p class="info__subtitle" style="margin-top: 50px;">Программы профессиональной подготовки по профессиям рабочих, должностям служащих</p>
+    <div class="table-wrapper">
+        <table class="table" width="100%">
+            <tr class="text">
+                <th class="th">Наименование программы</th>
+                <th class="th">Присваиваемая квалификация</th>
+                <th class="th">Срок обучения</th>
+                <th class="th">Программа + учебный план</th>
+                <th class="th">Календарный учебный график</th>
+                <th class="th">Расписание занятий</th>
+            </tr>
+            <tr class="text" align="center">
+                <td class="program">Вожатый</td>
+                <td class="program">Вожатый</td>
+                <td class="program">160 ак.часов</td>
+                <td class="program"><a class="link" href="https://ispri.ng/ZM26X" target="_blank" rel="noreferrer noopener">
+                        Программа</a></td>
+                <td class="program"><a class="link" href="https://ispri.ng/B0g8G" target="_blank" rel="noreferrer noopener">
+                        Календарный учебный график</a></td>
+                <td class="program"><a class="link" href="https://ispri.ng/yRv7g" target="_blank"
+                        rel="noreferrer noopener">Расписание</a></td>
+            </tr>
+        </table>
+    </div>
+    <p class="info__subtitle" style="margin-top: 50px;">Преподавательский состав</p>
+    <div class="teacher">
         <div class="teacher__left">
-            <img class="teacher__photo" src="https://static.tildacdn.com/tild6530-3666-4466-a365-346335616563/Rublik_Stanislav.png" alt="Рублик Станислав Сергеевич">
-            <p class="teacher__name" itemprop="fio">Рублик Станислав<br>Сергеевич</p>
-            <p class="teacher__post" itemprop="post">Преподаватель</p>
-            <p class="teacher__text" itemprop="degree">Ученая степень: нет</p>
-            <p class="teacher__text" itemprop="academStat">Ученое звание: нет</p>
+            <div class="teacher__line"></div>
+            <img class="teacher__photo" src="https://static.tildacdn.com/tild6530-3666-4466-a365-346335616563/Rublik_Stanislav.png">
+            <div class="teacher__content">
+                <p class="teacher__name">Рублик Станислав<br>Сергеевич</p>
+                <p class="teacher__post">Преподаватель</p>
+                <p class="teacher__text" itemprop="degree">Ученая степень: нет</p>
+                <p class="teacher__text" itemprop="academStat">Ученое звание: нет</p>
+                <a class="teacher__button">Подробнее -></a>
+            </div>
         </div>
         <div class="teacher__right">
             <div class="teacher__row">
                 <p class="teacher__title">Образование</p>
                 <div class="teacher__content">
                     <p itemprop="teachingLevel">Высшее,<br>ФГБОУ ВО «Новосибирский государственный педагогический университет»</p>
-                    <p itemprop="teachingQual">Квалификация: Бакалавр</p>
-                    <p itemprop="employeeQualification">Направление подготовки: Организация работы с молодежью</p>
+                    <p itemprop="teachingQual"><span class="teacher__subtitle">Квалификация</span>: Бакалавр</p>
+                    <p itemprop="employeeQualification" style="border-bottom: 1px solid orange"><span class="teacher__subtitle">Направление подготовки:</span> Организация работы с молодежью</p>
                     <p itemprop="teachingLevel">Высшее,<br>АНО ВО «Московский университет "Синергия"»</p>
-                    <p itemprop="teachingQual">Квалификация: Магистр</p>
-                    <p itemprop="employeeQualification">Направление подготовки: 38.04.02 Менеджмент</p>
+                    <p itemprop="teachingQual"><span class="teacher__subtitle">Квалификация:</span> Магистр</p>
+                    <p itemprop="employeeQualification"><span class="teacher__subtitle">Направление подготовки:</span> 38.04.02 Менеджмент</p>
                 </div>
             </div>
             <div class="teacher__row">
@@ -268,9 +415,15 @@
             <div class="teacher__row">
                 <p class="teacher__title">Сведения о повышении квалификации</p>
                 <div class="teacher__content">
-                    <p itemprop="qualification">Сведения о повышении квалификации отсутствуют.</p>
+                    <p itemprop="qualification">
+                        Сведения о повышении квалификации отсутствуют.
+                    </p>
+                </div>
+            </div>
+            <div class="teacher__row">
+                <p class="teacher__title">Сведения о профессиональной переподготовке</p>
+                <div class="teacher__content">
                     <p itemprop="profDevelopment">
-                        Сведения о профессиональной переподготовке отсутствуют.
                         Диплом о профессиональной переподготовке №000000095686
                         от 12.05.2021 «Основы безопасности жизнедеятельности:
                         теория и методика преподавания в образовательной организации»,
@@ -282,15 +435,26 @@
                 <p class="teacher__title">Преподаваемые дисциплины</p>
                 <div class="teacher__content">
                     <p itemprop="teachingDiscipline">Нет</p>
+                </div>
+            </div>
+            <div class="teacher__row">
+                <p class="teacher__title">Участие в реализации образовательных программ</p>
+                <div class="teacher__content">
                     <p itemprop="teachingOp">
-                        Участие в реализации образовательных программ:
-                        Основная программа профессионального обучения по должности
-                        служащего «200269 Вожатый».
+                        Основная программа профессионального обучения
+                        по должности служащего «200269 Вожатый».
                     </p>
                 </div>
             </div>
         </div>
     </div>
+    <div class="popup" id="popup">
+        <div class="popup__overlay"></div>
+        <div class="popup__window">
+            <button class="popup__close">&times;</button>
+            <div class="popup__content"></div>
+    </div>
+</div>
     <p class="info__subtitle" style="margin-top: 50px">Вакантные места для приема (перевода) обучающихся</p>
     <p class="description">В АНО ВО «РУМТ» места для приема (перевода) финансируемые за счет бюджетных ассигнований федерального бюджета, бюджетов Российской федерации, местных бюджетов <span style="color: orange">не предусмотрены</span>.</p>
     <p class="description">Количество вакантных мест для приема (перевода) на места по договорам об образовании за счет средств физических и (или) юридических лиц: <span style="color: orange">информация отсутствует</span>.</p>

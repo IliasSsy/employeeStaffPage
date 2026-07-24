@@ -1,4 +1,5 @@
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
     @font-face {
         font-family: "Inter Tight";
@@ -48,38 +49,36 @@
         font-family: "Inter", sans-serif;
         color: #222222;
         background: #ffffff;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
     }
     .info {
         max-width: 100%;
         margin: 0 auto;
-        padding: 28px 21px 30px 15px;
+        padding: 16px 12px;
     }
     .link-return {
         display: inline-flex;
         align-items: center;
-        gap: 8px;
-        margin-bottom: 40px;
+        gap: 6px;
+        margin-bottom: 24px;
         color: #222;
         text-decoration: none;
-        font-size: 15px;
+        font-size: 13px;
         font-weight: 500;
     }
     .link-return__arrow {
-        width: 40px;
-        height: 40px;
+        width: 28px;
+        height: 28px;
     }
     .title {
-        margin: 0 0 40px;
+        margin: 0 0 28px;
         font-family: "Inter Tight", sans-serif;
-        font-size: 64px;
+        font-size: 34px;
         font-weight: 700;
-        line-height: 1.05;
+        line-height: 1.1;
     }
     .includes {
-        margin: 0 0 48px;
-        font-size: 22px;
+        margin: 0 0 32px;
+        font-size: 16px;
         font-weight: 600;
         line-height: 1.5;
     }
@@ -88,7 +87,7 @@
         flex-direction: column;
     }
     .department {
-        padding: 42px 24px;
+        padding: 22px 0;
         border-bottom: 1px solid #ECECEC;
         transition: background-color .25s ease;
     }
@@ -96,23 +95,23 @@
         background: #FFF6F1;
     }
     .department__title {
-        margin: 0 0 28px;
+        margin: 0 0 18px;
         font-family: "Inter Tight", sans-serif;
-        font-size: 30px;
+        font-size: 22px;
         font-weight: 600;
         line-height: 1.2;
     }
     .department__content {
         display: flex;
         align-items: center;
-        gap: 56px;
+        gap: 18px;
     }
     .department__image {
-        width: 190px;
-        height: 190px;
+        width: 100px;
+        height: 100px;
         object-fit: cover;
         object-position: center;
-        border-radius: 18px;
+        border-radius: 12px;
         flex-shrink: 0;
         transition: transform .25s ease;
     }
@@ -126,33 +125,33 @@
     }
     .department__name {
         margin: 0;
-        font-size: 34px;
+        font-size: 20px;
         font-weight: 600;
-        line-height: 1.15;
+        line-height: 1.2;
     }
     .department__position {
-        margin: 12px 0 22px;
+        margin: 8px 0 14px;
         color: #FF6B35;
-        font-size: 20px;
+        font-size: 15px;
         font-weight: 500;
         line-height: 1.4;
     }
     .department__address,
     .department__website {
-        margin: 0 0 8px;
+        margin: 0 0 6px;
         color: #555;
-        font-size: 16px;
-        line-height: 1.65;
+        font-size: 14px;
+        line-height: 1.5;
     }
     .department__email {
-        margin-bottom: 18px;
+        margin-bottom: 12px;
         color: #FF6B35;
-        font-size: 16px;
+        font-size: 14px;
         text-decoration: none;
     }
     .department__document {
         color: #FF6B35;
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 500;
         text-decoration: none;
     }
@@ -164,20 +163,20 @@
         overflow-x: auto;
     }
     .info__description {
-        font-size: 24;
-        margin-bottom: 30px;
-        margin-top: 50px;
+        font-size: 16px;
+        margin-top: 32px;
+        margin-bottom: 20px;
     }
     .table {
         width: 100%;
         border-collapse: collapse;
-        font-size: 16px;
+        font-size: 13px;
         color: #333333;
     }
     .table th,
     .table td {
         border: 1px solid #7D7D7D;
-        padding: 12px 14px;
+        padding: 8px;
         text-align: center;
         vertical-align: middle;
         line-height: 1.3;
@@ -194,19 +193,20 @@
     .menu {
         display: flex;
         align-items: flex-start;
-        gap: 14px;
-        margin-bottom: 18px;
+        gap: 10px;
+        margin-bottom: 12px;
     }
     .menu:last-of-type {
-        margin-bottom: 50px;
+        margin-bottom: 28px;
     }
     .menu__arrow {
-        width: 18px;
-        margin-top: 4px;
+        width: 14px;
+        margin-top: 3px;
         flex-shrink: 0;
     }
     .menu__title {
-        line-height: 1.7;
+        font-size: 14px;
+        line-height: 1.6;
     }
     @media (max-width: 900px) {
         .title {
@@ -384,7 +384,7 @@
                         <p class="department__address">${department.address}</p>
                         <p class="department__website">${department.website}</p>
                         <a class="department__email" href="mailto:${department.email}">${department.email}</a>
-                        <a class="department__document" href="#">${department.document} →</a>
+                        <a class="department__document" href="#">${department.document} -></a>
                     </div>
                 </div>
             </div>

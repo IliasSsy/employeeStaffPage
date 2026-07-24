@@ -1,3 +1,5 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
     @font-face {
         font-family: "Inter Tight";
@@ -50,104 +52,105 @@
         color: #222222;
         background: #fff;
     }
-    a {
-        color: black;
-    }
     .link-return__title {
         display: inline;
         color: black;
-        font-size: 20px;
+        font-size: 16px;
     }
     .info {
-        max-width: 900px;
+        max-width: 100%;
         padding: 30px 21px 30px 15px;
     }
     .link-return {
         display: inline-flex;
         align-items: center;
-        gap: 8px;
-        margin-bottom: 40px;
+        gap: 6px;
+        margin-bottom: 24px;
         color: black;
         text-decoration: none;
-        font-size: 15px;
+        font-size: 13px;
         font-weight: 500;
     }
     .link-return__arrow {
-        width: 40px;
-        height: 40px;
+        width: 28px;
+        height: 28px;
     }
     .info__title {
-        margin: 0 0 50px;
+        margin: 0 0 32px;
         font-family: "Inter Tight", sans-serif;
-        font-size: 42px;
+        font-size: 30px;
         font-weight: 700;
-        line-height: 1.05;
+        line-height: 1.1;
     }
     .documents {
-        margin-top: 30px;
+        margin-top: 24px;
+        margin-bottom: 36px;
         cursor: pointer;
-        margin-bottom: 50px;
     }
     .documents__title {
-        margin: 0 0 16px;
-        font-size: 20   px;
+        margin: 0 0 12px;
+        font-size: 16px;
         font-weight: 600;
     }
     .documents__item {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: 20px;
-        padding: 18px 24px;
+        gap: 12px;
+        padding: 14px 16px;
         color: inherit;
         text-decoration: none;
         border-top: 1px solid #EAEAEA;
+        background-color: #fff;
+        transition: background-color .3s ease;
     }
     .documents__item:last-child {
         border-bottom: 1px solid #EAEAEA;
     }
-    .documents__left {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        flex: 1;
-    }
-    .documents__left span {
-        line-height: 23px;
-    }
-    .documents__left img {
-        width: 25px;
-        height: 25px;
-        flex-shrink: 0;
-    }
-    .documents__left span {
-        font-size: 16px;
-        line-height: 1.45;
-    }
-    .documents__action {
-        color: #FA5D20;
-    }
     .documents__item:hover {
         border-bottom: 1px solid orange;
     }
+    .documents__item.open {
+        background-color: #FFF3EB;
+    }
+    .documents__left {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex: 1;
+    }
+    .documents__left img {
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+    }
+    .documents__left span {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+    .documents__action {
+        color: #FA5D20;
+        font-size: 14px;
+    }
     .table-block {
-        margin-top: 32px;
+        margin-top: 24px;
         overflow-x: auto;
         display: none;
     }
+
     .table-block.open {
         display: block;
     }
     .table {
         width: 100%;
         border-collapse: collapse;
-        font-size: 16px;
+        font-size: 13px;
         color: #333;
     }
     .table th,
     .table td {
         border: 1px solid #7D7D7D;
-        padding: 12px 14px;
+        padding: 8px;
         text-align: center;
         vertical-align: middle;
         line-height: 1.3;
@@ -170,16 +173,16 @@
     .menu {
         display: flex;
         align-items: baseline;
-        gap: 12px;
-        padding: 16px 0;
+        gap: 10px;
+        padding: 12px 0;
         border-bottom: 1px solid #D9D9D9;
         cursor: pointer;
         transition: border-color .2s ease;
     }
     .menu__arrow {
-        width: 18px;
+        width: 14px;
         flex-shrink: 0;
-        transition: transform 0.3s ease;
+        transition: transform .3s ease;
     }
     .menu:hover {
         border-bottom-color: #FF5A1F;
@@ -194,7 +197,7 @@
         transform: rotate(90deg);
     }
     .menu__title {
-        font-size: 20px;
+        font-size: 16px;
         line-height: 1.45;
     }
     .menu__body {
@@ -206,66 +209,58 @@
     .point {
         display: flex;
         align-items: center;
-        gap: 14px;
-        margin-bottom: 18px;
+        gap: 10px;
+        margin-bottom: 14px;
     }
     .point:last-of-type {
-        margin-bottom: 50px;
+        margin-bottom: 36px;
     }
     .point__arrow {
-        width: 18px;
-        margin-top: 4px;
+        width: 14px;
+        margin-top: 3px;
         flex-shrink: 0;
-        align-items: center;
     }
     .point__title {
-        line-height: 1.7;
+        line-height: 1.6;
     }
     .point__text {
-        font-size: 24px;
+        font-size: 16px;
         font-weight: 500;
     }
     .info__text {
         display: none;
-        font-size: 20;
-        margin-bottom: 50px;
+        font-size: 15px;
+        line-height: 1.5;
+        margin-bottom: 36px;
     }
     .info__text.open {
         display: block;
     }
-    #sections__names, #accept__resources__names,
+    #sections__names,
+    #accept__resources__names,
     #education__courses {
-        margin-top: 15px;
-        border-radius: 10px;
-        margin-left: 15px;
-        margin-bottom: 50px;
+        margin-top: 12px;
+        margin-left: 12px;
+        margin-bottom: 36px;
+        border-radius: 8px;
         background-color: #fff7f7;
     }
     #education .table-block {
         width: 100%;
         display: block;
-        border-collapse: collapse;
-        margin-top: 32px;
-        margin-bottom: 50px;
+        margin-top: 24px;
+        margin-bottom: 36px;
     }
     .table-style td,
     .table-style th {
         border: 1px solid #F15A24;
-        padding: 12px;
+        padding: 8px;
     }
     .info__dormitory {
         display: none;
     }
     .info__dormitory.open {
         display: block;
-    }
-    .documents__item {
-        background-color: #fff;
-        transition: background-color 0.3s ease;
-    }
-
-    .documents__item.open {
-        background-color: #FFF3EB;
     }
     @media (min-width: 768px) {
         .info {
