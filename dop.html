@@ -50,23 +50,24 @@
         padding: 0;
         font-family: "Inter", sans-serif;
         color: #222;
-        background: #fff;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
+        background: #ffffff;
     }
     .info {
         max-width: 100%;
         padding: 30px 21px 30px 15px;
     }
+    .teacher__right {
+        display: none;
+    }
     .link-return {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 40px;
-            color: black;
-            text-decoration: none;
-            font-size: 15px;
-            font-weight: 500;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 40px;
+        color: black;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 500;
     }
     .link-return__arrow {
         width: 40px;
@@ -231,10 +232,12 @@
         margin-top: 5px;
         border-bottom: 2px solid #FF6B35
     }
+    .department__professional:last-child, .department__qualification:last-child, .teachers__evelopmental__programms:last-child {
+        border-bottom: none;
+    }
     .teacher__left {
         width: 260px;
         flex-shrink: 0;
-        border-left: 3px solid #FF6B35;
         padding-left: 24px;
     }
     .teacher__photo {
@@ -1406,12 +1409,13 @@
                             <p class="teacher__post" itemprop="post">${teacher.position}</p>
                             <p class="teacher__text" itemprop="degree">Ученая степень: ${teacher.degree}</p>
                             <p class="teacher__text" itemprop="academStat">Ученое звание: ${teacher.title}</p>
+                            <a class="teacher__button">Подробнее -></a>
                         </div>
                         <div class="teacher__right">
                             <div class="teacher__row">
                                 <p class="teacher__title">Образование</p>
                                 <div class="teacher__content">
-                                    ${education}
+                                    <p>${education}</p>
                                 </div>
                             </div>
                             <div class="teacher__row">
@@ -1425,15 +1429,15 @@
                             <div class="teacher__row">
                                 <p class="teacher__title">Сведения о повышении квалификации</p>
                                 <div class="teacher__content">
-                                    ${qualification}
-                                    ${retraining}
+                                    <p>${qualification}
+                                    ${retraining}</p>
                                 </div>
                             </div>
                             <div class="teacher__row">
                                 <p class="teacher__title">Преподаваемые дисциплины</p>
                                 <div class="teacher__content">
-                                    ${disciplines}
-                                    ${programs}
+                                    <p>${disciplines}
+                                    ${programs}</p>
                                 </div>
                             </div>
                         </div>
