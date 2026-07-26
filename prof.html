@@ -123,7 +123,7 @@
     }
     .teacher__left {
         display: flex;
-        align-items: flex-start;
+        align-items: center;
         gap: 14px;
     }
     .teacher__line {
@@ -159,20 +159,6 @@
         font-size: 16px;
         font-weight: 600;
         color: #FA5D20;
-    }
-    .teacher__text {
-        margin: 0 0 6px;
-        font-size: 14px;
-        color: #555;
-        line-height: 1.45;
-    }
-    .teacher__button {
-        display: inline-block;
-        margin-top: 8px;
-        color: #FA5D20;
-        font-size: 15px;
-        font-weight: 500;
-        text-decoration: none;
     }
     .teacher__right {
         display: none;
@@ -228,6 +214,12 @@
     body.popup-open{
         overflow:hidden;
     }
+    .teacher__button {
+        position: absolute;
+        align-self: flex-end;
+        color: #FA5D1F;
+        font-size: 22px;
+    }
     @media (min-width: 768px) {
         .info {
             padding: 50px 21px 50px 15px;
@@ -267,11 +259,6 @@
         width: 200px;
         height: 200px;
         margin: 0 0 24px;
-    }
-    .teacher__content {
-        display: block;
-        flex: 1;
-        min-width: 0;
     }
     .teacher__button {
         display: none;
@@ -388,11 +375,11 @@
             <div class="teacher__line"></div>
             <img class="teacher__photo" src="https://static.tildacdn.com/tild6530-3666-4466-a365-346335616563/Rublik_Stanislav.png">
             <div class="teacher__content">
-                <p class="teacher__name" itemprop="fio">Рублик Станислав<br>Сергеевич</p>
-                <p class="teacher__post" itemprop="post">Преподаватель</p>
-                <p class="teacher__text" itemprop="degree">Ученая степень: нет</p>
-                <p class="teacher__text" itemprop="academStat">Ученое звание: нет</p>
-                <a class="teacher__button">Подробнее -></a>
+                <div class="teacher__data">
+                    <p class="teacher__name" itemprop="fio">Рублик Станислав Сергеевич</p>
+                    <p class="teacher__post" itemprop="post">Преподаватель</p>
+                </div>
+                <a class="teacher__button">-></a>
             </div>
         </div>
         <div class="teacher__right">
@@ -401,10 +388,12 @@
                 <div class="teacher__content">
                     <p itemprop="teachingLevel">Высшее,<br>ФГБОУ ВО «Новосибирский государственный педагогический университет»</p>
                     <p itemprop="teachingQual"><span class="teacher__subtitle">Квалификация</span>: Бакалавр</p>
-                    <p itemprop="employeeQualification" style="border-bottom: 1px solid orange"><span class="teacher__subtitle">Направление подготовки:</span> Организация работы с молодежью</p>
+                    <p itemprop="employeeQualification"><span class="teacher__subtitle">Направление подготовки:</span> Организация работы с молодежью</p>
                     <p itemprop="teachingLevel">Высшее,<br>АНО ВО «Московский университет "Синергия"»</p>
                     <p itemprop="teachingQual"><span class="teacher__subtitle">Квалификация:</span> Магистр</p>
                     <p itemprop="employeeQualification"><span class="teacher__subtitle">Направление подготовки:</span> 38.04.02 Менеджмент</p>
+                    <p itemprop="degree" style="margin: 0">Ученая степень: нет</p>
+                    <p itemprop="academStat" style="margin: 0;">Ученое звание: нет</p>
                 </div>
             </div>
             <div class="teacher__row">
@@ -454,8 +443,8 @@
         <div class="popup__window">
             <button class="popup__close">&times;</button>
             <div class="popup__content"></div>
+        </div>
     </div>
-</div>
     <p class="info__subtitle" style="margin-top: 50px">Вакантные места для приема (перевода) обучающихся</p>
     <p class="description">В АНО ВО «РУМТ» места для приема (перевода) финансируемые за счет бюджетных ассигнований федерального бюджета, бюджетов Российской федерации, местных бюджетов <span style="color: orange">не предусмотрены</span>.</p>
     <p class="description">Количество вакантных мест для приема (перевода) на места по договорам об образовании за счет средств физических и (или) юридических лиц: <span style="color: orange">информация отсутствует</span>.</p>
