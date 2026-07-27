@@ -352,6 +352,31 @@
         color: #FA5D1F;
         font-size: 22px;
     }
+    .scroll-top {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: black;
+        border-radius: 50%;
+        cursor: pointer;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.4s ease;
+        z-index: 1;
+    }
+    .scroll-top.show {
+        opacity: 1;
+        pointer-events: auto;
+    }
+    .scroll-top img {
+        width: 24px;
+        height: 24px;
+    }
     @media (min-width: 768px) {
         .info {
             padding: 50px 21px 50px 15px;
@@ -366,8 +391,14 @@
             font-size: 18px;
         }
         .info__title {
-            font-size: 64px;
-            margin-bottom: 56px;
+            font-size: 40px;
+            margin-bottom: 50px;
+        }
+        .info__subtitle, .information__title {
+            font-size: 24px;
+        }
+        .description, .information__text {
+            font-size: 18px;
         }
         .info {
             padding: 50px 9.114vw;
@@ -433,22 +464,29 @@
             margin-bottom: 0;
         }
     }
-    @media (min-width: 1600px) {
-        .info {
-            padding: 50px 9.114vw;
-        }
-        .info__title {
-            font-size: 72px;
-        }
-    }
-    @media (min-width: 2300px) {
-        .info {
-            width: 90vw;
-            max-width: 100vw;
-            padding: 50px 9.114vw;
-        }
-    }
 </style>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const scrollTop = document.getElementById("scrollTop");
+        let timer;
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 50) {
+                scrollTop.classList.add("show");
+            }
+            clearTimeout(timer);
+            timer = setTimeout(() => {
+                scrollTop.classList.remove("show");
+            }, 1000);
+        });
+        scrollTop.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        
+        });
+    });
+</script>
 <script>
     document.addEventListener("DOMContentLoaded", () => {
     const bodies = {
@@ -1193,31 +1231,31 @@
         <p class="information__title">Срок обучения</p>
         <p class="information__text">2 года (1512 академических часа)</p>
         <div class="documents" style="margin-top: 30px">
-            <a class="documents__item" href="#" style="border-top: none">
+            <a class="documents__item" href="https://rumt.ispringcloud.ru/acc/BrlJbdMxNTkyNQ/s/15925-XxRaw-s530r-8r3cU" style="border-top: none" target="_blank">
                 <div class="documents__left">
                     <img src="images/Document.svg "alt="table">
-                    <span>Программа и учебный план<span>
+                    <span>Программа, в том числе учебный план<span>
                 </div>
                 <span class="documents__action">Открыть</span>
             </a>
-            <a class="documents__item" href="#">
-                <div class="documents__left">
-                    <img src="images/Document.svg"alt="table">
-                    <span>Программа и учебный план </span>
-                </div>
-                <span class="documents__action">Открыть</span>
-            </a>
-            <a class="documents__item" href="#">
+            <a class="documents__item" href="https://rumt.ispringcloud.ru/acc/BrlJbdMxNTkyNQ/s/15925-oeCNk-R9ShT-iiP6W" target="_blank">
                 <div class="documents__left">
                     <img src="images/Document.svg"alt="table">
                     <span>Рабочие программы дисциплин</span>
                 </div>
                 <span class="documents__action">Открыть</span>
             </a>
-            <a class="documents__item" href="#" style="margin-bottom: 30px;">
+            <a class="documents__item" href="https://rumt.ispringcloud.ru/acc/BrlJbdMxNTkyNQ/s/15925-hGgzp-sn51Y-aJ00c" target="_blank">
+                <div class="documents__left">
+                    <img src="images/Document.svg" alt="table" target="_blank">
+                    <span>Календарный учебный график</span>
+                </div>
+                <span class="documents__action">Открыть</span>
+            </a>
+            <a class="documents__item" href="https://rumt.ispringcloud.ru/acc/BrlJbdMxNTkyNQ/s/15925-i3iFo-CpVJk-WyeLj" style="margin-bottom: 30px;" target="_blank">
                 <div class="documents__left">
                     <img src="images/Document.svg"alt="table">
-                    <span>Рабочие программы дисциплин</span>
+                    <span>Расписание занятий</span>
                 </div>
                 <span class="documents__action">Открыть</span>
             </a>
@@ -1230,7 +1268,7 @@
             <p class="information__title">Срок обучения</p>
             <p class="information__text">16 академических часов</p>
             <div class="documents">
-                <a class="documents__item" href="#">
+                <a class="documents__item" href="https://rumt.ispringcloud.ru/acc/BrlJbdMxNTkyNQ/s/15925-istzA-iPV1A-anSuG" target="_blank">
                     <div class="documents__left">
                         <img src="images/Document.svg" alt="document">
                         <span>Программа, в том числе учебный план</span>
@@ -1245,7 +1283,7 @@
             <p class="information__title">Срок обучения</p>
             <p class="information__text">16 академических часов</p>
             <div class="documents">
-                <a class="documents__item" href="#">
+                <a class="documents__item" href="https://rumt.ispringcloud.ru/acc/BrlJbdMxNTkyNQ/s/15925-dmR4Q-iRfhL-kjGCp" target="_blank">
                     <div class="documents__left">
                         <img src="images/Document.svg" alt="document">
                         <span>Программа, в том числе учебный план</span>
@@ -1260,7 +1298,7 @@
             <p class="information__title">Срок обучения</p>
             <p class="information__text">21 академический час</p>
             <div class="documents">
-                <a class="documents__item" href="#">
+                <a class="documents__item" href="https://rumt.ispringcloud.ru/acc/BrlJbdMxNTkyNQ/s/15925-JhpKi-YB2pA-eUGYs" target="_blank">
                     <div class="documents__left">
                         <img src="images/Document.svg" alt="document">
                         <span>Программа, в том числе учебный план</span>
@@ -1275,7 +1313,7 @@
             <p class="information__title">Срок обучения</p>
             <p class="information__text">24 академических часа</p>
             <div class="documents">
-                <a class="documents__item" href="#">
+                <a class="documents__item" href="https://rumt.ispringcloud.ru/acc/BrlJbdMxNTkyNQ/s/15925-KQr9t-twV8L-8P82m" target="_blank">
                     <div class="documents__left">
                         <img src="images/Document.svg" alt="document">
                         <span>Программа, в том числе учебный план</span>
@@ -1290,7 +1328,7 @@
             <p class="information__title">Срок обучения</p>
             <p class="information__text">20 академических часов</p>
             <div class="documents">
-                <a class="documents__item" href="#">
+                <a class="documents__item" href="https://rumt.ispringcloud.ru/acc/BrlJbdMxNTkyNQ/s/15925-CmFep-jHwaz-p2pJP" target="_blank">
                     <div class="documents__left">
                         <img src="images/Document.svg" alt="document">
                         <span>Программа, в том числе учебный план</span>
@@ -1305,7 +1343,7 @@
             <p class="information__title">Срок обучения</p>
             <p class="information__text">16 академических часов</p>
             <div class="documents">
-                <a class="documents__item" href="#">
+                <a class="documents__item" href="https://rumt.ispringcloud.ru/acc/BrlJbdMxNTkyNQ/s/15925-FG1pA-98kGW-zmtrg" target="_blank">
                     <div class="documents__left">
                         <img src="images/Document.svg" alt="document">
                         <span>Программа, в том числе учебный план</span>
@@ -1320,7 +1358,7 @@
             <p class="information__title">Срок обучения</p>
             <p class="information__text">24 академических часа</p>
             <div class="documents">
-                <a class="documents__item" href="#">
+                <a class="documents__item" href="https://rumt.ispringcloud.ru/acc/BrlJbdMxNTkyNQ/s/15925-nrS0v-Qvuka-BWR4h" target="_blank">
                     <div class="documents__left">
                         <img src="images/Document.svg" alt="document">
                         <span>Программа, в том числе учебный план</span>
@@ -1341,14 +1379,14 @@
             <p class="information__title">Срок обучения</p>
             <p class="information__text">36 академических часов</p>
             <div class="documents">
-                <a class="documents__item" href="#">
+                <a class="documents__item" href="https://rumt.ispringcloud.ru/acc/BrlJbdMxNTkyNQ/s/15925-KwXkH-ohi6J-nG7eL" target="_blank">
                     <div class="documents__left">
                         <img src="images/Document.svg" alt="document">
                         <span>Программа</span>
                     </div>
                     <span class="documents__action">Открыть</span>
                 </a>
-                <a class="documents__item" href="#">
+                <a class="documents__item" href="https://www.institutps.ru/courses/course-ux-design" target="_blank">
                     <div class="documents__left">
                         <img src="images/arrow_right.svg" alt="link">
                         <span>Записаться на программу</span>
@@ -1362,6 +1400,15 @@
             <p class="information__text">Конструкция и базовые навыки пилотирования мультироторных БПЛА</p>
             <p class="information__title">Срок обучения</p>
             <p class="information__text">36 академических часов</p>
+            <div class="documents">
+                <a class="documents__item" href="https://rumt.ispringcloud.ru/acc/BrlJbdMxNTkyNQ/s/15925-1nYqT-xGA2F-0SSpj" target="_blank">
+                    <div class="documents__left">
+                        <img src="images/Document.svg" alt="document">
+                        <span>Программа</span>
+                    </div>
+                    <span class="documents__action">Открыть</span>
+                </a>
+            </div>
         </div>
         <div class="program">
             <p class="information__title">Наименование программы</p>
@@ -1369,14 +1416,14 @@
             <p class="information__title">Срок обучения</p>
             <p class="information__text">21 академический час</p>
             <div class="documents">
-                <a class="documents__item" href="#">
+                <a class="documents__item" href="https://rumt.ispringcloud.ru/acc/BrlJbdMxNTkyNQ/s/15925-TiXLz-86MVc-EefxZ" target="_blank">
                     <div class="documents__left">
                         <img src="images/Document.svg" alt="document">
                         <span>Программа</span>
                     </div>
                     <span class="documents__action">Открыть</span>
                 </a>
-                <a class="documents__item" href="#">
+                <a class="documents__item" href="https://ispring.institute/courses/course-design-tools" target="_blank">
                     <div class="documents__left">
                         <img src="images/arrow_right.svg" alt="link">
                         <span>Записаться на программу</span>
@@ -1390,6 +1437,15 @@
             <p class="information__text">Поисковое продвижение сайтов (SEO)</p>
             <p class="information__title">Срок обучения</p>
             <p class="information__text">20 академических часов</p>
+            <div class="documents">
+                <a class="documents__item" href="https://rumt.ispringcloud.ru/acc/BrlJbdMxNTkyNQ/s/15925-qGzEv-2D02V-3BgZC" target="_blank">
+                    <div class="documents__left">
+                        <img src="images/Document.svg" alt="document">
+                        <span>Программа</span>
+                    </div>
+                    <span class="documents__action">Открыть</span>
+                </a>
+            </div>
         </div>
         <div class="program">
             <p class="information__title">Наименование программы</p>
@@ -1397,14 +1453,14 @@
             <p class="information__title">Срок обучения</p>
             <p class="information__text">48 академических часов</p>
             <div class="documents">
-                <a class="documents__item" href="#">
+                <a class="documents__item" href="https://rumt.ispringcloud.ru/acc/BrlJbdMxNTkyNQ/s/15925-1d7om-ogXkQ-HRm9z" target="_blank">
                     <div class="documents__left">
                         <img src="images/Document.svg" alt="document">
                         <span>Программа</span>
                     </div>
                     <span class="documents__action">Открыть</span>
                 </a>
-                <a class="documents__item" href="#">
+                <a class="documents__item" href="https://www.institutps.ru/courses/software-testing" target="_blank">
                     <div class="documents__left">
                         <img src="images/arrow_right.svg" alt="link">
                         <span>Записаться на программу</span>
@@ -1419,14 +1475,14 @@
             <p class="information__title">Срок обучения</p>
             <p class="information__text">32 академических часа</p>
             <div class="documents">
-                <a class="documents__item" href="#">
+                <a class="documents__item" href="https://rumt.ispringcloud.ru/acc/BrlJbdMxNTkyNQ/s/15925-pK9mn-mY5uW-r5P0j" target="_blank">
                     <div class="documents__left">
                         <img src="images/Document.svg" alt="document">
                         <span>Программа</span>
                     </div>
                     <span class="documents__action">Открыть</span>
                 </a>
-                <a class="documents__item" href="#">
+                <a class="documents__item" href="https://ispring.institute/courses/course-web-design" target="_blank">
                     <div class="documents__left">
                         <img src="images/arrow_right.svg" alt="link">
                         <span>Записаться на программу</span>
@@ -1441,14 +1497,14 @@
             <p class="information__title">Срок обучения</p>
             <p class="information__text">36 академических часов</p>
             <div class="documents">
-                <a class="documents__item" href="#">
+                <a class="documents__item" href="https://rumt.ispringcloud.ru/acc/BrlJbdMxNTkyNQ/s/15925-NpBn7-ZTJZ5-P6gjk" target="_blank">
                     <div class="documents__left">
                         <img src="images/Document.svg" alt="document">
                         <span>Программа</span>
                     </div>
                     <span class="documents__action">Открыть</span>
                 </a>
-                <a class="documents__item" href="#">
+                <a class="documents__item" href="https://www.institutps.ru/courses/qa-engineer" target="_blank">
                     <div class="documents__left">
                         <img src="images/arrow_right.svg" alt="link">
                         <span>Записаться на программу</span>
@@ -1462,6 +1518,15 @@
             <p class="information__text">Математический модуль</p>
             <p class="information__title">Срок обучения</p>
             <p class="information__text">30 академических часов</p>
+            <div class="documents">
+                <a class="documents__item" href="https://rumt.ispringcloud.ru/acc/BrlJbdMxNTkyNQ/s/15925-dgfEP-L4Wb3-0R9X1" target="_blank">
+                    <div class="documents__left">
+                        <img src="images/Document.svg" alt="document">
+                        <span>Программа</span>
+                    </div>
+                    <span class="documents__action">Открыть</span>
+                </a>
+            </div>
         </div>
     </div>
     <h2 class="info__subtitle" style="margin-top: 100px; margin-bottom: 30px;">Преподавательский состав</h2>
@@ -1490,4 +1555,7 @@
             <div class="popup__content"></div>
         </div>
     </div>
+</div>
+<div id="scrollTop" class="scroll-top">
+    <img src="images/Arrow_left.svg" alt="" style="transform: rotate(90deg);">
 </div>
