@@ -73,19 +73,19 @@
     .info__title {
         margin: 0 0 32px;
         font-family: "Inter Tight", sans-serif;
-        font-size: 30px;
+        font-size: 36px;
         font-weight: 700;
         line-height: 1.1;
     }
     .info__subtitle {
-        font-size: 15px;
+        font-size: 16px;
         font-weight: 400;
         line-height: 1.5;
         margin-bottom: 24px;
     }
     .description,
     .table-name {
-        font-size: 15px;
+        font-size: 24px;
         font-weight: 700;
         line-height: 1.4;
         color: #1F2937;
@@ -107,15 +107,10 @@
         align-items: flex-start;
         gap: 14px;
         margin-bottom: 30px;
-    }
-    .ruk__line {
-        width: 3px;
-        min-height: 150px;
-        border-radius: 100px;
-        background: #FF7A3D;
-        flex-shrink: 0;
+        border-left: 3px solid orange;
     }
     .ruk__photo {
+        margin-left: 10px;
         width: 120px;
         height: 120px;
         border-radius: 12px;
@@ -166,7 +161,7 @@
         height: 18px;
     }
     .ruk__contact:last-child {
-        color: #FF7A3D;
+        color: #FA5D20;
     }
     .table-block {
         margin-top: 24px;
@@ -195,15 +190,14 @@
     }
     .table td {
         background: #fff;
-    }
-    .description {
-        font-size: 18px;
-    }
-    
+    }    
     .answer {
-        font-size: 15px;
+        font-size: 16px;
         line-height: 1.5;
         margin-bottom: 36px;
+    }
+    .link-return__title {
+        font-size: 16px
     }
     @media (min-width: 768px) {
         .info {
@@ -222,6 +216,18 @@
         .info__title {
             font-size: 64px;
             margin-bottom: 56px;
+        }
+        .info__subtitle {
+            font-size: 18px;
+        }
+        .description {
+            font-size: 28px;
+        }
+        .answer {
+            font-size: 18px;
+        }
+        .link-return__title {
+            font-size: 18px
         }
     }
     @media (min-width: 1600px) {
@@ -250,8 +256,7 @@
     <p class="description">
         Руководитель образовательной организации
     </p>
-    <div class="ruk">
-        <div class="ruk__line"></div>
+    <div class="ruk" itemprop="rukovodstvo">
         <img class="ruk__photo" src="https://static.tildacdn.com/tild3332-6236-4165-b232-303831393537/Kozlov_Alexander.jpg" alt="Фото руководителя">
         <div class="ruk__content">
             <p class="ruk__name" itemprop="fio">Козлов Александр Иванович</p>

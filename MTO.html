@@ -78,7 +78,7 @@
     .info__title {
         margin: 0 0 32px;
         font-family: "Inter Tight", sans-serif;
-        font-size: 30px;
+        font-size: 36px;
         font-weight: 700;
         line-height: 1.1;
     }
@@ -89,7 +89,7 @@
     }
     .documents__title {
         margin: 0 0 12px;
-        font-size: 16px;
+        font-size: 20px;
         font-weight: 600;
     }
     .documents__item {
@@ -125,7 +125,7 @@
         flex-shrink: 0;
     }
     .documents__left span {
-        font-size: 14px;
+        font-size: 16px;
         line-height: 1.4;
     }
     .documents__action {
@@ -251,6 +251,9 @@
         margin-top: 24px;
         margin-bottom: 36px;
     }
+    .link-return__title {
+        font-size: 16px
+    }
     .table-style td,
     .table-style th {
         border: 1px solid #F15A24;
@@ -302,6 +305,9 @@
         }
         .documents__item {
             padding: 24px 30px 24px 0px;
+        }
+        .link-return__title {
+            font-size: 18px
         }
     }
     @media (min-width: 2000px) {
@@ -464,25 +470,25 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
             <span class="documents__action">Показать</span>
         </a>
-        <a class="documents__item" id="education__menu">
+        <a class="documents__item" id="education__menu" itemprop="purposeFacil">
             <div class="documents__left">
                 <span>Сведения о средствах обучения и воспитания</span>
             </div>
             <span class="documents__action">Показать</span>
         </a>
-        <a class="documents__item" id="OVZ__menu">
+        <a class="documents__item" id="OVZ__menu" itemprop="purposeFacilOvz">
             <div class="documents__left">
                 <span>Сведения о средствах обучения и воспитания приспособленных для использования инвалидами и лицами с ограниченными возможностями здоровья</span>
             </div>
             <span class="documents__action">Показать</span>
         </a>
-        <a class="documents__item" id="access__information__sistem__menu">
+        <a class="documents__item" id="access__information__sistem__menu" itemprop="comNet">
             <div class="documents__left">
                 <span>Сведения о доступе к информационным системам и информационно-телекоммуникационным сетям</span>
             </div>
             <span class="documents__action">Показать</span>
         </a>
-        <a class="documents__item" id="OVZ__access__information__sistem__menu">
+        <a class="documents__item" id="OVZ__access__information__sistem__menu" itemprop="comNetOvz">
             <div class="documents__left">
                 <span>Сведения о доступе к информационным системам и информационно-телекоммуникационным сетям, приспособленным для использования инвалидами и лицами с ограниченными возможностями здоровья</span>
             </div>
@@ -500,19 +506,19 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
             <span class="documents__action">Показать</span>
         </a>
-        <a class="documents__item" id="accept__resources__menu">
+        <a class="documents__item" id="accept__resources__menu" itemprop="erList">
             <div class="documents__left">
                 <span>Сведения об электронных образовательных ресурсах, к которым обеспечивается доступ обучающихся</span>
             </div>
             <span class="documents__action">Показать</span>
         </a>
-        <a class="documents__item" id="education__courses__menu">
+        <a class="documents__item" id="education__courses__menu" itemprop="erListOvz">
             <div class="documents__left">
                 <span>Информация об электронных образовательных ресурсах, к которым обеспечивается доступ инвалидов и лиц с ограниченными возможностями здоровья</span>
             </div>
             <span class="documents__action">Показать</span>
         </a>
-        <a class="documents__item" id="special__insruments__menu">
+        <a class="documents__item" id="special__insruments__menu" itemprop="techOvz">
             <div class="documents__left">
                 <span>Сведения о наличии специальных технических средств обучения коллективного и индивидуального пользования для инвалидов и лиц с ограниченными возможностями здоровья</span>
             </div>
@@ -1138,8 +1144,8 @@ document.addEventListener("DOMContentLoaded", () => {
             <td itemprop="objAddress">Ауд. 314, расположенная по адресу: 424033, Республика Марий
             Эл, г.
             Йошкар-Ола, ул. Эшкинина, д. 8б</td>
-            <td align="center" itemprop="objSq">70,08</td>
-            <td align="center" itemprop="objCnt">20</td>
+            <td align="center">70,08</td>
+            <td align="center">20</td>
             <td align="center" itemprop="objOvz">Да</td>
         </tr>
         </table>

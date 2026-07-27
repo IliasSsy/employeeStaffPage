@@ -50,6 +50,10 @@
         color: #222222;
         background: #ffffff;
     }
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
     .info {
         max-width: 100%;
         margin: 0 auto;
@@ -72,13 +76,13 @@
     .title {
         margin: 0 0 28px;
         font-family: "Inter Tight", sans-serif;
-        font-size: 34px;
+        font-size: 36px;
         font-weight: 700;
         line-height: 1.1;
     }
     .includes {
         margin: 0 0 32px;
-        font-size: 16px;
+        font-size: 24px;
         font-weight: 600;
         line-height: 1.5;
     }
@@ -89,7 +93,7 @@
     .department {
         padding: 22px 0;
         border-bottom: 1px solid #ECECEC;
-        transition: background-color .25s ease;
+        transition: background-color 0.25s ease;
     }
     .department:hover {
         background: #FFF6F1;
@@ -97,7 +101,7 @@
     .department__title {
         margin: 0 0 18px;
         font-family: "Inter Tight", sans-serif;
-        font-size: 22px;
+        font-size: 26px;
         font-weight: 600;
         line-height: 1.2;
     }
@@ -113,7 +117,7 @@
         object-position: center;
         border-radius: 12px;
         flex-shrink: 0;
-        transition: transform .25s ease;
+        transition: transform 0.25s ease;
     }
     .department:hover .department__image {
         transform: scale(1.02);
@@ -144,12 +148,14 @@
         line-height: 1.5;
     }
     .department__email {
+        margin: 0;
         margin-bottom: 12px;
         color: #FF6B35;
         font-size: 14px;
         text-decoration: none;
     }
     .department__document {
+        margin: 0;
         color: #FF6B35;
         font-size: 14px;
         font-weight: 500;
@@ -163,8 +169,11 @@
         overflow-x: auto;
     }
     .info__description {
-        font-size: 16px;
-        margin-top: 32px;
+        font-family: "Inter Tight", sans-serif;
+        font-size: 26px;
+        font-weight: 600;
+        line-height: 1.2;
+        margin-top: 50px;
         margin-bottom: 20px;
     }
     .table {
@@ -200,7 +209,8 @@
         margin-bottom: 28px;
     }
     .menu__arrow {
-        width: 14px;
+        width: 16px;
+        align-self: center;
         margin-top: 3px;
         flex-shrink: 0;
     }
@@ -208,7 +218,7 @@
         font-size: 14px;
         line-height: 1.6;
     }
-    @media (max-width: 900px) {
+    @media (max-width: 768px) {
         .title {
             font-size: 48px;
         }
@@ -251,6 +261,9 @@
         .department__position {
             font-size: 18px;
         }
+        .link-return__title {
+            font-size: 16px
+        }
     }
     @media (min-width: 768px) {
         .info {
@@ -266,9 +279,18 @@
             max-width: 100vw;
             padding: 50px 9.114vw;
         }
-        .info__title {
+        .title {
             font-size: 64px;
             margin-bottom: 56px;
+        }
+        .includes {
+            font-size: 28px;
+        }
+        .menu__title {
+            font-size: 18px;
+        }
+        .link-return__title {
+            font-size: 18px
         }
     }
     @media (min-width: 1600px) {
@@ -297,7 +319,8 @@
             address: "424033, Республика Марий Эл, г. Йошкар-Ола, ул. Эшкинина, д. 86",
             website: "Официальный сайт отсутствует",
             email: "marina.protasova@ispring.com",
-            document: "Положение об административном отделе"
+            document: "Положение об административном отделе",
+            link: "https://rumt.ispringcloud.ru/acc/BrlJbdMxNTkyNQ/s/15925-xqLn9-ZwN27-WynPn"
         },
         {
             image: "https://static.tildacdn.com/tild3437-3733-4637-a562-616535326131/Serkina_Nadezhda.png",
@@ -307,7 +330,8 @@
             address: "424033, Республика Марий Эл, г. Йошкар-Ола, ул. Эшкинина, д. 86",
             website: "Официальный сайт отсутствует",
             email: "nadezhda.serkina@ispring.com",
-            document: "Положение об учебно-методическом отделе"
+            document: "Положение об учебно-методическом отделе",
+            link: "https://rumt.ispringcloud.ru/acc/BrlJbdMxNTkyNQ/s/15925-E4TH4-MfQq0-88y1n"
         },
         {
             image: "https://static.tildacdn.com/tild3734-3864-4737-b463-356365633535/Arnaberdiev_Kerim.png",
@@ -317,7 +341,8 @@
             address: "424033, Республика Марий Эл, г. Йошкар-Ола, ул. Эшкинина, д. 86",
             website: "Официальный сайт отсутствует",
             email: "kerim.arnaberdiev@ispring.com",
-            document: "Положение о кафедре программных систем"
+            document: "Положение о кафедре программных систем",
+            link: "https://rumt.ispringcloud.ru/acc/BrlJbdMxNTkyNQ/s/15925-dS2Xb-0hAfk-16dQa",
         },
         {
             image: "https://static.tildacdn.com/tild3536-3363-4461-a638-653838653238/noperson-white.png",
@@ -327,7 +352,8 @@
             address: "424033, Республика Марий Эл, г. Йошкар-Ола, ул. Эшкинина, д. 86",
             website: "Официальный сайт отсутствует",
             email: "institute@ispring.ru",
-            document: "Положение о кафедре маркетинговых коммуникаций"
+            document: "Положение о кафедре маркетинговых коммуникаций",
+            link: "https://rumt.ispringcloud.ru/acc/BrlJbdMxNTkyNQ/s/15925-U4KTK-cxcpS-PHCgE"
         },
         {
             image: "https://static.tildacdn.com/tild3463-3733-4162-b931-643537313364/Zherebtsova_Olga.jpg",
@@ -337,7 +363,8 @@
             address: "424033, Республика Марий Эл, г. Йошкар-Ола, ул. Эшкинина, д. 86",
             website: "Официальный сайт отсутствует",
             email: "olga.zherebtsova@ispring.com",
-            document: "Положение о кафедре цифровых образовательных систем"
+            document: "Положение о кафедре цифровых образовательных систем",
+            link: "https://rumt.ispringcloud.ru/acc/BrlJbdMxNTkyNQ/s/15925-XVj0H-EHHuz-AjKVe"
         },
         {
             image: "https://static.tildacdn.com/tild3536-3363-4461-a638-653838653238/noperson-white.png",
@@ -347,7 +374,8 @@
             address: "424033, Республика Марий Эл, г. Йошкар-Ола, ул. Эшкинина, д. 86",
             website: "Официальный сайт отсутствует",
             email: "institute@ispring.ru",
-            document: "Положение о центре академического образования"
+            document: "Положение о центре академического образования",
+            link: "https://rumt.ispringcloud.ru/acc/BrlJbdMxNTkyNQ/s/15925-L09h3-s07dt-MkkwQ"
         },
         {
             image: "https://static.tildacdn.com/tild3333-6135-4939-b933-313764333532/Vavilova_Kseniya.png",
@@ -357,7 +385,8 @@
             address: "424033, Республика Марий Эл, г. Йошкар-Ола, ул. Эшкинина, д. 86",
             website: "Официальный сайт отсутствует",
             email: "kseniya.vavilova@ispring.com",
-            document: "Положение о центре иностранных языков"
+            document: "Положение о центре иностранных языков",
+            link: "https://rumt.ispringcloud.ru/acc/BrlJbdMxNTkyNQ/s/15925-tHpRe-JKn7e-Q6Vtd"
         },
         {
             image: "https://static.tildacdn.com/tild3536-3363-4461-a638-653838653238/noperson-white.png",
@@ -367,7 +396,8 @@
             address: "424033, Республика Марий Эл, г. Йошкар-Ола, ул. Эшкинина, д. 86",
             website: "Официальный сайт отсутствует",
             email: "institute@ispring.ru",
-            document: "Положение о центре дополнительного образования"
+            document: "Положение о центре дополнительного образования",
+            link: "https://rumt.ispringcloud.ru/acc/BrlJbdMxNTkyNQ/s/15925-fH0ZR-0tseR-xj1G3"
         }
     ];
     document.addEventListener("DOMContentLoaded", () => {
@@ -376,17 +406,19 @@
         cards.insertAdjacentHTML("beforeend", `
             <div class="department">
                 <h2 class="department__title">${department.title}</h2>
-                <div class="department__content">
-                    <img class="department__image" src="${department.image}" alt="${department.name}">
-                    <div class="department__info">
-                        <p class="department__name">${department.name}</p>
-                        <p class="department__position">${department.position}</p>
-                        <p class="department__address">${department.address}</p>
-                        <p class="department__website">${department.website}</p>
-                        <a class="department__email" href="mailto:${department.email}">${department.email}</a>
-                        <a class="department__document" href="#">${department.document} -></a>
+                <a class="department__link" href="${department.link}" draggable="false">
+                    <div class="department__content" style="-webkit-user-drag: none;">
+                        <img class="department__image" src="${department.image}" alt="${department.name}">
+                        <div class="department__info">
+                            <p class="department__name" itemprop="fio">${department.name}</p>
+                            <p class="department__position" itemprop="post">${department.position}</p>
+                            <p class="department__address" itemprop="addressStr">${department.address}</p>
+                            <p class="department__website" itemprop="site">${department.website}</p>
+                            <p class="department__email" href="mailto:${department.email}" itemprop="email">${department.email}</p>
+                            <p class="department__document" itemprop="divisionClauseDocLink">${department.document} -></p>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
         `);
     });
@@ -397,65 +429,69 @@
         <img class="link-return__arrow" src="images/Arrow_left.svg" alt="arrow">
         <p class="link-return__title">Назад</p>
     </a>
-    <h1 class="title">Структура и органы управления образовательной организацией</h1>
-    <h2 class="includes">Структура органов управления АНО ВО "РУМТ" включает в себя:</h2>
-    <div class="menu">
-        <img class="menu__arrow" src="images/arrow_right.svg" alt="arrow">
-        <span class="menu__title">Стипендии обучающимся предоставляются в соответствии с Положением о стипендиях и материальной поддержке обучающихся АНО ВО «РУМТ»</span>
-    </div>
-    <div class="menu">
-        <img class="menu__arrow" src="images/arrow_right.svg" alt="arrow">
-        <span class="menu__title">Материальная поддержка обучающимся предоставляется в соответствии с Положением о стипендиях и материальной поддержке обучающихся в АНО ВО «РУМТ».</span>
-    </div>
-    <div class="menu" style="margin-bottom: 50px;">
-        <img class="menu__arrow" src="images/arrow_right.svg" alt="arrow">
-        <span class="menu__title">В АНО ВО «РУМТ» общежитий нет.</span>
-    </div>
-    <div class="cards"></div>
-    <p class="info__description">Информация о филиалах образовательной организации</p>
-    <div class="table-block">
-        <table class="table">
-            <tr>
-                <th>Наименование филиала</th>
-                <th>ФИО руководителя</th>
-                <th>Должность руководителя</th>
-                <th>Адрес места нахождения</th>
-                <th>Электронная почта</th>
-                <th>Адрес официального сайта или страницы</th>
-                <th>Положение о филиале</th>
-            </tr>
-            <tr align="center" itemprop="filInfo">
-                <td itemprop="nameFil">отсутствует</td>
-                <td itemprop="fioFil">отсутствует</td>
-                <td itemprop="postFil">отсутствует</td>
-                <td itemprop="addressFil">отсутствует</td>
-                <td itemprop="emailFil">отсутствует</td>
-                <td itemprop="websiteFil">отсутствует</td>
-                <td itemprop="divisionClauseDocLink">отсутствует</td>
-            </tr>
-        </table>
-    </div>
-    <p class="info__description">Информация о представительствах образовательной организации</p>
-    <div class="table-block">
-        <table class="table">
-            <tr>
-                <th>Наименование представительства</th>
-                <th>ФИО руководителя</th>
-                <th>Должность руководителя</th>
-                <th>Адрес места нахождения</th>
-                <th>Электронная почта</th>
-                <th>Адрес официального сайта или страницы</th>
-                <th>Положение о представительстве</th>
-            </tr>
-            <tr align="center" itemprop="repInfo">
-                <td itemprop="nameRep">отсутствует</td>
-                <td itemprop="fioRep">отсутствует</td>
-                <td itemprop="postRep">отсутствует</td>
-                <td itemprop="addressRep">отсутствует</td>
-                <td itemprop="emailRep">отсутствует</td>
-                <td itemprop="websiteRep">отсутствует</td>
-                <td itemprop="divisionClauseDocLink">отсутствует</td>
-            </tr>
-        </table>
+    <div itemprop="structOrgUprav">
+        <h1 class="title">Структура и органы управления образовательной организацией</h1>
+        <h2 class="includes">Структура органов управления АНО ВО "РУМТ" включает в себя:</h2>
+        <div class="menu">
+            <img class="menu__arrow" src="images/arrow_right.svg" alt="arrow">
+            <span class="menu__title">Стипендии обучающимся предоставляются в соответствии с Положением о стипендиях и материальной поддержке обучающихся АНО ВО «РУМТ»</span>
+        </div>
+        <div class="menu">
+            <img class="menu__arrow" src="images/arrow_right.svg" alt="arrow">
+            <span class="menu__title">Материальная поддержка обучающимся предоставляется в соответствии с Положением о стипендиях и материальной поддержке обучающихся в АНО ВО «РУМТ».</span>
+        </div>
+        <div class="menu" style="margin-bottom: 50px;">
+            <img class="menu__arrow" src="images/arrow_right.svg" alt="arrow">
+            <span class="menu__title">В АНО ВО «РУМТ» общежитий нет.</span>
+        </div>
+        <div itemprop="name">
+            <div class="cards"></div>
+        </div>
+        <p class="info__description">Информация о филиалах образовательной организации</p>
+        <div class="table-block">
+            <table class="table">
+                <tr>
+                    <th>Наименование филиала</th>
+                    <th>ФИО руководителя</th>
+                    <th>Должность руководителя</th>
+                    <th>Адрес места нахождения</th>
+                    <th>Электронная почта</th>
+                    <th>Адрес официального сайта или страницы</th>
+                    <th>Положение о филиале</th>
+                </tr>
+                <tr align="center" itemprop="filInfo">
+                    <td itemprop="nameFil">отсутствует</td>
+                    <td itemprop="fioFil">отсутствует</td>
+                    <td itemprop="postFil">отсутствует</td>
+                    <td itemprop="addressFil">отсутствует</td>
+                    <td itemprop="emailFil">отсутствует</td>
+                    <td itemprop="websiteFil">отсутствует</td>
+                    <td itemprop="divisionClauseDocLink">отсутствует</td>
+                </tr>
+            </table>
+        </div>
+        <p class="info__description">Информация о представительствах образовательной организации</p>
+        <div class="table-block">
+            <table class="table">
+                <tr>
+                    <th>Наименование представительства</th>
+                    <th>ФИО руководителя</th>
+                    <th>Должность руководителя</th>
+                    <th>Адрес места нахождения</th>
+                    <th>Электронная почта</th>
+                    <th>Адрес официального сайта или страницы</th>
+                    <th>Положение о представительстве</th>
+                </tr>
+                <tr align="center" itemprop="repInfo">
+                    <td itemprop="nameRep">отсутствует</td>
+                    <td itemprop="fioRep">отсутствует</td>
+                    <td itemprop="postRep">отсутствует</td>
+                    <td itemprop="addressRep">отсутствует</td>
+                    <td itemprop="emailRep">отсутствует</td>
+                    <td itemprop="websiteRep">отсутствует</td>
+                    <td itemprop="divisionClauseDocLink">отсутствует</td>
+                </tr>
+            </table>
+        </div>
     </div>
 </div>

@@ -134,6 +134,9 @@
         text-decoration: none;
         border-top: 1px solid #EAEAEA;
     }
+    .link-return__title {
+        font-size: 16px
+    }
     .documents__item:last-child {
         border-bottom: 1px solid #EAEAEA;
     }
@@ -152,7 +155,7 @@
         flex-shrink: 0;
     }
     .documents__left span {
-        font-size: 16px;
+        font-size: 18px;
         line-height: 1.45;
     }
     .documents__action {
@@ -214,7 +217,7 @@
     }
     .documents__action {
         flex-shrink: 0;
-        font-size: 15px;
+        font-size: 14px;
         font-weight: 500;
         color: #FA5D20;
     }
@@ -268,6 +271,7 @@
     .teacher__name {
         margin: 0 0 6px;
         font-size: 22px;
+        width: 90%;
         font-weight: 700;
         line-height: 1.15;
         color: #1F2937;
@@ -344,6 +348,7 @@
     .teacher__button {
         position: absolute;
         align-self: flex-end;
+        transform: translateY(100%);
         color: #FA5D1F;
         font-size: 22px;
     }
@@ -357,12 +362,15 @@
         }
     }
     @media (min-width: 1024px) {
-    body {
-            padding: 50px 9.114vw;
+        .link-return__title {
+            font-size: 18px;
         }
         .info__title {
             font-size: 64px;
             margin-bottom: 56px;
+        }
+        .info {
+            padding: 50px 9.114vw;
         }
         .teacher {
             display: flex;

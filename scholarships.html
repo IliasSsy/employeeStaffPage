@@ -75,7 +75,7 @@
     .info__title {
         margin: 0 0 32px;
         font-family: "Inter Tight", sans-serif;
-        font-size: 30px;
+        font-size: 36px;
         font-weight: 700;
         line-height: 1.1;
     }
@@ -112,7 +112,7 @@
     }
     .documents__title {
         margin: 0 0 12px;
-        font-size: 13px;
+        font-size: 20px;
         font-weight: 600;
     }
     .documents__item {
@@ -143,7 +143,7 @@
         flex-shrink: 0;
     }
     .documents__left span {
-        font-size: 14px;
+        font-size: 18px;
         line-height: 1.4;
     }
     .documents__action {
@@ -160,13 +160,17 @@
         margin-bottom: 36px;
     }
     .menu__arrow {
-        width: 14px;
+        align-self: center;
+        width: 16px;
         margin-top: 3px;
         flex-shrink: 0;
     }
     .menu__title {
-        font-size: 14px;
+        font-size: 16px;
         line-height: 1.6;
+    }
+    .link-return__title {
+        font-size: 16px
     }
     @media (min-width: 768px) {
         .info {
@@ -182,17 +186,23 @@
             max-width: 100vw;
             padding: 50px 9.114vw;
         }
+        .link-return__title {
+            font-size: 18px
+        }
         .info__title {
             font-size: 64px;
             margin-bottom: 56px;
+        }
+        .menu__title {
+            font-size: 18px;
+        }
+        .menu__arrow {
+            width: 18px;
         }
     }
     @media (min-width: 1600px) {
         .info {
             padding: 50px 9.114vw;
-        }
-        .info__title {
-            font-size: 72px;
         }
     }
     @media (min-width: 2300px) {
@@ -211,7 +221,7 @@
     <h1 class="info__title">Стипендии и меры поддержки обучающихся</h1>
     <div class="documents">
         <p class="documents__title">Название документа</p>
-        <a class="documents__item" href="#" itemprop="grantDocLink">
+        <a class="documents__item" href="#" itemprop="grant">
             <div class="documents__left">
                 <img src="images/Document.svg" alt="Документ">
                 <span>Положение о стипендиях и материальной поддержке обучающихся в АНО ВО «РУМТ»</span>
@@ -266,5 +276,5 @@
             </tr>
         </tbody>
     </table>
-    <p class="info__text">Ссылка на информацию о формировании платы за проживание в общежитии <span style="color:#FA5D20">отсутствует</span>, общежитий нет.</p>
+    <p class="menu__title" itemprop="localActObSt">Ссылка на информацию о формировании платы за проживание в общежитии <span style="color:#FA5D20">отсутствует</span>, общежитий нет.</p>
 </div>

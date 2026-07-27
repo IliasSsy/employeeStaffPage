@@ -78,7 +78,7 @@
     .info__title {
         margin: 0 0 32px;
         font-family: "Inter Tight", sans-serif;
-        font-size: 30px;
+        font-size: 36px;
         font-weight: 700;
         line-height: 1.1;
     }
@@ -110,10 +110,12 @@
         flex: 1;
     }
     .FGOS__left span {
-        font-size: 14px;
+        font-size: 16px;
         line-height: 1.4;
     }
-
+    .info__subtitle {
+        font-size: 24px;
+    }
     .FGOS__left img {
         width: 20px;
         height: 20px;
@@ -126,31 +128,44 @@
     .educationStandarts {
         margin-bottom: 36px;
     }
+    .info__text {
+        font-size: 16px;
+    }
     @media (min-width: 768px) {
         .info {
             padding: 50px 21px 50px 15px;
         }
+        .link-return__title {
+            font-size: 18px;
+        }
         .info__title {
-            font-size: 56px;
             margin-bottom: 48px;
         }
     }
     @media (min-width: 1024px) {
+        .FGOS__left span {
+            font-size: 18px;
+        }
+        .info__title {
+            font-size: 64px;
+        }
+        .info__text {
+            font-size: 18px;
+        }
+        .info__subtitle {
+            font-size: 28px;
+        }
         .info {
             max-width: 100vw;
             padding: 50px 9.114vw;
         }
         .info__title {
-            font-size: 64px;
             margin-bottom: 56px;
         }
     }
     @media (min-width: 1600px) {
         .info {
             padding: 50px 9.114vw;
-        }
-        .info__title {
-            font-size: 55px;
         }
     }
     @media (min-width: 2300px) {
@@ -167,17 +182,16 @@
         <p class="link-return__title">Назад</p>
     </a>
     <h1 class="info__title">Образовательные стандарты и требования</h1>
-    <h2 class="info__subtitle">ФГОС высшего образования:</h2>
     <div class="FGOS" style="margin-bottom: 50px">
-        <p class="FGOS__title">Название документа</p>
-        <a class="FGOS__item" href="#" itemprop="licenseDocLink">
+        <h2 class="info__subtitle">ФГОС высшего образования:</h2>
+        <a class="FGOS__item" href="https://rumt.ispringcloud.ru/acc/BrlJbdMxNTkyNQ/s/15925-aK9qG-XTV2a-f2fP0" itemprop="eduFedDoc">
             <div class="FGOS__left">
                 <img src="images/Document.svg" alt="table">
                 <span>09.03.04 Программная инженерия</span>
             </div>
             <span class="FGOS__action">Открыть</span>
         </a>
-        <a class="FGOS__item" href="#" itemprop="accreditationDocLink">
+        <a class="FGOS__item" href="https://rumt.ispringcloud.ru/acc/BrlJbdMxNTkyNQ/s/15925-48gK5-DEJ5e-waBdo" itemprop="eduFedDoc">
             <div class="FGOS__left">
                 <img src="images/Document.svg" alt="table">
                 <span>09.03.03 Прикладная информатика</span>
@@ -186,8 +200,9 @@
         </a>
     </div>
     <div class="educationStandarts">
-        <h2>Образовательные стандарты</h2>
-        <p>Не используются</p>
+        <h2 class="info__subtitle">Образовательные стандарты</h2>
+        <p class="info__text" itemprop="eduStandartDoc">Не используются</p>
     </div>
-    <h2>Основные программы профессионального обучения и дополнительные образовательные программы в соответствии с Федеральным Законом № 273-ФЗ от 29.12.2012 г. "Об образовании в Российской Федерации" организация разрабатывает самостоятельно.</h2>
+    <h2 class="info__subtitle">Основные программы профессионального обучения и дополнительные образовательные программы в соответствии с Федеральным Законом № 273-ФЗ от 29.12.2012 г. "Об образовании в Российской Федерации"</h2> 
+    <span class="info__text">Организация разрабатывает самостоятельно.</span>
 </div>
