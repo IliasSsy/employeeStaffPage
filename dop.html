@@ -387,86 +387,154 @@
         }
     }
     @media (min-width: 1024px) {
-        .link-return__title {
-            font-size: 18px;
+        .info {
+            padding: 50px 9.114vw;
         }
         .info__title {
             font-size: 40px;
             margin-bottom: 50px;
         }
-        .info__subtitle, .information__title {
+        .link-return__title {
+                font-size: 18px
+        }
+        .info__subtitle {
             font-size: 24px;
         }
-        .description, .information__text {
+        .info__description, .description {
             font-size: 18px;
         }
-        .info {
-            padding: 50px 9.114vw;
+        .documents__left span {
+            font-size: 18px;
         }
         .teacher {
             display: flex;
-            gap: 48px;
-            margin-top: 32px;
-            border-bottom: 3px solid #FA5D20;
+            cursor: pointer;
+            justify-content: center;
+            padding: 24px 0;
+            border-bottom: 1px solid #ECECEC;
+            transition: background-color 0.25s ease;
+        }
+        .teacher:hover {
+            background: #FFF6F1;
         }
         .teacher__left {
-            width: 260px;
-            flex-shrink: 0;
             display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            border-left: none;
-            padding-left: 24px;
+            align-items: center;
+            gap: 24px;
+            width: 100%;
         }
         .teacher__line {
             display: none;
         }
         .teacher__photo {
-            display: block;
-            width: 200px;
-            height: 200px;
-            margin: 0 0 24px;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 12px;
+            flex-shrink: 0;
+            transition: transform 0.25s ease;
+        }
+        .teacher:hover .teacher__photo {
+            transform: scale(1.03);
+        }
+        .teacher__name {
+            margin: 0;
+            font-family: "Inter Tight", sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 1.15;
+        }
+        .teacher__post {
+            margin: 10px 0 0;
+            color: #FA5D20;
+            font-size: 16px;
+            font-weight: 500;
         }
         .teacher__button {
             display: none;
         }
-        .teacher__right {
-            flex: 1;
-            min-width: 0;
+        .teacher:hover .teacher__button {
+            transform: translateX(6px);
+        }
+        .popup__window .teacher {
             display: block;
-        }
-        .teacher__row {
-            display: flex;
-            gap: 40px;
-            padding: 28px 0;
-            border-bottom: 1px solid #E5E7EB;
-        }
-        .teacher__row:first-child {
-            padding-top: 0;
-        }
-        .teacher__title {
-            width: 230px;
-            flex-shrink: 0;
             margin: 0;
-            color: #222;
-            font-size: 16px;
-            font-weight: 700;
-            line-height: 1.5;
+            padding: 0;
+            border: none;
+            background: transparent;
+            cursor: default;
         }
-        .teacher__row > .teacher__content {
-            flex: 1;
-            min-width: 0;
+        .popup__window .teacher:hover {
+            background: transparent;
         }
-        .teacher__row > .teacher__content p {
+        .popup__window .teacher:hover .teacher__photo {
+            transform: none;
+        }
+        .popup__window .teacher__left {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 40px;
+            align-items: center;
+            padding-bottom: 32px;
+            margin-bottom: 32px;
+            border-bottom: 1px solid #ECECEC;
+        }
+        .popup__window .teacher__photo {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+        .popup__window .teacher__content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .popup__window .teacher__name {
+            font-size: 24px;
+            line-height: 1.15;
             margin: 0 0 12px;
         }
-        .teacher__row > .teacher__content p:last-child {
-            margin-bottom: 0;
+        .popup__window .teacher__post {
+            margin: 0 0 20px;
+            font-size: 20px;
+        }
+        .popup__window .teacher__button,
+        .popup__window .teacher__line {
+            display: none;
+        }
+        .popup__window .teacher__right {
+            display: block;
+            margin: 0;
+        }
+        .popup__window .teacher__row {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 28px;
+            padding: 24px 0;
+            border-top: 1px solid #ECECEC;
+        }
+        .popup__window .teacher__row:first-child {
+            border-top: none;
+            padding-top: 0;
+        }
+        .popup__window .teacher__title {
+            margin: 0;
+            color: #FA5D20;
+            font-size: 18px;
+            line-height: 1.45;
+            font-weight: 600;
+        }
+        .popup__window .teacher__row > .teacher__content {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .popup__window .teacher__row > .teacher__content p {
+            margin: 0;
+            line-height: 1.6;
         }
         .menu__title {
-            font-size: 18px;
-        }
-        .documents__left span {
             font-size: 18px;
         }
     }
@@ -1196,6 +1264,11 @@
             document.querySelectorAll(".teacher__left").forEach(button => {
                 button.addEventListener("click", () => {
                     const teacher = button.closest(".teacher");
+                    const name = teacher.querySelector(".teacher__name").textContent.trim();
+                    if (name === "Вакансия") 
+                    {
+                        return;
+                    }
                     popupContent.innerHTML = teacher.outerHTML;
                     popup.classList.add("active");
                 });
@@ -1266,6 +1339,8 @@
                 <span class="documents__action">Открыть</span>
             </a>
         </div>
+        <h2 class="info__subtitle" style="margin-top: 100px; margin-bottom: 30px;">Преподавательский состав</h2>
+        <div id="proffessional" class="people"></div>
     </div>
     <div class="menu__information" id="dop__programms">
         <div class="program" style="padding-top:0; margin-top: 0">
@@ -1373,6 +1448,8 @@
                 </a>
             </div>
         </div>
+        <h2 class="info__subtitle" style="margin-top: 100px; margin-bottom: 30px;">Преподавательский состав</h2>
+        <div id="qualification" class="people"></div>
     </div>
     <div class="menu__information" id="general__developmental__programms">
         <p class="description">Программы реализуются в очной форме. Обучение осуществляется по договорам об оказании платных образовательных услуг. Обучение осуществляется на русском языке.</p>
@@ -1534,17 +1611,7 @@
                 </a>
             </div>
         </div>
-    </div>
-    <h2 class="info__subtitle" style="margin-top: 100px; margin-bottom: 30px;">Преподавательский состав</h2>
-    <div class="card__content">
-        <h3 class="department" style="margin-bottom: 30px;">Дополнительные образовательные профессиональные программы</h3>
-        <div id="proffessional" class="people"></div>
-        <div class="people" id="people__dop__prof"></div>
-        <div class="teacher" id="department__professional" style="display: flex; flex-direction: column;"></div>
-        <h3 class="department" style="margin-bottom: 30px; margin-top: 50px; margin-bottom: 30px">Дополнительные образовательные профессиональные программы</h3>
-        <div id="qualification" class="people"></div>
-        <div class="teacher" id="department__qualification" style="display: flex; flex-direction: column;"></div>
-        <h3 class="department" style="margin-bottom: 30px;">Дополнительные общеразвивающие программы</h3>
+        <h2 class="info__subtitle" style="margin-top: 100px; margin-bottom: 30px;">Преподавательский состав</h2>
         <div id="general_developmental" class="people"></div>
     </div>
     <p class="info__subtitle" style="margin-top: 100px;">Вакантные места для приема (перевода) обучающихся</p>
