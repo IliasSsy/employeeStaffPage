@@ -54,6 +54,10 @@
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
+    a {
+        color: #FF6B35;
+        text-decoration: none;
+    }
     .info {
         max-width: 100%;
         padding: 30px 21px 30px 15px;
@@ -231,7 +235,7 @@
             clearTimeout(timer);
             timer = setTimeout(() => {
                 scrollTop.classList.remove("show");
-            }, 1000);
+            }, 2000);
         });
         scrollTop.addEventListener("click", () => {
             window.scrollTo({
@@ -338,6 +342,7 @@ function initTables() {
                 const link = document.createElement("a");
                 link.className = "documents__item table__document";
                 link.href = doc.link;
+                link.target = "_blank"
                 if (doc.download) {
                     link.download = "";
                 }
@@ -418,8 +423,8 @@ function renderLists() {
         <li>основных программ профессионального обучения</li>
     </ul>
     <p class="education__text">(выписка из государственной информационной системы "Реестр организаций, осуществляющих образовательную деятельность по имеющим государственную аккредитацию образовательным программам")</p>
-    <div class="tables-container" class="documents-container"></div>
-    <div class="documents-container"></div>
+        <div class="documents-container" style="margin-bottom: 50px;"></div>
+    <div class="tables-container"></div>
     <div class="table-block" id="education-levels" itemprop="eduAccred">
         <table class="table">
             <tr>

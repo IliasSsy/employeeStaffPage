@@ -332,7 +332,7 @@
             clearTimeout(timer);
             timer = setTimeout(() => {
                 scrollTop.classList.remove("show");
-            }, 1000);
+            }, 2000);
         });
         scrollTop.addEventListener("click", () => {
             window.scrollTo({
@@ -440,7 +440,7 @@
         cards.insertAdjacentHTML("beforeend", `
             <div class="department">
                 <h2 class="department__title">${department.title}</h2>
-                <a class="department__link" href="${department.link}" draggable="false">
+                <a class="department__link" href="${department.link}" draggable="false" target="_blank">
                     <div class="department__content" style="-webkit-user-drag: none;">
                         <img class="department__image" src="${department.image}" alt="${department.name}">
                         <div class="department__info">
@@ -476,11 +476,11 @@
         </div>
         <div class="menu">
             <img class="menu__arrow" src="https://static.tildacdn.com/tild6630-6138-4533-b731-313239313763/arrow_right.svg" alt="arrow">
-            <span class="menu__title">Коллегиальный орган управления — Учёный совет. <a href="https://rumt.ispringcloud.ru/acc/BrlJbdMxNTkyNQ/s/15925-TxDbY-jNsiz-n7010" target="_blank"><span style="color: orange">Положение</span></a></span>
+            <span class="menu__title">Коллегиальный орган управления — Учёный совет. <a href="https://rumt.ispringcloud.ru/acc/BrlJbdMxNTkyNQ/s/15925-TxDbY-jNsiz-n7010" target="_blank"><span style="color: #FF6B35">Положение</span></a></span>
         </div>
         <div class="menu" style="margin-bottom: 50px;">
             <img class="menu__arrow" src="https://static.tildacdn.com/tild6630-6138-4533-b731-313239313763/arrow_right.svg" alt="arrow">
-            <span class="menu__title">Коллегиальный орган управления — Общее собрание работников и обучающихся. <a href="https://rumt.ispringcloud.ru/acc/BrlJbdMxNTkyNQ/s/15925-1TpWB-RhXap-hanyX" target="_blank"><span style="color: orange">Положение</span></a></span>
+            <span class="menu__title">Коллегиальный орган управления — Общее собрание работников и обучающихся. <a href="https://rumt.ispringcloud.ru/acc/BrlJbdMxNTkyNQ/s/15925-1TpWB-RhXap-hanyX" target="_blank"><span style="color: #FF6B35">Положение</span></a></span>
         </div>
         <div itemprop="name">
             <div class="cards"></div>

@@ -196,7 +196,7 @@
             clearTimeout(timer);
             timer = setTimeout(() => {
                 scrollTop.classList.remove("show");
-            }, 1000);
+            }, 2000);
         });
         scrollTop.addEventListener("click", () => {
             window.scrollTo({
@@ -270,12 +270,12 @@
             </div>
             <span class="documents__action">Открыть</span>
         </a>
-        <a class="documents__item" href="#" itemprop="paidParents">
+        <a class="documents__item" href="#" itemprop="paidParents" style="pointer-events: none;">
             <div class="documents__left">
                 <img src="https://static.tildacdn.com/tild6439-3533-4465-b464-663264386234/Document.svg" alt="document">
                 <span>Документ об установлении размера платы, взимаемой с родителей (законных представителей) за присмотр и уход за детьми, осваивающими образовательные программы дошкольного образования в организациях, осуществляющих образовательную деятельность, за содержание детей в образовательной организации, реализующей образовательные программы начального общего, основного общего или среднего общего образования — отсутствует, образовательные программы дошкольного образования не реализуются.</span>
             </div>
-            <span class="documents__action">Открыть</span>
+            <span class="documents__action">Отсутствует</span>
         </a>
     </div>
 </div>

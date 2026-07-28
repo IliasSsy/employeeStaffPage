@@ -351,13 +351,13 @@
         }
         .person__info {
             padding: 18px;
-            min-height: 140px;
+            min-height: 120px;
         }
         .link-return__title {
             font-size: 18px;
         }
         .people {
-            grid-template-columns: repeat(auto-fit, 365px);
+            grid-template-columns: repeat(auto-fit, 300px);
             gap: 30px;
             justify-content: center;
             margin-bottom: 150px;
@@ -442,7 +442,7 @@
             clearTimeout(timer);
             timer = setTimeout(() => {
                 scrollTop.classList.remove("show");
-            }, 1000);
+            }, 2000);
         });
         scrollTop.addEventListener("click", () => {
             window.scrollTo({

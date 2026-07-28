@@ -414,6 +414,9 @@
             border-bottom: 1px solid #ECECEC;
             transition: background-color 0.25s ease;
         }
+        .information__text {
+            font-size: 16px;
+        }
         .teacher:hover {
             background: #FFF6F1;
         }
@@ -426,6 +429,7 @@
         .teacher__line {
             display: none;
         }
+
         .teacher__photo {
             width: 150px;
             height: 150px;
@@ -550,7 +554,7 @@
             clearTimeout(timer);
             timer = setTimeout(() => {
                 scrollTop.classList.remove("show");
-            }, 1000);
+            }, 2000);
         });
         scrollTop.addEventListener("click", () => {
             window.scrollTo({
@@ -1123,7 +1127,7 @@
             {
                 id: "skylkina", category: "general_developmental",
                 photo: "https://static.tildacdn.com/tild3638-3861-4664-a239-663565353539/Skulkina_Anastasia.jpg",
-                name: "Скулкина Анастасия<br>Александровна",
+                name: "Седых Анастасия<br>Александровна",
                 position: "Преподаватель дополнительного образования",
                 degree: "нет",
                 title: "нет",
@@ -1292,19 +1296,18 @@
     <p class="description">Программы реализуются только по договорам об оказании платных образовательных услуг. Обучающихся за счет бюджетных ассигнований федерального бюджета, за счет бюджетных ассигнований бюджетов субъектов Российской Федерации нет.</p>
     <div class="menu" id="menu__prefessional__education"> 
         <img class="menu__arrow" src="https://static.tildacdn.com/tild3766-3932-4231-b737-353431623664/Vector.svg" alt="arrow">
-        <span class="menu__title">Программа профессиональной переподготовки</span>
+        <span class="menu__title">Программы профессиональной переподготовки</span>
     </div>
     <div class="menu" id="menu__dop__programms">
         <img class="menu__arrow" src="https://static.tildacdn.com/tild3766-3932-4231-b737-353431623664/Vector.svg" alt="arrow">
-        <span class="menu__title">Дополнительны профессиональные программы повышения квалификации</span>
+        <span class="menu__title">Дополнительные профессиональные программы повышения квалификации</span>
     </div>
     <div class="menu" id="menu__general__developmental__programms">
         <img class="menu__arrow" src="https://static.tildacdn.com/tild3766-3932-4231-b737-353431623664/Vector.svg" alt="arrow" >
         <span class="menu__title">Дополнительные общеразвивающие программы</span>
     </div>
     <div class="menu__information" id="professional__education">
-        <p class="information__title">Наименование программы</p>
-        <p class="information__text">Разработка и проектирование программных систем. Базовый уровень</p>
+        <p class="information__title">Разработка и проектирование программных систем. Базовый уровень</p>
         <p class="information__title">Присваиваемая квалификаиця</p>
         <p class="information__text">Программист</p>
         <p class="information__title">Срок обучения</p>
@@ -1331,12 +1334,19 @@
                 </div>
                 <span class="documents__action">Открыть</span>
             </a>
-            <a class="documents__item" href="https://rumt.ispringcloud.ru/acc/BrlJbdMxNTkyNQ/s/15925-i3iFo-CpVJk-WyeLj" style="margin-bottom: 30px;" target="_blank">
+            <a class="documents__item" href="https://www.institutps.ru/courses" target="_blank">
                 <div class="documents__left">
                     <img src="https://static.tildacdn.com/tild6439-3533-4465-b464-663264386234/Document.svg"alt="table">
                     <span>Расписание занятий</span>
                 </div>
                 <span class="documents__action">Открыть</span>
+            </a>
+            <a class="documents__item" href="https://www.institutps.ru/courses" style="margin-bottom: 30px;" target="_blank">
+                <div class="documents__left">
+                    <img src="https://static.tildacdn.com/tild6630-6138-4533-b731-313239313763/arrow_right.svg" alt="table">
+                    <span>Записаться на программу</span>
+                </div>
+                <span class="documents__action">Перейти</span>
             </a>
         </div>
         <h2 class="info__subtitle" style="margin-top: 100px; margin-bottom: 30px;">Преподавательский состав</h2>
@@ -1344,8 +1354,14 @@
     </div>
     <div class="menu__information" id="dop__programms">
         <div class="program" style="padding-top:0; margin-top: 0">
-            <p class="information__title">Дополнительная профессиональная образовательная программа повышения квалификации</p>
-            <p class="information__text">Особенности современного образовательного процесса. Базовые траектории обучения, технологии и методики преподавания учебных дисциплин.</p>
+            <a class="documents__item" href="https://www.institutps.ru/courses" style="margin-bottom: 30px; border-top: none" target="_blank">
+                <div class="documents__left">
+                    <img src="https://static.tildacdn.com/tild6630-6138-4533-b731-313239313763/arrow_right.svg" alt="table">
+                    <span>Записаться на программу</span>
+                </div>
+                <span class="documents__action">Перейти</span>
+            </a>
+            <p class="information__title">Особенности современного образовательного процесса. Базовые траектории обучения, технологии и методики преподавания учебных дисциплин.</p>
             <p class="information__title">Срок обучения</p>
             <p class="information__text">16 академических часов</p>
             <div class="documents">
@@ -1359,8 +1375,7 @@
             </div>
         </div>
         <div class="program">
-            <p class="information__title">Дополнительная профессиональная образовательная программа повышения квалификации</p>
-            <p class="information__text">Педагогика и психология преподавания в системе дополнительного образования.</p>
+            <p class="information__title">Педагогика и психология преподавания в системе дополнительного образования.</p>
             <p class="information__title">Срок обучения</p>
             <p class="information__text">16 академических часов</p>
             <div class="documents">
@@ -1374,8 +1389,7 @@
             </div>
         </div>
         <div class="program">
-            <p class="information__title">Дополнительная профессиональная образовательная программа повышения квалификации</p>
-            <p class="information__text">Методические аспекты преподавания английского языка в формате CELTA.</p>
+            <p class="information__title">Методические аспекты преподавания английского языка в формате CELTA.</p>
             <p class="information__title">Срок обучения</p>
             <p class="information__text">21 академический час</p>
             <div class="documents">
@@ -1389,8 +1403,7 @@
             </div>
         </div>
         <div class="program">
-            <p class="information__title">Дополнительная профессиональная образовательная программа повышения квалификации</p>
-            <p class="information__text">Образовательная робототехника в начальной и средней школе.</p>
+            <p class="information__title">Образовательная робототехника в начальной и средней школе.</p>
             <p class="information__title">Срок обучения</p>
             <p class="information__text">24 академических часа</p>
             <div class="documents">
@@ -1404,8 +1417,7 @@
             </div>
         </div>
         <div class="program">
-            <p class="information__title">Дополнительная профессиональная образовательная программа повышения квалификации</p>
-            <p class="information__text">Базовые траектории обучения, технологии и методики преподавания учебных дисциплин в КШ «Инфосфера».</p>
+            <p class="information__title">Базовые траектории обучения, технологии и методики преподавания учебных дисциплин в КШ «Инфосфера».</p>
             <p class="information__title">Срок обучения</p>
             <p class="information__text">20 академических часов</p>
             <div class="documents">
@@ -1419,8 +1431,7 @@
             </div>
         </div>
         <div class="program">
-            <p class="information__title">Дополнительная профессиональная образовательная программа повышения квалификации</p>
-            <p class="information__text">Базовые основы веб-разработки.</p>
+            <p class="information__title">Базовые основы веб-разработки.</p>
             <p class="information__title">Срок обучения</p>
             <p class="information__text">16 академических часов</p>
             <div class="documents">
@@ -1434,8 +1445,7 @@
             </div>
         </div>
         <div class="program" style="margin-bottom: 30px;">
-            <p class="information__title">Дополнительная профессиональная образовательная программа повышения квалификации</p>
-            <p class="information__text">Практическое применение метода погружений как педагогической технологии комплексного воспитания личности: опыт учителей-передвижников.</p>
+            <p class="information__title">Практическое применение метода погружений как педагогической технологии комплексного воспитания личности: опыт учителей-передвижников.</p>
             <p class="information__title">Срок обучения</p>
             <p class="information__text">24 академических часа</p>
             <div class="documents">
@@ -1448,6 +1458,13 @@
                 </a>
             </div>
         </div>
+        <a class="documents__item" href="https://www.institutps.ru/courses" style="margin-bottom: 30px;" target="_blank">
+            <div class="documents__left">
+                <img src="https://static.tildacdn.com/tild6630-6138-4533-b731-313239313763/arrow_right.svg" alt="table">
+                <span>Записаться на программу</span>
+            </div>
+            <span class="documents__action">Перейти</span>
+        </a>
         <h2 class="info__subtitle" style="margin-top: 100px; margin-bottom: 30px;">Преподавательский состав</h2>
         <div id="qualification" class="people"></div>
     </div>
@@ -1457,8 +1474,7 @@
         <p class="description">Объем программы (в академических часах), срок освоения программы, примерный календарный учебный график, рекомендуемый численный состав учебной группы указаны в образовательной программе.</p>
         <p class="description">Старт обучения проводится при наборе учебной группы.</p>
         <div class="program">
-            <p class="information__title">Наименование программы</p>
-            <p class="information__text">Продуктовый дизайн (UX/UI)</p>
+            <p class="information__title">Продуктовый дизайн (UX/UI)</p>
             <p class="information__title">Срок обучения</p>
             <p class="information__text">36 академических часов</p>
             <div class="documents">
@@ -1469,18 +1485,10 @@
                     </div>
                     <span class="documents__action">Открыть</span>
                 </a>
-                <a class="documents__item" href="https://www.institutps.ru/courses/course-ux-design" target="_blank">
-                    <div class="documents__left">
-                        <img src="https://static.tildacdn.com/tild6630-6138-4533-b731-313239313763/arrow_right.svg" alt="link">
-                        <span>Записаться на программу</span>
-                    </div>
-                    <span class="documents__action">Перейти</span>
-                </a>
             </div>
         </div>
         <div class="program">
-            <p class="information__title">Наименование программы</p>
-            <p class="information__text">Конструкция и базовые навыки пилотирования мультироторных БПЛА</p>
+            <p class="information__title">Конструкция и базовые навыки пилотирования мультироторных БПЛА</p>
             <p class="information__title">Срок обучения</p>
             <p class="information__text">36 академических часов</p>
             <div class="documents">
@@ -1494,8 +1502,7 @@
             </div>
         </div>
         <div class="program">
-            <p class="information__title">Наименование программы</p>
-            <p class="information__text">Инструменты дизайнера</p>
+            <p class="information__title">Инструменты дизайнера</p>
             <p class="information__title">Срок обучения</p>
             <p class="information__text">21 академический час</p>
             <div class="documents">
@@ -1506,18 +1513,10 @@
                     </div>
                     <span class="documents__action">Открыть</span>
                 </a>
-                <a class="documents__item" href="https://ispring.institute/courses/course-design-tools" target="_blank">
-                    <div class="documents__left">
-                        <img src="https://static.tildacdn.com/tild6630-6138-4533-b731-313239313763/arrow_right.svg" alt="link">
-                        <span>Записаться на программу</span>
-                    </div>
-                    <span class="documents__action">Перейти</span>
-                </a>
             </div>
         </div>
         <div class="program">
-            <p class="information__title">Наименование программы</p>
-            <p class="information__text">Поисковое продвижение сайтов (SEO)</p>
+            <p class="information__title">Поисковое продвижение сайтов (SEO)</p>
             <p class="information__title">Срок обучения</p>
             <p class="information__text">20 академических часов</p>
             <div class="documents">
@@ -1531,8 +1530,7 @@
             </div>
         </div>
         <div class="program">
-            <p class="information__title">Наименование программы</p>
-            <p class="information__text">Тестирование ПО</p>
+            <p class="information__title">Тестирование ПО</p>
             <p class="information__title">Срок обучения</p>
             <p class="information__text">48 академических часов</p>
             <div class="documents">
@@ -1543,18 +1541,10 @@
                     </div>
                     <span class="documents__action">Открыть</span>
                 </a>
-                <a class="documents__item" href="https://www.institutps.ru/courses/software-testing" target="_blank">
-                    <div class="documents__left">
-                        <img src="https://static.tildacdn.com/tild6630-6138-4533-b731-313239313763/arrow_right.svg" alt="link">
-                        <span>Записаться на программу</span>
-                    </div>
-                    <span class="documents__action">Перейти</span>
-                </a>
             </div>
         </div>
         <div class="program">
-            <p class="information__title">Наименование программы</p>
-            <p class="information__text">Веб-дизайн: сайты, лендинги, блоги и интернет-магазины</p>
+            <p class="information__title">Веб-дизайн: сайты, лендинги, блоги и интернет-магазины</p>
             <p class="information__title">Срок обучения</p>
             <p class="information__text">32 академических часа</p>
             <div class="documents">
@@ -1565,18 +1555,11 @@
                     </div>
                     <span class="documents__action">Открыть</span>
                 </a>
-                <a class="documents__item" href="https://ispring.institute/courses/course-web-design" target="_blank">
-                    <div class="documents__left">
-                        <img src="https://static.tildacdn.com/tild6630-6138-4533-b731-313239313763/arrow_right.svg" alt="link">
-                        <span>Записаться на программу</span>
-                    </div>
-                    <span class="documents__action">Перейти</span>
-                </a>
             </div>
         </div>
         <div class="program">
-            <p class="information__title">Наименование программы</p>
-            <p class="information__text">Автоматизированное тестирование ПО</p>
+            <p class="information__title">Автоматизированное тестирование ПО</p>
+            <p class="information__text"></p>
             <p class="information__title">Срок обучения</p>
             <p class="information__text">36 академических часов</p>
             <div class="documents">
@@ -1587,18 +1570,11 @@
                     </div>
                     <span class="documents__action">Открыть</span>
                 </a>
-                <a class="documents__item" href="https://www.institutps.ru/courses/qa-engineer" target="_blank">
-                    <div class="documents__left">
-                        <img src="https://static.tildacdn.com/tild6630-6138-4533-b731-313239313763/arrow_right.svg" alt="link">
-                        <span>Записаться на программу</span>
-                    </div>
-                    <span class="documents__action">Перейти</span>
-                </a>
+
             </div>
         </div>
         <div class="program">
-            <p class="information__title">Наименование программы</p>
-            <p class="information__text">Математический модуль</p>
+            <p class="information__title">Математический модуль</p>
             <p class="information__title">Срок обучения</p>
             <p class="information__text">30 академических часов</p>
             <div class="documents">
@@ -1615,12 +1591,8 @@
         <div id="general_developmental" class="people"></div>
     </div>
     <p class="info__subtitle" style="margin-top: 100px;">Вакантные места для приема (перевода) обучающихся</p>
-    <p class="description">В АНО ВО «РУМТ» места для приема (перевода) финансируемые за счет бюджетных ассигнований федерального бюджета, бюджетов Российской федерации, местных бюджетов <span style="color: orange;">не предусмотрены.</span></p>
-    <p class="description" style="margin-bottom: 50px;">Количество вакантных мест для приема (перевода) на места по договорам об образовании за счет средств физических и (или) юридических лиц: <span style="color: orange">отсутствует</span></p>
-    <p class="info__subtitle"> Дополнительные программы профессиональной переподготовки </p>
-    <p class="description" style="margin-bottom: 50px;">Разработка и проектирование программных систем. Базовый уровень – 30.<br><span style="color: orange">Записаться на программу</span></p>
-    <p class="info__subtitle"> Дополнительные общеразвивающие программы </p>
-    <p class="description" style="color: orange">Подробнее</p>
+    <p class="description">В АНО ВО «РУМТ» места для приема (перевода) финансируемые за счет бюджетных ассигнований федерального бюджета, бюджетов Российской федерации, местных бюджетов не предусмотрены.</p>
+    <p class="description" style="margin-bottom: 50px;">Количество вакантных мест для приема (перевода) на места по договорам об образовании за счет средств физических и (или) юридических лиц: отсутствует</p>
     <div class="popup" id="popup">
         <div class="popup__overlay"></div>
         <div class="popup__window">

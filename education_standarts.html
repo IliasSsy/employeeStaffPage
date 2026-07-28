@@ -200,7 +200,7 @@
             clearTimeout(timer);
             timer = setTimeout(() => {
                 scrollTop.classList.remove("show");
-            }, 1000);
+            }, 2000);
         });
         scrollTop.addEventListener("click", () => {
             window.scrollTo({
@@ -238,8 +238,11 @@
         <h2 class="info__subtitle">Образовательные стандарты</h2>
         <p class="info__text" itemprop="eduStandartDoc">Не используются</p>
     </div>
-    <h2 class="info__subtitle">Основные программы профессионального обучения и дополнительные образовательные программы в соответствии с Федеральным Законом № 273-ФЗ от 29.12.2012 г. "Об образовании в Российской Федерации"</h2> 
-    <span class="info__text">Организация разрабатывает самостоятельно.</span>
+    <div class="educationStandarts">
+        <h2 class="info__subtitle">Федеральные государственные требования</h2>
+        <p class="info__text" itemprop="eduStandartDoc">Не используются</p>
+    </div>
+    <p class="info__text">Основные программы профессионального обучения и дополнительные образовательные программы в соответствии с Федеральным Законом № 273-ФЗ от 29.12.2012 г. "Об образовании в Российской Федерации" организация разрабатывает самостоятельно.</p>
 </div>
 <div id="scrollTop" class="scroll-top">
     <img src="https://static.tildacdn.com/tild6231-3136-4431-b836-346239643735/Arrow_left.svg" alt="" style="transform: rotate(90deg);">

@@ -89,7 +89,7 @@
         padding: 12px 0;
         border-bottom: 1px solid #D9D9D9;
         cursor: pointer;
-        transition: border-color .2s ease;
+        transition: border-color 0.2s ease;
     }
     .link-return__title {
         font-size: 16px
@@ -104,6 +104,7 @@
     }
     .menu.open {
         border-bottom-color: #FF5A1F;
+        background-color: #F8EDE7;
     }
     .menu.open .menu__arrow {
         transform: rotate(90deg);
@@ -238,7 +239,7 @@
             clearTimeout(timer);
             timer = setTimeout(() => {
                 scrollTop.classList.remove("show");
-            }, 1000);
+            }, 2000);
         });
         scrollTop.addEventListener("click", () => {
             window.scrollTo({
