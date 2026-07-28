@@ -406,6 +406,16 @@
         .documents__left span {
             font-size: 18px;
         }
+        .popup__window{
+            position:relative;
+            width: 85vw;
+            max-height: 90vh;
+            background:#ffffff;
+            border-radius:16px;
+            overflow-y:auto;
+            padding:30px;
+            z-index:1;
+        }
         .teacher {
             display: flex;
             cursor: pointer;
@@ -481,7 +491,6 @@
             align-items: center;
             padding-bottom: 32px;
             margin-bottom: 32px;
-            border-bottom: 1px solid #ECECEC;
         }
         .popup__window .teacher__photo {
             width: 200px;
@@ -508,15 +517,20 @@
             display: none;
         }
         .popup__window .teacher__right {
-            display: block;
-            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 40px;
+            align-items: start;
+        }
+        .popup__window {
+            height: auto;
         }
         .popup__window .teacher__row {
-            display: grid;
-            grid-template-columns: 280px 1fr;
-            gap: 28px;
-            padding: 24px 0;
-            border-top: 1px solid #ECECEC;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 0 0 24px;
+            border: none;
         }
         .popup__window .teacher__row:first-child {
             border-top: none;
@@ -526,17 +540,16 @@
             margin: 0;
             color: #FA5D20;
             font-size: 18px;
-            line-height: 1.45;
             font-weight: 600;
         }
         .popup__window .teacher__row > .teacher__content {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 8px;
         }
         .popup__window .teacher__row > .teacher__content p {
             margin: 0;
-            line-height: 1.6;
+            line-height: 1.5;
         }
         .menu__title {
             font-size: 18px;
@@ -1275,13 +1288,16 @@
                     }
                     popupContent.innerHTML = teacher.outerHTML;
                     popup.classList.add("active");
+                    document.body.style.overflow = "hidden"
                 });
             });
             popup.querySelector(".popup__close").addEventListener("click", () => {
                 popup.classList.remove("active");
+                document.body.style.overflow = ""
             });
             popup.querySelector(".popup__overlay").addEventListener("click", () => {
                 popup.classList.remove("active");
+                document.body.style.overflow = ""
             });
         })
 </script>
